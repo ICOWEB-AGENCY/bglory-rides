@@ -60,7 +60,7 @@ const helpTopics = [
     description:
       "Thinking about earning with BGlory? Here is everything you need to know about signing up, vehicle requirements, and how you get paid.",
     questions: [
-      "How to become a BGlory driver in Lagos",
+      "How to become a BGlory driver in Port Harcourt",
       "What are the vehicle requirements for BGlory drivers?",
       "How do BGlory driver earnings and payouts work?",
       "What documents do I need to sign up as a BGlory driver?",

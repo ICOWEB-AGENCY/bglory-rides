@@ -49,7 +49,7 @@ function Hero() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-400/10 border border-primary-400/20 mb-6">
               <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse" />
               <span className="text-sm font-medium text-primary-400">
-                Launching in Lagos, 2026
+                Launching in Port Harcourt, 2026
               </span>
             </div>
 
@@ -61,7 +61,7 @@ function Hero() {
             <p className="mt-5 sm:mt-6 text-base sm:text-lg md:text-xl text-dark-400 leading-relaxed max-w-2xl">
               BGlory Rides connects you with verified drivers in minutes.
               See your fare before you book. No surge pricing, no hidden
-              fees. Just safe, affordable rides across Lagos.
+              fees. Just safe, affordable rides across Port Harcourt.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
@@ -293,7 +293,7 @@ function Testimonials() {
         <SectionHeading
           label="Real Feedback"
           title="Hear from our pilot riders and drivers"
-          description="We ran a closed pilot in Lagos before launch. Here is what real riders and drivers had to say."
+          description="We ran a closed pilot in Port Harcourt before launch. Here is what real riders and drivers had to say."
           align="center"
         />
 
@@ -436,7 +436,7 @@ function NotifyCTA() {
               Be first in line when we launch.
             </h2>
             <p className="mt-5 text-dark-400 text-base leading-relaxed max-w-lg">
-              We are launching soon in Lagos. Drop your email and you will
+              We are launching soon in Port Harcourt. Drop your email and you will
               be the first to know when you can book your first ride.
               Early signups get priority access and exclusive launch offers.
             </p>

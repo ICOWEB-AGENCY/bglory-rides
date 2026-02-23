@@ -8,11 +8,11 @@ import Button from "@/components/Button";
 
 export const metadata: Metadata = {
   title:
-    "Become a Driver in Lagos | Earn Up to ₦15,000/Day | BGlory Rides",
+    "Become a Driver in Port Harcourt | Earn Up to ₦15,000/Day | BGlory Rides",
   description:
-    "Drive and earn in Nigeria with BGlory Rides. Apply today, start earning in 48 hours. Weekly payouts, flexible hours, and launch bonuses for early drivers in Lagos.",
+    "Drive and earn in Nigeria with BGlory Rides. Apply today, start earning in 48 hours. Weekly payouts, flexible hours, and launch bonuses for early drivers in Port Harcourt.",
   keywords:
-    "become a driver Lagos, earn money driving Nigeria, driver app Lagos, drive and earn Nigeria, ride hailing driver Lagos, BGlory driver signup",
+    "become a driver Port Harcourt, earn money driving Nigeria, driver app Port Harcourt, drive and earn Nigeria, ride hailing driver Port Harcourt, BGlory driver signup",
 };
 
 const benefits = [
@@ -29,7 +29,7 @@ const benefits = [
   {
     title: "Keep More of What You Earn",
     description:
-      "Our commission rates are lower than every other platform in Lagos. You did the driving, you should keep the money. Simple.",
+      "Our commission rates are lower than every other platform in Port Harcourt. You did the driving, you should keep the money. Simple.",
   },
   {
     title: "Earn Extra During Peak Hours",
@@ -84,9 +84,9 @@ export default function DrivePage() {
   return (
     <>
       <PageHero
-        label="Become a Driver in Lagos"
+        label="Become a Driver in Port Harcourt"
         title="Earn up to ₦15,000 a day driving with BGlory."
-        description="Thousands of ride requests go unfilled every day in Lagos. Your car is sitting idle while other drivers are cashing out. Apply now, get approved in 48 hours, and start earning this week."
+        description="Thousands of ride requests go unfilled every day in Port Harcourt. Your car is sitting idle while other drivers are cashing out. Apply now, get approved in 48 hours, and start earning this week."
         breadcrumbs={[{ label: "Drive and Earn" }]}
       />
 
@@ -218,7 +218,7 @@ export default function DrivePage() {
                   Every day you wait is money left on the table.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  We are onboarding a limited number of launch drivers in Lagos
+                  We are onboarding a limited number of launch drivers in Port Harcourt
                   right now. Early drivers lock in the lowest commission rates
                   and get first access to the highest-demand zones. Spots are
                   filling fast. The application takes less than 10 minutes.
