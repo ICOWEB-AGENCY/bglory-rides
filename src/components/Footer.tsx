@@ -56,28 +56,28 @@ export default function Footer() {
               />
             </Link>
             <p className="text-dark-400 text-sm leading-relaxed max-w-sm mb-6">
-              Affordable rides across Lagos with verified drivers and
+              Affordable rides across Port Harcourt with verified drivers and
               upfront pricing. No surge fees, no surprises. Request a ride
               and get where you need to go.
             </p>
             <div className="space-y-3">
               <a
-                href="mailto:hello@bgloryrides.com"
+                href="mailto:contact@bgloryrides.com"
                 className="flex items-center gap-2 text-sm text-dark-400 hover:text-primary-400 transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                hello@bgloryrides.com
+                contact@bgloryrides.com
               </a>
               <a
-                href="tel:+2348001234567"
+                href="tel:+2348063376181"
                 className="flex items-center gap-2 text-sm text-dark-400 hover:text-primary-400 transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                +234 (0) 800 123 4567
+                0806 337 6181
               </a>
               <p className="flex items-center gap-2 text-sm text-dark-400">
                 <MapPin className="w-4 h-4 shrink-0" />
-                Lagos, Nigeria
+                Port Harcourt, Nigeria
               </p>
             </div>
           </div>

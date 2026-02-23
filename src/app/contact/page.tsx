@@ -10,19 +10,19 @@ import AnimatedSection from "@/components/AnimatedSection";
 const contactChannels = [
   {
     label: "Email",
-    value: "hello@bgloryrides.com",
-    href: "mailto:hello@bgloryrides.com",
+    value: "contact@bgloryrides.com",
+    href: "mailto:contact@bgloryrides.com",
     note: "Most inquiries answered within 2 hours",
   },
   {
     label: "Phone",
-    value: "+234 (0) 800 123 4567",
-    href: "tel:+2348001234567",
+    value: "0806 337 6181",
+    href: "tel:+2348063376181",
     note: "Speak to a real person, Monday to Friday",
   },
   {
     label: "Office",
-    value: "Victoria Island, Lagos",
+    value: "Port Harcourt, Nigeria",
     href: "#",
     note: "Walk in and meet the team on weekdays",
   },
