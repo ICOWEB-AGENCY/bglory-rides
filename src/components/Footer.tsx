@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="inline-block mb-5">
               <Image
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt="BGlory Rides"
                 width={140}
                 height={40}
@@ -146,6 +146,7 @@ export default function Footer() {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
+                rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center text-dark-500 hover:text-primary-400 transition-colors"
               >
                 <social.icon className="w-4 h-4" />

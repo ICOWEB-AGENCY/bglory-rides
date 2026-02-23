@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
   ChevronDown,
@@ -46,11 +45,7 @@ function Hero() {
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12 py-32 sm:py-40">
         <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
+          <div className="animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-400/10 border border-primary-400/20 mb-6">
               <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse" />
               <span className="text-sm font-medium text-primary-400">
@@ -94,7 +89,7 @@ function Hero() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
@@ -371,14 +366,11 @@ function FAQItem({
           className={`w-5 h-5 text-dark-400 shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
         />
       </button>
-      <motion.div
-        initial={false}
-        animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
-        transition={{ duration: 0.3 }}
-        className="overflow-hidden"
-      >
-        <p className="pb-5 text-sm text-dark-500 leading-relaxed">{answer}</p>
-      </motion.div>
+      <div className={`faq-content ${isOpen ? "open" : ""}`}>
+        <div>
+          <p className="pb-5 text-sm text-dark-500 leading-relaxed">{answer}</p>
+        </div>
+      </div>
     </div>
   );
 }

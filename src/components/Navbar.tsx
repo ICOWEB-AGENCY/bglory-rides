@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { navLinks } from "@/lib/data";
 
 export default function Navbar() {
@@ -52,7 +51,7 @@ export default function Navbar() {
               <Link href="/" className="relative z-[60] flex items-center shrink-0">
                 {/* Light logo (for dark/transparent background) */}
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo.webp"
                   alt="BGlory Rides"
                   width={130}
                   height={36}
@@ -63,7 +62,7 @@ export default function Navbar() {
                 />
                 {/* Dark logo (for white/scrolled background) */}
                 <Image
-                  src="/images/logo-dark.png"
+                  src="/images/logo-dark.webp"
                   alt="BGlory Rides"
                   width={130}
                   height={36}
@@ -152,72 +151,71 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-50 bg-white lg:hidden overflow-y-auto"
-          >
-            <div className="flex flex-col justify-between min-h-screen pt-20 pb-10 px-5 sm:px-6">
-              {/* Nav links */}
-              <div className="space-y-1">
-                {navLinks.map((link, i) => {
-                  const isActive = pathname === link.href;
-                  return (
-                    <motion.div
-                      key={link.href}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.04, duration: 0.3 }}
-                    >
-                      <Link
-                        href={link.href}
-                        className={`flex items-center justify-between py-3.5 border-b border-surface-100 text-base font-medium transition-colors ${
-                          isActive
-                            ? "text-primary-500"
-                            : "text-dark-800 hover:text-primary-500"
-                        }`}
-                      >
-                        {link.label}
-                        <ArrowRight
-                          className={`w-4 h-4 transition-colors ${
-                            isActive ? "text-primary-400" : "text-dark-300"
-                          }`}
-                        />
-                      </Link>
-                    </motion.div>
-                  );
-                })}
-              </div>
+      <div
+        className={`fixed inset-0 z-50 bg-white lg:hidden overflow-y-auto transition-opacity duration-250 ${
+          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="flex flex-col justify-between min-h-screen pt-20 pb-10 px-5 sm:px-6">
+          {/* Nav links */}
+          <div className="space-y-1">
+            {navLinks.map((link, i) => {
+              const isActive = pathname === link.href;
+              return (
+                <div
+                  key={link.href}
+                  className="transition-all duration-300"
+                  style={{
+                    opacity: isOpen ? 1 : 0,
+                    transform: isOpen ? "translateX(0)" : "translateX(-20px)",
+                    transitionDelay: isOpen ? `${i * 40}ms` : "0ms",
+                  }}
+                >
+                  <Link
+                    href={link.href}
+                    className={`flex items-center justify-between py-3.5 border-b border-surface-100 text-base font-medium transition-colors ${
+                      isActive
+                        ? "text-primary-500"
+                        : "text-dark-800 hover:text-primary-500"
+                    }`}
+                  >
+                    {link.label}
+                    <ArrowRight
+                      className={`w-4 h-4 transition-colors ${
+                        isActive ? "text-primary-400" : "text-dark-300"
+                      }`}
+                    />
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
 
-              {/* Bottom CTAs */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.25, duration: 0.3 }}
-                className="flex flex-col gap-3"
-              >
-                <Link
-                  href="/#notify"
-                  className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-sm font-semibold bg-primary-400 text-white hover:bg-primary-500 transition-colors"
-                >
-                  Join Waitlist
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/drive"
-                  className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-sm font-semibold border border-dark-200 text-dark-800 hover:bg-surface-50 transition-colors"
-                >
-                  Drive with Us
-                </Link>
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          {/* Bottom CTAs */}
+          <div
+            className="flex flex-col gap-3 transition-all duration-300"
+            style={{
+              opacity: isOpen ? 1 : 0,
+              transform: isOpen ? "translateY(0)" : "translateY(20px)",
+              transitionDelay: isOpen ? "250ms" : "0ms",
+            }}
+          >
+            <Link
+              href="/#notify"
+              className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-sm font-semibold bg-primary-400 text-white hover:bg-primary-500 transition-colors"
+            >
+              Join Waitlist
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/drive"
+              className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-sm font-semibold border border-dark-200 text-dark-800 hover:bg-surface-50 transition-colors"
+            >
+              Drive with Us
+            </Link>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }

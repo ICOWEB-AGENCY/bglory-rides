@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -38,32 +35,23 @@ export default function Button({
   onClick,
   type = "button",
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all ${variants[variant]} ${sizes[size]} ${className}`;
-
-  const motionProps = {
-    whileHover: { scale: 1.03, y: -1 },
-    whileTap: { scale: 0.97 },
-    transition: { type: "spring" as const, stiffness: 400, damping: 17 },
-  };
+  const classes = `inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 hover:scale-[1.03] hover:-translate-y-px active:scale-[0.97] ${variants[variant]} ${sizes[size]} ${className}`;
 
   if (href) {
     return (
-      <motion.div {...motionProps} className="inline-block">
-        <Link href={href} className={classes}>
-          {children}
-        </Link>
-      </motion.div>
+      <Link href={href} className={classes}>
+        {children}
+      </Link>
     );
   }
 
   return (
-    <motion.button
-      {...motionProps}
+    <button
       onClick={onClick}
       type={type}
       className={classes}
     >
       {children}
-    </motion.button>
+    </button>
   );
 }

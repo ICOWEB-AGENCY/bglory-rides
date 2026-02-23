@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Breadcrumb from "./Breadcrumb";
 
@@ -35,12 +32,7 @@ export default function PageHero({ label, title, description, breadcrumbs }: Pag
       <Navbar />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12 pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-2xl"
-        >
+        <div className="max-w-2xl animate-fade-in">
           <Breadcrumb items={breadcrumbs} variant="dark" />
           <p className="text-sm font-medium text-primary-400 mb-3">{label}</p>
           <h1 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white tracking-tight leading-[1.1]">
@@ -49,7 +41,7 @@ export default function PageHero({ label, title, description, breadcrumbs }: Pag
           <p className="mt-4 sm:mt-5 text-base sm:text-lg text-dark-400 leading-relaxed">
             {description}
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

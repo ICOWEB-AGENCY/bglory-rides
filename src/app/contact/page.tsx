@@ -2,7 +2,6 @@
 
 import { useState, FormEvent } from "react";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
 import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
@@ -112,11 +111,7 @@ export default function ContactPage() {
 
               <AnimatedSection delay={0.1}>
                 {submitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="py-16 sm:py-20 text-center"
-                  >
+                  <div className="py-16 sm:py-20 text-center animate-fade-in">
                     <p className="text-xs font-mono text-primary-400 tracking-widest mb-4">
                       SENT
                     </p>
@@ -133,7 +128,7 @@ export default function ContactPage() {
                     >
                       Send another message
                     </button>
-                  </motion.div>
+                  </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
