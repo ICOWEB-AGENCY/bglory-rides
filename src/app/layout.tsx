@@ -22,18 +22,22 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "BGlory Rides - Your Ride, Your Way",
+    default: "BGlory Rides | Affordable Ride-Hailing in Lagos, Nigeria",
     template: "%s | BGlory Rides",
   },
   description:
-    "BGlory Rides is the smart, safe, and affordable ride-hailing service. Request a ride in seconds, travel in comfort, and arrive on time. Available 24/7.",
+    "Request a ride in Lagos and get picked up in under 4 minutes. Verified drivers, upfront pricing, no surge fees. Join the waitlist for Nigeria's smarter ride-hailing app.",
   keywords: [
-    "ride hailing",
-    "taxi",
-    "transportation",
+    "ride-hailing Lagos",
+    "ride-hailing Nigeria",
+    "affordable rides Lagos",
+    "book a ride Lagos",
+    "taxi app Nigeria",
     "BGlory Rides",
-    "car service",
-    "ride sharing",
+    "ride-hailing app Africa",
+    "become a driver Lagos",
+    "earn money driving Nigeria",
+    "safe rides Lagos",
   ],
   icons: {
     icon: "/images/favicon-32x32.png",
@@ -41,26 +45,26 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://bglory-rides.vercel.app"),
   openGraph: {
-    title: "BGlory Rides - Your Ride, Your Way",
+    title: "BGlory Rides | Affordable Ride-Hailing in Lagos, Nigeria",
     description:
-      "BGlory Rides is the smart, safe, and affordable ride-hailing service. Request a ride in seconds, travel in comfort, and arrive on time.",
+      "Get picked up in under 4 minutes. Verified drivers, upfront pricing, zero surge fees. Join the waitlist for Lagos's smarter ride-hailing app.",
     type: "website",
-    locale: "en_US",
+    locale: "en_NG",
     siteName: "BGlory Rides",
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "BGlory Rides",
+        alt: "BGlory Rides - Affordable Ride-Hailing in Lagos",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BGlory Rides - Your Ride, Your Way",
+    title: "BGlory Rides | Affordable Ride-Hailing in Lagos",
     description:
-      "Smart, safe, and affordable ride-hailing. Request a ride in seconds.",
+      "Verified drivers. Upfront pricing. 4-minute pickups. Join the waitlist for Lagos's smarter ride-hailing app.",
     images: ["/images/og-image.png"],
   },
   robots: {

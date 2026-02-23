@@ -12,19 +12,19 @@ const contactChannels = [
     label: "Email",
     value: "hello@bgloryrides.com",
     href: "mailto:hello@bgloryrides.com",
-    note: "Typically responds within 2 hours",
+    note: "Most inquiries answered within 2 hours",
   },
   {
     label: "Phone",
     value: "+234 (0) 800 123 4567",
     href: "tel:+2348001234567",
-    note: "Monday to Friday, 8AM to 8PM",
+    note: "Speak to a real person, Monday to Friday",
   },
   {
     label: "Office",
     value: "Victoria Island, Lagos",
     href: "#",
-    note: "Walk-ins welcome on weekdays",
+    note: "Walk in and meet the team on weekdays",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function ContactPage() {
       <PageHero
         label="Contact"
         title="We would love to hear from you."
-        description="Have a question, feedback, or partnership inquiry? Reach out and our team will get back to you."
+        description="Whether you want to ride, drive, or partner with us, our team is ready to help. Reach out and get a response within hours, not days."
         breadcrumbs={[{ label: "Contact" }]}
       />
 
@@ -86,24 +86,25 @@ export default function ContactPage() {
               <div className="lg:sticky lg:top-32 lg:self-start">
                 <AnimatedSection>
                   <p className="text-sm font-medium text-primary-400 mb-6">
-                    Send a Message
+                    Get a Fast Response
                   </p>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15]">
-                    Get in touch.
+                    Tell us what you need.
                   </h2>
                   <p className="mt-5 text-dark-500 leading-relaxed">
-                    Fill out the form and our team will get back to you within 24
-                    hours. For urgent matters, call us directly.
+                    Drop us a message and a real team member will get back to you
+                    within hours. Riders, drivers, and partners all get priority
+                    support.
                   </p>
 
                   <div className="mt-8 space-y-3">
                     <div className="flex items-center gap-2 text-sm text-dark-500">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
-                      Typical response time: 2 hours
+                      Average response time: under 2 hours
                     </div>
                     <div className="flex items-center gap-2 text-sm text-dark-500">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
-                      Support hours: 24/7
+                      Available 24/7, including weekends
                     </div>
                   </div>
                 </AnimatedSection>
@@ -119,8 +120,8 @@ export default function ContactPage() {
                       Message received.
                     </h3>
                     <p className="text-dark-500 text-sm mb-8 max-w-sm mx-auto">
-                      Thank you for reaching out. Our team will get back to you
-                      within 24 hours.
+                      Thank you for reaching out. A team member will respond
+                      within a few hours.
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}
@@ -208,7 +209,7 @@ export default function ContactPage() {
                           setFormState({ ...formState, message: e.target.value })
                         }
                         className="w-full px-4 py-3 rounded-xl bg-surface-50 border border-surface-200 text-dark-900 text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all resize-none"
-                        placeholder="Tell us more about your question or feedback..."
+                        placeholder="Tell us how we can help you ride, drive, or partner with BGlory..."
                       />
                     </div>
 

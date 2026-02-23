@@ -7,31 +7,31 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Business",
+  title: "Business | Corporate Rides Lagos",
   description:
-    "BGlory Rides corporate accounts. Centralized billing, employee management, usage reports, and priority pickup for your team.",
+    "BGlory Business is the smartest way to manage corporate rides in Lagos. Centralized billing, real-time reporting, and priority pickup for your team. The leading business ride-hailing solution in Nigeria.",
 };
 
 const benefits = [
   {
     title: "Centralized Billing",
     description:
-      "One invoice for all rides across your organization. No more chasing receipts or expense reports from individual employees.",
+      "Stop collecting receipts from 50 different employees. You get one clean invoice for every ride, every month. Your finance team will thank you.",
   },
   {
     title: "Employee Management",
     description:
-      "Add or remove team members in seconds. Set ride limits, approve trips, and control spending from a single dashboard.",
+      "Spending too much on rides you never approved? Add or remove team members in seconds, set ride limits per person, and control your budget from a single dashboard.",
   },
   {
     title: "Usage Reports",
     description:
-      "Detailed analytics on ride frequency, spending by department, peak usage times, and cost breakdowns. Export to CSV anytime.",
+      "Know exactly where your transport budget goes. See ride frequency, cost per department, and peak usage times at a glance. Export to CSV for your records.",
   },
   {
     title: "Priority Pickup",
     description:
-      "Your team gets matched with nearby drivers faster. Shorter wait times mean less downtime and more productivity.",
+      "Your team should not be standing on the curb waiting. BGlory Business riders get matched with nearby drivers faster, so they spend less time waiting and more time working.",
   },
 ];
 
@@ -39,17 +39,17 @@ const steps = [
   {
     title: "Sign Up Your Company",
     description:
-      "Create a business account with your company details. Takes less than 5 minutes to get started.",
+      "Fill out a short form with your company details. It takes under 5 minutes, and there is no paperwork to mail in.",
   },
   {
     title: "Add Your Team",
     description:
-      "Invite employees by email. They will receive a link to join your company account and start riding immediately.",
+      "Send email invites to your employees. They click one link, join your company account, and they are ready to ride.",
   },
   {
     title: "Start Riding",
     description:
-      "Your team books rides as usual. All trips are billed to your company account with full visibility.",
+      "Your team books rides the same way they always do. Every trip bills to your company account automatically, with full visibility for you.",
   },
 ];
 
@@ -59,7 +59,7 @@ const plans = [
     name: "Startup",
     capacity: "Up to 10 employees",
     features: [
-      "Centralized monthly billing",
+      "One monthly invoice for all rides",
       "Basic usage reports",
       "Email support",
       "Standard pickup times",
@@ -71,11 +71,11 @@ const plans = [
     name: "Growth",
     capacity: "Up to 50 employees",
     features: [
-      "Everything in Startup",
-      "Department-level reporting",
-      "Ride approval workflows",
-      "Priority pickup",
-      "Dedicated account manager",
+      "Everything in Startup, plus",
+      "Reporting broken down by department",
+      "Ride approval workflows to control spend",
+      "Priority pickup for faster matching",
+      "Your own dedicated account manager",
     ],
   },
   {
@@ -83,11 +83,11 @@ const plans = [
     name: "Enterprise",
     capacity: "Unlimited employees",
     features: [
-      "Everything in Growth",
-      "Custom integrations (API access)",
+      "Everything in Growth, plus",
+      "Custom API integrations for your systems",
       "Advanced analytics dashboard",
-      "24/7 priority support",
-      "Custom billing terms",
+      "24/7 priority phone and chat support",
+      "Flexible billing terms tailored to you",
     ],
   },
 ];
@@ -97,8 +97,8 @@ export default function BusinessPage() {
     <>
       <PageHero
         label="Business"
-        title="Corporate rides, simplified."
-        description="One account for your entire team. Centralized billing, real-time reporting, and priority service so your people can focus on what matters."
+        title="Stop chasing receipts. Start managing rides."
+        description="One account for your entire team. Centralized billing, real-time reporting, and priority corporate transportation in Lagos, so your people focus on the work that matters."
         breadcrumbs={[{ label: "Business" }]}
       />
 
@@ -111,8 +111,8 @@ export default function BusinessPage() {
                 Why BGlory Business
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
-                Built for teams that{" "}
-                <span className="text-primary-400">move fast.</span>
+                Built for teams that waste zero time on{" "}
+                <span className="text-primary-400">logistics.</span>
               </h2>
             </AnimatedSection>
 
@@ -146,7 +146,7 @@ export default function BusinessPage() {
                 How It Works
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15]">
-                Three steps to get your team moving.
+                Set up in minutes, not weeks.
               </h2>
             </AnimatedSection>
 
@@ -188,8 +188,8 @@ export default function BusinessPage() {
                 Plans
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
-                A plan for every{" "}
-                <span className="text-primary-400">team size.</span>
+                Pick the plan that fits your{" "}
+                <span className="text-primary-400">team today.</span>
               </h2>
             </AnimatedSection>
 
@@ -244,15 +244,15 @@ export default function BusinessPage() {
                   Get Started
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Ready to move your team?
+                  Your team could be riding by tomorrow.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Tell us about your company and we will set up your business
-                  account. Most teams are onboarded within 24 hours.
+                  Tell us about your company and we will have your business
+                  account live within 24 hours. No lengthy contracts, no setup fees.
                 </p>
                 <div className="mt-8">
                   <Button href="/contact" variant="primary" size="lg">
-                    Contact Us
+                    Get Started Now
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </div>

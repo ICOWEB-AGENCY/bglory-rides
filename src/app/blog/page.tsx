@@ -7,46 +7,46 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog | BGlory Rides News, Ride-Hailing Insights Nigeria",
   description:
-    "Updates, insights, and behind-the-scenes stories from the BGlory Rides team. Follow our journey as we build the future of urban transportation.",
+    "Get insider insights on ride-hailing in Lagos, safety tips for riders and drivers, product updates, and the story behind BGlory Rides. New posts every week.",
 };
 
 const posts = [
   {
     category: "Safety",
     date: "Feb 12, 2026",
-    title: "A deep dive into how BGlory keeps every ride safe",
+    title: "The 7 safety layers you do not see on every BGlory ride",
     excerpt:
-      "From real-time trip monitoring to driver background checks, here is a detailed look at the systems we built to protect riders and drivers on every trip.",
+      "Real-time trip monitoring, driver background checks, panic buttons, and more. Here is a look inside the safety systems working behind the scenes every time you book a ride.",
   },
   {
     category: "Product",
     date: "Jan 28, 2026",
-    title: "How BGlory pricing works, and why we keep it transparent",
+    title: "Why your BGlory fare never changes after you confirm",
     excerpt:
-      "We believe you should know exactly what you are paying for before you confirm a ride. Here is how our pricing model works and the principles behind it.",
+      "No surprise charges. No hidden fees. We break down exactly how BGlory pricing works and why you will always know what you are paying before you tap \"Book.\"",
   },
   {
     category: "Operations",
     date: "Jan 15, 2026",
-    title: "Behind the driver verification process",
+    title: "What it actually takes to become a BGlory driver (and why most apps skip these steps)",
     excerpt:
-      "Every driver on BGlory goes through a multi-step verification before their first trip. We walk through the full process and explain why each step matters.",
+      "Every BGlory driver passes a multi-step verification before their first trip. We walk you through what we check, why we check it, and what it means for your safety.",
   },
   {
     category: "Engineering",
     date: "Dec 20, 2025",
-    title: "Building a ride-hailing platform for Lagos traffic",
+    title: "How we built routing that actually works in Lagos traffic",
     excerpt:
-      "Lagos moves differently. Our engineering team shares how we designed routing, ETAs, and surge logic for one of the most dynamic cities on the planet.",
+      "Lagos does not follow the rules of other cities. Our engineering team explains how they built ETAs, routing, and surge logic for a city that never stops moving.",
   },
   {
     category: "Community",
     date: "Dec 5, 2025",
-    title: "What our pilot riders taught us",
+    title: "We gave 500 Lagosians free rides. Here is what they told us.",
     excerpt:
-      "We ran a closed pilot with a small group of riders in Lagos. Their feedback changed our product in ways we did not expect. Here are the biggest lessons.",
+      "Our closed pilot changed the product in ways we never expected. From pickup UX to driver ratings, here are the biggest lessons from the people who tested BGlory first.",
   },
 ];
 
@@ -56,7 +56,7 @@ export default function BlogPage() {
       <PageHero
         label="Blog"
         title="Stories from the road."
-        description="Updates, insights, and behind-the-scenes stories from the team building BGlory Rides."
+        description="Practical tips for riders and drivers, product deep dives, and the real story behind building a ride-hailing platform in Lagos. Written for you, not investors."
         breadcrumbs={[{ label: "Blog" }]}
       />
 
@@ -70,7 +70,7 @@ export default function BlogPage() {
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
                 Read, learn,{" "}
-                <span className="text-primary-400">stay informed.</span>
+                <span className="text-primary-400">ride smarter.</span>
               </h2>
             </AnimatedSection>
 
@@ -121,18 +121,19 @@ export default function BlogPage() {
             <div className="max-w-2xl">
               <AnimatedSection>
                 <p className="text-sm font-medium text-primary-400 mb-4">
-                  Stay in the Loop
+                  Join the Waitlist
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Stay in the loop.
+                  Be first to ride.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Get product updates, city launch announcements, and new blog
-                  posts delivered to your inbox. No spam, just the good stuff.
+                  Join the BGlory waitlist and get early access, launch updates,
+                  and new posts before anyone else. No spam, just the things
+                  that matter.
                 </p>
                 <div className="mt-8">
                   <Button href="/#notify" variant="primary" size="lg">
-                    Get Notified
+                    Join the Waitlist
                   </Button>
                 </div>
               </AnimatedSection>

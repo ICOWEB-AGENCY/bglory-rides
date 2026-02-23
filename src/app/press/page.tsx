@@ -6,35 +6,35 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Press",
+  title: "Press & Media | BGlory Rides Newsroom, Ride-Hailing News Lagos",
   description:
-    "BGlory Rides in the news. Read our latest press releases, download media resources, and get in touch with our communications team.",
+    "Get the latest news from BGlory Rides. Press releases, media kits, brand assets, and press contacts for Africa's fastest-growing ride-hailing platform.",
 };
 
 const pressReleases = [
   {
     date: "Feb 2026",
-    title: "BGlory Rides Announces Public Launch Across Lagos",
+    title: "BGlory Rides Goes Live Across Lagos, Opens Doors to All Riders and Drivers",
     description:
-      "After months of testing and iteration, BGlory Rides is officially available to riders and drivers across Lagos. The public launch marks a new chapter for affordable, safe ride-hailing in Nigeria.",
+      "After months of closed testing, BGlory Rides is now publicly available across Lagos. Riders can book their first trip today, and thousands of verified drivers are already on the road.",
   },
   {
     date: "Jan 2026",
-    title: "BGlory Reaches 5,000 Verified Drivers on the Platform",
+    title: "BGlory Hits 5,000 Verified Drivers Before Public Launch",
     description:
-      "The company has onboarded over 5,000 verified drivers ahead of its public launch. Every driver has completed background checks, vehicle inspections, and safety training.",
+      "BGlory Rides has onboarded over 5,000 drivers, each cleared through background checks, vehicle inspections, and safety training. The milestone sets the stage for the largest verified driver network at launch in Nigeria.",
   },
   {
     date: "Dec 2025",
-    title: "Pilot Program Results: 98% Rider Satisfaction Rate",
+    title: "10,000 Pilot Trips Completed with 98% Rider Satisfaction",
     description:
-      "BGlory Rides shares results from its closed pilot program. Over 10,000 trips were completed with a 98% rider satisfaction rate and an average pickup time of 4 minutes.",
+      "BGlory Rides releases results from its closed pilot: 10,000+ trips, 98% satisfaction, and an average pickup time of just 4 minutes. The data signals strong product-market fit ahead of the public launch.",
   },
   {
     date: "Oct 2025",
-    title: "BGlory Rides Founded to Transform Urban Mobility in Africa",
+    title: "New Ride-Hailing Challenger Launches in Lagos with a Safety-First Approach",
     description:
-      "A new ride-hailing company launches with a mission to make safe, reliable, and affordable transportation accessible to everyone. BGlory Rides begins development and early driver recruitment.",
+      "BGlory Rides enters the market with a clear mission: make safe, reliable, and affordable rides accessible to every rider in Africa. Development begins alongside early driver recruitment.",
   },
 ];
 
@@ -42,17 +42,17 @@ const mediaResources = [
   {
     title: "Brand Assets",
     description:
-      "Download the BGlory Rides logo, brand colors, and visual guidelines for editorial and media use.",
+      "Grab our logo, brand colors, and visual guidelines in print and web-ready formats. Everything you need to feature BGlory accurately in your publication.",
   },
   {
     title: "Media Kit",
     description:
-      "Access our company fact sheet, executive bios, key statistics, and high-resolution product images.",
+      "Download our company fact sheet, founder bios, key growth metrics, and high-resolution product screenshots. Ready to drop into your story.",
   },
   {
     title: "Press Contact",
     description:
-      "For media inquiries, interviews, or story collaboration, reach our communications team at press@bgloryrides.com.",
+      "Need a quote, interview, or exclusive? Our communications team responds to journalists within 24 hours. Reach us at press@bgloryrides.com.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function PressPage() {
       <PageHero
         label="Press"
         title="BGlory Rides in the news."
-        description="Read our latest announcements, access media resources, and connect with our communications team for coverage and inquiries."
+        description="5,000+ verified drivers. 10,000+ pilot trips. 98% rider satisfaction. Here is what is happening at Lagos' fastest-growing ride-hailing platform."
         breadcrumbs={[{ label: "Press" }]}
       />
 
@@ -114,7 +114,7 @@ export default function PressPage() {
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
                 Everything you need{" "}
-                <span className="text-primary-400">to tell our story.</span>
+                <span className="text-primary-400">to cover BGlory.</span>
               </h2>
             </AnimatedSection>
 
@@ -153,16 +153,16 @@ export default function PressPage() {
                   Media Inquiries
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Want to cover BGlory?
+                  Writing about ride-hailing in Africa?
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  We would love to hear from you. Get in touch with our
-                  communications team for interviews, data, or story
-                  collaboration.
+                  We make it easy for journalists. Get data, executive quotes,
+                  and exclusive insights from our communications team. Fast
+                  turnaround guaranteed.
                 </p>
                 <div className="mt-8">
                   <Button href="/contact" variant="primary" size="lg">
-                    Contact Us
+                    Reach the Press Team
                   </Button>
                 </div>
               </AnimatedSection>

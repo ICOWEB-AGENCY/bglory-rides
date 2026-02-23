@@ -6,75 +6,75 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Help Center",
+  title: "Help Center | BGlory Rides Support",
   description:
-    "Find answers to common questions about BGlory Rides. Get help with your account, rides, payments, safety, and more.",
+    "Get quick answers about BGlory Rides. Help with booking rides, payments, driver sign-up, safety features, and account settings. Our ride-hailing support team responds within hours.",
 };
 
 const helpTopics = [
   {
     title: "Getting Started",
     description:
-      "New to BGlory? Here is everything you need to know to create your account, book your first ride, and set up your preferred payment method.",
+      "Ready to take your first ride? Follow these simple steps to create your BGlory account, set up your payment method, and book a ride in minutes.",
     questions: [
-      "How do I create a BGlory account?",
-      "How do I book my first ride?",
-      "What payment methods are accepted?",
-      "How do I add a payment card to my account?",
+      "How to create a BGlory Rides account",
+      "How to book your first ride on BGlory",
+      "What payment methods does BGlory accept?",
+      "How to add a debit card to your BGlory account",
     ],
   },
   {
     title: "Rides & Booking",
     description:
-      "Learn how to request rides, cancel bookings, schedule trips in advance, and get the most out of every journey.",
+      "Booking a ride should be the easy part of your day. Here is how to request, schedule, cancel, and manage every trip.",
     questions: [
-      "How do I request a ride?",
-      "Can I cancel a ride after booking?",
-      "How do I schedule a ride in advance?",
-      "What happens if my driver cancels?",
+      "How to request a ride on BGlory",
+      "Can I cancel a BGlory ride after booking?",
+      "How to schedule a ride in advance on BGlory",
+      "What happens if my BGlory driver cancels on me?",
     ],
   },
   {
     title: "Payments & Pricing",
     description:
-      "Understand how fares are calculated, manage your payment methods, and access your ride receipts and transaction history.",
+      "No surprises when it comes to your fare. Learn how pricing works, manage your payment options, and download receipts for any trip.",
     questions: [
-      "How is my fare calculated?",
-      "Can I pay with cash?",
-      "How do I get a receipt for my ride?",
-      "Why was I charged a cancellation fee?",
+      "How is my BGlory ride fare calculated?",
+      "Can I pay for a BGlory ride with cash?",
+      "How to get a receipt for my BGlory ride",
+      "Why was I charged a cancellation fee on BGlory?",
     ],
   },
   {
     title: "Safety & Security",
     description:
-      "Your safety matters. Learn about trip sharing, the emergency button, how to report incidents, and the steps we take to protect you.",
+      "Your safety is built into every ride. Learn how to share your trip, use the emergency button, and report anything that does not feel right.",
     questions: [
-      "How do I share my trip with someone?",
-      "How does the emergency button work?",
-      "How do I report a safety concern?",
+      "How to share your BGlory trip location with family",
+      "How does the BGlory emergency button work?",
+      "How to report a safety issue on BGlory Rides",
     ],
   },
   {
     title: "Driver Questions",
     description:
-      "Interested in driving with BGlory? Find out about requirements, the sign-up process, how earnings work, and how to get started.",
+      "Thinking about earning with BGlory? Here is everything you need to know about signing up, vehicle requirements, and how you get paid.",
     questions: [
-      "How do I become a BGlory driver?",
-      "What are the vehicle requirements?",
-      "How do driver earnings and payouts work?",
-      "What documents do I need to sign up?",
+      "How to become a BGlory driver in Lagos",
+      "What are the vehicle requirements for BGlory drivers?",
+      "How do BGlory driver earnings and payouts work?",
+      "What documents do I need to sign up as a BGlory driver?",
     ],
   },
   {
     title: "Account & Settings",
     description:
-      "Manage your profile, update notification preferences, control your privacy settings, and keep your account secure.",
+      "Keep your account up to date and secure. Update your profile, adjust your notifications, and manage your privacy in just a few taps.",
     questions: [
-      "How do I update my profile information?",
-      "How do I change my notification preferences?",
-      "How do I delete my account?",
-      "How do I reset my password?",
+      "How to update your BGlory profile information",
+      "How to change notification settings on BGlory",
+      "How to delete your BGlory Rides account",
+      "How to reset your BGlory password",
     ],
   },
 ];
@@ -85,7 +85,7 @@ export default function HelpPage() {
       <PageHero
         label="Help Center"
         title="How can we help you?"
-        description="Find answers to common questions, learn how to get the most out of BGlory Rides, and get the support you need."
+        description="You will find answers to the most common questions below. If you need anything else, our support team is just a message away."
         breadcrumbs={[{ label: "Help Center" }]}
       />
 
@@ -98,8 +98,8 @@ export default function HelpPage() {
                 Browse Topics
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
-                Find what you are{" "}
-                <span className="text-primary-400">looking for.</span>
+                Get answers{" "}
+                <span className="text-primary-400">fast.</span>
               </h2>
             </AnimatedSection>
 
@@ -145,11 +145,11 @@ export default function HelpPage() {
                   Contact Support
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Still need help?
+                  Did not find your answer?
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Our support team is here for you. Reach out and we will get
-                  back to you as soon as possible.
+                  Send us a message and our support team will get back to you
+                  within a few hours. We are here to help you ride with confidence.
                 </p>
                 <div className="mt-8">
                   <Button href="/contact" variant="primary" size="lg">

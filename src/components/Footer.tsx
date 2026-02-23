@@ -56,9 +56,9 @@ export default function Footer() {
               />
             </Link>
             <p className="text-dark-400 text-sm leading-relaxed max-w-sm mb-6">
-              BGlory Rides is your trusted ride-hailing partner. Safe,
-              affordable, and always available. Request a ride and get where you
-              need to go.
+              Affordable rides across Lagos with verified drivers and
+              upfront pricing. No surge fees, no surprises. Request a ride
+              and get where you need to go.
             </p>
             <div className="space-y-3">
               <a
@@ -69,11 +69,11 @@ export default function Footer() {
                 hello@bgloryrides.com
               </a>
               <a
-                href="tel:+1234567890"
+                href="tel:+2348001234567"
                 className="flex items-center gap-2 text-sm text-dark-400 hover:text-primary-400 transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                +1 (234) 567-890
+                +234 (0) 800 123 4567
               </a>
               <p className="flex items-center gap-2 text-sm text-dark-400">
                 <MapPin className="w-4 h-4 shrink-0" />

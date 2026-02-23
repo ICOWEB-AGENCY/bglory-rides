@@ -8,9 +8,9 @@ import SectionHeading from "@/components/SectionHeading";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Ride Options Lagos | Book a Ride in Nigeria | BGlory Rides",
   description:
-    "Explore BGlory Rides services: everyday rides, premium comfort, group travel, business accounts, scheduled rides, and package delivery.",
+    "Discover affordable ride options in Lagos. From daily commutes to group travel and corporate accounts, BGlory gives you reliable ride-hailing services across Nigeria.",
 };
 
 const services = [
@@ -18,7 +18,7 @@ const services = [
     name: "BGlory Go",
     tag: "Most popular",
     description:
-      "Our most popular option for everyday rides. Affordable, reliable, and available in minutes.",
+      "Tired of waiting 20 minutes for a ride that costs too much? BGlory Go gets you moving in under 5 minutes at prices that actually make sense for your daily commute.",
     features: ["1-3 passengers", "Average 4 min pickup", "Affordable pricing"],
     priceRange: "₦1,500 - ₦8,000",
   },
@@ -26,7 +26,7 @@ const services = [
     name: "BGlory Comfort",
     tag: "Premium",
     description:
-      "Upgrade your ride with premium vehicles, extra legroom, and top-rated drivers.",
+      "You deserve more than cramped backseats and awkward small talk. Stretch out in a premium vehicle with a top-rated driver who knows when to talk and when to let you ride in peace.",
     features: ["1-3 passengers", "Premium vehicles", "Top-rated drivers only"],
     priceRange: "₦3,000 - ₦15,000",
   },
@@ -34,7 +34,7 @@ const services = [
     name: "BGlory XL",
     tag: "Groups",
     description:
-      "Spacious vehicles for groups and families. Room for up to 6 passengers and their luggage.",
+      "Stop splitting your crew across three different cars. Fit your whole group in one ride with room for everyone's bags, so you arrive together, not in pieces.",
     features: ["1-6 passengers", "SUVs and minivans", "Extra luggage space"],
     priceRange: "₦5,000 - ₦20,000",
   },
@@ -42,7 +42,7 @@ const services = [
     name: "BGlory Business",
     tag: "Corporate",
     description:
-      "Corporate accounts with centralized billing, employee ride management, and priority pickup.",
+      "No more chasing employees for ride receipts. One dashboard, one bill, and priority pickups that keep your team on time and your finance team sane.",
     features: [
       "Centralized billing",
       "Employee management dashboard",
@@ -54,7 +54,7 @@ const services = [
     name: "Scheduled Rides",
     tag: "Plan ahead",
     description:
-      "Schedule rides up to 7 days in advance. A driver will be pre-assigned and ready at your pickup time.",
+      "Early morning flight? Important meeting across town? Book your ride up to 7 days ahead and stop worrying. Your driver will be waiting before you even step outside.",
     features: [
       "Book up to 7 days ahead",
       "Pre-assigned driver",
@@ -66,7 +66,7 @@ const services = [
     name: "BGlory Delivery",
     tag: "Packages",
     description:
-      "Send packages across town quickly and securely. Track your delivery in real time.",
+      "Need something delivered across Lagos today? Skip the unreliable dispatch riders. Your package gets a dedicated driver, real-time tracking, and delivery confirmation you can trust.",
     features: [
       "Same-day delivery",
       "Real-time tracking",
@@ -81,8 +81,8 @@ export default function ServicesPage() {
     <>
       <PageHero
         label="Services"
-        title="Rides for every occasion."
-        description="From daily commutes to group travel, business accounts to package delivery. BGlory has you covered."
+        title="The right ride, right when you need it."
+        description="Whether you need affordable rides in Lagos for your daily commute, a premium car for a client meeting, or a group ride to the airport, you will always find a BGlory option that fits."
         breadcrumbs={[{ label: "Services" }]}
       />
 
@@ -146,7 +146,7 @@ export default function ServicesPage() {
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <SectionHeading
               label="Compare"
-              title="Find the right ride for you"
+              title="See exactly what you get with each ride"
               align="center"
             />
 
@@ -202,13 +202,13 @@ export default function ServicesPage() {
             <div className="max-w-2xl">
               <AnimatedSection>
                 <p className="text-sm font-medium text-primary-400 mb-4">
-                  Start Riding
+                  Launching Soon
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Your next ride is waiting.
+                  Lagos is about to ride better.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Join the waitlist and be among the first to ride with BGlory.
+                  Spots on the early access list are filling fast. Get in now and be the first to book a ride when we go live.
                 </p>
                 <div className="mt-8">
                   <Button href="/#notify" variant="primary" size="lg">

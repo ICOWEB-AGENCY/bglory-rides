@@ -35,61 +35,61 @@ export interface FAQ {
 
 export const features: Feature[] = [
   {
-    title: "Lightning Fast Pickups",
+    title: "4-Minute Pickups",
     description:
-      "Average pickup time of under 4 minutes. We match you with the nearest available driver so you spend less time waiting.",
+      "Your driver arrives in under 4 minutes on average. We match you with the closest verified driver so you spend less time waiting and more time moving.",
   },
   {
-    title: "Safe and Secure",
+    title: "Know Your Fare Before You Ride",
     description:
-      "Every driver is background-checked and verified. Real-time trip tracking and an emergency button keep you protected.",
+      "See exactly what you will pay before you confirm. No surge pricing, no hidden charges, no surprises when the trip ends. What you see is what you pay.",
   },
   {
-    title: "Transparent Pricing",
+    title: "Every Driver Is Verified",
     description:
-      "No surge surprises. See your fare upfront before you confirm. Pay with card, cash, or your BGlory wallet.",
+      "Background checks, vehicle inspections, identity verification, and ongoing performance reviews. You will always know who is behind the wheel.",
   },
   {
-    title: "Go Anywhere",
+    title: "Track Every Trip in Real Time",
     description:
-      "From quick errands across town to long-distance trips between cities, BGlory Rides gets you there comfortably.",
+      "Follow your driver on the map from the moment they accept your ride. Share your live trip with family and friends for extra peace of mind.",
   },
   {
-    title: "Top-Rated Drivers",
+    title: "Pay However You Want",
     description:
-      "We hold our drivers to a high standard. Professional, courteous, and committed to getting you there safely.",
+      "Card, cash, bank transfer, or your BGlory Wallet. Choose the payment method that works for you. Top up your wallet for faster checkout and bonus rewards.",
   },
   {
-    title: "24/7 Support",
+    title: "Help Whenever You Need It",
     description:
-      "Our support team is always available. Whether you have a question, feedback, or need help, we are here for you.",
+      "Real humans, not bots. Our support team is available 24/7 by phone, chat, or email. If something goes wrong on a ride, we resolve it fast.",
   },
 ];
 
 export const howItWorks: HowItWorksStep[] = [
   {
     step: "01",
-    title: "Open the App",
+    title: "Download the App",
     description:
-      "Download BGlory Rides once it launches. Sign up in seconds with your phone number or email.",
+      "Get BGlory Rides from the App Store or Google Play. Create your account in under 30 seconds with your phone number or email.",
   },
   {
     step: "02",
-    title: "Set Your Destination",
+    title: "Enter Where You Are Going",
     description:
-      "Enter where you want to go. You will see your fare upfront, estimated arrival time, and available ride options.",
+      "Type your destination and see your exact fare, estimated pickup time, and available ride options before you confirm anything.",
   },
   {
     step: "03",
-    title: "Match with a Driver",
+    title: "Get Matched with a Driver",
     description:
-      "We connect you with a verified driver nearby. Track their arrival in real time on the map.",
+      "A verified driver nearby accepts your request. Watch them arrive on the map in real time. You will see their name, photo, plate number, and rating.",
   },
   {
     step: "04",
-    title: "Enjoy the Ride",
+    title: "Arrive Safely",
     description:
-      "Sit back, relax, and arrive at your destination safely. Rate your driver and share your experience.",
+      "Enjoy the ride with real-time tracking and in-app safety tools. Pay seamlessly when you arrive. Rate your driver and help keep the community strong.",
   },
 ];
 
@@ -97,21 +97,21 @@ export const rideOptions: RideOption[] = [
   {
     name: "BGlory Go",
     description:
-      "Affordable everyday rides. Perfect for solo trips and daily commutes.",
+      "The everyday ride that saves you money. Quick pickups, clean cars, and the fastest route to where you are going. Perfect for commutes and errands.",
     capacity: "1-3 passengers",
     priceLabel: "From ₦1,500",
   },
   {
     name: "BGlory Comfort",
     description:
-      "Premium vehicles with extra legroom. For when you want a little more comfort.",
+      "A step up when you want it. Premium vehicles, top-rated drivers, and extra legroom. Ideal for meetings, airport runs, and date nights.",
     capacity: "1-3 passengers",
     priceLabel: "From ₦3,000",
   },
   {
     name: "BGlory XL",
     description:
-      "Spacious rides for groups and families. Room for everyone and their luggage.",
+      "Room for the whole crew. Spacious SUVs and minivans for up to 6 passengers with luggage. Great for families, group outings, and airport trips.",
     capacity: "1-6 passengers",
     priceLabel: "From ₦5,000",
   },
@@ -119,68 +119,68 @@ export const rideOptions: RideOption[] = [
 
 export const testimonials: Testimonial[] = [
   {
-    name: "Amara Johnson",
-    role: "Beta Tester, Lagos",
-    text: "I tested the app during the pilot and the experience was smooth. The interface is clean, the driver showed up on time, and the fare was shown upfront. Really looking forward to the full launch.",
+    name: "Amara O.",
+    role: "Pilot Rider, Victoria Island",
+    text: "I requested a ride from VI to Ikeja during rush hour. The driver arrived in 3 minutes, the fare was exactly what the app showed, and I got there faster than I expected. This is what Lagos has been waiting for.",
     rating: 5,
   },
   {
-    name: "David Okonkwo",
-    role: "Beta Tester, Abuja",
-    text: "Tried BGlory Comfort during the pilot program. The vehicle was great, the driver was professional, and the trip tracking worked perfectly. This is going to be a solid option when it launches.",
+    name: "Chinedu A.",
+    role: "Pilot Driver, Lekki",
+    text: "I signed up, got verified in two days, and earned ₦47,000 in my first week driving part-time. The payout hits my account every Friday without delays. The app is simple and the support team actually responds.",
     rating: 5,
   },
   {
-    name: "Sarah Mitchell",
-    role: "Beta Tester, Port Harcourt",
-    text: "What stood out to me was the safety features. Being able to share my trip in real time with my family gave me confidence. The app is intuitive and easy to use.",
+    name: "Blessing E.",
+    role: "Pilot Rider, Abuja",
+    text: "I travel alone at night for work. Being able to share my live trip with my husband and having that emergency button gives me real peace of mind. The drivers are professional and the cars are clean.",
     rating: 5,
   },
   {
-    name: "James Adeyemi",
-    role: "Pilot Driver, Lagos",
-    text: "The driver app is straightforward. I signed up, got verified quickly, and started accepting rides during the pilot. The payout process was clear and the support team was responsive.",
-    rating: 4,
+    name: "Tunde K.",
+    role: "Pilot Driver, Port Harcourt",
+    text: "I drive between 6AM and 2PM while my kids are at school. No boss, no fixed shifts. I set my own hours and still earn enough to handle my responsibilities. This is the flexibility I was looking for.",
+    rating: 5,
   },
 ];
 
 export const stats: Stat[] = [
-  { value: "10K+", label: "Waitlist Signups" },
-  { value: "500+", label: "Drivers Registered" },
-  { value: "15+", label: "Launch Cities" },
-  { value: "24/7", label: "Support Ready" },
+  { value: "4 min", label: "Average Pickup Time" },
+  { value: "₦0", label: "Hidden Fees" },
+  { value: "98%", label: "Pilot Rider Satisfaction" },
+  { value: "24/7", label: "Customer Support" },
 ];
 
 export const faqs: FAQ[] = [
   {
-    question: "How do I request a ride?",
+    question: "How do I request a ride with BGlory?",
     answer:
-      "Once the app launches, you will download it, create an account, enter your destination, choose your ride type, and tap 'Request Ride'. A driver will be matched with you in seconds.",
+      "Download the app, create an account, and enter your destination. You will see your fare upfront before you confirm. Tap 'Request Ride' and a verified driver will be matched with you in seconds. The whole process takes under a minute.",
   },
   {
-    question: "What payment methods are accepted?",
+    question: "What does a ride cost?",
     answer:
-      "We accept credit/debit cards, mobile wallets, and cash. You can also load your BGlory Wallet for faster checkout and exclusive discounts.",
+      "Fares start from ₦1,500 for BGlory Go. You see the exact price before you confirm your ride, and that price does not change. No surge pricing, no hidden charges. Pay with card, cash, bank transfer, or your BGlory Wallet.",
   },
   {
-    question: "How are drivers verified?",
+    question: "How do I know my driver is safe?",
     answer:
-      "All drivers go through a multi-step verification process including background checks, driving record review, vehicle inspection, and identity verification. We also conduct periodic re-checks.",
+      "Every driver passes a comprehensive background check, vehicle inspection, and identity verification before their first trip. We also run ongoing checks and monitor driver ratings. If a driver falls below our standards, they are removed from the platform.",
   },
   {
-    question: "Can I schedule a ride in advance?",
+    question: "When is BGlory launching in my city?",
     answer:
-      "Yes. You can schedule rides up to 7 days in advance. Just select your pickup time when booking, and a driver will be assigned ahead of time.",
+      "We are launching first in Lagos, with Abuja and Port Harcourt following shortly after. Join the waitlist to get notified the moment we go live in your city. Early waitlist members get priority access and exclusive launch offers.",
   },
   {
-    question: "What happens if I leave something in the car?",
+    question: "How much can I earn as a BGlory driver?",
     answer:
-      "Use the 'Lost Item' feature in the app to contact your driver directly. Our support team can also help coordinate the return of your belongings.",
+      "Earnings depend on how often you drive, but our pilot drivers in Lagos averaged ₦8,000 to ₦15,000 per day. You keep a higher percentage of each fare compared to other platforms, and you get paid every week directly to your bank account.",
   },
   {
-    question: "Is BGlory Rides available in my city?",
+    question: "What do I need to become a driver?",
     answer:
-      "We are launching in select cities first and expanding from there. Join the waitlist to be notified when BGlory Rides is available in your area.",
+      "A valid driver's license (at least 1 year old), a vehicle in good condition (2015 or newer), valid insurance and registration, and a smartphone. The application takes under 10 minutes and most drivers get approved within 48 hours.",
   },
 ];
 

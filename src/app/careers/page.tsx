@@ -6,31 +6,31 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Careers",
+  title: "Careers at BGlory Rides | Tech Jobs Lagos, Ride-Hailing Careers Nigeria",
   description:
-    "Join the BGlory Rides team. We are building the future of urban mobility and looking for talented people to help us get there.",
+    "Join BGlory Rides and help build Africa's next great ride-hailing platform. We are hiring engineers, designers, and operators in Lagos and remotely. Early-stage equity, massive impact, zero bureaucracy.",
 };
 
 const benefits = [
   {
-    title: "Mission-Driven Work",
+    title: "Mission That Actually Matters",
     description:
-      "Every line of code, every campaign, every decision moves us closer to making safe, affordable transportation a reality for millions of people.",
+      "You will not be optimizing ad clicks. You will be building the infrastructure that moves millions of people safely and affordably across Africa's biggest cities.",
   },
   {
-    title: "Early Stage Impact",
+    title: "Ground Floor, Not the Waiting Room",
     description:
-      "We are still small enough that your work shapes the product directly. No layers of bureaucracy. Your ideas ship fast and reach real users.",
+      "We are early stage, which means your work ships to real users this week, not next quarter. No approval chains. No politics. Your fingerprints will be on everything.",
   },
   {
-    title: "Growth Opportunities",
+    title: "Grow Faster Than Anywhere Else",
     description:
-      "Join now and grow with us. Early team members get outsized responsibility, mentorship, and the chance to build their career as the company scales.",
+      "Early team members get equity potential, outsized responsibility, and a direct line to leadership. As BGlory scales, your role scales with it.",
   },
   {
-    title: "Flexible Culture",
+    title: "Flexibility as a Default",
     description:
-      "We care about results, not hours at a desk. Work remotely, set your own schedule, and take the time you need to do your best work.",
+      "Remote-friendly, async-first, results-only. You set your own schedule and work from wherever you do your best thinking. We measure output, not hours at a desk.",
   },
 ];
 
@@ -79,7 +79,7 @@ export default function CareersPage() {
       <PageHero
         label="Careers"
         title="Build the future of mobility."
-        description="We are assembling a team of builders, thinkers, and operators who believe transportation can be better. If that sounds like you, we want to hear from you."
+        description="This is your chance to get in early at a company that will move millions of people. We are hiring builders, thinkers, and operators who want equity in something massive, not just another job."
         breadcrumbs={[{ label: "Careers" }]}
       />
 
@@ -92,8 +92,8 @@ export default function CareersPage() {
                 Why Join Us
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
-                More than a job.{" "}
-                <span className="text-primary-400">A mission.</span>
+                Your unfair advantage{" "}
+                <span className="text-primary-400">starts here.</span>
               </h2>
             </AnimatedSection>
 
@@ -168,19 +168,20 @@ export default function CareersPage() {
             <div className="max-w-2xl">
               <AnimatedSection>
                 <p className="text-sm font-medium text-primary-400 mb-4">
-                  Don&apos;t See Your Role?
+                  Limited Window
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  We are always looking for great people.
+                  The founding team is still forming.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  If you are passionate about building the future of mobility
-                  and think you can contribute, reach out. We would love to
-                  hear from you.
+                  We only have a handful of roles open right now, and once they
+                  are filled, this window closes. If you are exceptional at
+                  what you do and want to build something that matters, do not
+                  wait.
                 </p>
                 <div className="mt-8">
                   <Button href="/contact" variant="primary" size="lg">
-                    Get in Touch
+                    Apply Now
                   </Button>
                 </div>
               </AnimatedSection>

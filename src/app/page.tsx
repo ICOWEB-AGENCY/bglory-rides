@@ -49,36 +49,36 @@ function Hero() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-400/10 border border-primary-400/20 mb-6">
               <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse" />
               <span className="text-sm font-medium text-primary-400">
-                Launching soon
+                Launching in Lagos, 2026
               </span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white tracking-tight leading-[1.1]">
-              Your Ride,{" "}
-              <span className="text-primary-400">Your Way.</span>
+              Get there faster.{" "}
+              <span className="text-primary-400">Pay less.</span>
             </h1>
 
             <p className="mt-5 sm:mt-6 text-base sm:text-lg md:text-xl text-dark-400 leading-relaxed max-w-2xl">
-              BGlory Rides is a smarter way to get around. Request a ride,
-              get matched with a verified driver, and travel safely to your
-              destination. Simple, affordable, reliable.
+              BGlory Rides connects you with verified drivers in minutes.
+              See your fare before you book. No surge pricing, no hidden
+              fees. Just safe, affordable rides across Lagos.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Button href="/#notify" variant="primary" size="lg">
-                Get Notified at Launch
+                Join the Waitlist
               </Button>
               <Button href="/drive" variant="outline" size="lg">
-                Become a Driver
+                Start Earning as a Driver
               </Button>
             </div>
 
             {/* Value props */}
             <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-x-6 sm:gap-y-3">
               {[
-                "Verified drivers",
-                "Transparent pricing",
-                "Real-time tracking",
+                "4-minute average pickup",
+                "Upfront pricing, always",
+                "Background-checked drivers",
               ].map((item) => (
                 <div
                   key={item}
@@ -130,11 +130,11 @@ function Features() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
         <AnimatedSection>
           <p className="text-sm font-medium text-primary-400 mb-6">
-            Why BGlory Rides
+            Why Riders Choose BGlory
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
-            A better way to{" "}
-            <span className="text-primary-400">get around.</span>
+            Everything you need.{" "}
+            <span className="text-primary-400">Nothing you don&apos;t.</span>
           </h2>
         </AnimatedSection>
 
@@ -175,11 +175,11 @@ function HowItWorks() {
                 How It Works
               </p>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dark-900 tracking-tight">
-                Get a ride in four simple steps
+                Request a ride in under 60 seconds
               </h2>
               <p className="mt-4 text-base text-dark-500 leading-relaxed">
-                From opening the app to arriving at your destination, the whole
-                process takes minutes, not hours.
+                Open the app, enter your destination, confirm your fare, and
+                a verified driver is on the way. That is it.
               </p>
             </AnimatedSection>
           </div>
@@ -215,8 +215,8 @@ function RideOptions() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
         <SectionHeading
           label="Ride Options"
-          title="Choose the ride that fits your needs"
-          description="Whether you need an everyday ride or a premium experience, we have something for you."
+          title="A ride for every trip, every budget"
+          description="Daily commute, airport run, or group outing. Pick the option that fits and know your fare before you book."
           align="center"
         />
 
@@ -291,9 +291,9 @@ function Testimonials() {
     <section className="py-20 sm:py-28 bg-surface-50">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
         <SectionHeading
-          label="What Riders Say"
-          title="What early testers are saying"
-          description="Feedback from riders and drivers who have been part of our pilot program."
+          label="Real Feedback"
+          title="Hear from our pilot riders and drivers"
+          description="We ran a closed pilot in Lagos before launch. Here is what real riders and drivers had to say."
           align="center"
         />
 
@@ -386,11 +386,10 @@ function FAQSection() {
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-3">FAQ</p>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dark-900 tracking-tight">
-                Got questions? We have answers.
+                Questions riders and drivers ask us
               </h2>
               <p className="mt-4 text-base text-dark-500 leading-relaxed">
-                Everything you need to know about riding with BGlory. Can&apos;t
-                find what you need?{" "}
+                Everything you need to know before you ride or drive with BGlory. Still have questions?{" "}
                 <Link
                   href="/contact"
                   className="text-primary-500 font-medium hover:underline"
@@ -431,14 +430,15 @@ function NotifyCTA() {
         <div className="max-w-2xl">
           <AnimatedSection>
             <p className="text-sm font-medium text-primary-400 mb-4">
-              Coming Soon
+              Get Early Access
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-              Be the first to ride with BGlory.
+              Be first in line when we launch.
             </h2>
             <p className="mt-5 text-dark-400 text-base leading-relaxed max-w-lg">
-              We are putting the finishing touches on the app. Leave your email
-              and we will let you know the moment it goes live.
+              We are launching soon in Lagos. Drop your email and you will
+              be the first to know when you can book your first ride.
+              Early signups get priority access and exclusive launch offers.
             </p>
 
             <form
@@ -447,7 +447,7 @@ function NotifyCTA() {
             >
               <input
                 type="email"
-                placeholder="Your email address"
+                placeholder="Enter your email address"
                 required
                 className="flex-1 px-5 py-3.5 rounded-xl bg-dark-800 border border-dark-700 text-white text-sm placeholder:text-dark-500 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all"
               />
@@ -455,11 +455,11 @@ function NotifyCTA() {
                 type="submit"
                 className="px-6 py-3.5 rounded-xl bg-primary-400 text-white text-sm font-semibold hover:bg-primary-500 transition-colors shrink-0 cursor-pointer"
               >
-                Notify Me
+                Join Waitlist
               </button>
             </form>
 
-            <div className="mt-6 flex items-center gap-4 text-sm text-dark-500">
+            <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-dark-500">
               <div className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
                 No spam, ever
@@ -467,6 +467,10 @@ function NotifyCTA() {
               <div className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
                 Unsubscribe anytime
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
+                Priority access for early signups
               </div>
             </div>
           </AnimatedSection>

@@ -6,49 +6,49 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About BGlory Rides | Ride-Hailing Company Nigeria",
   description:
-    "Learn about BGlory Rides, our mission to transform urban transportation, and the team behind the movement.",
+    "BGlory Rides is a ride-hailing company in Nigeria building safe, affordable transportation for Lagos and beyond. Discover why thousands are joining the movement.",
 };
 
 const values = [
   {
-    title: "Safety First",
+    title: "Your Safety, Non-Negotiable",
     description:
-      "Every decision we make starts with the safety of our riders and drivers. From background checks to real-time monitoring, we never compromise.",
+      "You deserve to feel safe every time you open the app. That is why every driver passes thorough background checks, every ride is tracked in real time, and every trip comes with built-in safety features. No exceptions.",
   },
   {
-    title: "Community Driven",
+    title: "You Belong Here",
     description:
-      "We are more than a ride-hailing service. We are a community of riders and drivers working together to make cities more connected.",
+      "BGlory Rides is not just a ride-hailing company in Nigeria. It is a growing community of riders and drivers building something bigger together. When you ride or drive with us, you move your city forward.",
   },
   {
-    title: "Accessible to All",
+    title: "Affordable for Everyone",
     description:
-      "Transportation should not be a luxury. We keep our prices fair and our service available so everyone can get where they need to go.",
+      "Getting around Lagos or any city should never drain your wallet. You get transparent pricing, no surge surprises, and fares that respect your budget. Reliable transportation is for everyone, not just those who can afford to overpay.",
   },
   {
-    title: "Always Improving",
+    title: "Built on Your Feedback",
     description:
-      "We listen to feedback, study the data, and constantly evolve. Every update is driven by real rider and driver experiences.",
+      "Every feature in the BGlory Rides app exists because a real rider or driver asked for it. You shape the product. We listen, we build, we ship. Your voice drives every update.",
   },
 ];
 
 const milestones = [
-  { year: "2024", title: "The Idea", description: "BGlory Rides was born from a simple frustration: getting around the city should not be this hard. We set out to build something better." },
-  { year: "2024", title: "Team Assembled", description: "We brought together engineers, designers, and operations people who shared the vision. Development began in earnest." },
-  { year: "2025", title: "Pilot Program", description: "We launched a closed pilot in Lagos with a small group of riders and drivers. The feedback shaped every feature in the app." },
-  { year: "2025", title: "Driver Onboarding", description: "We opened driver registration and started building our network of verified drivers across multiple cities." },
-  { year: "2026", title: "Public Launch", description: "We are preparing to launch BGlory Rides to the public. Join the waitlist and be among the first to ride." },
+  { year: "2024", title: "The Spark", description: "One too many cancelled rides, one too many overpriced fares. BGlory Rides started because getting around Nigerian cities deserved a better answer." },
+  { year: "2024", title: "The Team", description: "Engineers, designers, and operators who live the same commute frustrations came together. Building started fast because the mission was personal." },
+  { year: "2025", title: "Lagos Pilot", description: "Real riders and drivers in Lagos tested every feature and told us exactly what worked and what did not. Their feedback became the product." },
+  { year: "2025", title: "Drivers Joining", description: "Verified drivers across multiple cities signed up, passed screening, and started earning. The BGlory network grew city by city." },
+  { year: "2026", title: "Your Turn", description: "Public launch is coming. Join the waitlist now and be among the first to experience ride-hailing in Lagos the way it should be." },
 ];
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
-        label="About Us"
-        title="Moving people forward, one ride at a time."
-        description="BGlory Rides was founded on a belief that getting around your city should be safe, affordable, and reliable. Here is our story."
+        label="About BGlory Rides"
+        title="Your city deserves a ride-hailing company that puts you first."
+        description="BGlory Rides exists for one reason: to give you safe, affordable, and reliable rides wherever you need to go. This is the story of how we are making ride-hailing in Lagos and across Nigeria work for you."
         breadcrumbs={[{ label: "About Us" }]}
       />
 
@@ -58,11 +58,11 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
-                Who We Are
+                Why We Exist
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-3xl">
-                We believe mobility is a right,{" "}
-                <span className="text-primary-400">not a privilege.</span>
+                You should never have to choose between{" "}
+                <span className="text-primary-400">safe and affordable.</span>
               </h2>
             </AnimatedSection>
 
@@ -79,9 +79,10 @@ export default function AboutPage() {
                     Mission
                   </h3>
                   <p className="text-dark-500 leading-relaxed">
-                    To provide safe, reliable, and affordable transportation for
-                    everyone. We are building technology to make that real for
-                    millions of people across Nigeria and beyond.
+                    To end the daily transportation struggle for millions of
+                    people in Nigeria. You open the app, you get a ride, you
+                    arrive safely, and you can afford to do it again tomorrow.
+                    That is the standard we are building toward.
                   </p>
                 </div>
               </AnimatedSection>
@@ -98,9 +99,10 @@ export default function AboutPage() {
                     Vision
                   </h3>
                   <p className="text-dark-500 leading-relaxed">
-                    A world where anyone can get from point A to point B safely
-                    and affordably, without owning a car. Cities with less
-                    congestion, cleaner air, and more connected communities.
+                    Picture a Lagos where you never wait more than minutes for a
+                    safe, affordable ride. Fewer cars on the road, cleaner air,
+                    and a city that actually moves. That is the future BGlory
+                    Rides is building, and it starts with you.
                   </p>
                 </div>
               </AnimatedSection>
@@ -113,11 +115,11 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
-                Our Values
+                Our Promises
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
-                What drives us{" "}
-                <span className="text-primary-400">every day.</span>
+                What you can{" "}
+                <span className="text-primary-400">count on.</span>
               </h2>
             </AnimatedSection>
 
@@ -149,7 +151,7 @@ export default function AboutPage() {
                 Our Journey
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15]">
-                From idea to launch.
+                From frustration to the future of ride-hailing in Nigeria.
               </h2>
             </AnimatedSection>
 
@@ -196,11 +198,11 @@ export default function AboutPage() {
                   Join the Movement
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Want to be part of the BGlory story?
+                  The waitlist is filling up. Get your spot now.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Whether you want to ride with us or drive with us, there is a
-                  place for you at BGlory.
+                  Ride or drive with BGlory Rides. Early members get first
+                  access when we launch. Do not miss it.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <Button href="/#notify" variant="primary" size="lg">

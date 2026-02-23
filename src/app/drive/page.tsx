@@ -7,73 +7,76 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Drive with Us",
+  title:
+    "Become a Driver in Lagos | Earn Up to ₦15,000/Day | BGlory Rides",
   description:
-    "Become a BGlory Rides driver. Earn on your schedule, get weekly payouts, and join a community of verified drivers.",
+    "Drive and earn in Nigeria with BGlory Rides. Apply today, start earning in 48 hours. Weekly payouts, flexible hours, and launch bonuses for early drivers in Lagos.",
+  keywords:
+    "become a driver Lagos, earn money driving Nigeria, driver app Lagos, drive and earn Nigeria, ride hailing driver Lagos, BGlory driver signup",
 };
 
 const benefits = [
   {
-    title: "Earn on Your Terms",
+    title: "Earn Up to ₦15,000 Daily",
     description:
-      "Set your own hours and drive when it works for you. No minimum hours, no rigid schedules.",
+      "Full-time drivers on BGlory are taking home serious money every single day. The more you drive, the more you earn. Your income has no ceiling.",
   },
   {
-    title: "Weekly Payouts",
+    title: "Get Paid Every Week",
     description:
-      "Get paid every week directly to your bank account. Cash out instantly when you need to.",
+      "Your earnings hit your bank account weekly, guaranteed. Need cash sooner? Instant withdrawals are available anytime, no waiting around.",
   },
   {
-    title: "Insurance Coverage",
+    title: "Keep More of What You Earn",
     description:
-      "Every trip is covered by our comprehensive insurance policy. You and your passengers are protected.",
+      "Our commission rates are lower than every other platform in Lagos. You did the driving, you should keep the money. Simple.",
   },
   {
-    title: "Easy-to-Use App",
+    title: "Earn Extra During Peak Hours",
     description:
-      "Accept rides, navigate to pickups, and manage your earnings all in one place.",
+      "Surge pricing means your fares multiply during rush hours, rain, and weekends. Smart drivers plan around peak times and double their daily take-home.",
   },
   {
-    title: "Surge Bonuses",
+    title: "Get Free Insurance on Every Trip",
     description:
-      "Earn more during peak hours. The app shows you where demand is highest.",
+      "You and your passengers are fully covered on every ride at zero cost to you. Drive with peace of mind knowing your vehicle and your income are protected.",
   },
   {
-    title: "Driver Rewards",
+    title: "Get Rewarded for Great Service",
     description:
-      "Top-rated drivers get priority matching, bonus incentives, and community recognition.",
+      "Top-rated drivers unlock priority ride matching, cash bonuses, and exclusive incentives. The better your ratings, the more money you make.",
   },
 ];
 
 const requirements = [
-  "Valid driver's license (at least 1 year old)",
-  "Vehicle in good condition (2015 or newer)",
-  "Clean driving record with no major violations",
-  "Valid vehicle insurance and registration",
-  "Smartphone with iOS 14+ or Android 10+",
-  "Pass a background check and identity verification",
+  "Valid driver's license (at least 1 year old). Most drivers already qualify.",
+  "Vehicle in good condition (2015 or newer). Sedans, SUVs, and minivans all accepted.",
+  "Clean driving record with no major violations. A good record works in your favour.",
+  "Valid vehicle insurance and registration. Standard documents you already have.",
+  "Smartphone with iOS 14+ or Android 10+. Any recent phone will do.",
+  "Pass a background check and identity verification. Quick and straightforward.",
 ];
 
 const steps = [
   {
-    title: "Apply Online",
+    title: "Apply in 10 Minutes",
     description:
-      "Upload your license, vehicle documents, and a recent photo. Takes less than 10 minutes.",
+      "Upload your license, vehicle documents, and a recent photo. The whole application takes less than 10 minutes from your phone.",
   },
   {
-    title: "Get Verified",
+    title: "Get Approved Fast",
     description:
-      "Our team reviews your application and runs the required checks. Approved within 48 hours.",
+      "Our team reviews your documents and verifies your identity. Most drivers are approved within 48 hours, not weeks.",
   },
   {
-    title: "Complete Training",
+    title: "Learn the App",
     description:
-      "Short safety and best practices training. Learn the driver app inside out.",
+      "A quick training walkthrough shows you how to accept rides, navigate, and track your earnings. You will be ready in under an hour.",
   },
   {
-    title: "Start Earning",
+    title: "Start Earning Immediately",
     description:
-      "Go online whenever you are ready. Accept your first ride on your own schedule.",
+      "Go online and accept your first ride. There is no waiting period. From approval to your first fare, it happens the same day.",
   },
 ];
 
@@ -81,10 +84,10 @@ export default function DrivePage() {
   return (
     <>
       <PageHero
-        label="Drive with BGlory"
-        title="Your car can earn for you."
-        description="Join our growing network of verified drivers. Flexible hours, weekly payouts, and a supportive community."
-        breadcrumbs={[{ label: "Drive with Us" }]}
+        label="Become a Driver in Lagos"
+        title="Earn up to ₦15,000 a day driving with BGlory."
+        description="Thousands of ride requests go unfilled every day in Lagos. Your car is sitting idle while other drivers are cashing out. Apply now, get approved in 48 hours, and start earning this week."
+        breadcrumbs={[{ label: "Drive and Earn" }]}
       />
 
       <main>
@@ -93,11 +96,11 @@ export default function DrivePage() {
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
-                Why Drive with Us
+                Why Drivers Choose BGlory
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
-                Benefits that make{" "}
-                <span className="text-primary-400">a difference.</span>
+                More money in your pocket,{" "}
+                <span className="text-primary-400">every single week.</span>
               </h2>
             </AnimatedSection>
 
@@ -128,10 +131,10 @@ export default function DrivePage() {
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
-                Getting Started
+                Start Earning in 48 Hours
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15]">
-                Four steps to your first ride.
+                From application to your first fare. Two days.
               </h2>
             </AnimatedSection>
 
@@ -174,12 +177,13 @@ export default function DrivePage() {
                   Requirements
                 </p>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15]">
-                  What you need{" "}
-                  <span className="text-primary-400">to get started.</span>
+                  You probably{" "}
+                  <span className="text-primary-400">already qualify.</span>
                 </h2>
                 <p className="mt-5 text-dark-500 leading-relaxed">
-                  Make sure you meet these basic requirements before applying.
-                  If you have questions, our support team is happy to help.
+                  Most applicants meet every requirement on this list. If you
+                  have a car and a license, you are closer to earning than you
+                  think. Not sure about something? Our team will walk you through it.
                 </p>
               </AnimatedSection>
 
@@ -208,18 +212,20 @@ export default function DrivePage() {
             <div className="max-w-2xl">
               <AnimatedSection>
                 <p className="text-sm font-medium text-primary-400 mb-4">
-                  Ready to Earn?
+                  Limited Early Driver Spots
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Start your application today.
+                  Every day you wait is money left on the table.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Join our growing network of drivers earning with BGlory Rides.
-                  The application takes less than 10 minutes.
+                  We are onboarding a limited number of launch drivers in Lagos
+                  right now. Early drivers lock in the lowest commission rates
+                  and get first access to the highest-demand zones. Spots are
+                  filling fast. The application takes less than 10 minutes.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <Button href="#" variant="primary" size="lg">
-                    Apply Now
+                    Apply Now and Start Earning
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                   <Button href="/contact" variant="outline" size="lg">

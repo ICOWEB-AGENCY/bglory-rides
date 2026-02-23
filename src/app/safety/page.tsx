@@ -6,70 +6,70 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Safety",
+  title: "Safety | Safe Ride-Hailing in Lagos | BGlory Rides",
   description:
-    "Your safety is our top priority. Learn about the measures BGlory Rides takes to ensure every ride is secure.",
+    "Feel protected on every trip with verified drivers in Lagos, real-time tracking, and 24/7 safety support. BGlory Rides is the safe ride-hailing choice in Nigeria.",
 };
 
 const safetyFeatures = [
   {
     title: "Verified Drivers",
     description:
-      "Every driver passes a comprehensive background check, vehicle inspection, and identity verification before joining BGlory.",
+      "You only ride with drivers who have passed thorough background checks, vehicle inspections, and identity verification. Every driver on BGlory is screened before they can accept a single trip.",
   },
   {
     title: "Real-Time Trip Tracking",
     description:
-      "Share your trip with family and friends. They can follow your ride live on the map from start to finish.",
+      "You can share your trip with family and friends so they follow your ride live on the map. From pickup to drop-off, someone always knows where you are.",
   },
   {
     title: "Emergency Button",
     description:
-      "One tap connects you to emergency services and shares your live location. Your safety is always one button away.",
+      "You are never more than one tap away from help. Press the emergency button and your live location is instantly shared with emergency services and your chosen contacts.",
   },
   {
     title: "In-App Reporting",
     description:
-      "Report any concern directly in the app. Our safety team reviews every report and takes action within 24 hours.",
+      "You can report any concern directly in the app and expect a response. Our safety team reviews every single report and takes action within 24 hours.",
   },
   {
     title: "Two-Way Ratings",
     description:
-      "Both riders and drivers rate each other after every trip. This keeps the community accountable and the experience great.",
+      "You rate your driver, and your driver rates you. This two-way accountability keeps standards high and ensures a respectful experience on every trip.",
   },
   {
     title: "24/7 Safety Team",
     description:
-      "A dedicated safety team monitors rides around the clock. If something seems off, they can intervene in real time.",
+      "You have a dedicated safety team watching over your rides around the clock. If anything seems off, they step in immediately. No waiting, no delays.",
   },
 ];
 
 const safetyPillars = [
   {
-    title: "Before the Ride",
+    title: "Before Your Ride",
     items: [
-      "Multi-step driver background checks",
-      "Vehicle inspection and registration verification",
-      "Identity verification with photo matching",
-      "Mandatory safety training for all drivers",
+      "Your driver has cleared a multi-step background check",
+      "The vehicle you enter has been inspected and registered",
+      "Your driver's identity is photo-verified, so you always know who is picking you up",
+      "Every driver completes mandatory safety training before accepting rides",
     ],
   },
   {
-    title: "During the Ride",
+    title: "During Your Ride",
     items: [
-      "Real-time GPS tracking on every trip",
-      "Share your trip with family and friends",
-      "In-app emergency button with live location",
-      "Audio recording option for accountability",
+      "Your trip is GPS-tracked in real time from start to finish",
+      "You can share your live route with anyone you trust",
+      "You have a one-tap emergency button that shares your exact location",
+      "Optional audio recording gives you an extra layer of protection",
     ],
   },
   {
-    title: "After the Ride",
+    title: "After Your Ride",
     items: [
-      "Two-way rating system for accountability",
-      "24-hour incident reporting and response",
-      "Insurance coverage on every ride",
-      "Dedicated safety team reviews all reports",
+      "You rate your driver and hold them accountable",
+      "You can report any incident and get a response within 24 hours",
+      "Every ride you take is covered by insurance",
+      "Our dedicated safety team personally reviews every report",
     ],
   },
 ];
@@ -79,8 +79,8 @@ export default function SafetyPage() {
     <>
       <PageHero
         label="Safety"
-        title="Your safety is not negotiable."
-        description="We have built multiple layers of protection into every ride. From the moment you request to the moment you arrive, you are covered."
+        title="You deserve to feel safe on every ride."
+        description="Every layer of BGlory is built to protect you. From the moment you request a ride to the moment you step out, you are covered by verified drivers, real-time tracking, and a safety team that never sleeps."
         breadcrumbs={[{ label: "Safety" }]}
       />
 
@@ -93,8 +93,8 @@ export default function SafetyPage() {
                 Safety Features
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
-                Built-in protection{" "}
-                <span className="text-primary-400">at every step.</span>
+                Your protection is{" "}
+                <span className="text-primary-400">built into every trip.</span>
               </h2>
             </AnimatedSection>
 
@@ -128,7 +128,7 @@ export default function SafetyPage() {
                 End-to-End Safety
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15]">
-                Before, during, and after.
+                You are protected before, during, and after every ride.
               </h2>
             </AnimatedSection>
 
@@ -166,23 +166,23 @@ export default function SafetyPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
               <AnimatedSection>
                 <p className="text-sm font-medium text-red-500 mb-6">
-                  Emergency
+                  Emergency Response
                 </p>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15]">
-                  In an emergency, help is one tap away.
+                  If something goes wrong, you are never alone.
                 </h2>
                 <p className="mt-5 text-dark-500 leading-relaxed">
-                  Here is what happens when you press the emergency button.
+                  One tap on the emergency button triggers an immediate, coordinated response. Here is exactly what happens.
                 </p>
               </AnimatedSection>
 
               <AnimatedSection delay={0.1}>
                 <div className="border-t border-surface-200">
                   {[
-                    "Your live location is immediately shared with emergency services",
-                    "Our safety team is alerted and begins monitoring your ride",
-                    "Your emergency contacts receive a notification with your location",
-                    "The driver is notified that an emergency alert has been triggered",
+                    "Your live location is instantly shared with emergency services so help can reach you fast",
+                    "Our safety team is alerted within seconds and begins actively monitoring your ride",
+                    "Your emergency contacts receive an immediate notification with your real-time location",
+                    "Your driver is notified that an emergency response is underway",
                   ].map((step, i) => (
                     <div
                       key={i}
@@ -211,10 +211,10 @@ export default function SafetyPage() {
                   Ride with Confidence
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Your safety is our promise.
+                  Safe ride-hailing in Lagos starts here.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Join the waitlist and experience transportation you can trust.
+                  Thousands of riders across Nigeria are waiting for a safer way to move. Join the waitlist and be the first to experience ride-hailing built around your protection.
                 </p>
                 <div className="mt-8">
                   <Button href="/#notify" variant="primary" size="lg">
