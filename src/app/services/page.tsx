@@ -8,9 +8,9 @@ import SectionHeading from "@/components/SectionHeading";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Ride Options Port Harcourt | Book a Ride in Nigeria | BGlory Rides",
+  title: "Ride Options Abuja | Book a Ride in Nigeria | BGlory Rides",
   description:
-    "Discover affordable ride options in Port Harcourt. From daily commutes to group travel and corporate accounts, BGlory gives you reliable ride-hailing services across Nigeria.",
+    "Discover affordable ride options in Abuja. From daily commutes to group travel and corporate accounts, BGlory gives you reliable ride-hailing services across Nigeria.",
 };
 
 const services = [
@@ -66,7 +66,7 @@ const services = [
     name: "BGlory Delivery",
     tag: "Packages",
     description:
-      "Need something delivered across Port Harcourt today? Skip the unreliable dispatch riders. Your package gets a dedicated driver, real-time tracking, and delivery confirmation you can trust.",
+      "Need something delivered across Abuja today? Skip the unreliable dispatch riders. Your package gets a dedicated driver, real-time tracking, and delivery confirmation you can trust.",
     features: [
       "Same-day delivery",
       "Real-time tracking",
@@ -82,7 +82,7 @@ export default function ServicesPage() {
       <PageHero
         label="Services"
         title="The right ride, right when you need it."
-        description="Whether you need affordable rides in Port Harcourt for your daily commute, a premium car for a client meeting, or a group ride to the airport, you will always find a BGlory option that fits."
+        description="Whether you need affordable rides in Abuja for your daily commute, a premium car for a client meeting, or a group ride to the airport, you will always find a BGlory option that fits."
         breadcrumbs={[{ label: "Services" }]}
       />
 
@@ -205,7 +205,7 @@ export default function ServicesPage() {
                   Launching Soon
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Port Harcourt is about to ride better.
+                  Abuja is about to ride better.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
                   Spots on the early access list are filling fast. Get in now and be the first to book a ride when we go live.

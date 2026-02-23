@@ -22,22 +22,22 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "BGlory Rides | Affordable Ride-Hailing in Port Harcourt, Nigeria",
+    default: "BGlory Rides | Affordable Ride-Hailing in Abuja, Nigeria",
     template: "%s | BGlory Rides",
   },
   description:
-    "Request a ride in Port Harcourt and get picked up in under 4 minutes. Verified drivers, upfront pricing, no surge fees. Join the waitlist for Nigeria's smarter ride-hailing app.",
+    "Request a ride in Abuja and get picked up in under 4 minutes. Verified drivers, upfront pricing, no surge fees. Join the waitlist for Nigeria's smarter ride-hailing app.",
   keywords: [
-    "ride-hailing Port Harcourt",
+    "ride-hailing Abuja",
     "ride-hailing Nigeria",
-    "affordable rides Port Harcourt",
-    "book a ride Port Harcourt",
+    "affordable rides Abuja",
+    "book a ride Abuja",
     "taxi app Nigeria",
     "BGlory Rides",
     "ride-hailing app Africa",
-    "become a driver Port Harcourt",
+    "become a driver Abuja",
     "earn money driving Nigeria",
-    "safe rides Port Harcourt",
+    "safe rides Abuja",
   ],
   icons: {
     icon: "/images/favicon-32x32.png",
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://bglory-rides.vercel.app"),
   openGraph: {
-    title: "BGlory Rides | Affordable Ride-Hailing in Port Harcourt, Nigeria",
+    title: "BGlory Rides | Affordable Ride-Hailing in Abuja, Nigeria",
     description:
-      "Get picked up in under 4 minutes. Verified drivers, upfront pricing, zero surge fees. Join the waitlist for Port Harcourt's smarter ride-hailing app.",
+      "Get picked up in under 4 minutes. Verified drivers, upfront pricing, zero surge fees. Join the waitlist for Abuja's smarter ride-hailing app.",
     type: "website",
     locale: "en_NG",
     siteName: "BGlory Rides",
@@ -56,15 +56,15 @@ export const metadata: Metadata = {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "BGlory Rides - Affordable Ride-Hailing in Port Harcourt",
+        alt: "BGlory Rides - Affordable Ride-Hailing in Abuja",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BGlory Rides | Affordable Ride-Hailing in Port Harcourt",
+    title: "BGlory Rides | Affordable Ride-Hailing in Abuja",
     description:
-      "Verified drivers. Upfront pricing. 4-minute pickups. Join the waitlist for Port Harcourt's smarter ride-hailing app.",
+      "Verified drivers. Upfront pricing. 4-minute pickups. Join the waitlist for Abuja's smarter ride-hailing app.",
     images: ["/images/og-image.png"],
   },
   robots: {

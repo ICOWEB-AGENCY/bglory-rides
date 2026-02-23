@@ -7,9 +7,9 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Business | Corporate Rides Port Harcourt",
+  title: "Business | Corporate Rides Abuja",
   description:
-    "BGlory Business is the smartest way to manage corporate rides in Port Harcourt. Centralized billing, real-time reporting, and priority pickup for your team. The leading business ride-hailing solution in Nigeria.",
+    "BGlory Business is the smartest way to manage corporate rides in Abuja. Centralized billing, real-time reporting, and priority pickup for your team. The leading business ride-hailing solution in Nigeria.",
 };
 
 const benefits = [
@@ -98,7 +98,7 @@ export default function BusinessPage() {
       <PageHero
         label="Business"
         title="Stop chasing receipts. Start managing rides."
-        description="One account for your entire team. Centralized billing, real-time reporting, and priority corporate transportation in Port Harcourt, so your people focus on the work that matters."
+        description="One account for your entire team. Centralized billing, real-time reporting, and priority corporate transportation in Abuja, so your people focus on the work that matters."
         breadcrumbs={[{ label: "Business" }]}
       />
 

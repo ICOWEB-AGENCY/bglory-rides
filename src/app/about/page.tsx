@@ -8,7 +8,7 @@ import Button from "@/components/Button";
 export const metadata: Metadata = {
   title: "About BGlory Rides | Ride-Hailing Company Nigeria",
   description:
-    "BGlory Rides is a ride-hailing company in Nigeria building safe, affordable transportation for Port Harcourt and beyond. Discover why thousands are joining the movement.",
+    "BGlory Rides is a ride-hailing company in Nigeria building safe, affordable transportation for Abuja and beyond. Discover why thousands are joining the movement.",
 };
 
 const values = [
@@ -25,7 +25,7 @@ const values = [
   {
     title: "Affordable for Everyone",
     description:
-      "Getting around Port Harcourt or any city should never drain your wallet. You get transparent pricing, no surge surprises, and fares that respect your budget. Reliable transportation is for everyone, not just those who can afford to overpay.",
+      "Getting around Abuja or any city should never drain your wallet. You get transparent pricing, no surge surprises, and fares that respect your budget. Reliable transportation is for everyone, not just those who can afford to overpay.",
   },
   {
     title: "Built on Your Feedback",
@@ -37,9 +37,9 @@ const values = [
 const milestones = [
   { year: "2024", title: "The Spark", description: "One too many cancelled rides, one too many overpriced fares. BGlory Rides started because getting around Nigerian cities deserved a better answer." },
   { year: "2024", title: "The Team", description: "Engineers, designers, and operators who live the same commute frustrations came together. Building started fast because the mission was personal." },
-  { year: "2025", title: "Port Harcourt Pilot", description: "Real riders and drivers in Port Harcourt tested every feature and told us exactly what worked and what did not. Their feedback became the product." },
+  { year: "2025", title: "Abuja Pilot", description: "Real riders and drivers in Abuja tested every feature and told us exactly what worked and what did not. Their feedback became the product." },
   { year: "2025", title: "Drivers Joining", description: "Verified drivers across multiple cities signed up, passed screening, and started earning. The BGlory network grew city by city." },
-  { year: "2026", title: "Your Turn", description: "Public launch is coming. Join the waitlist now and be among the first to experience ride-hailing in Port Harcourt the way it should be." },
+  { year: "2026", title: "Your Turn", description: "Public launch is coming. Join the waitlist now and be among the first to experience ride-hailing in Abuja the way it should be." },
 ];
 
 export default function AboutPage() {
@@ -48,7 +48,7 @@ export default function AboutPage() {
       <PageHero
         label="About BGlory Rides"
         title="Your city deserves a ride-hailing company that puts you first."
-        description="BGlory Rides exists for one reason: to give you safe, affordable, and reliable rides wherever you need to go. This is the story of how we are making ride-hailing in Port Harcourt and across Nigeria work for you."
+        description="BGlory Rides exists for one reason: to give you safe, affordable, and reliable rides wherever you need to go. This is the story of how we are making ride-hailing in Abuja and across Nigeria work for you."
         breadcrumbs={[{ label: "About Us" }]}
       />
 
@@ -99,7 +99,7 @@ export default function AboutPage() {
                     Vision
                   </h3>
                   <p className="text-dark-500 leading-relaxed">
-                    Picture a Port Harcourt where you never wait more than minutes for a
+                    Picture a Abuja where you never wait more than minutes for a
                     safe, affordable ride. Fewer cars on the road, cleaner air,
                     and a city that actually moves. That is the future BGlory
                     Rides is building, and it starts with you.

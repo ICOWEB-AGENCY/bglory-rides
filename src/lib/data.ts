@@ -129,13 +129,13 @@ export const rideOptions: RideOption[] = [
 export const testimonials: Testimonial[] = [
   {
     name: "Amara O.",
-    role: "Pilot Rider, GRA Phase 2",
-    text: "I requested a ride from GRA to Trans Amadi during rush hour. The driver arrived in 3 minutes, the fare was exactly what the app showed, and I got there faster than I expected. This is what Port Harcourt has been waiting for.",
+    role: "Pilot Rider, Wuse 2",
+    text: "I requested a ride from Wuse to Maitama during rush hour. The driver arrived in 3 minutes, the fare was exactly what the app showed, and I got there faster than I expected. This is what Abuja has been waiting for.",
     rating: 5,
   },
   {
     name: "Chinedu A.",
-    role: "Pilot Driver, Port Harcourt",
+    role: "Pilot Driver, Abuja",
     text: "I signed up, got verified in two days, and earned ₦47,000 in my first week driving part-time. The payout hits my account every Friday without delays. The app is simple and the support team actually responds.",
     rating: 5,
   },
@@ -147,7 +147,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     name: "Tunde K.",
-    role: "Pilot Driver, Port Harcourt",
+    role: "Pilot Driver, Abuja",
     text: "I drive between 6AM and 2PM while my kids are at school. No boss, no fixed shifts. I set my own hours and still earn enough to handle my responsibilities. This is the flexibility I was looking for.",
     rating: 5,
   },
@@ -179,12 +179,12 @@ export const faqs: FAQ[] = [
   {
     question: "When is BGlory launching in my city?",
     answer:
-      "We are launching first in Port Harcourt, with Lagos and Abuja following shortly after. Join the waitlist to get notified the moment we go live in your city. Early waitlist members get priority access and exclusive launch offers.",
+      "We are launching first in Abuja, with Lagos and Port Harcourt following shortly after. Join the waitlist to get notified the moment we go live in your city. Early waitlist members get priority access and exclusive launch offers.",
   },
   {
     question: "How much can I earn as a BGlory driver?",
     answer:
-      "Earnings depend on how often you drive, but our pilot drivers in Port Harcourt averaged ₦8,000 to ₦15,000 per day. You keep a higher percentage of each fare compared to other platforms, and you get paid every week directly to your bank account.",
+      "Earnings depend on how often you drive, but our pilot drivers in Abuja averaged ₦8,000 to ₦15,000 per day. You keep a higher percentage of each fare compared to other platforms, and you get paid every week directly to your bank account.",
   },
   {
     question: "What do I need to become a driver?",
@@ -249,37 +249,37 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    slug: "routing-that-works-in-port-harcourt-traffic",
+    slug: "routing-that-works-in-abuja-traffic",
     category: "Engineering",
     date: "Dec 20, 2025",
-    title: "How we built routing that actually works in Port Harcourt traffic",
+    title: "How we built routing that actually works in Abuja traffic",
     excerpt:
-      "Port Harcourt does not follow the rules of other cities. Our engineering team explains how they built ETAs, routing, and surge logic for a city that never stops moving.",
+      "Abuja does not follow the rules of other cities. Our engineering team explains how they built ETAs, routing, and surge logic for a city that never stops moving.",
     content: [
-      "If you have ever tried to navigate Port Harcourt during peak hours, you know that standard mapping tools do not always get it right. Traffic patterns shift by the hour, roads flood during rainy season, and alternative routes that work on Monday might be gridlocked by Wednesday. Building a ride-hailing app for this city required us to rethink routing from scratch.",
-      "Most ride-hailing apps rely heavily on third-party mapping services for their ETAs and routing. Those services work well in cities with predictable traffic, consistent road conditions, and comprehensive map data. Port Harcourt has none of those things consistently. So we built a layer on top.",
+      "If you have ever tried to navigate Abuja during peak hours, you know that standard mapping tools do not always get it right. Traffic patterns shift by the hour, roads flood during rainy season, and alternative routes that work on Monday might be gridlocked by Wednesday. Building a ride-hailing app for this city required us to rethink routing from scratch.",
+      "Most ride-hailing apps rely heavily on third-party mapping services for their ETAs and routing. Those services work well in cities with predictable traffic, consistent road conditions, and comprehensive map data. Abuja has none of those things consistently. So we built a layer on top.",
       "Our routing engine combines standard map data with real-time signals from active drivers on the road. When a BGlory driver is on a trip, their speed, route, and stops feed back into our system. Over time, this builds a living picture of how traffic actually flows across the city, not how a map says it should flow.",
       "For ETAs, we use a machine learning model trained on thousands of completed trips. Instead of calculating distance and dividing by average speed, our model factors in time of day, day of week, weather conditions, and real-time congestion data from active drivers. The result is ETAs that are accurate within a few minutes, even during rush hour.",
-      "We also built custom logic for common Port Harcourt scenarios. If a road is flooded, drivers can flag it in the app and our routing engine immediately redirects other drivers around the affected area. If a particular intersection is known for delays during certain hours, we pre-route around it before drivers even get close.",
-      "Surge logic was another challenge. In most cities, demand spikes are predictable: morning commute, evening commute, weekend nights. Port Harcourt has its own rhythms. Market days, church schedules, university schedules, and local events all create demand spikes that a generic surge algorithm would miss. Our system learns from historical patterns specific to different neighborhoods.",
-      "The result is a routing system that feels like it was built by someone who actually lives in Port Harcourt. Because it was. Our engineering team spent months driving the city, mapping problem areas, and testing routes before writing a single line of code. That local knowledge is baked into every trip you take.",
+      "We also built custom logic for common Abuja scenarios. If a road is flooded, drivers can flag it in the app and our routing engine immediately redirects other drivers around the affected area. If a particular intersection is known for delays during certain hours, we pre-route around it before drivers even get close.",
+      "Surge logic was another challenge. In most cities, demand spikes are predictable: morning commute, evening commute, weekend nights. Abuja has its own rhythms. Market days, church schedules, university schedules, and local events all create demand spikes that a generic surge algorithm would miss. Our system learns from historical patterns specific to different neighborhoods.",
+      "The result is a routing system that feels like it was built by someone who actually lives in Abuja. Because it was. Our engineering team spent months driving the city, mapping problem areas, and testing routes before writing a single line of code. That local knowledge is baked into every trip you take.",
     ],
   },
   {
     slug: "500-free-rides-pilot-lessons",
     category: "Community",
     date: "Dec 5, 2025",
-    title: "We gave 500 Port Harcourt residents free rides. Here is what they told us.",
+    title: "We gave 500 Abuja residents free rides. Here is what they told us.",
     excerpt:
       "Our closed pilot changed the product in ways we never expected. From pickup UX to driver ratings, here are the biggest lessons from the people who tested BGlory first.",
     content: [
-      "Before we launched BGlory to the public, we needed to know if the product actually worked for real people in real traffic. So we invited 500 residents of Port Harcourt to take free rides over a four-week pilot. Their feedback changed everything.",
-      "The first thing we learned was that our pickup experience was broken. In testing, finding a rider at a GPS pin seemed simple. In practice, especially in dense areas like GRA and Trans Amadi, the pin would drop in the middle of a road with no obvious pickup spot. Riders would wait on one side of the street while drivers circled on the other. We redesigned the pickup flow to include a text description field where riders can add landmarks (\"I am at the gate of the shopping complex\" or \"next to the yellow building\"). Pickup accuracy improved by 40%.",
+      "Before we launched BGlory to the public, we needed to know if the product actually worked for real people in real traffic. So we invited 500 residents of Abuja to take free rides over a four-week pilot. Their feedback changed everything.",
+      "The first thing we learned was that our pickup experience was broken. In testing, finding a rider at a GPS pin seemed simple. In practice, especially in dense areas like Wuse and Garki, the pin would drop in the middle of a road with no obvious pickup spot. Riders would wait on one side of the street while drivers circled on the other. We redesigned the pickup flow to include a text description field where riders can add landmarks (\"I am at the gate of the shopping complex\" or \"next to the yellow building\"). Pickup accuracy improved by 40%.",
       "The second big lesson was about pricing transparency. Our pilot riders told us they wanted to see the fare breakdown before booking, not after. The original app showed a total fare and that was it. Riders wanted to know how much was base fare, how much was distance, and how much was time. We added a detailed breakdown screen. Booking rates went up immediately because riders felt more confident about what they were paying for.",
       "Driver ratings taught us something unexpected. We started with a 5-star rating system, and almost every ride got 5 stars. That made it impossible to tell which drivers were truly excellent and which were just adequate. So we added specific feedback categories: cleanliness, driving, conversation, and route choice. This gave us much more useful data and helped us identify our best drivers for the Comfort tier.",
       "The fourth lesson was about wait time expectations. Our system showed an ETA, but riders told us they wanted more context. \"5 minutes\" felt different depending on whether the driver was 2 blocks away in traffic or 2 kilometers away on an open road. We added a live map view showing the driver's real-time position and updated the ETA every 15 seconds. Rider satisfaction with wait times improved by 25%, even though actual wait times did not change.",
       "Finally, safety features. We built trip sharing and an emergency button before the pilot, but we did not realize how important the perception of safety was for adoption. Many pilot riders, especially women, told us they would not have tried the app at all if those features were not prominently visible on the booking screen. We moved the safety features from a settings menu to the main ride screen. First-time rider retention went up by 18%.",
-      "These 500 riders did not just test our product. They rebuilt it with us. Every major feature in the BGlory app today was shaped by their honest feedback. When we launch publicly, we are not launching a guess. We are launching something that real people in Port Harcourt already validated.",
+      "These 500 riders did not just test our product. They rebuilt it with us. Every major feature in the BGlory app today was shaped by their honest feedback. When we launch publicly, we are not launching a guess. We are launching something that real people in Abuja already validated.",
     ],
   },
 ];

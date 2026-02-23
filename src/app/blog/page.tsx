@@ -10,7 +10,7 @@ import Button from "@/components/Button";
 export const metadata: Metadata = {
   title: "Blog | BGlory Rides News, Ride-Hailing Insights Nigeria",
   description:
-    "Get insider insights on ride-hailing in Port Harcourt, safety tips for riders and drivers, product updates, and the story behind BGlory Rides. New posts every week.",
+    "Get insider insights on ride-hailing in Abuja, safety tips for riders and drivers, product updates, and the story behind BGlory Rides. New posts every week.",
 };
 
 export default function BlogPage() {
@@ -19,7 +19,7 @@ export default function BlogPage() {
       <PageHero
         label="Blog"
         title="Stories from the road."
-        description="Practical tips for riders and drivers, product deep dives, and the real story behind building a ride-hailing platform in Port Harcourt. Written for you, not investors."
+        description="Practical tips for riders and drivers, product deep dives, and the real story behind building a ride-hailing platform in Abuja. Written for you, not investors."
         breadcrumbs={[{ label: "Blog" }]}
       />
 

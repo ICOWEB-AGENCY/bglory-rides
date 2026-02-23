@@ -56,7 +56,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-dark-400 text-sm leading-relaxed max-w-sm mb-6">
-              Affordable rides across Port Harcourt with verified drivers and
+              Affordable rides across Abuja with verified drivers and
               upfront pricing. No surge fees, no surprises. Request a ride
               and get where you need to go.
             </p>
@@ -77,7 +77,7 @@ export default function Footer() {
               </a>
               <p className="flex items-center gap-2 text-sm text-dark-400">
                 <MapPin className="w-4 h-4 shrink-0" />
-                Port Harcourt, Nigeria
+                Abuja, Nigeria
               </p>
             </div>
           </div>

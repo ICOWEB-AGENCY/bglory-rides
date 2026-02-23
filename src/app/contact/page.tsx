@@ -22,7 +22,7 @@ const contactChannels = [
   },
   {
     label: "Office",
-    value: "Port Harcourt, Nigeria",
+    value: "Abuja, Nigeria",
     href: "#",
     note: "Walk in and meet the team on weekdays",
   },
@@ -36,11 +36,33 @@ export default function ContactPage() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setFormState({ name: "", email: "", subject: "", message: "" });
+    setSending(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Something went wrong.");
+      }
+
+      setSubmitted(true);
+      setFormState({ name: "", email: "", subject: "", message: "" });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -213,12 +235,17 @@ export default function ContactPage() {
                       />
                     </div>
 
+                    {error && (
+                      <p className="text-sm text-red-500">{error}</p>
+                    )}
+
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-primary-400 text-white text-sm font-semibold hover:bg-primary-500 transition-colors cursor-pointer"
+                      disabled={sending}
+                      className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-primary-400 text-white text-sm font-semibold hover:bg-primary-500 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Message
-                      <ArrowRight className="w-4 h-4" />
+                      {sending ? "Sending..." : "Send Message"}
+                      {!sending && <ArrowRight className="w-4 h-4" />}
                     </button>
                   </form>
                 )}

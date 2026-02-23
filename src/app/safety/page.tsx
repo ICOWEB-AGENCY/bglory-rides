@@ -6,9 +6,9 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Safety | Safe Ride-Hailing in Port Harcourt | BGlory Rides",
+  title: "Safety | Safe Ride-Hailing in Abuja | BGlory Rides",
   description:
-    "Feel protected on every trip with verified drivers in Port Harcourt, real-time tracking, and 24/7 safety support. BGlory Rides is the safe ride-hailing choice in Nigeria.",
+    "Feel protected on every trip with verified drivers in Abuja, real-time tracking, and 24/7 safety support. BGlory Rides is the safe ride-hailing choice in Nigeria.",
 };
 
 const safetyFeatures = [
@@ -211,7 +211,7 @@ export default function SafetyPage() {
                   Ride with Confidence
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Safe ride-hailing in Port Harcourt starts here.
+                  Safe ride-hailing in Abuja starts here.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
                   Thousands of riders across Nigeria are waiting for a safer way to move. Join the waitlist and be the first to experience ride-hailing built around your protection.

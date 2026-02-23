@@ -6,9 +6,9 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Careers at BGlory Rides | Tech Jobs Port Harcourt, Ride-Hailing Careers Nigeria",
+  title: "Careers at BGlory Rides | Tech Jobs Abuja, Ride-Hailing Careers Nigeria",
   description:
-    "Join BGlory Rides and help build Africa's next great ride-hailing platform. We are hiring engineers, designers, and operators in Port Harcourt and remotely. Early-stage equity, massive impact, zero bureaucracy.",
+    "Join BGlory Rides and help build Africa's next great ride-hailing platform. We are hiring engineers, designers, and operators in Abuja and remotely. Early-stage equity, massive impact, zero bureaucracy.",
 };
 
 const benefits = [
@@ -38,13 +38,13 @@ const positions = [
   {
     role: "Senior Mobile Engineer",
     department: "Engineering",
-    location: "Port Harcourt, Nigeria",
+    location: "Abuja, Nigeria",
     type: "Full-time",
   },
   {
     role: "Backend Engineer",
     department: "Engineering",
-    location: "Port Harcourt, Nigeria",
+    location: "Abuja, Nigeria",
     type: "Full-time",
   },
   {
@@ -56,13 +56,13 @@ const positions = [
   {
     role: "Operations Manager",
     department: "Operations",
-    location: "Port Harcourt, Nigeria",
+    location: "Abuja, Nigeria",
     type: "Full-time",
   },
   {
     role: "Marketing Lead",
     department: "Marketing",
-    location: "Port Harcourt, Nigeria",
+    location: "Abuja, Nigeria",
     type: "Full-time",
   },
   {

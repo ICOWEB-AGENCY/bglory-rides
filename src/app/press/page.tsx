@@ -6,7 +6,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Press & Media | BGlory Rides Newsroom, Ride-Hailing News Port Harcourt",
+  title: "Press & Media | BGlory Rides Newsroom, Ride-Hailing News Abuja",
   description:
     "Get the latest news from BGlory Rides. Press releases, media kits, brand assets, and press contacts for Africa's fastest-growing ride-hailing platform.",
 };
@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 const pressReleases = [
   {
     date: "Feb 2026",
-    title: "BGlory Rides Goes Live Across Port Harcourt, Opens Doors to All Riders and Drivers",
+    title: "BGlory Rides Goes Live Across Abuja, Opens Doors to All Riders and Drivers",
     description:
-      "After months of closed testing, BGlory Rides is now publicly available across Port Harcourt. Riders can book their first trip today, and thousands of verified drivers are already on the road.",
+      "After months of closed testing, BGlory Rides is now publicly available across Abuja. Riders can book their first trip today, and thousands of verified drivers are already on the road.",
   },
   {
     date: "Jan 2026",
@@ -32,7 +32,7 @@ const pressReleases = [
   },
   {
     date: "Oct 2025",
-    title: "New Ride-Hailing Challenger Launches in Port Harcourt with a Safety-First Approach",
+    title: "New Ride-Hailing Challenger Launches in Abuja with a Safety-First Approach",
     description:
       "BGlory Rides enters the market with a clear mission: make safe, reliable, and affordable rides accessible to every rider in Africa. Development begins alongside early driver recruitment.",
   },
@@ -62,7 +62,7 @@ export default function PressPage() {
       <PageHero
         label="Press"
         title="BGlory Rides in the news."
-        description="5,000+ verified drivers. 10,000+ pilot trips. 98% rider satisfaction. Here is what is happening at Port Harcourt's fastest-growing ride-hailing platform."
+        description="5,000+ verified drivers. 10,000+ pilot trips. 98% rider satisfaction. Here is what is happening at Abuja's fastest-growing ride-hailing platform."
         breadcrumbs={[{ label: "Press" }]}
       />
 
