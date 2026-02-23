@@ -29,6 +29,10 @@ export const metadata: Metadata = {
     "car service",
     "ride sharing",
   ],
+  icons: {
+    icon: "/images/favicon.png",
+    apple: "/images/favicon.png",
+  },
 };
 
 export default function RootLayout({
