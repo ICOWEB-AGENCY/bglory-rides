@@ -292,7 +292,7 @@ function Features() {
               <AnimatedSection
                 key={feature.title}
                 delay={i * 0.06}
-                className={`${isOdd ? "md:border-l md:pl-10 lg:pl-14" : "md:pr-10 lg:pr-14"} border-b border-surface-200`}
+                className={`${isOdd ? "md:border-l md:pl-10 lg:pl-14" : "md:pr-10 lg:pr-14"} border-b border-surface-200 dark:border-white/[0.06]`}
               >
                 <div className="py-8 sm:py-10">
                   <div className="flex items-start gap-4">
