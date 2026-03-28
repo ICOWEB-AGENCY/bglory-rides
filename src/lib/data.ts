@@ -136,7 +136,7 @@ export const testimonials: Testimonial[] = [
   {
     name: "Chinedu A.",
     role: "Pilot Driver, Abuja",
-    text: "I signed up, got verified in two days, and earned ₦47,000 in my first week driving part-time. The payout hits my account every Friday without delays. The app is simple and the support team actually responds.",
+    text: "I signed up, got verified in two days, and earned ₦85,000 in my first week driving part-time. The payout hits my account every Friday without delays. The app is simple and the support team actually responds.",
     rating: 5,
   },
   {
@@ -184,7 +184,7 @@ export const faqs: FAQ[] = [
   {
     question: "How much can I earn as a BGlory driver?",
     answer:
-      "Earnings depend on how often you drive, but our pilot drivers in Abuja averaged ₦8,000 to ₦15,000 per day. You keep a higher percentage of each fare compared to other platforms, and you get paid every week directly to your bank account.",
+      "Earnings depend on how often you drive. BGlory only takes 20%, so you keep 80% of every fare. Full-time drivers completing 10 to 15 trips a day can take home ₦24,000 to ₦40,000 daily. Part-time drivers doing 5 to 8 trips typically earn ₦12,000 to ₦25,000. You get paid every week directly to your bank account.",
   },
   {
     question: "What do I need to become a driver?",

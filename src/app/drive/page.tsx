@@ -8,7 +8,7 @@ import Button from "@/components/Button";
 
 export const metadata: Metadata = {
   title:
-    "Become a Driver in Abuja | Earn Up to ₦15,000/Day | BGlory Rides",
+    "Become a Driver in Abuja | Earn Up to ₦40,000/Day | BGlory Rides",
   description:
     "Drive and earn in Nigeria with BGlory Rides. Apply today, start earning in 48 hours. Weekly payouts, flexible hours, and launch bonuses for early drivers in Abuja.",
   keywords:
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    title: "Earn Up to ₦15,000 Daily",
+    title: "Earn Up to ₦40,000 Daily",
     description:
-      "Full-time drivers on BGlory are taking home serious money every single day. The more you drive, the more you earn. Your income has no ceiling.",
+      "Full-time drivers on BGlory are taking home serious money every single day. You keep 80% of every fare. The more you drive, the more you earn. Your income has no ceiling.",
   },
   {
     title: "Get Paid Every Week",
@@ -85,8 +85,8 @@ export default function DrivePage() {
     <>
       <PageHero
         label="Become a Driver in Abuja"
-        title="Earn up to ₦15,000 a day driving with BGlory."
-        description="Thousands of ride requests go unfilled every day in Abuja. Your car is sitting idle while other drivers are cashing out. Apply now, get approved in 48 hours, and start earning this week."
+        title="Earn up to ₦40,000 a day driving with BGlory."
+        description="Thousands of ride requests go unfilled every day in Abuja. You keep 80% of every fare, and there is no cap on how much you can make. Apply now, get approved in 48 hours, and start earning this week."
         breadcrumbs={[{ label: "Drive and Earn" }]}
       />
 
