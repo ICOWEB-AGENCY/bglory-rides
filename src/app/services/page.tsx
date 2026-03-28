@@ -40,9 +40,9 @@ const services = [
   },
   {
     name: "Scheduled Rides",
-    tag: "Plan ahead",
+    tag: "Coming soon",
     description:
-      "Early morning flight? Important meeting across town? Book your ride up to 7 days ahead and stop worrying. Your driver will be waiting before you even step outside.",
+      "Early morning flight? Important meeting across town? Book your ride up to 7 days ahead and stop worrying. Your driver will be waiting before you even step outside. This feature is currently in development.",
     features: [
       "Book up to 7 days ahead",
       "Pre-assigned driver",
@@ -76,7 +76,7 @@ export default function ServicesPage() {
                         <span className="text-xs font-mono text-dark-300 tracking-widest">
                           {String(i + 1).padStart(2, "0")}
                         </span>
-                        <span className="text-[11px] font-medium text-primary-600 bg-primary-400/10 px-2.5 py-1 rounded-full border border-primary-400/20">
+                        <span className={`text-[11px] font-medium px-2.5 py-1 rounded-full border ${service.tag === "Coming soon" ? "text-dark-500 bg-surface-100 border-surface-300" : "text-primary-600 bg-primary-400/10 border-primary-400/20"}`}>
                           {service.tag}
                         </span>
                       </div>
