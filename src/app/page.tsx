@@ -158,14 +158,14 @@ function Hero() {
       />
       {/* Bottom fade to solid for clean transition to Stats section */}
       <div
-        className="absolute inset-x-0 bottom-0 h-40"
+        className="absolute inset-x-0 bottom-0 h-56"
         style={{
           background:
-            "linear-gradient(to top, rgba(15,20,25,1) 0%, rgba(15,20,25,0) 100%)",
+            "linear-gradient(to top, rgba(15,20,25,1) 0%, rgba(15,20,25,0.8) 40%, rgba(15,20,25,0) 100%)",
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12 pt-28 pb-20 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 w-full">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12 pt-32 pb-28 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-[1.15fr,1fr] gap-12 lg:gap-16 xl:gap-20 items-center">
           {/* Left - Copy */}
           <motion.div
@@ -200,8 +200,8 @@ function Hero() {
               </Button>
             </div>
 
-            {/* Inline stats */}
-            <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-6 border-t border-white/[0.08] pt-8">
+            {/* Inline stats - hidden on mobile to avoid duplicating the Stats section */}
+            <div className="mt-12 hidden sm:grid grid-cols-3 gap-4 sm:gap-6 border-t border-white/[0.08] pt-8">
               {[
                 { value: "4 min", label: "Avg. pickup" },
                 { value: "₦0", label: "Hidden fees" },
