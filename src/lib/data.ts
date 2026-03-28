@@ -104,25 +104,25 @@ export const howItWorks: HowItWorksStep[] = [
 
 export const rideOptions: RideOption[] = [
   {
-    name: "BGlory Go",
+    name: "Economy",
     description:
-      "The everyday ride that saves you money. Quick pickups, clean cars, and the fastest route to where you are going. Perfect for commutes and errands.",
-    capacity: "1-3 passengers",
+      "Affordable everyday rides. Get where you need to go without breaking the bank. Clean cars, verified drivers, and the fastest route to your destination.",
+    capacity: "Up to 4 seats",
     priceLabel: "From ₦1,500",
   },
   {
-    name: "BGlory Comfort",
+    name: "Standard",
     description:
-      "A step up when you want it. Premium vehicles, top-rated drivers, and extra legroom. Ideal for meetings, airport runs, and date nights.",
-    capacity: "1-3 passengers",
-    priceLabel: "From ₦3,000",
+      "The fastest option on the road. Shorter wait times, comfortable sedans, and drivers who know every shortcut in Abuja. The sweet spot between price and speed.",
+    capacity: "Up to 4 seats",
+    priceLabel: "From ₦2,500",
   },
   {
-    name: "BGlory XL",
+    name: "Premium",
     description:
-      "Room for the whole crew. Spacious SUVs and minivans for up to 6 passengers with luggage. Great for families, group outings, and airport trips.",
-    capacity: "1-6 passengers",
-    priceLabel: "From ₦5,000",
+      "Top-tier vehicles and our highest-rated drivers. Extra legroom, pristine interiors, and a quiet ride. For meetings, airport runs, and when you want the best.",
+    capacity: "Up to 4 seats",
+    priceLabel: "From ₦4,000",
   },
 ];
 
@@ -169,7 +169,7 @@ export const faqs: FAQ[] = [
   {
     question: "What does a ride cost?",
     answer:
-      "Fares start from ₦1,500 for BGlory Go. You see the exact price before you confirm your ride, and that price does not change. No surge pricing, no hidden charges. Pay with card, cash, bank transfer, or your BGlory Wallet.",
+      "Fares start from ₦1,500 for Economy rides. You see the exact price before you confirm your ride, and that price does not change. No surge pricing, no hidden charges. Pay with card, cash, bank transfer, or your BGlory Wallet.",
   },
   {
     question: "How do I know my driver is safe?",
@@ -222,7 +222,7 @@ export const blogPosts: BlogPost[] = [
       "No surprise charges. No hidden fees. We break down exactly how BGlory pricing works and why you will always know what you are paying before you tap \"Book.\"",
     content: [
       "You have probably experienced this before. You book a ride, and the price you see on the screen is not the price you pay when you arrive. Surge pricing kicks in. A \"booking fee\" appears. The route changes and suddenly your fare doubles. At BGlory, we decided that was not acceptable.",
-      "Here is how our pricing works. When you enter your destination, our system calculates your fare based on three factors: distance, estimated trip duration, and the ride type you select (Go, Comfort, or XL). That number you see on screen is exactly what you will pay. Period.",
+      "Here is how our pricing works. When you enter your destination, our system calculates your fare based on three factors: distance, estimated trip duration, and the ride type you select (Economy, Standard, or Premium). That number you see on screen is exactly what you will pay. Period.",
       "We do not use surge pricing. During peak hours, when demand goes up and other apps multiply your fare by 2x or 3x, your BGlory fare stays the same. We believe that punishing riders for needing a ride at a popular time is not fair. You should not have to check three different apps to find the cheapest option during rush hour.",
       "There are no hidden fees either. No \"booking fee,\" no \"platform fee,\" no \"safe ride fee\" quietly tacked onto your receipt. The fare you confirm is the fare you pay. We show you a complete breakdown before you book: base fare, distance charge, and time charge. That is it.",
       "What happens if your driver takes a longer route? You still pay the original fare. Our system quotes based on the optimal route, and if your driver deviates, we absorb the difference. You are not penalized for traffic detours or wrong turns.",
@@ -276,7 +276,7 @@ export const blogPosts: BlogPost[] = [
       "Before we launched BGlory to the public, we needed to know if the product actually worked for real people in real traffic. So we invited 500 residents of Abuja to take free rides over a four-week pilot. Their feedback changed everything.",
       "The first thing we learned was that our pickup experience was broken. In testing, finding a rider at a GPS pin seemed simple. In practice, especially in dense areas like Wuse and Garki, the pin would drop in the middle of a road with no obvious pickup spot. Riders would wait on one side of the street while drivers circled on the other. We redesigned the pickup flow to include a text description field where riders can add landmarks (\"I am at the gate of the shopping complex\" or \"next to the yellow building\"). Pickup accuracy improved by 40%.",
       "The second big lesson was about pricing transparency. Our pilot riders told us they wanted to see the fare breakdown before booking, not after. The original app showed a total fare and that was it. Riders wanted to know how much was base fare, how much was distance, and how much was time. We added a detailed breakdown screen. Booking rates went up immediately because riders felt more confident about what they were paying for.",
-      "Driver ratings taught us something unexpected. We started with a 5-star rating system, and almost every ride got 5 stars. That made it impossible to tell which drivers were truly excellent and which were just adequate. So we added specific feedback categories: cleanliness, driving, conversation, and route choice. This gave us much more useful data and helped us identify our best drivers for the Comfort tier.",
+      "Driver ratings taught us something unexpected. We started with a 5-star rating system, and almost every ride got 5 stars. That made it impossible to tell which drivers were truly excellent and which were just adequate. So we added specific feedback categories: cleanliness, driving, conversation, and route choice. This gave us much more useful data and helped us identify our best drivers for the Premium tier.",
       "The fourth lesson was about wait time expectations. Our system showed an ETA, but riders told us they wanted more context. \"5 minutes\" felt different depending on whether the driver was 2 blocks away in traffic or 2 kilometers away on an open road. We added a live map view showing the driver's real-time position and updated the ETA every 15 seconds. Rider satisfaction with wait times improved by 25%, even though actual wait times did not change.",
       "Finally, safety features. We built trip sharing and an emergency button before the pilot, but we did not realize how important the perception of safety was for adoption. Many pilot riders, especially women, told us they would not have tried the app at all if those features were not prominently visible on the booking screen. We moved the safety features from a settings menu to the main ride screen. First-time rider retention went up by 18%.",
       "These 500 riders did not just test our product. They rebuilt it with us. Every major feature in the BGlory app today was shaped by their honest feedback. When we launch publicly, we are not launching a guess. We are launching something that real people in Abuja already validated.",

@@ -15,40 +15,28 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    name: "BGlory Go",
-    tag: "Most popular",
+    name: "Economy",
+    tag: "Budget-friendly",
     description:
-      "Tired of waiting 20 minutes for a ride that costs too much? BGlory Go gets you moving in under 5 minutes at prices that actually make sense for your daily commute.",
-    features: ["1-3 passengers", "Average 4 min pickup", "Affordable pricing"],
+      "Tired of waiting 20 minutes for a ride that costs too much? Economy gets you moving in under 5 minutes at prices that actually make sense for your daily commute.",
+    features: ["Up to 4 passengers", "Average 4 min pickup", "Lowest fares"],
     priceRange: "₦1,500 - ₦8,000",
   },
   {
-    name: "BGlory Comfort",
-    tag: "Premium",
+    name: "Standard",
+    tag: "Most popular",
+    description:
+      "The fastest option on the road. Comfortable sedans with drivers who know every shortcut in Abuja. The sweet spot between price and speed for riders who value their time.",
+    features: ["Up to 4 passengers", "Shorter wait times", "Comfortable sedans"],
+    priceRange: "₦2,500 - ₦12,000",
+  },
+  {
+    name: "Premium",
+    tag: "Top tier",
     description:
       "You deserve more than cramped backseats and awkward small talk. Stretch out in a premium vehicle with a top-rated driver who knows when to talk and when to let you ride in peace.",
-    features: ["1-3 passengers", "Premium vehicles", "Top-rated drivers only"],
-    priceRange: "₦3,000 - ₦15,000",
-  },
-  {
-    name: "BGlory XL",
-    tag: "Groups",
-    description:
-      "Stop splitting your crew across three different cars. Fit your whole group in one ride with room for everyone's bags, so you arrive together, not in pieces.",
-    features: ["1-6 passengers", "SUVs and minivans", "Extra luggage space"],
-    priceRange: "₦5,000 - ₦20,000",
-  },
-  {
-    name: "BGlory Business",
-    tag: "Corporate",
-    description:
-      "No more chasing employees for ride receipts. One dashboard, one bill, and priority pickups that keep your team on time and your finance team sane.",
-    features: [
-      "Centralized billing",
-      "Employee management dashboard",
-      "Priority matching",
-    ],
-    priceRange: "Custom pricing",
+    features: ["Up to 4 passengers", "Premium vehicles", "Top-rated drivers only"],
+    priceRange: "₦4,000 - ₦18,000",
   },
   {
     name: "Scheduled Rides",
@@ -60,19 +48,7 @@ const services = [
       "Pre-assigned driver",
       "Confirmation reminders",
     ],
-    priceRange: "Same as standard",
-  },
-  {
-    name: "BGlory Delivery",
-    tag: "Packages",
-    description:
-      "Need something delivered across Abuja today? Skip the unreliable dispatch riders. Your package gets a dedicated driver, real-time tracking, and delivery confirmation you can trust.",
-    features: [
-      "Same-day delivery",
-      "Real-time tracking",
-      "Delivery confirmation",
-    ],
-    priceRange: "₦2,500 - ₦10,000",
+    priceRange: "Same as standard fares",
   },
 ];
 
@@ -159,34 +135,34 @@ export default function ServicesPage() {
                         Feature
                       </th>
                       <th className="pb-4 px-2 sm:px-4 text-xs sm:text-sm font-semibold text-dark-900 text-center">
-                        Go
+                        Economy
                       </th>
                       <th className="pb-4 px-2 sm:px-4 text-xs sm:text-sm font-semibold text-dark-900 text-center">
-                        Comfort
+                        Standard
                       </th>
                       <th className="pb-4 pl-2 sm:pl-4 text-xs sm:text-sm font-semibold text-dark-900 text-center">
-                        XL
+                        Premium
                       </th>
                     </tr>
                   </thead>
                   <tbody className="text-xs sm:text-sm">
                     {[
-                      { feature: "Max passengers", go: "3", comfort: "3", xl: "6" },
-                      { feature: "Vehicle type", go: "Standard", comfort: "Premium", xl: "SUV / Minivan" },
-                      { feature: "Avg. pickup time", go: "4 min", comfort: "5 min", xl: "6 min" },
-                      { feature: "Driver rating req.", go: "4.5+", comfort: "4.8+", xl: "4.7+" },
-                      { feature: "Extra luggage", go: "Limited", comfort: "Yes", xl: "Large" },
-                      { feature: "Trip sharing", go: "Yes", comfort: "Yes", xl: "Yes" },
+                      { feature: "Max passengers", economy: "4", standard: "4", premium: "4" },
+                      { feature: "Vehicle type", economy: "Compact", standard: "Sedan", premium: "Premium sedan" },
+                      { feature: "Avg. pickup time", economy: "6 min", standard: "4 min", premium: "8 min" },
+                      { feature: "Driver rating req.", economy: "4.5+", standard: "4.6+", premium: "4.8+" },
+                      { feature: "A/C guaranteed", economy: "Yes", standard: "Yes", premium: "Yes" },
+                      { feature: "Trip sharing", economy: "Yes", standard: "Yes", premium: "Yes" },
                     ].map((row) => (
                       <tr key={row.feature} className="border-b border-surface-200">
                         <td className="py-3.5 sm:py-4 pr-4 text-dark-700 font-medium">
                           {row.feature}
                         </td>
-                        <td className="py-3.5 sm:py-4 px-2 sm:px-4 text-dark-500 text-center">{row.go}</td>
+                        <td className="py-3.5 sm:py-4 px-2 sm:px-4 text-dark-500 text-center">{row.economy}</td>
                         <td className="py-3.5 sm:py-4 px-2 sm:px-4 text-dark-500 text-center">
-                          {row.comfort}
+                          {row.standard}
                         </td>
-                        <td className="py-3.5 sm:py-4 pl-2 sm:pl-4 text-dark-500 text-center">{row.xl}</td>
+                        <td className="py-3.5 sm:py-4 pl-2 sm:pl-4 text-dark-500 text-center">{row.premium}</td>
                       </tr>
                     ))}
                   </tbody>
