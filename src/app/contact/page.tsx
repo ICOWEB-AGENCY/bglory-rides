@@ -133,122 +133,124 @@ export default function ContactPage() {
               </div>
 
               <AnimatedSection delay={0.1}>
-                {submitted ? (
-                  <div className="py-16 sm:py-20 text-center animate-fade-in">
-                    <p className="text-xs font-mono text-primary-400 tracking-widest mb-4">
-                      SENT
-                    </p>
-                    <h3 className="text-2xl sm:text-3xl font-bold text-dark-900 dark:text-white mb-3">
-                      Message received.
-                    </h3>
-                    <p className="text-dark-500 dark:text-dark-400 text-sm mb-8 max-w-sm mx-auto">
-                      Thank you for reaching out. A team member will respond
-                      within a few hours.
-                    </p>
-                    <button
-                      onClick={() => setSubmitted(false)}
-                      className="text-sm font-medium text-primary-500 hover:underline cursor-pointer"
-                    >
-                      Send another message
-                    </button>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-5">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="rounded-2xl border border-surface-200 dark:border-white/[0.06] bg-surface-50 dark:bg-dark-900 p-6 sm:p-8 lg:p-10">
+                  {submitted ? (
+                    <div className="py-10 sm:py-14 text-center">
+                      <p className="text-xs font-mono text-primary-400 tracking-widest mb-4">
+                        SENT
+                      </p>
+                      <h3 className="text-2xl sm:text-3xl font-bold text-dark-900 dark:text-white mb-3">
+                        Message received.
+                      </h3>
+                      <p className="text-dark-500 dark:text-dark-400 text-sm mb-8 max-w-sm mx-auto">
+                        Thank you for reaching out. A team member will respond
+                        within a few hours.
+                      </p>
+                      <button
+                        onClick={() => setSubmitted(false)}
+                        className="text-sm font-medium text-primary-500 hover:underline cursor-pointer"
+                      >
+                        Send another message
+                      </button>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-5">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                          <label
+                            htmlFor="name"
+                            className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
+                          >
+                            Full Name
+                          </label>
+                          <input
+                            type="text"
+                            id="name"
+                            required
+                            value={formState.name}
+                            onChange={(e) =>
+                              setFormState({ ...formState, name: e.target.value })
+                            }
+                            className="w-full px-4 py-3 rounded-xl bg-white dark:bg-dark-800 border border-surface-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all"
+                            placeholder="John Doe"
+                          />
+                        </div>
+                        <div>
+                          <label
+                            htmlFor="email"
+                            className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
+                          >
+                            Email
+                          </label>
+                          <input
+                            type="email"
+                            id="email"
+                            required
+                            value={formState.email}
+                            onChange={(e) =>
+                              setFormState({ ...formState, email: e.target.value })
+                            }
+                            className="w-full px-4 py-3 rounded-xl bg-white dark:bg-dark-800 border border-surface-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all"
+                            placeholder="john@example.com"
+                          />
+                        </div>
+                      </div>
+
                       <div>
                         <label
-                          htmlFor="name"
+                          htmlFor="subject"
                           className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
                         >
-                          Full Name
+                          Subject
                         </label>
                         <input
                           type="text"
-                          id="name"
+                          id="subject"
                           required
-                          value={formState.name}
+                          value={formState.subject}
                           onChange={(e) =>
-                            setFormState({ ...formState, name: e.target.value })
+                            setFormState({ ...formState, subject: e.target.value })
                           }
-                          className="w-full px-4 py-3 rounded-xl bg-surface-50 dark:bg-dark-800 border border-surface-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all"
-                          placeholder="John Doe"
+                          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-dark-800 border border-surface-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all"
+                          placeholder="How can we help?"
                         />
                       </div>
+
                       <div>
                         <label
-                          htmlFor="email"
+                          htmlFor="message"
                           className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
                         >
-                          Email
+                          Message
                         </label>
-                        <input
-                          type="email"
-                          id="email"
+                        <textarea
+                          id="message"
                           required
-                          value={formState.email}
+                          rows={5}
+                          value={formState.message}
                           onChange={(e) =>
-                            setFormState({ ...formState, email: e.target.value })
+                            setFormState({ ...formState, message: e.target.value })
                           }
-                          className="w-full px-4 py-3 rounded-xl bg-surface-50 dark:bg-dark-800 border border-surface-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all"
-                          placeholder="john@example.com"
+                          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-dark-800 border border-surface-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all resize-none"
+                          placeholder="Tell us how we can help you ride, drive, or partner with BGlory..."
                         />
                       </div>
-                    </div>
 
-                    <div>
-                      <label
-                        htmlFor="subject"
-                        className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
+                      {error && (
+                        <p className="text-sm text-red-500">{error}</p>
+                      )}
+
+                      <button
+                        type="submit"
+                        disabled={sending}
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-primary-400 text-white text-sm font-semibold hover:bg-primary-500 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        Subject
-                      </label>
-                      <input
-                        type="text"
-                        id="subject"
-                        required
-                        value={formState.subject}
-                        onChange={(e) =>
-                          setFormState({ ...formState, subject: e.target.value })
-                        }
-                        className="w-full px-4 py-3 rounded-xl bg-surface-50 dark:bg-dark-800 border border-surface-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all"
-                        placeholder="How can we help?"
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
-                      >
-                        Message
-                      </label>
-                      <textarea
-                        id="message"
-                        required
-                        rows={5}
-                        value={formState.message}
-                        onChange={(e) =>
-                          setFormState({ ...formState, message: e.target.value })
-                        }
-                        className="w-full px-4 py-3 rounded-xl bg-surface-50 dark:bg-dark-800 border border-surface-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all resize-none"
-                        placeholder="Tell us how we can help you ride, drive, or partner with BGlory..."
-                      />
-                    </div>
-
-                    {error && (
-                      <p className="text-sm text-red-500">{error}</p>
-                    )}
-
-                    <button
-                      type="submit"
-                      disabled={sending}
-                      className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-primary-400 text-white text-sm font-semibold hover:bg-primary-500 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {sending ? "Sending..." : "Send Message"}
-                      {!sending && <ArrowRight className="w-4 h-4" />}
-                    </button>
-                  </form>
-                )}
+                        {sending ? "Sending..." : "Send Message"}
+                        {!sending && <ArrowRight className="w-4 h-4" />}
+                      </button>
+                    </form>
+                  )}
+                </div>
               </AnimatedSection>
             </div>
           </div>
