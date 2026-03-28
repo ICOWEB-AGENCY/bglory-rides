@@ -42,9 +42,7 @@ export default function Footer() {
   return (
     <footer className="bg-dark-950 text-white border-t border-white/[0.08]">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-        {/* Main Footer */}
         <div className="py-14 sm:py-20 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-6 lg:gap-8">
-          {/* Brand Column */}
           <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="inline-block mb-5">
               <Image
@@ -82,7 +80,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Company */}
           <div>
             <h3 className="text-sm font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-3">
@@ -99,7 +96,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Product */}
           <div>
             <h3 className="text-sm font-semibold text-white mb-4">Product</h3>
             <ul className="space-y-3">
@@ -116,7 +112,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Support */}
           <div>
             <h3 className="text-sm font-semibold text-white mb-4">Support</h3>
             <ul className="space-y-3">
@@ -134,7 +129,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="border-t border-dark-800 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-dark-500">
             &copy; {new Date().getFullYear()} BGlory Rides. All rights

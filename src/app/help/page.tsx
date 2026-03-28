@@ -91,31 +91,31 @@ export default function HelpPage() {
 
       <main>
         {/* Browse Topics */}
-        <section className="py-20 sm:py-28 bg-white">
+        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
                 Browse Topics
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
                 Get answers{" "}
                 <span className="text-primary-400">fast.</span>
               </h2>
             </AnimatedSection>
 
-            <div className="mt-14 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 border-t border-surface-200">
+            <div className="mt-14 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 border-t border-surface-200 dark:border-white/[0.06]">
               {helpTopics.map((topic, i) => (
                 <AnimatedSection key={topic.title} delay={i * 0.06}>
-                  <div className="py-8 sm:py-10 border-b border-surface-200">
+                  <div className="py-8 sm:py-10 border-b border-surface-200 dark:border-white/[0.06]">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="text-xs font-mono text-dark-300 tracking-widest">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-dark-900 mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-dark-900 dark:text-white mb-2">
                       {topic.title}
                     </h3>
-                    <p className="text-sm text-dark-500 leading-relaxed mb-5">
+                    <p className="text-sm text-dark-500 dark:text-dark-400 leading-relaxed mb-5">
                       {topic.description}
                     </p>
                     <ul className="space-y-2.5">

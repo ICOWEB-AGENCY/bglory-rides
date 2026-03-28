@@ -85,29 +85,29 @@ export default function CareersPage() {
 
       <main>
         {/* Why Join Us */}
-        <section className="py-20 sm:py-28 bg-white">
+        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
                 Why Join Us
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
                 Your unfair advantage{" "}
                 <span className="text-primary-400">starts here.</span>
               </h2>
             </AnimatedSection>
 
-            <div className="mt-14 sm:mt-16 border-t border-surface-200">
+            <div className="mt-14 sm:mt-16 border-t border-surface-200 dark:border-white/[0.06]">
               {benefits.map((benefit, i) => (
                 <AnimatedSection key={benefit.title} delay={i * 0.08}>
                   <div className="py-7 sm:py-8 border-b border-surface-200 grid grid-cols-1 md:grid-cols-[60px,1fr,1.5fr] gap-3 md:gap-8 items-start">
                     <span className="text-xs font-mono text-dark-300 tracking-widest pt-1">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="text-lg font-bold text-dark-900">
+                    <h3 className="text-lg font-bold text-dark-900 dark:text-white">
                       {benefit.title}
                     </h3>
-                    <p className="text-dark-500 leading-relaxed">
+                    <p className="text-dark-500 dark:text-dark-400 leading-relaxed">
                       {benefit.description}
                     </p>
                   </div>
@@ -118,19 +118,19 @@ export default function CareersPage() {
         </section>
 
         {/* Open Positions */}
-        <section className="py-20 sm:py-28 bg-surface-50">
+        <section className="py-20 sm:py-28 bg-surface-50 dark:bg-dark-900">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
                 Open Positions
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
                 Find your role{" "}
                 <span className="text-primary-400">at BGlory.</span>
               </h2>
             </AnimatedSection>
 
-            <div className="mt-14 sm:mt-16 border-t border-surface-200">
+            <div className="mt-14 sm:mt-16 border-t border-surface-200 dark:border-white/[0.06]">
               {positions.map((position, i) => (
                 <AnimatedSection key={position.role} delay={i * 0.06}>
                   <div className="group py-6 sm:py-8 border-b border-surface-200 cursor-pointer">
@@ -141,7 +141,7 @@ export default function CareersPage() {
                           {String(i + 1).padStart(2, "0")}
                         </span>
                         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                          <h3 className="text-base sm:text-lg font-bold text-dark-900 group-hover:text-primary-500 transition-colors">
+                          <h3 className="text-base sm:text-lg font-bold text-dark-900 dark:text-white group-hover:text-primary-500 transition-colors">
                             {position.role}
                           </h3>
                           <span className="text-[11px] font-medium text-primary-600 bg-primary-400/10 px-2.5 py-1 rounded-full border border-primary-400/20 w-fit">

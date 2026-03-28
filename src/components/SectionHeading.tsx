@@ -21,13 +21,13 @@ export default function SectionHeading({
     >
       <p className="text-sm font-medium text-primary-400 mb-3">{label}</p>
       <h2
-        className={`text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight ${light ? "text-white" : "text-dark-900"}`}
+        className={`text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight ${light ? "text-white" : "text-dark-900 dark:text-white"}`}
       >
         {title}
       </h2>
       {description && (
         <p
-          className={`mt-4 text-base leading-relaxed ${light ? "text-dark-400" : "text-dark-500"}`}
+          className={`mt-4 text-base leading-relaxed ${light ? "text-dark-400" : "text-dark-500 dark:text-dark-400"}`}
         >
           {description}
         </p>

@@ -236,7 +236,7 @@ function Stats() {
   return (
     <section className="relative -mt-16 z-10">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-        <div className="bg-white rounded-2xl shadow-xl shadow-dark-950/5 border border-surface-200 p-6 sm:p-8">
+        <div className="bg-white dark:bg-dark-900 rounded-2xl shadow-xl shadow-dark-950/5 dark:shadow-black/20 border border-surface-200 dark:border-white/[0.06] p-6 sm:p-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {stats.map((stat, i) => (
               <AnimatedSection key={stat.label} delay={i * 0.1}>
@@ -260,7 +260,7 @@ const featureIcons = [Clock, MapPin, Shield, Zap, Wallet, Phone];
 
 function Features() {
   return (
-    <section className="py-24 sm:py-32 bg-white overflow-hidden">
+    <section className="py-24 sm:py-32 bg-white dark:bg-dark-950 overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
         {/* Two-column editorial header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 mb-16 sm:mb-20">

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-heading: var(--font-sora), system-ui, sans-serif;
@@ -61,8 +63,6 @@ html {
 }
 
 body {
-  background: #ffffff;
-  color: #1c2127;
   font-family: var(--font-sans);
   overflow-x: hidden;
 }
@@ -82,6 +82,9 @@ h6 {
 }
 ::-webkit-scrollbar-track {
   background: #f1f4f6;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #1c2127;
 }
 ::-webkit-scrollbar-thumb {
   background: #9BC53D;
@@ -136,223 +139,83 @@ h6 {
   }
 }
 
-/* Bubble blob animations - each on a different path and speed */
+/* Bubble blob animations */
 @keyframes bubble-1 {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(-60px, 40px) scale(1.1);
-  }
-  50% {
-    transform: translate(-30px, -50px) scale(0.95);
-  }
-  75% {
-    transform: translate(40px, 20px) scale(1.05);
-  }
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-60px, 40px) scale(1.1); }
+  50% { transform: translate(-30px, -50px) scale(0.95); }
+  75% { transform: translate(40px, 20px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
 }
-
 @keyframes bubble-2 {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(50px, -30px) scale(1.08);
-  }
-  50% {
-    transform: translate(20px, 60px) scale(0.92);
-  }
-  75% {
-    transform: translate(-40px, -20px) scale(1.05);
-  }
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(50px, -30px) scale(1.08); }
+  50% { transform: translate(20px, 60px) scale(0.92); }
+  75% { transform: translate(-40px, -20px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
 }
-
 @keyframes bubble-3 {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(70px, 30px) scale(1.12);
-  }
-  66% {
-    transform: translate(-50px, -40px) scale(0.9);
-  }
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(70px, 30px) scale(1.12); }
+  66% { transform: translate(-50px, -40px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
 }
+.animate-bubble-1 { animation: bubble-1 18s ease-in-out infinite; }
+.animate-bubble-2 { animation: bubble-2 22s ease-in-out infinite; }
+.animate-bubble-3 { animation: bubble-3 15s ease-in-out infinite; }
 
-.animate-bubble-1 {
-  animation: bubble-1 18s ease-in-out infinite;
-}
-.animate-bubble-2 {
-  animation: bubble-2 22s ease-in-out infinite;
-}
-.animate-bubble-3 {
-  animation: bubble-3 15s ease-in-out infinite;
-}
-
-/* ── Ride pickup animation ── */
+/* Ride pickup animation */
 @keyframes ride-car-move {
-  0% {
-    left: -50px;
-    opacity: 0;
-  }
-  4% {
-    opacity: 1;
-  }
-  32% {
-    left: calc(50% - 18px);
-  }
-  55% {
-    left: calc(50% - 18px);
-  }
-  80% {
-    left: 105%;
-    opacity: 1;
-  }
-  84% {
-    opacity: 0;
-  }
-  100% {
-    left: -50px;
-    opacity: 0;
-  }
+  0% { left: -50px; opacity: 0; }
+  4% { opacity: 1; }
+  32% { left: calc(50% - 18px); }
+  55% { left: calc(50% - 18px); }
+  80% { left: 105%; opacity: 1; }
+  84% { opacity: 0; }
+  100% { left: -50px; opacity: 0; }
 }
-
 @media (min-width: 640px) {
   @keyframes ride-car-move {
-    0% {
-      left: -60px;
-      opacity: 0;
-    }
-    4% {
-      opacity: 1;
-    }
-    32% {
-      left: calc(50% - 24px);
-    }
-    55% {
-      left: calc(50% - 24px);
-    }
-    80% {
-      left: 105%;
-      opacity: 1;
-    }
-    84% {
-      opacity: 0;
-    }
-    100% {
-      left: -60px;
-      opacity: 0;
-    }
+    0% { left: -60px; opacity: 0; }
+    4% { opacity: 1; }
+    32% { left: calc(50% - 24px); }
+    55% { left: calc(50% - 24px); }
+    80% { left: 105%; opacity: 1; }
+    84% { opacity: 0; }
+    100% { left: -60px; opacity: 0; }
   }
 }
-
 @keyframes ride-passenger-show {
-  0%,
-  30% {
-    opacity: 0;
-    transform: translateX(0);
-  }
-  36% {
-    opacity: 0.7;
-    transform: translateX(0);
-  }
-  48% {
-    opacity: 0.7;
-    transform: translateX(-10px);
-  }
-  52% {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(0);
-  }
+  0%, 30% { opacity: 0; transform: translateX(0); }
+  36% { opacity: 0.7; transform: translateX(0); }
+  48% { opacity: 0.7; transform: translateX(-10px); }
+  52% { opacity: 0; transform: translateX(-10px); }
+  100% { opacity: 0; transform: translateX(0); }
 }
-
 @keyframes ride-pickup-show {
-  0%,
-  18% {
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  56% {
-    opacity: 1;
-  }
-  62% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
+  0%, 18% { opacity: 0; }
+  25% { opacity: 1; }
+  56% { opacity: 1; }
+  62% { opacity: 0; }
+  100% { opacity: 0; }
 }
+.ride-car { animation: ride-car-move 10s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+.ride-pickup-point { animation: ride-pickup-show 10s ease-in-out infinite; }
+.ride-passenger svg { animation: ride-passenger-show 10s ease-in-out infinite; }
 
-.ride-car {
-  animation: ride-car-move 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-.ride-pickup-point {
-  animation: ride-pickup-show 10s ease-in-out infinite;
-}
-
-.ride-passenger svg {
-  animation: ride-passenger-show 10s ease-in-out infinite;
-}
-
-/* Fade-in animation for hero/page sections */
+/* Fade-in animation */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+.animate-fade-in { animation: fadeIn 0.7s ease-out both; }
 
-.animate-fade-in {
-  animation: fadeIn 0.7s ease-out both;
-}
-
-/* FAQ accordion - CSS grid-rows transition */
-.faq-content {
-  display: grid;
-  grid-template-rows: 0fr;
-  opacity: 0;
-  transition: grid-template-rows 0.3s ease, opacity 0.3s ease;
-}
-.faq-content.open {
-  grid-template-rows: 1fr;
-  opacity: 1;
-}
-.faq-content > div {
-  overflow: hidden;
-}
-
-/* Accessibility: respect reduced motion preferences */
+/* Accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .animate-bubble-1,
-  .animate-bubble-2,
-  .animate-bubble-3,
-  .animate-fade-in,
-  .ride-car,
-  .ride-pickup-point,
-  .ride-passenger svg {
+  .animate-bubble-1, .animate-bubble-2, .animate-bubble-3,
+  .animate-fade-in, .ride-car, .ride-pickup-point, .ride-passenger svg {
     animation: none !important;
   }
-
   * {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { navLinks } from "@/lib/data";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,9 +38,9 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
         isOpen
-          ? "bg-white"
+          ? "bg-white dark:bg-dark-900"
           : scrolled
-            ? "bg-white/80 backdrop-blur-xl shadow-lg shadow-dark-950/[0.04] border-b border-surface-200/60"
+            ? "bg-white/80 dark:bg-dark-900/80 backdrop-blur-xl shadow-lg shadow-dark-950/[0.04] dark:shadow-black/20 border-b border-surface-200/60 dark:border-white/[0.06]"
             : "bg-transparent"
       }`}
     >
@@ -47,37 +48,35 @@ export default function Navbar() {
         <nav>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-14 sm:h-16">
-              {/* Logo - swap between light and dark versions */}
+              {/* Logo */}
               <Link href="/" className="relative z-[60] flex items-center shrink-0">
-                {/* Light logo (for dark/transparent background) */}
                 <Image
                   src="/images/logo.webp"
                   alt="BGlory Rides"
                   width={130}
                   height={36}
                   className={`h-7 sm:h-8 w-auto transition-all duration-500 ${
-                    scrolled || isOpen ? "opacity-0 absolute" : "opacity-100"
+                    scrolled || isOpen ? "opacity-0 absolute dark:opacity-100 dark:relative" : "opacity-100"
                   }`}
                   priority
                 />
-                {/* Dark logo (for white/scrolled background) */}
                 <Image
                   src="/images/logo-dark.webp"
                   alt="BGlory Rides"
                   width={130}
                   height={36}
                   className={`h-7 sm:h-8 w-auto transition-all duration-500 ${
-                    scrolled || isOpen ? "opacity-100" : "opacity-0 absolute"
+                    scrolled || isOpen ? "opacity-100 dark:opacity-0 dark:absolute" : "opacity-0 absolute"
                   }`}
                   priority
                 />
               </Link>
 
-              {/* Desktop Nav - pill container */}
+              {/* Desktop Nav */}
               <div
                 className={`hidden lg:flex items-center gap-0.5 transition-all duration-500 ${
                   scrolled
-                    ? "bg-surface-100/80 rounded-full px-1.5 py-1"
+                    ? "bg-surface-100/80 dark:bg-white/[0.06] rounded-full px-1.5 py-1"
                     : "bg-white/[0.08] backdrop-blur-sm rounded-full px-1.5 py-1"
                 }`}
               >
@@ -90,10 +89,10 @@ export default function Navbar() {
                       className={`relative px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-all duration-200 ${
                         isActive
                           ? scrolled
-                            ? "bg-white text-dark-900 shadow-sm"
+                            ? "bg-white dark:bg-white/10 text-dark-900 dark:text-white shadow-sm dark:shadow-none"
                             : "bg-white/15 text-white"
                           : scrolled
-                            ? "text-dark-600 hover:text-dark-900 hover:bg-white/60"
+                            ? "text-dark-600 dark:text-dark-400 hover:text-dark-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-white/10"
                             : "text-white/70 hover:text-white hover:bg-white/10"
                       }`}
                     >
@@ -104,12 +103,13 @@ export default function Navbar() {
               </div>
 
               {/* Desktop CTA */}
-              <div className="hidden lg:flex items-center gap-2.5 shrink-0">
+              <div className="hidden lg:flex items-center gap-2 shrink-0">
+                <ThemeToggle variant="navbar" scrolled={scrolled} />
                 <Link
                   href="/drive"
                   className={`px-4 py-2 rounded-full text-[13px] font-semibold transition-all duration-300 ${
                     scrolled
-                      ? "text-dark-700 hover:text-dark-900"
+                      ? "text-dark-700 dark:text-dark-300 hover:text-dark-900 dark:hover:text-white"
                       : "text-white/80 hover:text-white"
                   }`}
                 >
@@ -125,26 +125,29 @@ export default function Navbar() {
               </div>
 
               {/* Mobile Menu Button */}
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden relative z-[60] w-11 h-11 flex items-center justify-center rounded-full transition-colors cursor-pointer"
-                style={{
-                  backgroundColor: isOpen || scrolled
-                    ? "rgba(0,0,0,0.05)"
-                    : "rgba(255,255,255,0.1)",
-                }}
-                aria-label={isOpen ? "Close menu" : "Open menu"}
-              >
-                {isOpen ? (
-                  <X className="w-[18px] h-[18px] text-dark-900" />
-                ) : (
-                  <Menu
-                    className={`w-[18px] h-[18px] transition-colors ${
-                      scrolled ? "text-dark-900" : "text-white"
-                    }`}
-                  />
-                )}
-              </button>
+              <div className="lg:hidden flex items-center gap-1">
+                <ThemeToggle variant="navbar" scrolled={scrolled} />
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="relative z-[60] w-11 h-11 flex items-center justify-center rounded-full transition-colors cursor-pointer"
+                  style={{
+                    backgroundColor: isOpen || scrolled
+                      ? "rgba(128,128,128,0.1)"
+                      : "rgba(255,255,255,0.1)",
+                  }}
+                  aria-label={isOpen ? "Close menu" : "Open menu"}
+                >
+                  {isOpen ? (
+                    <X className="w-[18px] h-[18px] text-dark-900 dark:text-white" />
+                  ) : (
+                    <Menu
+                      className={`w-[18px] h-[18px] transition-colors ${
+                        scrolled ? "text-dark-900 dark:text-white" : "text-white"
+                      }`}
+                    />
+                  )}
+                </button>
+              </div>
             </div>
           </div>
         </nav>
@@ -152,12 +155,11 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-50 bg-white lg:hidden overflow-y-auto transition-opacity duration-250 ${
+        className={`fixed inset-0 z-50 bg-white dark:bg-dark-900 lg:hidden overflow-y-auto transition-opacity duration-250 ${
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
         <div className="flex flex-col justify-between min-h-screen pt-20 pb-10 px-5 sm:px-6">
-          {/* Nav links */}
           <div className="space-y-1">
             {navLinks.map((link, i) => {
               const isActive = pathname === link.href;
@@ -173,16 +175,16 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    className={`flex items-center justify-between py-3.5 border-b border-surface-100 text-base font-medium transition-colors ${
+                    className={`flex items-center justify-between py-3.5 border-b border-surface-100 dark:border-white/[0.06] text-base font-medium transition-colors ${
                       isActive
                         ? "text-primary-500"
-                        : "text-dark-800 hover:text-primary-500"
+                        : "text-dark-800 dark:text-dark-200 hover:text-primary-500"
                     }`}
                   >
                     {link.label}
                     <ArrowRight
                       className={`w-4 h-4 transition-colors ${
-                        isActive ? "text-primary-400" : "text-dark-300"
+                        isActive ? "text-primary-400" : "text-dark-300 dark:text-dark-600"
                       }`}
                     />
                   </Link>
@@ -191,7 +193,6 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Bottom CTAs */}
           <div
             className="flex flex-col gap-3 transition-all duration-300"
             style={{
@@ -209,7 +210,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="/drive"
-              className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-sm font-semibold border border-dark-200 text-dark-800 hover:bg-surface-50 transition-colors"
+              className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-sm font-semibold border border-dark-200 dark:border-dark-700 text-dark-800 dark:text-dark-200 hover:bg-surface-50 dark:hover:bg-white/5 transition-colors"
             >
               Drive with Us
             </Link>

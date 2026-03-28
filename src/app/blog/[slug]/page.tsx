@@ -60,11 +60,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       <main>
         {/* Article Content */}
-        <article className="py-16 sm:py-24 bg-white">
+        <article className="py-16 sm:py-24 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-3xl px-5 sm:px-6 md:px-8">
             {/* Meta bar */}
             <AnimatedSection>
-              <div className="flex flex-wrap items-center gap-4 pb-8 border-b border-surface-200">
+              <div className="flex flex-wrap items-center gap-4 pb-8 border-b border-surface-200 dark:border-white/[0.06]">
                 <span className="text-[11px] font-medium text-primary-600 bg-primary-400/10 px-2.5 py-1 rounded-full border border-primary-400/20">
                   {post.category}
                 </span>
@@ -98,7 +98,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             {/* Back link */}
             <AnimatedSection delay={0.15}>
-              <div className="mt-12 pt-8 border-t border-surface-200">
+              <div className="mt-12 pt-8 border-t border-surface-200 dark:border-white/[0.06]">
                 <Link
                   href="/blog"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary-500 hover:text-primary-600 transition-colors"
@@ -113,7 +113,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* Prev / Next Navigation */}
         {(prevPost || nextPost) && (
-          <section className="py-16 sm:py-20 bg-surface-50">
+          <section className="py-16 sm:py-20 bg-surface-50 dark:bg-dark-900">
             <div className="mx-auto max-w-3xl px-5 sm:px-6 md:px-8">
               <AnimatedSection>
                 <p className="text-sm font-medium text-primary-400 mb-8">
@@ -130,7 +130,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       <span className="text-xs font-mono text-dark-300 tracking-widest">
                         Previous
                       </span>
-                      <h3 className="mt-3 text-sm font-bold text-dark-900 group-hover:text-primary-500 transition-colors leading-snug">
+                      <h3 className="mt-3 text-sm font-bold text-dark-900 dark:text-white group-hover:text-primary-500 transition-colors leading-snug">
                         {prevPost.title}
                       </h3>
                       <span className="inline-block mt-2 text-[11px] font-medium text-primary-600 bg-primary-400/10 px-2 py-0.5 rounded-full">
@@ -148,7 +148,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       <span className="text-xs font-mono text-dark-300 tracking-widest">
                         Next
                       </span>
-                      <h3 className="mt-3 text-sm font-bold text-dark-900 group-hover:text-primary-500 transition-colors leading-snug">
+                      <h3 className="mt-3 text-sm font-bold text-dark-900 dark:text-white group-hover:text-primary-500 transition-colors leading-snug">
                         {nextPost.title}
                       </h3>
                       <span className="inline-block mt-2 text-[11px] font-medium text-primary-600 bg-primary-400/10 px-2 py-0.5 rounded-full">

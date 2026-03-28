@@ -68,22 +68,22 @@ export default function PressPage() {
 
       <main>
         {/* Press Releases */}
-        <section className="py-20 sm:py-28 bg-white">
+        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
                 Press Releases
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
                 Latest announcements{" "}
                 <span className="text-primary-400">from BGlory.</span>
               </h2>
             </AnimatedSection>
 
-            <div className="mt-14 sm:mt-16 border-t border-surface-200">
+            <div className="mt-14 sm:mt-16 border-t border-surface-200 dark:border-white/[0.06]">
               {pressReleases.map((release, i) => (
                 <AnimatedSection key={release.title} delay={i * 0.08}>
-                  <div className="py-7 sm:py-8 border-b border-surface-200">
+                  <div className="py-7 sm:py-8 border-b border-surface-200 dark:border-white/[0.06]">
                     <div className="flex items-center gap-3 mb-3">
                       <span className="text-xs font-mono text-dark-300 tracking-widest">
                         {String(i + 1).padStart(2, "0")}
@@ -92,10 +92,10 @@ export default function PressPage() {
                         {release.date}
                       </span>
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold text-dark-900 mb-2">
+                    <h3 className="text-base sm:text-lg font-bold text-dark-900 dark:text-white mb-2">
                       {release.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-dark-500 leading-relaxed">
+                    <p className="text-sm sm:text-base text-dark-500 dark:text-dark-400 leading-relaxed">
                       {release.description}
                     </p>
                   </div>
@@ -106,13 +106,13 @@ export default function PressPage() {
         </section>
 
         {/* Media Resources */}
-        <section className="py-20 sm:py-28 bg-surface-50">
+        <section className="py-20 sm:py-28 bg-surface-50 dark:bg-dark-900">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
                 Media Resources
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
                 Everything you need{" "}
                 <span className="text-primary-400">to cover BGlory.</span>
               </h2>
@@ -131,10 +131,10 @@ export default function PressPage() {
                     <span className="text-xs font-mono text-dark-300 tracking-widest">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="text-lg font-bold text-dark-900 mt-3 mb-3">
+                    <h3 className="text-lg font-bold text-dark-900 dark:text-white mt-3 mb-3">
                       {resource.title}
                     </h3>
-                    <p className="text-sm text-dark-500 leading-relaxed">
+                    <p className="text-sm text-dark-500 dark:text-dark-400 leading-relaxed">
                       {resource.description}
                     </p>
                   </div>

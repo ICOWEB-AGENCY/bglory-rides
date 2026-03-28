@@ -64,9 +64,9 @@ export default function ServicesPage() {
 
       <main>
         {/* Services List */}
-        <section className="py-20 sm:py-28 bg-white">
+        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-            <div className="border-t border-surface-200">
+            <div className="border-t border-surface-200 dark:border-white/[0.06]">
               {services.map((service, i) => (
                 <AnimatedSection key={service.name} delay={i * 0.06}>
                   <div className="group py-8 sm:py-10 border-b border-surface-200 grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-6 lg:gap-16 cursor-pointer">
@@ -80,7 +80,7 @@ export default function ServicesPage() {
                           {service.tag}
                         </span>
                       </div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-dark-900 group-hover:text-primary-500 transition-colors">
+                      <h3 className="text-xl sm:text-2xl font-bold text-dark-900 dark:text-white group-hover:text-primary-500 transition-colors">
                         {service.name}
                       </h3>
                       <p className="mt-1 text-sm font-semibold text-primary-500">
@@ -90,7 +90,7 @@ export default function ServicesPage() {
 
                     {/* Right: description + features + arrow */}
                     <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 lg:gap-16">
-                      <p className="text-dark-500 leading-relaxed flex-1">
+                      <p className="text-dark-500 dark:text-dark-400 leading-relaxed flex-1">
                         {service.description}
                       </p>
 
@@ -118,7 +118,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Comparison */}
-        <section className="py-20 sm:py-28 bg-surface-50">
+        <section className="py-20 sm:py-28 bg-surface-50 dark:bg-dark-900">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <SectionHeading
               label="Compare"
@@ -131,8 +131,8 @@ export default function ServicesPage() {
               <div className="overflow-x-auto scrollbar-hide">
                 <table className="w-full min-w-[480px] text-left">
                   <thead>
-                    <tr className="border-b border-surface-300">
-                      <th className="pb-4 pr-4 text-sm font-semibold text-dark-900">Feature</th>
+                    <tr className="border-b border-surface-300 dark:border-white/[0.08]">
+                      <th className="pb-4 pr-4 text-sm font-semibold text-dark-900 dark:text-white">Feature</th>
                       <th className="pb-4 px-4 text-sm font-semibold text-dark-900 text-center">Economy</th>
                       <th className="pb-4 px-4 text-sm font-semibold text-dark-900 text-center">Standard</th>
                       <th className="pb-4 pl-4 text-sm font-semibold text-dark-900 text-center">Premium</th>
@@ -147,7 +147,7 @@ export default function ServicesPage() {
                       { feature: "A/C guaranteed", economy: "Yes", standard: "Yes", premium: "Yes" },
                       { feature: "Trip sharing", economy: "Yes", standard: "Yes", premium: "Yes" },
                     ].map((row) => (
-                      <tr key={row.feature} className="border-b border-surface-200">
+                      <tr key={row.feature} className="border-b border-surface-200 dark:border-white/[0.06]">
                         <td className="py-4 pr-4 text-dark-700 font-medium">{row.feature}</td>
                         <td className="py-4 px-4 text-dark-500 text-center">{row.economy}</td>
                         <td className="py-4 px-4 text-dark-500 text-center">{row.standard}</td>
@@ -167,8 +167,8 @@ export default function ServicesPage() {
                 { name: "Premium", specs: ["4 passengers", "Premium sedan", "8 min pickup", "4.8+ rating", "A/C", "Trip sharing"] },
               ].map((tier, i) => (
                 <AnimatedSection key={tier.name} delay={i * 0.1}>
-                  <div className="rounded-2xl border border-surface-200 bg-white p-5">
-                    <h3 className="text-base font-bold text-dark-900 mb-3">{tier.name}</h3>
+                  <div className="rounded-2xl border border-surface-200 bg-white dark:bg-dark-900 p-5">
+                    <h3 className="text-base font-bold text-dark-900 dark:text-white mb-3">{tier.name}</h3>
                     <div className="flex flex-wrap gap-2">
                       {tier.specs.map((spec) => (
                         <span key={spec} className="text-xs text-dark-500 bg-surface-50 border border-surface-200 px-2.5 py-1 rounded-full">

@@ -86,31 +86,31 @@ export default function SafetyPage() {
 
       <main>
         {/* Safety Features */}
-        <section className="py-20 sm:py-28 bg-white">
+        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
                 Safety Features
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
                 Your protection is{" "}
                 <span className="text-primary-400">built into every trip.</span>
               </h2>
             </AnimatedSection>
 
-            <div className="mt-14 sm:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-0 border-t border-surface-200">
+            <div className="mt-14 sm:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-0 border-t border-surface-200 dark:border-white/[0.06]">
               {safetyFeatures.map((feature, i) => (
                 <AnimatedSection key={feature.title} delay={i * 0.06}>
-                  <div className="py-7 sm:py-8 border-b border-surface-200">
+                  <div className="py-7 sm:py-8 border-b border-surface-200 dark:border-white/[0.06]">
                     <div className="flex items-center gap-3 mb-3">
                       <span className="text-xs font-mono text-dark-300 tracking-widest">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-dark-900 mb-2">
+                    <h3 className="text-base font-bold text-dark-900 dark:text-white mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-dark-500 leading-relaxed">
+                    <p className="text-sm text-dark-500 dark:text-dark-400 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -161,23 +161,23 @@ export default function SafetyPage() {
         </section>
 
         {/* Emergency */}
-        <section className="py-20 sm:py-28 bg-white">
+        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
               <AnimatedSection>
                 <p className="text-sm font-medium text-red-500 mb-6">
                   Emergency Response
                 </p>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15]">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15]">
                   If something goes wrong, you are never alone.
                 </h2>
-                <p className="mt-5 text-dark-500 leading-relaxed">
+                <p className="mt-5 text-dark-500 dark:text-dark-400 leading-relaxed">
                   One tap on the emergency button triggers an immediate, coordinated response. Here is exactly what happens.
                 </p>
               </AnimatedSection>
 
               <AnimatedSection delay={0.1}>
-                <div className="border-t border-surface-200">
+                <div className="border-t border-surface-200 dark:border-white/[0.06]">
                   {[
                     "Your live location is instantly shared with emergency services so help can reach you fast",
                     "Our safety team is alerted within seconds and begins actively monitoring your ride",

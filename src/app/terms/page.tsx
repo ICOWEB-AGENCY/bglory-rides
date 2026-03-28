@@ -127,7 +127,7 @@ export default function TermsPage() {
       />
 
       <main>
-        <section className="py-20 sm:py-28 bg-white">
+        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-3xl px-5 sm:px-6 md:px-8 lg:px-12">
             {sections.map((section, i) => (
               <AnimatedSection key={section.title} delay={i * 0.04}>
@@ -137,7 +137,7 @@ export default function TermsPage() {
                   <span className="text-xs font-mono text-dark-300 tracking-widest">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h2 className="text-lg sm:text-xl font-bold text-dark-900 mt-3 mb-3">
+                  <h2 className="text-lg sm:text-xl font-bold text-dark-900 dark:text-white mt-3 mb-3">
                     {section.title}
                   </h2>
 

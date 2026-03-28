@@ -25,19 +25,19 @@ export default function BlogPage() {
 
       <main>
         {/* Latest Posts */}
-        <section className="py-20 sm:py-28 bg-white">
+        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
                 Latest Posts
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
                 Read, learn,{" "}
                 <span className="text-primary-400">ride smarter.</span>
               </h2>
             </AnimatedSection>
 
-            <div className="mt-14 sm:mt-16 border-t border-surface-200">
+            <div className="mt-14 sm:mt-16 border-t border-surface-200 dark:border-white/[0.06]">
               {blogPosts.map((post, i) => (
                 <AnimatedSection key={post.slug} delay={i * 0.06}>
                   <Link
@@ -62,10 +62,10 @@ export default function BlogPage() {
 
                       {/* Right: title + excerpt + read more */}
                       <div>
-                        <h3 className="text-lg font-bold text-dark-900 group-hover:text-primary-500 transition-colors">
+                        <h3 className="text-lg font-bold text-dark-900 dark:text-white group-hover:text-primary-500 transition-colors">
                           {post.title}
                         </h3>
-                        <p className="mt-2 text-sm text-dark-500 leading-relaxed">
+                        <p className="mt-2 text-sm text-dark-500 dark:text-dark-400 leading-relaxed">
                           {post.excerpt}
                         </p>
                         <span className="inline-block mt-4 text-sm font-semibold text-primary-500 group-hover:text-primary-600 transition-colors">

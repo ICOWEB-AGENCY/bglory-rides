@@ -15,9 +15,9 @@ const variants = {
     "bg-primary-400 text-white hover:bg-primary-500 border-2 border-primary-400 hover:border-primary-500",
   outline:
     "bg-transparent text-white border-2 border-white hover:bg-white hover:text-dark-900",
-  dark: "bg-dark-900 text-white border-2 border-dark-900 hover:bg-dark-800 hover:border-dark-800",
+  dark: "bg-dark-900 dark:bg-white text-white dark:text-dark-900 border-2 border-dark-900 dark:border-white hover:bg-dark-800 dark:hover:bg-dark-100 hover:border-dark-800 dark:hover:border-dark-100",
   ghost:
-    "bg-transparent text-dark-900 border-2 border-dark-200 hover:border-dark-900",
+    "bg-transparent text-dark-900 dark:text-dark-100 border-2 border-dark-200 dark:border-dark-700 hover:border-dark-900 dark:hover:border-dark-400",
 };
 
 const sizes = {

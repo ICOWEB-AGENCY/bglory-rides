@@ -170,7 +170,7 @@ export default function ContactPage() {
                           onChange={(e) =>
                             setFormState({ ...formState, name: e.target.value })
                           }
-                          className="w-full px-4 py-3 rounded-xl bg-surface-50 border border-surface-200 text-dark-900 text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all"
+                          className="w-full px-4 py-3 rounded-xl bg-surface-50 dark:bg-dark-800 border border-surface-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all"
                           placeholder="John Doe"
                         />
                       </div>
@@ -189,7 +189,7 @@ export default function ContactPage() {
                           onChange={(e) =>
                             setFormState({ ...formState, email: e.target.value })
                           }
-                          className="w-full px-4 py-3 rounded-xl bg-surface-50 border border-surface-200 text-dark-900 text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all"
+                          className="w-full px-4 py-3 rounded-xl bg-surface-50 dark:bg-dark-800 border border-surface-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all"
                           placeholder="john@example.com"
                         />
                       </div>
@@ -210,7 +210,7 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormState({ ...formState, subject: e.target.value })
                         }
-                        className="w-full px-4 py-3 rounded-xl bg-surface-50 border border-surface-200 text-dark-900 text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all"
+                        className="w-full px-4 py-3 rounded-xl bg-surface-50 dark:bg-dark-800 border border-surface-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all"
                         placeholder="How can we help?"
                       />
                     </div>
@@ -230,7 +230,7 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormState({ ...formState, message: e.target.value })
                         }
-                        className="w-full px-4 py-3 rounded-xl bg-surface-50 border border-surface-200 text-dark-900 text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all resize-none"
+                        className="w-full px-4 py-3 rounded-xl bg-surface-50 dark:bg-dark-800 border border-surface-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all resize-none"
                         placeholder="Tell us how we can help you ride, drive, or partner with BGlory..."
                       />
                     </div>

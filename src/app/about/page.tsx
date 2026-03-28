@@ -54,13 +54,13 @@ export default function AboutPage() {
 
       <main>
         {/* Mission & Vision */}
-        <section className="py-20 sm:py-28 bg-white">
+        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
                 Why We Exist
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-3xl">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-3xl">
                 You should never have to choose between{" "}
                 <span className="text-primary-400">safe and affordable.</span>
               </h2>
@@ -68,17 +68,17 @@ export default function AboutPage() {
 
             <div className="mt-14 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-0">
               <AnimatedSection>
-                <div className="pb-8 md:pb-0 md:pr-12 md:border-r border-surface-200">
+                <div className="pb-8 md:pb-0 md:pr-12 md:border-r border-surface-200 dark:border-white/[0.06]">
                   <div className="flex items-center gap-3 mb-5">
                     <span className="text-xs font-mono text-dark-300 tracking-widest">
                       01
                     </span>
                     <div className="h-px flex-1 bg-surface-200" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-dark-900 mb-3">
+                  <h3 className="text-lg sm:text-xl font-bold text-dark-900 dark:text-white mb-3">
                     Mission
                   </h3>
-                  <p className="text-dark-500 leading-relaxed">
+                  <p className="text-dark-500 dark:text-dark-400 leading-relaxed">
                     To end the daily transportation struggle for millions of
                     people in Nigeria. You open the app, you get a ride, you
                     arrive safely, and you can afford to do it again tomorrow.
@@ -88,17 +88,17 @@ export default function AboutPage() {
               </AnimatedSection>
 
               <AnimatedSection delay={0.1}>
-                <div className="pt-8 md:pt-0 md:pl-12 border-t md:border-t-0 border-surface-200">
+                <div className="pt-8 md:pt-0 md:pl-12 border-t md:border-t-0 border-surface-200 dark:border-white/[0.06]">
                   <div className="flex items-center gap-3 mb-5">
                     <span className="text-xs font-mono text-dark-300 tracking-widest">
                       02
                     </span>
                     <div className="h-px flex-1 bg-surface-200" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-dark-900 mb-3">
+                  <h3 className="text-lg sm:text-xl font-bold text-dark-900 dark:text-white mb-3">
                     Vision
                   </h3>
-                  <p className="text-dark-500 leading-relaxed">
+                  <p className="text-dark-500 dark:text-dark-400 leading-relaxed">
                     Picture Abuja where you never wait more than minutes for a
                     safe, affordable ride. Fewer cars on the road, cleaner air,
                     and a city that actually moves. That is the future BGlory
@@ -111,7 +111,7 @@ export default function AboutPage() {
         </section>
 
         {/* Values */}
-        <section className="py-20 sm:py-28 bg-surface-50">
+        <section className="py-20 sm:py-28 bg-surface-50 dark:bg-dark-900">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr,1.5fr] gap-10 lg:gap-20">
               <div className="lg:sticky lg:top-32 lg:self-start">
@@ -119,26 +119,26 @@ export default function AboutPage() {
                   <p className="text-sm font-medium text-primary-400 mb-6">
                     Our Promises
                   </p>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-dark-900 tracking-tight leading-[1.15]">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15]">
                     What you can{" "}
                     <span className="text-primary-400">count on.</span>
                   </h2>
                 </AnimatedSection>
               </div>
 
-              <div className="border-t border-surface-300">
+              <div className="border-t border-surface-300 dark:border-white/[0.08]">
                 {values.map((value, i) => (
                   <AnimatedSection key={value.title} delay={i * 0.08}>
-                    <div className="py-7 sm:py-8 border-b border-surface-300">
+                    <div className="py-7 sm:py-8 border-b border-surface-300 dark:border-white/[0.08]">
                       <div className="flex items-center gap-3 mb-3">
                         <span className="text-xs font-mono text-dark-300 tracking-widest">
                           {String(i + 1).padStart(2, "0")}
                         </span>
                       </div>
-                      <h3 className="text-lg font-bold text-dark-900 mb-2">
+                      <h3 className="text-lg font-bold text-dark-900 dark:text-white mb-2">
                         {value.title}
                       </h3>
-                      <p className="text-dark-500 leading-relaxed text-sm sm:text-base">
+                      <p className="text-dark-500 dark:text-dark-400 leading-relaxed text-sm sm:text-base">
                         {value.description}
                       </p>
                     </div>

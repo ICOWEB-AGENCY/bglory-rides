@@ -104,31 +104,31 @@ export default function BusinessPage() {
 
       <main>
         {/* Why BGlory Business */}
-        <section className="py-20 sm:py-28 bg-white">
+        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
                 Why BGlory Business
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
                 Built for teams that waste zero time on{" "}
                 <span className="text-primary-400">logistics.</span>
               </h2>
             </AnimatedSection>
 
-            <div className="mt-14 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0 border-t border-surface-200">
+            <div className="mt-14 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0 border-t border-surface-200 dark:border-white/[0.06]">
               {benefits.map((b, i) => (
                 <AnimatedSection key={b.title} delay={i * 0.06}>
-                  <div className="py-7 sm:py-8 border-b border-surface-200">
+                  <div className="py-7 sm:py-8 border-b border-surface-200 dark:border-white/[0.06]">
                     <div className="flex items-center gap-3 mb-3">
                       <span className="text-xs font-mono text-dark-300 tracking-widest">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-dark-900 mb-2">
+                    <h3 className="text-base font-bold text-dark-900 dark:text-white mb-2">
                       {b.title}
                     </h3>
-                    <p className="text-sm text-dark-500 leading-relaxed">
+                    <p className="text-sm text-dark-500 dark:text-dark-400 leading-relaxed">
                       {b.description}
                     </p>
                   </div>
@@ -198,19 +198,19 @@ export default function BusinessPage() {
         </section>
 
         {/* Plans */}
-        <section className="py-20 sm:py-28 bg-white">
+        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
                 Plans
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
                 Pick the plan that fits your{" "}
                 <span className="text-primary-400">team today.</span>
               </h2>
             </AnimatedSection>
 
-            <div className="mt-14 sm:mt-16 grid grid-cols-1 lg:grid-cols-3 gap-0 border-t border-surface-200">
+            <div className="mt-14 sm:mt-16 grid grid-cols-1 lg:grid-cols-3 gap-0 border-t border-surface-200 dark:border-white/[0.06]">
               {plans.map((plan, i) => (
                 <AnimatedSection key={plan.name} delay={i * 0.1}>
                   <div
@@ -227,7 +227,7 @@ export default function BusinessPage() {
                     <span className="text-xs font-mono text-dark-300 tracking-widest">
                       {plan.number}
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-bold text-dark-900 mt-3">
+                    <h3 className="text-xl sm:text-2xl font-bold text-dark-900 dark:text-white mt-3">
                       {plan.name}
                     </h3>
                     <p className="text-sm text-primary-500 font-medium mt-1">

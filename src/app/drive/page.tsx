@@ -92,31 +92,31 @@ export default function DrivePage() {
 
       <main>
         {/* Benefits */}
-        <section className="py-20 sm:py-28 bg-white">
+        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
                 Why Drivers Choose BGlory
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
                 More money in your pocket,{" "}
                 <span className="text-primary-400">every single week.</span>
               </h2>
             </AnimatedSection>
 
-            <div className="mt-14 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0 border-t border-surface-200">
+            <div className="mt-14 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0 border-t border-surface-200 dark:border-white/[0.06]">
               {benefits.map((b, i) => (
                 <AnimatedSection key={b.title} delay={i * 0.06}>
-                  <div className="py-7 sm:py-8 border-b border-surface-200">
+                  <div className="py-7 sm:py-8 border-b border-surface-200 dark:border-white/[0.06]">
                     <div className="flex items-center gap-3 mb-3">
                       <span className="text-xs font-mono text-dark-300 tracking-widest">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-dark-900 mb-2">
+                    <h3 className="text-base font-bold text-dark-900 dark:text-white mb-2">
                       {b.title}
                     </h3>
-                    <p className="text-sm text-dark-500 leading-relaxed">
+                    <p className="text-sm text-dark-500 dark:text-dark-400 leading-relaxed">
                       {b.description}
                     </p>
                   </div>
@@ -186,18 +186,18 @@ export default function DrivePage() {
         </section>
 
         {/* Requirements */}
-        <section className="py-20 sm:py-28 bg-white">
+        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
               <AnimatedSection>
                 <p className="text-sm font-medium text-primary-400 mb-6">
                   Requirements
                 </p>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15]">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15]">
                   You probably{" "}
                   <span className="text-primary-400">already qualify.</span>
                 </h2>
-                <p className="mt-5 text-dark-500 leading-relaxed">
+                <p className="mt-5 text-dark-500 dark:text-dark-400 leading-relaxed">
                   Most applicants meet every requirement on this list. If you
                   have a car and a license, you are closer to earning than you
                   think. Not sure about something? Our team will walk you through it.
@@ -205,7 +205,7 @@ export default function DrivePage() {
               </AnimatedSection>
 
               <AnimatedSection delay={0.1}>
-                <div className="border-t border-surface-200">
+                <div className="border-t border-surface-200 dark:border-white/[0.06]">
                   {requirements.map((req, i) => (
                     <div
                       key={req}
@@ -214,7 +214,7 @@ export default function DrivePage() {
                       <span className="text-xs font-mono text-dark-300 tracking-widest pt-0.5">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="text-sm text-dark-700">{req}</span>
+                      <span className="text-sm text-dark-700 dark:text-dark-300">{req}</span>
                     </div>
                   ))}
                 </div>
