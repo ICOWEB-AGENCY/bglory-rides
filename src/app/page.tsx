@@ -30,49 +30,147 @@ import {
   faqs,
 } from "@/lib/data";
 
+/* ──────────────────────── HERO BOOKING CARD ──────────────────────── */
+function HeroBookingCard() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40, rotateY: -4 }}
+      animate={{ opacity: 1, y: 0, rotateY: 0 }}
+      transition={{ duration: 0.9, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+      className="relative"
+    >
+      {/* Glow behind card */}
+      <div className="absolute -inset-8 bg-primary-400/[0.06] rounded-3xl blur-[60px] pointer-events-none" />
+
+      <div className="relative rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm overflow-hidden">
+        {/* Card header */}
+        <div className="px-6 pt-5 pb-4 border-b border-white/[0.06]">
+          <div className="flex items-center justify-between">
+            <p className="text-[11px] font-medium uppercase tracking-widest text-dark-500">
+              Your ride
+            </p>
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse" />
+              <span className="text-[11px] text-primary-400 font-medium">Live</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Route */}
+        <div className="px-6 py-5">
+          <div className="flex gap-3">
+            {/* Route line */}
+            <div className="flex flex-col items-center pt-1.5">
+              <div className="w-2.5 h-2.5 rounded-full border-2 border-primary-400 bg-primary-400/20" />
+              <div className="w-px h-10 border-l border-dashed border-white/15 my-1" />
+              <div className="w-2.5 h-2.5 rounded-full border-2 border-accent-400 bg-accent-400/20" />
+            </div>
+
+            {/* Locations */}
+            <div className="flex-1 space-y-5">
+              <div>
+                <p className="text-[11px] text-dark-500 mb-0.5">Pickup</p>
+                <p className="text-sm font-medium text-white">Wuse 2, Abuja</p>
+              </div>
+              <div>
+                <p className="text-[11px] text-dark-500 mb-0.5">Destination</p>
+                <p className="text-sm font-medium text-white">Nnamdi Azikiwe Int&apos;l Airport</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Fare + ride type */}
+        <div className="px-6 py-4 border-t border-white/[0.06] flex items-center justify-between">
+          <div>
+            <p className="text-2xl font-bold text-white tracking-tight">₦4,200</p>
+            <p className="text-[11px] text-dark-500 mt-0.5">Fixed fare, no surprises</p>
+          </div>
+          <span className="text-[11px] font-bold tracking-wider uppercase text-primary-400 bg-primary-400/10 border border-primary-400/20 px-3 py-1.5 rounded-full">
+            Standard
+          </span>
+        </div>
+
+        {/* Driver match */}
+        <div className="px-6 py-4 border-t border-white/[0.06] bg-white/[0.02]">
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <div className="w-10 h-10 rounded-full bg-dark-800 border border-white/10 flex items-center justify-center">
+                <span className="text-sm font-semibold text-white">A</span>
+              </div>
+              <div className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-primary-400 border-2 border-dark-950 flex items-center justify-center">
+                <span className="text-[6px] font-bold text-white">✓</span>
+              </div>
+            </div>
+            <div className="flex-1">
+              <div className="flex items-center gap-2">
+                <p className="text-sm font-medium text-white">Adamu K.</p>
+                <div className="flex items-center gap-0.5">
+                  <Star className="w-3 h-3 text-accent-400 fill-accent-400" />
+                  <span className="text-xs text-dark-400">4.9</span>
+                </div>
+              </div>
+              <p className="text-[11px] text-dark-500">Toyota Corolla · ABJ-234-KL</p>
+            </div>
+            <div className="text-right">
+              <motion.p
+                animate={{ opacity: [1, 0.5, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="text-sm font-bold text-primary-400"
+              >
+                3 min
+              </motion.p>
+              <p className="text-[10px] text-dark-500">away</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 /* ──────────────────────── HERO ──────────────────────── */
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center bg-dark-950 overflow-hidden">
-      {/* Dot grid overlay */}
+      {/* Subtle diagonal grid */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none opacity-[0.03]"
         aria-hidden="true"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
+            "linear-gradient(135deg, rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(225deg, rgba(255,255,255,1) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
         }}
       />
 
-      {/* Animated green bubble blobs */}
-      <div className="absolute top-[10%] right-[5%] w-[250px] h-[250px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] bg-primary-400/20 rounded-full blur-[120px] animate-bubble-1" />
-      <div className="absolute bottom-[15%] left-[0%] w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] bg-primary-400/10 rounded-full blur-[100px] animate-bubble-2" />
-      <div className="absolute top-[50%] left-[30%] w-[180px] h-[180px] sm:w-[280px] sm:h-[280px] lg:w-[350px] lg:h-[350px] bg-primary-400/[0.07] rounded-full blur-[90px] animate-bubble-3" />
+      {/* Single concentrated glow - architectural, not fluffy */}
+      <div className="absolute top-[20%] right-[15%] w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] bg-primary-400/[0.07] rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12 py-32 sm:py-40">
-        <div className="max-w-3xl">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12 pt-28 pb-20 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr,1fr] gap-12 lg:gap-16 xl:gap-20 items-center">
+          {/* Left - Copy */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-400/10 border border-primary-400/20 mb-6">
-              <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse" />
-              <span className="text-sm font-medium text-primary-400">
-                Launching in Abuja, 2026
-              </span>
-            </div>
+            <p className="text-sm font-medium text-primary-400 mb-5 tracking-wide">
+              Launching in Abuja, 2026
+            </p>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white tracking-tight leading-[1.1]">
-              Get there faster.{" "}
-              <span className="text-primary-400">Pay less.</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-bold text-white tracking-tight leading-[1.08]">
+              Your ride is
+              <br />
+              <span className="text-primary-400">3 minutes away.</span>
             </h1>
 
-            <p className="mt-5 sm:mt-6 text-base sm:text-lg md:text-xl text-dark-400 leading-relaxed max-w-2xl">
-              BGlory Rides connects you with verified drivers in minutes.
-              See your fare before you book. No surge pricing, no hidden
-              fees. Just safe, affordable rides across Abuja.
+            <div className="w-12 h-px bg-primary-400/40 mt-6 mb-6" />
+
+            <p className="text-base sm:text-lg text-dark-400 leading-relaxed max-w-lg">
+              See your fare before you book. No surge pricing, no hidden fees.
+              Verified drivers, real-time tracking, and rides that actually
+              show up. Built for Abuja.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
@@ -84,23 +182,29 @@ function Hero() {
               </Button>
             </div>
 
-            {/* Value props */}
-            <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-x-6 sm:gap-y-3">
+            {/* Inline stats instead of generic bullet points */}
+            <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-6 border-t border-white/[0.06] pt-8">
               {[
-                "4-minute average pickup",
-                "Upfront pricing, always",
-                "Background-checked drivers",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-2 text-sm text-dark-400"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
-                  {item}
+                { value: "4 min", label: "Avg. pickup" },
+                { value: "₦0", label: "Hidden fees" },
+                { value: "100%", label: "Verified drivers" },
+              ].map((stat) => (
+                <div key={stat.label}>
+                  <p className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                    {stat.value}
+                  </p>
+                  <p className="text-[11px] sm:text-xs text-dark-500 mt-1">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
           </motion.div>
+
+          {/* Right - Live booking card */}
+          <div className="hidden lg:block">
+            <HeroBookingCard />
+          </div>
         </div>
       </div>
 
