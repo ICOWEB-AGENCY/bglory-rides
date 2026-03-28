@@ -6,12 +6,12 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   ChevronDown,
-  Star,
   Clock,
   Shield,
   Wallet,
   MapPin,
   Phone,
+  Star,
   Zap,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -25,7 +25,6 @@ import {
   features,
   howItWorks,
   rideOptions,
-  testimonials,
   stats,
   faqs,
 } from "@/lib/data";
@@ -444,92 +443,6 @@ function RideOptions() {
   );
 }
 
-/* ──────────────────────── TESTIMONIALS ──────────────────────── */
-function Testimonials() {
-  return (
-    <section className="py-24 sm:py-32 bg-white overflow-hidden">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-        {/* Editorial two-column header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 mb-14 sm:mb-16">
-          <AnimatedSection>
-            <p className="text-sm font-medium text-primary-400 mb-3">
-              Real Feedback
-            </p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dark-900 tracking-tight">
-              What our pilot riders and drivers had to say
-            </h2>
-          </AnimatedSection>
-          <AnimatedSection delay={0.1}>
-            <p className="text-dark-500 leading-relaxed lg:pt-10">
-              We ran a closed pilot in Abuja before launch. Real trips, real
-              feedback. These are unedited responses from people who tested
-              BGlory first.
-            </p>
-          </AnimatedSection>
-        </div>
-
-        {/* Staggered masonry-style layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          {testimonials.map((t, i) => {
-            const isLarge = i === 0 || i === 3;
-            return (
-              <AnimatedSection key={t.name} delay={i * 0.1}>
-                <div
-                  className={`relative rounded-2xl border border-surface-200 hover:border-surface-300 transition-all duration-300 ${
-                    isLarge
-                      ? "p-8 sm:p-10 bg-surface-50"
-                      : "p-6 sm:p-8 bg-white"
-                  }`}
-                >
-                  {/* Quote */}
-                  <p
-                    className={`text-dark-700 leading-relaxed mb-8 ${
-                      isLarge ? "text-base sm:text-lg" : "text-sm sm:text-base"
-                    }`}
-                  >
-                    &ldquo;{t.text}&rdquo;
-                  </p>
-
-                  {/* Attribution */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-dark-900 flex items-center justify-center">
-                        <span className="text-sm font-semibold text-white">
-                          {t.name.charAt(0)}
-                        </span>
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-dark-900">
-                          {t.name}
-                        </p>
-                        <p className="text-xs text-dark-400">{t.role}</p>
-                      </div>
-                    </div>
-
-                    {/* Stars */}
-                    <div className="flex gap-0.5">
-                      {Array.from({ length: 5 }).map((_, s) => (
-                        <Star
-                          key={s}
-                          className={`w-3.5 h-3.5 ${
-                            s < t.rating
-                              ? "text-accent-400 fill-accent-400"
-                              : "text-surface-300"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ──────────────────────── FAQ ──────────────────────── */
 function FAQItem({
   question,
@@ -687,7 +600,6 @@ export default function Home() {
         <Features />
         <HowItWorks />
         <RideOptions />
-        <Testimonials />
         <FAQSection />
         <NotifyCTA />
       </main>
