@@ -186,12 +186,12 @@ export default function SafetyPage() {
                   ].map((step, i) => (
                     <div
                       key={i}
-                      className="py-5 border-b border-surface-200 flex items-start gap-4"
+                      className="py-5 border-b border-surface-200 dark:border-white/[0.06] flex items-start gap-4"
                     >
                       <span className="text-xs font-mono text-dark-300 tracking-widest pt-0.5">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <p className="text-sm text-dark-600 leading-relaxed">
+                      <p className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed">
                         {step}
                       </p>
                     </div>

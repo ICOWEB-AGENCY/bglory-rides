@@ -124,7 +124,7 @@ export default function PressPage() {
                   <div
                     className={`py-8 lg:py-0 lg:px-8 first:lg:pl-0 last:lg:pr-0 ${
                       i < mediaResources.length - 1
-                        ? "border-b lg:border-b-0 lg:border-r border-surface-200"
+                        ? "border-b lg:border-b-0 lg:border-r border-surface-200 dark:border-white/[0.06]"
                         : ""
                     }`}
                   >

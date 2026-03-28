@@ -42,7 +42,7 @@ export default function BlogPage() {
                 <AnimatedSection key={post.slug} delay={i * 0.06}>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="group block py-8 sm:py-10 border-b border-surface-200"
+                    className="group block py-8 sm:py-10 border-b border-surface-200 dark:border-white/[0.06]"
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-4 lg:gap-16">
                       {/* Left: number + category + date */}

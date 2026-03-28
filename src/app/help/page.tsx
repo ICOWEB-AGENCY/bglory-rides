@@ -122,7 +122,7 @@ export default function HelpPage() {
                       {topic.questions.map((question) => (
                         <li
                           key={question}
-                          className="flex items-start gap-2.5 text-sm text-dark-600"
+                          className="flex items-start gap-2.5 text-sm text-dark-600 dark:text-dark-300"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-primary-400 mt-1.5 shrink-0" />
                           {question}

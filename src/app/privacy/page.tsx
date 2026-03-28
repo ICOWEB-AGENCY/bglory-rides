@@ -173,7 +173,7 @@ export default function PrivacyPage() {
         <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-3xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
-              <p className="text-sm text-dark-600 leading-relaxed">
+              <p className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed">
                 At BGlory Rides, we respect your privacy and are committed to
                 protecting the personal information you share with us. This
                 policy explains what data we collect, how we use it, and the
@@ -186,7 +186,7 @@ export default function PrivacyPage() {
               {sections.map((section, i) => (
                 <AnimatedSection key={section.number} delay={i * 0.03}>
                   <div
-                    className={`py-8 ${i < sections.length - 1 ? "border-b border-surface-200" : ""}`}
+                    className={`py-8 ${i < sections.length - 1 ? "border-b border-surface-200 dark:border-white/[0.06]" : ""}`}
                   >
                     <span className="text-xs font-mono text-dark-300 tracking-widest">
                       {section.number}
@@ -197,7 +197,7 @@ export default function PrivacyPage() {
                     {section.paragraphs.map((paragraph, pi) => (
                       <p
                         key={pi}
-                        className="text-sm text-dark-600 leading-relaxed mb-3 last:mb-0"
+                        className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed mb-3 last:mb-0"
                       >
                         {paragraph}
                       </p>
@@ -207,7 +207,7 @@ export default function PrivacyPage() {
                         {section.items.map((item, ii) => (
                           <li
                             key={ii}
-                            className="flex items-start gap-2.5 text-sm text-dark-600 leading-relaxed"
+                            className="flex items-start gap-2.5 text-sm text-dark-600 dark:text-dark-300 leading-relaxed"
                           >
                             <span className="w-1 h-1 rounded-full bg-primary-400 mt-2 shrink-0" />
                             {item}

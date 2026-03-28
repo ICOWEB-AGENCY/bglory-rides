@@ -45,7 +45,7 @@ function HeroBookingCard() {
         {/* Card header */}
         <div className="px-6 pt-5 pb-4 border-b border-white/[0.06]">
           <div className="flex items-center justify-between">
-            <p className="text-[11px] font-medium uppercase tracking-widest text-dark-500">
+            <p className="text-[11px] font-medium uppercase tracking-widest text-dark-500 dark:text-dark-400">
               Your ride
             </p>
             <div className="flex items-center gap-1.5">
@@ -68,11 +68,11 @@ function HeroBookingCard() {
             {/* Locations */}
             <div className="flex-1 space-y-5">
               <div>
-                <p className="text-[11px] text-dark-500 mb-0.5">Pickup</p>
+                <p className="text-[11px] text-dark-500 dark:text-dark-400 mb-0.5">Pickup</p>
                 <p className="text-sm font-medium text-white">Wuse 2, Abuja</p>
               </div>
               <div>
-                <p className="text-[11px] text-dark-500 mb-0.5">Destination</p>
+                <p className="text-[11px] text-dark-500 dark:text-dark-400 mb-0.5">Destination</p>
                 <p className="text-sm font-medium text-white">Nnamdi Azikiwe Int&apos;l Airport</p>
               </div>
             </div>
@@ -83,7 +83,7 @@ function HeroBookingCard() {
         <div className="px-6 py-4 border-t border-white/[0.06] flex items-center justify-between">
           <div>
             <p className="text-2xl font-bold text-white tracking-tight">₦4,200</p>
-            <p className="text-[11px] text-dark-500 mt-0.5">Fixed fare, no surprises</p>
+            <p className="text-[11px] text-dark-500 dark:text-dark-400 mt-0.5">Fixed fare, no surprises</p>
           </div>
           <span className="text-[11px] font-bold tracking-wider uppercase text-primary-400 bg-primary-400/10 border border-primary-400/20 px-3 py-1.5 rounded-full">
             Standard
@@ -109,7 +109,7 @@ function HeroBookingCard() {
                   <span className="text-xs text-dark-400">4.9</span>
                 </div>
               </div>
-              <p className="text-[11px] text-dark-500">Toyota Corolla · ABJ-234-KL</p>
+              <p className="text-[11px] text-dark-500 dark:text-dark-400">Toyota Corolla · ABJ-234-KL</p>
             </div>
             <div className="text-right">
               <motion.p
@@ -119,7 +119,7 @@ function HeroBookingCard() {
               >
                 3 min
               </motion.p>
-              <p className="text-[10px] text-dark-500">away</p>
+              <p className="text-[10px] text-dark-500 dark:text-dark-400">away</p>
             </div>
           </div>
         </div>
@@ -241,10 +241,10 @@ function Stats() {
             {stats.map((stat, i) => (
               <AnimatedSection key={stat.label} delay={i * 0.1}>
                 <div className="text-center">
-                  <p className="text-3xl sm:text-4xl font-bold text-dark-900">
+                  <p className="text-3xl sm:text-4xl font-bold text-dark-900 dark:text-white">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-dark-500 mt-1">{stat.label}</p>
+                  <p className="text-sm text-dark-500 dark:text-dark-400 mt-1">{stat.label}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -268,13 +268,13 @@ function Features() {
             <p className="text-sm font-medium text-primary-400 mb-4">
               Why Riders Choose BGlory
             </p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-dark-900 tracking-tight leading-[1.15]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15]">
               Everything you need.{" "}
               <span className="text-primary-400">Nothing you don&apos;t.</span>
             </h2>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <p className="text-dark-500 leading-relaxed lg:pt-10">
+            <p className="text-dark-500 dark:text-dark-400 leading-relaxed lg:pt-10">
               We stripped out everything that makes ride-hailing frustrating and
               kept what matters. Transparent pricing, fast pickups, real
               safety measures, and drivers you can trust. Every feature exists
@@ -284,7 +284,7 @@ function Features() {
         </div>
 
         {/* Feature rows - alternating large/small layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-surface-200">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-surface-200 dark:border-white/[0.06]">
           {features.map((feature, i) => {
             const Icon = featureIcons[i];
             const isOdd = i % 2 === 1;
@@ -300,10 +300,10 @@ function Features() {
                       <Icon className="w-[18px] h-[18px] text-primary-500" />
                     </div>
                     <div>
-                      <h3 className="text-base sm:text-lg font-bold text-dark-900 mb-2">
+                      <h3 className="text-base sm:text-lg font-bold text-dark-900 dark:text-white mb-2">
                         {feature.title}
                       </h3>
-                      <p className="text-sm text-dark-500 leading-relaxed">
+                      <p className="text-sm text-dark-500 dark:text-dark-400 leading-relaxed">
                         {feature.description}
                       </p>
                     </div>
@@ -321,7 +321,7 @@ function Features() {
 /* ──────────────────────── HOW IT WORKS ──────────────────────── */
 function HowItWorks() {
   return (
-    <section className="py-24 sm:py-32 bg-surface-50">
+    <section className="py-24 sm:py-32 bg-surface-50 dark:bg-dark-900">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr,1.5fr] gap-10 lg:gap-20">
           {/* Left - Sticky heading */}
@@ -330,10 +330,10 @@ function HowItWorks() {
               <p className="text-sm font-medium text-primary-400 mb-3">
                 How It Works
               </p>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dark-900 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dark-900 dark:text-white tracking-tight">
                 Request a ride in under 60 seconds
               </h2>
-              <p className="mt-4 text-base text-dark-500 leading-relaxed">
+              <p className="mt-4 text-base text-dark-500 dark:text-dark-400 leading-relaxed">
                 Open the app, enter your destination, confirm your fare, and
                 a verified driver is on the way. That is it.
               </p>
@@ -348,10 +348,10 @@ function HowItWorks() {
                   <span className="text-xs font-medium text-dark-400 tabular-nums">
                     {step.step}
                   </span>
-                  <h3 className="text-lg sm:text-xl font-semibold text-dark-900 mt-2 mb-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-dark-900 dark:text-white mt-2 mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-dark-500 leading-relaxed">
+                  <p className="text-sm sm:text-base text-dark-500 dark:text-dark-400 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -416,7 +416,7 @@ function RideOptions() {
                     <p className="text-lg font-bold text-white">
                       {option.priceLabel}
                     </p>
-                    <p className="text-xs text-dark-500 mt-0.5">
+                    <p className="text-xs text-dark-500 dark:text-dark-400 mt-0.5">
                       {option.capacity}
                     </p>
                   </div>
@@ -431,7 +431,7 @@ function RideOptions() {
 
         {/* Bottom note */}
         <AnimatedSection delay={0.3} className="mt-10">
-          <p className="text-sm text-dark-500">
+          <p className="text-sm text-dark-500 dark:text-dark-400">
             All ride types include upfront pricing, verified drivers, real-time tracking, and trip sharing.{" "}
             <Link href="/services" className="text-primary-400 font-medium hover:underline">
               Compare all options
@@ -456,12 +456,12 @@ function FAQItem({
   onToggle: () => void;
 }) {
   return (
-    <div className="border-b border-surface-200">
+    <div className="border-b border-surface-200 dark:border-white/[0.06]">
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between py-5 text-left cursor-pointer"
       >
-        <span className="text-sm sm:text-base font-medium text-dark-900 pr-4">
+        <span className="text-sm sm:text-base font-medium text-dark-900 dark:text-white pr-4">
           {question}
         </span>
         <ChevronDown
@@ -477,7 +477,7 @@ function FAQItem({
         transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
         className="overflow-hidden"
       >
-        <p className="pb-5 text-sm text-dark-500 leading-relaxed">{answer}</p>
+        <p className="pb-5 text-sm text-dark-500 dark:text-dark-400 leading-relaxed">{answer}</p>
       </motion.div>
     </div>
   );
@@ -487,16 +487,16 @@ function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 sm:py-32 bg-surface-50">
+    <section className="py-24 sm:py-32 bg-surface-50 dark:bg-dark-900">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr,1.5fr] gap-10 lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-3">FAQ</p>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dark-900 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-dark-900 dark:text-white tracking-tight">
                 Questions riders and drivers ask us
               </h2>
-              <p className="mt-4 text-base text-dark-500 leading-relaxed">
+              <p className="mt-4 text-base text-dark-500 dark:text-dark-400 leading-relaxed">
                 Everything you need to know before you ride or drive with BGlory. Still have questions?{" "}
                 <Link
                   href="/contact"
@@ -510,7 +510,7 @@ function FAQSection() {
           </div>
 
           <AnimatedSection delay={0.1}>
-            <div className="border-t border-surface-200">
+            <div className="border-t border-surface-200 dark:border-white/[0.06]">
               {faqs.map((faq, i) => (
                 <FAQItem
                   key={i}

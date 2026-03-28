@@ -84,9 +84,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.content.map((paragraph, i) => (
                   <p
                     key={i}
-                    className={`text-dark-600 leading-[1.8] ${
+                    className={`text-dark-600 dark:text-dark-300 leading-[1.8] ${
                       i === 0
-                        ? "text-lg sm:text-xl text-dark-800 font-medium leading-[1.7]"
+                        ? "text-lg sm:text-xl text-dark-800 dark:text-dark-200 font-medium leading-[1.7]"
                         : "text-base"
                     }`}
                   >
@@ -125,7 +125,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   <AnimatedSection delay={0.06}>
                     <Link
                       href={`/blog/${prevPost.slug}`}
-                      className="group block p-6 bg-white rounded-2xl border border-surface-200 hover:border-primary-400/30 transition-colors"
+                      className="group block p-6 bg-white dark:bg-dark-950 rounded-2xl border border-surface-200 dark:border-white/[0.06] hover:border-primary-400/30 transition-colors"
                     >
                       <span className="text-xs font-mono text-dark-300 tracking-widest">
                         Previous
@@ -143,7 +143,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   <AnimatedSection delay={0.12}>
                     <Link
                       href={`/blog/${nextPost.slug}`}
-                      className="group block p-6 bg-white rounded-2xl border border-surface-200 hover:border-primary-400/30 transition-colors"
+                      className="group block p-6 bg-white dark:bg-dark-950 rounded-2xl border border-surface-200 dark:border-white/[0.06] hover:border-primary-400/30 transition-colors"
                     >
                       <span className="text-xs font-mono text-dark-300 tracking-widest">
                         Next

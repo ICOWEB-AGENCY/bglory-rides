@@ -69,14 +69,14 @@ export default function ServicesPage() {
             <div className="border-t border-surface-200 dark:border-white/[0.06]">
               {services.map((service, i) => (
                 <AnimatedSection key={service.name} delay={i * 0.06}>
-                  <div className="group py-8 sm:py-10 border-b border-surface-200 grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-6 lg:gap-16 cursor-pointer">
+                  <div className="group py-8 sm:py-10 border-b border-surface-200 dark:border-white/[0.06] grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-6 lg:gap-16 cursor-pointer">
                     {/* Left: number + name + tag */}
                     <div>
                       <div className="flex items-center gap-3 mb-4">
                         <span className="text-xs font-mono text-dark-300 tracking-widest">
                           {String(i + 1).padStart(2, "0")}
                         </span>
-                        <span className={`text-[11px] font-medium px-2.5 py-1 rounded-full border ${service.tag === "Coming soon" ? "text-dark-500 bg-surface-100 border-surface-300" : "text-primary-600 bg-primary-400/10 border-primary-400/20"}`}>
+                        <span className={`text-[11px] font-medium px-2.5 py-1 rounded-full border ${service.tag === "Coming soon" ? "text-dark-500 dark:text-dark-400 bg-surface-100 border-surface-300 dark:border-white/[0.08]" : "text-primary-600 bg-primary-400/10 border-primary-400/20"}`}>
                           {service.tag}
                         </span>
                       </div>
@@ -99,7 +99,7 @@ export default function ServicesPage() {
                           {service.features.map((f) => (
                             <li
                               key={f}
-                              className="flex items-center gap-2 text-sm text-dark-600"
+                              className="flex items-center gap-2 text-sm text-dark-600 dark:text-dark-300"
                             >
                               <span className="w-1 h-1 rounded-full bg-dark-300 shrink-0" />
                               {f}
@@ -133,9 +133,9 @@ export default function ServicesPage() {
                   <thead>
                     <tr className="border-b border-surface-300 dark:border-white/[0.08]">
                       <th className="pb-4 pr-4 text-sm font-semibold text-dark-900 dark:text-white">Feature</th>
-                      <th className="pb-4 px-4 text-sm font-semibold text-dark-900 text-center">Economy</th>
-                      <th className="pb-4 px-4 text-sm font-semibold text-dark-900 text-center">Standard</th>
-                      <th className="pb-4 pl-4 text-sm font-semibold text-dark-900 text-center">Premium</th>
+                      <th className="pb-4 px-4 text-sm font-semibold text-dark-900 dark:text-white text-center">Economy</th>
+                      <th className="pb-4 px-4 text-sm font-semibold text-dark-900 dark:text-white text-center">Standard</th>
+                      <th className="pb-4 pl-4 text-sm font-semibold text-dark-900 dark:text-white text-center">Premium</th>
                     </tr>
                   </thead>
                   <tbody className="text-sm">
@@ -148,10 +148,10 @@ export default function ServicesPage() {
                       { feature: "Trip sharing", economy: "Yes", standard: "Yes", premium: "Yes" },
                     ].map((row) => (
                       <tr key={row.feature} className="border-b border-surface-200 dark:border-white/[0.06]">
-                        <td className="py-4 pr-4 text-dark-700 font-medium">{row.feature}</td>
-                        <td className="py-4 px-4 text-dark-500 text-center">{row.economy}</td>
-                        <td className="py-4 px-4 text-dark-500 text-center">{row.standard}</td>
-                        <td className="py-4 pl-4 text-dark-500 text-center">{row.premium}</td>
+                        <td className="py-4 pr-4 text-dark-700 dark:text-dark-300 font-medium">{row.feature}</td>
+                        <td className="py-4 px-4 text-dark-500 dark:text-dark-400 text-center">{row.economy}</td>
+                        <td className="py-4 px-4 text-dark-500 dark:text-dark-400 text-center">{row.standard}</td>
+                        <td className="py-4 pl-4 text-dark-500 dark:text-dark-400 text-center">{row.premium}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -167,11 +167,11 @@ export default function ServicesPage() {
                 { name: "Premium", specs: ["4 passengers", "Premium sedan", "8 min pickup", "4.8+ rating", "A/C", "Trip sharing"] },
               ].map((tier, i) => (
                 <AnimatedSection key={tier.name} delay={i * 0.1}>
-                  <div className="rounded-2xl border border-surface-200 bg-white dark:bg-dark-900 p-5">
+                  <div className="rounded-2xl border border-surface-200 dark:border-white/[0.06] bg-white dark:bg-dark-900 p-5">
                     <h3 className="text-base font-bold text-dark-900 dark:text-white mb-3">{tier.name}</h3>
                     <div className="flex flex-wrap gap-2">
                       {tier.specs.map((spec) => (
-                        <span key={spec} className="text-xs text-dark-500 bg-surface-50 border border-surface-200 px-2.5 py-1 rounded-full">
+                        <span key={spec} className="text-xs text-dark-500 dark:text-dark-400 bg-surface-50 dark:bg-dark-900 border border-surface-200 dark:border-white/[0.06] px-2.5 py-1 rounded-full">
                           {spec}
                         </span>
                       ))}

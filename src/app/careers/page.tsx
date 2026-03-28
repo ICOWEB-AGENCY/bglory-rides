@@ -100,7 +100,7 @@ export default function CareersPage() {
             <div className="mt-14 sm:mt-16 border-t border-surface-200 dark:border-white/[0.06]">
               {benefits.map((benefit, i) => (
                 <AnimatedSection key={benefit.title} delay={i * 0.08}>
-                  <div className="py-7 sm:py-8 border-b border-surface-200 grid grid-cols-1 md:grid-cols-[60px,1fr,1.5fr] gap-3 md:gap-8 items-start">
+                  <div className="py-7 sm:py-8 border-b border-surface-200 dark:border-white/[0.06] grid grid-cols-1 md:grid-cols-[60px,1fr,1.5fr] gap-3 md:gap-8 items-start">
                     <span className="text-xs font-mono text-dark-300 tracking-widest pt-1">
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -133,7 +133,7 @@ export default function CareersPage() {
             <div className="mt-14 sm:mt-16 border-t border-surface-200 dark:border-white/[0.06]">
               {positions.map((position, i) => (
                 <AnimatedSection key={position.role} delay={i * 0.06}>
-                  <div className="group py-6 sm:py-8 border-b border-surface-200 cursor-pointer">
+                  <div className="group py-6 sm:py-8 border-b border-surface-200 dark:border-white/[0.06] cursor-pointer">
                     <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 sm:justify-between">
                       {/* Left: number + role + badge */}
                       <div className="flex items-start sm:items-center gap-3 sm:gap-4">
@@ -151,7 +151,7 @@ export default function CareersPage() {
                       </div>
 
                       {/* Right: location + type */}
-                      <div className="flex items-center gap-3 text-sm text-dark-500 pl-8 sm:pl-0 shrink-0">
+                      <div className="flex items-center gap-3 text-sm text-dark-500 dark:text-dark-400 pl-8 sm:pl-0 shrink-0">
                         <span>{position.location}</span>
                         <span className="w-1 h-1 rounded-full bg-dark-300 shrink-0" />
                         <span>{position.type}</span>

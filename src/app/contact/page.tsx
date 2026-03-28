@@ -76,23 +76,23 @@ export default function ContactPage() {
 
       <main>
         {/* Contact Channels */}
-        <section className="py-20 sm:py-28 bg-white">
+        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             {/* Channels as editorial rows */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-t border-surface-200">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border-t border-surface-200 dark:border-white/[0.06]">
               {contactChannels.map((channel, i) => (
                 <AnimatedSection key={channel.label} delay={i * 0.1}>
                   <a
                     href={channel.href}
-                    className={`group block py-8 ${i === 0 ? "lg:pr-10" : i === contactChannels.length - 1 ? "lg:pl-10" : "lg:px-10"} border-b lg:border-b-0 border-surface-200 ${i < contactChannels.length - 1 ? "lg:border-r" : ""}`}
+                    className={`group block py-8 ${i === 0 ? "lg:pr-10" : i === contactChannels.length - 1 ? "lg:pl-10" : "lg:px-10"} border-b lg:border-b-0 border-surface-200 dark:border-white/[0.06] ${i < contactChannels.length - 1 ? "lg:border-r" : ""}`}
                   >
                     <span className="text-xs font-mono text-dark-300 tracking-widest">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="text-sm text-dark-500 mt-3 mb-1">
+                    <p className="text-sm text-dark-500 dark:text-dark-400 mt-3 mb-1">
                       {channel.label}
                     </p>
-                    <p className="text-base font-bold text-dark-900 group-hover:text-primary-500 transition-colors">
+                    <p className="text-base font-bold text-dark-900 dark:text-white group-hover:text-primary-500 transition-colors">
                       {channel.value}
                     </p>
                     <p className="text-xs text-dark-400 mt-2">
@@ -110,21 +110,21 @@ export default function ContactPage() {
                   <p className="text-sm font-medium text-primary-400 mb-6">
                     Get a Fast Response
                   </p>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15]">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15]">
                     Tell us what you need.
                   </h2>
-                  <p className="mt-5 text-dark-500 leading-relaxed">
+                  <p className="mt-5 text-dark-500 dark:text-dark-400 leading-relaxed">
                     Drop us a message and a real team member will get back to you
                     within hours. Riders, drivers, and partners all get priority
                     support.
                   </p>
 
                   <div className="mt-8 space-y-3">
-                    <div className="flex items-center gap-2 text-sm text-dark-500">
+                    <div className="flex items-center gap-2 text-sm text-dark-500 dark:text-dark-400">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
                       Average response time: under 2 hours
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-dark-500">
+                    <div className="flex items-center gap-2 text-sm text-dark-500 dark:text-dark-400">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
                       Available 24/7, including weekends
                     </div>
@@ -138,10 +138,10 @@ export default function ContactPage() {
                     <p className="text-xs font-mono text-primary-400 tracking-widest mb-4">
                       SENT
                     </p>
-                    <h3 className="text-2xl sm:text-3xl font-bold text-dark-900 mb-3">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-dark-900 dark:text-white mb-3">
                       Message received.
                     </h3>
-                    <p className="text-dark-500 text-sm mb-8 max-w-sm mx-auto">
+                    <p className="text-dark-500 dark:text-dark-400 text-sm mb-8 max-w-sm mx-auto">
                       Thank you for reaching out. A team member will respond
                       within a few hours.
                     </p>
@@ -158,7 +158,7 @@ export default function ContactPage() {
                       <div>
                         <label
                           htmlFor="name"
-                          className="block text-sm font-medium text-dark-700 mb-2"
+                          className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
                         >
                           Full Name
                         </label>
@@ -177,7 +177,7 @@ export default function ContactPage() {
                       <div>
                         <label
                           htmlFor="email"
-                          className="block text-sm font-medium text-dark-700 mb-2"
+                          className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
                         >
                           Email
                         </label>
@@ -198,7 +198,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="subject"
-                        className="block text-sm font-medium text-dark-700 mb-2"
+                        className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
                       >
                         Subject
                       </label>
@@ -218,7 +218,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="message"
-                        className="block text-sm font-medium text-dark-700 mb-2"
+                        className="block text-sm font-medium text-dark-700 dark:text-dark-300 mb-2"
                       >
                         Message
                       </label>

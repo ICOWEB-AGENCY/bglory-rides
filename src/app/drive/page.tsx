@@ -209,7 +209,7 @@ export default function DrivePage() {
                   {requirements.map((req, i) => (
                     <div
                       key={req}
-                      className="py-4 border-b border-surface-200 flex items-start gap-4"
+                      className="py-4 border-b border-surface-200 dark:border-white/[0.06] flex items-start gap-4"
                     >
                       <span className="text-xs font-mono text-dark-300 tracking-widest pt-0.5">
                         {String(i + 1).padStart(2, "0")}

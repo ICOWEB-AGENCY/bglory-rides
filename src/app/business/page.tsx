@@ -220,7 +220,7 @@ export default function BusinessPage() {
                         : i === plans.length - 1
                           ? "lg:pl-10"
                           : "lg:px-10"
-                    } border-b lg:border-b-0 border-surface-200 ${
+                    } border-b lg:border-b-0 border-surface-200 dark:border-white/[0.06] ${
                       i < plans.length - 1 ? "lg:border-r" : ""
                     }`}
                   >
@@ -238,7 +238,7 @@ export default function BusinessPage() {
                       {plan.features.map((feature) => (
                         <li
                           key={feature}
-                          className="flex items-center gap-2.5 text-sm text-dark-600"
+                          className="flex items-center gap-2.5 text-sm text-dark-600 dark:text-dark-300"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
                           {feature}

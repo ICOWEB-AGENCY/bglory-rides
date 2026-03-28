@@ -132,7 +132,7 @@ export default function TermsPage() {
             {sections.map((section, i) => (
               <AnimatedSection key={section.title} delay={i * 0.04}>
                 <div
-                  className={`py-8 ${i < sections.length - 1 ? "border-b border-surface-200" : ""}`}
+                  className={`py-8 ${i < sections.length - 1 ? "border-b border-surface-200 dark:border-white/[0.06]" : ""}`}
                 >
                   <span className="text-xs font-mono text-dark-300 tracking-widest">
                     {String(i + 1).padStart(2, "0")}
@@ -146,7 +146,7 @@ export default function TermsPage() {
                       {section.content.map((paragraph, j) => (
                         <p
                           key={j}
-                          className="text-sm text-dark-600 leading-relaxed"
+                          className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed"
                         >
                           {paragraph}
                         </p>
@@ -159,7 +159,7 @@ export default function TermsPage() {
                       {section.items.map((item, j) => (
                         <li
                           key={j}
-                          className="flex items-start gap-2.5 text-sm text-dark-600 leading-relaxed"
+                          className="flex items-start gap-2.5 text-sm text-dark-600 dark:text-dark-300 leading-relaxed"
                         >
                           <span className="w-1 h-1 rounded-full bg-primary-400 mt-2 shrink-0" />
                           {item}
@@ -169,13 +169,13 @@ export default function TermsPage() {
                   )}
 
                   {section.footer && (
-                    <p className="text-sm text-dark-600 leading-relaxed mt-4">
+                    <p className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed mt-4">
                       {section.footer}
                     </p>
                   )}
 
                   {section.contact && (
-                    <p className="text-sm text-dark-600 leading-relaxed mt-3">
+                    <p className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed mt-3">
                       Email:{" "}
                       <a
                         href={`mailto:${section.contact}`}
