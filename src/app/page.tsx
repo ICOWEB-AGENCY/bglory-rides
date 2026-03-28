@@ -133,19 +133,37 @@ function HeroBookingCard() {
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center bg-dark-950 overflow-hidden">
-      {/* Subtle diagonal grid */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+      {/* Video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
         aria-hidden="true"
+      >
+        <source src="/videos/hero-driving.mp4" type="video/mp4" />
+      </video>
+
+      {/* Layered overlay for readability */}
+      {/* Base dark wash */}
+      <div className="absolute inset-0 bg-dark-950/70" />
+      {/* Gradient: heavier on left (text side), lighter on right (card side) */}
+      <div
+        className="absolute inset-0"
         style={{
-          backgroundImage:
-            "linear-gradient(135deg, rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(225deg, rgba(255,255,255,1) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
+          background:
+            "linear-gradient(to right, rgba(15,20,25,0.85) 0%, rgba(15,20,25,0.6) 50%, rgba(15,20,25,0.45) 100%)",
         }}
       />
-
-      {/* Single concentrated glow - architectural, not fluffy */}
-      <div className="absolute top-[20%] right-[15%] w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] bg-primary-400/[0.07] rounded-full blur-[150px] pointer-events-none" />
+      {/* Bottom fade to solid for clean transition to Stats section */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-40"
+        style={{
+          background:
+            "linear-gradient(to top, rgba(15,20,25,1) 0%, rgba(15,20,25,0) 100%)",
+        }}
+      />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12 pt-28 pb-20 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-[1.15fr,1fr] gap-12 lg:gap-16 xl:gap-20 items-center">
@@ -167,7 +185,7 @@ function Hero() {
 
             <div className="w-12 h-px bg-primary-400/40 mt-6 mb-6" />
 
-            <p className="text-base sm:text-lg text-dark-400 leading-relaxed max-w-lg">
+            <p className="text-base sm:text-lg text-white/60 leading-relaxed max-w-lg">
               See your fare before you book. No surge pricing, no hidden fees.
               Verified drivers, real-time tracking, and rides that actually
               show up. Built for Abuja.
@@ -182,8 +200,8 @@ function Hero() {
               </Button>
             </div>
 
-            {/* Inline stats instead of generic bullet points */}
-            <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-6 border-t border-white/[0.06] pt-8">
+            {/* Inline stats */}
+            <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-6 border-t border-white/[0.08] pt-8">
               {[
                 { value: "4 min", label: "Avg. pickup" },
                 { value: "₦0", label: "Hidden fees" },
@@ -193,7 +211,7 @@ function Hero() {
                   <p className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                     {stat.value}
                   </p>
-                  <p className="text-[11px] sm:text-xs text-dark-500 mt-1">
+                  <p className="text-[11px] sm:text-xs text-white/40 mt-1">
                     {stat.label}
                   </p>
                 </div>
