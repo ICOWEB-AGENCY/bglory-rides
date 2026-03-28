@@ -126,26 +126,19 @@ export default function ServicesPage() {
               align="center"
             />
 
-            <AnimatedSection>
-              <div className="-mx-5 px-5 sm:mx-0 sm:px-0 overflow-x-auto scrollbar-hide">
+            {/* Desktop table */}
+            <AnimatedSection className="hidden sm:block">
+              <div className="overflow-x-auto scrollbar-hide">
                 <table className="w-full min-w-[480px] text-left">
                   <thead>
                     <tr className="border-b border-surface-300">
-                      <th className="pb-4 pr-4 text-xs sm:text-sm font-semibold text-dark-900">
-                        Feature
-                      </th>
-                      <th className="pb-4 px-2 sm:px-4 text-xs sm:text-sm font-semibold text-dark-900 text-center">
-                        Economy
-                      </th>
-                      <th className="pb-4 px-2 sm:px-4 text-xs sm:text-sm font-semibold text-dark-900 text-center">
-                        Standard
-                      </th>
-                      <th className="pb-4 pl-2 sm:pl-4 text-xs sm:text-sm font-semibold text-dark-900 text-center">
-                        Premium
-                      </th>
+                      <th className="pb-4 pr-4 text-sm font-semibold text-dark-900">Feature</th>
+                      <th className="pb-4 px-4 text-sm font-semibold text-dark-900 text-center">Economy</th>
+                      <th className="pb-4 px-4 text-sm font-semibold text-dark-900 text-center">Standard</th>
+                      <th className="pb-4 pl-4 text-sm font-semibold text-dark-900 text-center">Premium</th>
                     </tr>
                   </thead>
-                  <tbody className="text-xs sm:text-sm">
+                  <tbody className="text-sm">
                     {[
                       { feature: "Max passengers", economy: "4", standard: "4", premium: "4" },
                       { feature: "Vehicle type", economy: "Compact", standard: "Sedan", premium: "Premium sedan" },
@@ -155,20 +148,38 @@ export default function ServicesPage() {
                       { feature: "Trip sharing", economy: "Yes", standard: "Yes", premium: "Yes" },
                     ].map((row) => (
                       <tr key={row.feature} className="border-b border-surface-200">
-                        <td className="py-3.5 sm:py-4 pr-4 text-dark-700 font-medium">
-                          {row.feature}
-                        </td>
-                        <td className="py-3.5 sm:py-4 px-2 sm:px-4 text-dark-500 text-center">{row.economy}</td>
-                        <td className="py-3.5 sm:py-4 px-2 sm:px-4 text-dark-500 text-center">
-                          {row.standard}
-                        </td>
-                        <td className="py-3.5 sm:py-4 pl-2 sm:pl-4 text-dark-500 text-center">{row.premium}</td>
+                        <td className="py-4 pr-4 text-dark-700 font-medium">{row.feature}</td>
+                        <td className="py-4 px-4 text-dark-500 text-center">{row.economy}</td>
+                        <td className="py-4 px-4 text-dark-500 text-center">{row.standard}</td>
+                        <td className="py-4 pl-4 text-dark-500 text-center">{row.premium}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
             </AnimatedSection>
+
+            {/* Mobile: stacked cards instead of table */}
+            <div className="sm:hidden space-y-4">
+              {[
+                { name: "Economy", specs: ["4 passengers", "Compact", "6 min pickup", "4.5+ rating", "A/C", "Trip sharing"] },
+                { name: "Standard", specs: ["4 passengers", "Sedan", "4 min pickup", "4.6+ rating", "A/C", "Trip sharing"] },
+                { name: "Premium", specs: ["4 passengers", "Premium sedan", "8 min pickup", "4.8+ rating", "A/C", "Trip sharing"] },
+              ].map((tier, i) => (
+                <AnimatedSection key={tier.name} delay={i * 0.1}>
+                  <div className="rounded-2xl border border-surface-200 bg-white p-5">
+                    <h3 className="text-base font-bold text-dark-900 mb-3">{tier.name}</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {tier.specs.map((spec) => (
+                        <span key={spec} className="text-xs text-dark-500 bg-surface-50 border border-surface-200 px-2.5 py-1 rounded-full">
+                          {spec}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
         </section>
 

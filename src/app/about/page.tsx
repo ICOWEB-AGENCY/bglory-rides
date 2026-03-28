@@ -99,7 +99,7 @@ export default function AboutPage() {
                     Vision
                   </h3>
                   <p className="text-dark-500 leading-relaxed">
-                    Picture a Abuja where you never wait more than minutes for a
+                    Picture Abuja where you never wait more than minutes for a
                     safe, affordable ride. Fewer cars on the road, cleaner air,
                     and a city that actually moves. That is the future BGlory
                     Rides is building, and it starts with you.
@@ -113,78 +113,98 @@ export default function AboutPage() {
         {/* Values */}
         <section className="py-20 sm:py-28 bg-surface-50">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-            <AnimatedSection>
-              <p className="text-sm font-medium text-primary-400 mb-6">
-                Our Promises
-              </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 tracking-tight leading-[1.15] max-w-2xl">
-                What you can{" "}
-                <span className="text-primary-400">count on.</span>
-              </h2>
-            </AnimatedSection>
-
-            <div className="mt-14 sm:mt-16 border-t border-surface-300">
-              {values.map((value, i) => (
-                <AnimatedSection key={value.title} delay={i * 0.08}>
-                  <div className="py-7 sm:py-8 border-b border-surface-300 grid grid-cols-1 md:grid-cols-[60px,1fr,1.5fr] gap-3 md:gap-8 items-start">
-                    <span className="text-xs font-mono text-dark-300 tracking-widest pt-1">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="text-lg font-bold text-dark-900">
-                      {value.title}
-                    </h3>
-                    <p className="text-dark-500 leading-relaxed">
-                      {value.description}
-                    </p>
-                  </div>
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr,1.5fr] gap-10 lg:gap-20">
+              <div className="lg:sticky lg:top-32 lg:self-start">
+                <AnimatedSection>
+                  <p className="text-sm font-medium text-primary-400 mb-6">
+                    Our Promises
+                  </p>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-dark-900 tracking-tight leading-[1.15]">
+                    What you can{" "}
+                    <span className="text-primary-400">count on.</span>
+                  </h2>
                 </AnimatedSection>
-              ))}
+              </div>
+
+              <div className="border-t border-surface-300">
+                {values.map((value, i) => (
+                  <AnimatedSection key={value.title} delay={i * 0.08}>
+                    <div className="py-7 sm:py-8 border-b border-surface-300">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="text-xs font-mono text-dark-300 tracking-widest">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                      </div>
+                      <h3 className="text-lg font-bold text-dark-900 mb-2">
+                        {value.title}
+                      </h3>
+                      <p className="text-dark-500 leading-relaxed text-sm sm:text-base">
+                        {value.description}
+                      </p>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Timeline */}
+        {/* Timeline - vertical on mobile, horizontal on desktop */}
         <section className="py-20 sm:py-28 bg-dark-950 overflow-hidden">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
                 Our Journey
               </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15]">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] max-w-2xl">
                 From frustration to the future of ride-hailing in Nigeria.
               </h2>
             </AnimatedSection>
 
-            {/* Horizontal timeline */}
-            <div className="mt-14 sm:mt-16 -mx-5 px-5 sm:mx-0 sm:px-0 overflow-x-auto scrollbar-hide">
-              <div className="flex min-w-max sm:min-w-0 sm:grid sm:grid-cols-5 gap-0">
-                {milestones.map((m, i) => (
-                  <AnimatedSection key={m.title} delay={i * 0.1}>
-                    <div className="w-[220px] sm:w-auto pr-6 sm:pr-8 last:pr-0">
-                      {/* Year */}
-                      <span className="text-xs font-mono text-primary-400 tracking-widest">
-                        {m.year}
-                      </span>
+            {/* Mobile: vertical timeline */}
+            <div className="mt-14 sm:mt-16 lg:hidden border-l border-white/[0.08] ml-3">
+              {milestones.map((m, i) => (
+                <AnimatedSection key={m.title} delay={i * 0.1}>
+                  <div className="relative pl-8 pb-10 last:pb-0">
+                    {/* Dot on line */}
+                    <div className="absolute left-0 top-1 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-primary-400" />
+                    <span className="text-xs font-mono text-primary-400 tracking-widest">
+                      {m.year}
+                    </span>
+                    <h3 className="text-base font-bold text-white mt-2 mb-2">
+                      {m.title}
+                    </h3>
+                    <p className="text-sm text-dark-400 leading-relaxed">
+                      {m.description}
+                    </p>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </div>
 
-                      {/* Dot + connector line */}
-                      <div className="flex items-center mt-3 mb-5">
-                        <div className="w-2 h-2 rounded-full bg-primary-400 shrink-0 relative z-10" />
-                        {i < milestones.length - 1 && (
-                          <div className="h-px flex-1 bg-white/[0.08]" />
-                        )}
-                      </div>
-
-                      {/* Content */}
-                      <h3 className="text-base font-bold text-white mb-2">
-                        {m.title}
-                      </h3>
-                      <p className="text-sm text-dark-400 leading-relaxed">
-                        {m.description}
-                      </p>
+            {/* Desktop: horizontal timeline */}
+            <div className="mt-14 sm:mt-16 hidden lg:grid lg:grid-cols-5 gap-0">
+              {milestones.map((m, i) => (
+                <AnimatedSection key={m.title} delay={i * 0.1}>
+                  <div className="pr-8 last:pr-0">
+                    <span className="text-xs font-mono text-primary-400 tracking-widest">
+                      {m.year}
+                    </span>
+                    <div className="flex items-center mt-3 mb-5">
+                      <div className="w-2 h-2 rounded-full bg-primary-400 shrink-0 relative z-10" />
+                      {i < milestones.length - 1 && (
+                        <div className="h-px flex-1 bg-white/[0.08]" />
+                      )}
                     </div>
-                  </AnimatedSection>
-                ))}
-              </div>
+                    <h3 className="text-base font-bold text-white mb-2">
+                      {m.title}
+                    </h3>
+                    <p className="text-sm text-dark-400 leading-relaxed">
+                      {m.description}
+                    </p>
+                  </div>
+                </AnimatedSection>
+              ))}
             </div>
           </div>
         </section>

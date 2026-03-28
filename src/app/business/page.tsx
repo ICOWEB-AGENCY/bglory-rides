@@ -150,32 +150,49 @@ export default function BusinessPage() {
               </h2>
             </AnimatedSection>
 
-            <div className="mt-14 sm:mt-16 -mx-5 px-5 sm:mx-0 sm:px-0 overflow-x-auto scrollbar-hide">
-              <div className="flex min-w-max sm:min-w-0 sm:grid sm:grid-cols-3 gap-0">
-                {steps.map((s, i) => (
-                  <AnimatedSection key={s.title} delay={i * 0.1}>
-                    <div className="w-[220px] sm:w-auto pr-6 sm:pr-8 last:pr-0">
-                      <span className="text-xs font-mono text-primary-400 tracking-widest">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
+            {/* Mobile: vertical steps */}
+            <div className="mt-14 sm:mt-16 lg:hidden border-l border-white/[0.08] ml-3">
+              {steps.map((s, i) => (
+                <AnimatedSection key={s.title} delay={i * 0.1}>
+                  <div className="relative pl-8 pb-10 last:pb-0">
+                    <div className="absolute left-0 top-1 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-primary-400" />
+                    <span className="text-xs font-mono text-primary-400 tracking-widest">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="text-base font-bold text-white mt-2 mb-2">
+                      {s.title}
+                    </h3>
+                    <p className="text-sm text-dark-400 leading-relaxed">
+                      {s.description}
+                    </p>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </div>
 
-                      <div className="flex items-center mt-3 mb-5">
-                        <div className="w-2 h-2 rounded-full bg-primary-400 shrink-0 relative z-10" />
-                        {i < steps.length - 1 && (
-                          <div className="h-px flex-1 bg-white/[0.08]" />
-                        )}
-                      </div>
-
-                      <h3 className="text-base font-bold text-white mb-2">
-                        {s.title}
-                      </h3>
-                      <p className="text-sm text-dark-400 leading-relaxed">
-                        {s.description}
-                      </p>
+            {/* Desktop: horizontal steps */}
+            <div className="mt-14 sm:mt-16 hidden lg:grid lg:grid-cols-3 gap-0">
+              {steps.map((s, i) => (
+                <AnimatedSection key={s.title} delay={i * 0.1}>
+                  <div className="pr-8 last:pr-0">
+                    <span className="text-xs font-mono text-primary-400 tracking-widest">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div className="flex items-center mt-3 mb-5">
+                      <div className="w-2 h-2 rounded-full bg-primary-400 shrink-0 relative z-10" />
+                      {i < steps.length - 1 && (
+                        <div className="h-px flex-1 bg-white/[0.08]" />
+                      )}
                     </div>
-                  </AnimatedSection>
-                ))}
-              </div>
+                    <h3 className="text-base font-bold text-white mb-2">
+                      {s.title}
+                    </h3>
+                    <p className="text-sm text-dark-400 leading-relaxed">
+                      {s.description}
+                    </p>
+                  </div>
+                </AnimatedSection>
+              ))}
             </div>
           </div>
         </section>

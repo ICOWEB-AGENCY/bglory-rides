@@ -132,11 +132,11 @@ export default function SafetyPage() {
               </h2>
             </AnimatedSection>
 
-            <div className="mt-14 sm:mt-16 grid grid-cols-1 lg:grid-cols-3 gap-0">
+            <div className="mt-14 sm:mt-16 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-0">
               {safetyPillars.map((pillar, i) => (
                 <AnimatedSection key={pillar.title} delay={i * 0.1}>
-                  <div className={`py-8 lg:py-0 lg:px-8 first:lg:pl-0 last:lg:pr-0 ${i < safetyPillars.length - 1 ? "border-b lg:border-b-0 lg:border-r border-white/[0.08]" : ""}`}>
-                    <span className="text-xs font-mono text-dark-500 tracking-widest">
+                  <div className={`p-6 sm:p-8 lg:p-0 rounded-2xl lg:rounded-none border border-white/[0.08] lg:border-0 bg-white/[0.02] lg:bg-transparent ${i === 0 ? "lg:pr-8" : i === safetyPillars.length - 1 ? "lg:pl-8" : "lg:px-8"} ${i < safetyPillars.length - 1 ? "lg:border-r lg:!border-white/[0.08]" : ""}`}>
+                    <span className="text-xs font-mono text-primary-400 tracking-widest">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <h3 className="text-lg font-bold text-white mt-3 mb-5">
@@ -148,7 +148,7 @@ export default function SafetyPage() {
                           key={item}
                           className="flex items-start gap-2.5 text-sm text-dark-400"
                         >
-                          <span className="w-1 h-1 rounded-full bg-primary-400 mt-2 shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary-400 mt-1.5 shrink-0" />
                           {item}
                         </li>
                       ))}
