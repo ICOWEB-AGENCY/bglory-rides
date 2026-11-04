@@ -6,35 +6,35 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Press & Media | BGlory Rides Newsroom, Ride-Hailing News Abuja",
+  title: "Press & Media | Zyon Newsroom, Ride-Hailing News Abuja",
   description:
-    "Get the latest news from BGlory Rides. Press releases, media kits, brand assets, and press contacts for Africa's fastest-growing ride-hailing platform.",
+    "Get the latest news from Zyon. Press releases, media kits, brand assets, and press contacts for Africa's fastest-growing ride-hailing platform.",
 };
 
 const pressReleases = [
   {
     date: "Feb 2026",
-    title: "BGlory Rides Goes Live Across Abuja, Opens Doors to All Riders and Drivers",
+    title: "Zyon Goes Live Across Abuja, Opens Doors to All Riders and Drivers",
     description:
-      "After months of closed testing, BGlory Rides is now publicly available across Abuja. Riders can book their first trip today, and thousands of verified drivers are already on the road.",
+      "After months of closed testing, Zyon is now publicly available across Abuja. Riders can book their first trip today, and thousands of verified drivers are already on the road.",
   },
   {
     date: "Jan 2026",
-    title: "BGlory Hits 5,000 Verified Drivers Before Public Launch",
+    title: "Zyon Hits 5,000 Verified Drivers Before Public Launch",
     description:
-      "BGlory Rides has onboarded over 5,000 drivers, each cleared through background checks, vehicle inspections, and safety training. The milestone sets the stage for the largest verified driver network at launch in Nigeria.",
+      "Zyon has onboarded over 5,000 drivers, each cleared through background checks, vehicle inspections, and safety training. The milestone sets the stage for the largest verified driver network at launch in Nigeria.",
   },
   {
     date: "Dec 2025",
     title: "10,000 Pilot Trips Completed with 98% Rider Satisfaction",
     description:
-      "BGlory Rides releases results from its closed pilot: 10,000+ trips, 98% satisfaction, and an average pickup time of just 4 minutes. The data signals strong product-market fit ahead of the public launch.",
+      "Zyon releases results from its closed pilot: 10,000+ trips, 98% satisfaction, and an average pickup time of just 4 minutes. The data signals strong product-market fit ahead of the public launch.",
   },
   {
     date: "Oct 2025",
     title: "New Ride-Hailing Challenger Launches in Abuja with a Safety-First Approach",
     description:
-      "BGlory Rides enters the market with a clear mission: make safe, reliable, and affordable rides accessible to every rider in Africa. Development begins alongside early driver recruitment.",
+      "Zyon enters the market with a clear mission: make safe, reliable, and affordable rides accessible to every rider in Africa. Development begins alongside early driver recruitment.",
   },
 ];
 
@@ -42,7 +42,7 @@ const mediaResources = [
   {
     title: "Brand Assets",
     description:
-      "Grab our logo, brand colors, and visual guidelines in print and web-ready formats. Everything you need to feature BGlory accurately in your publication.",
+      "Grab our logo, brand colors, and visual guidelines in print and web-ready formats. Everything you need to feature Zyon accurately in your publication.",
   },
   {
     title: "Media Kit",
@@ -61,7 +61,7 @@ export default function PressPage() {
     <>
       <PageHero
         label="Press"
-        title="BGlory Rides in the news."
+        title="Zyon in the news."
         description="5,000+ verified drivers. 10,000+ pilot trips. 98% rider satisfaction. Here is what is happening at Abuja's fastest-growing ride-hailing platform."
         breadcrumbs={[{ label: "Press" }]}
       />
@@ -76,7 +76,7 @@ export default function PressPage() {
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
                 Latest announcements{" "}
-                <span className="text-primary-400">from BGlory.</span>
+                <span className="text-primary-400">from Zyon.</span>
               </h2>
             </AnimatedSection>
 
@@ -114,7 +114,7 @@ export default function PressPage() {
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
                 Everything you need{" "}
-                <span className="text-primary-400">to cover BGlory.</span>
+                <span className="text-primary-400">to cover Zyon.</span>
               </h2>
             </AnimatedSection>
 

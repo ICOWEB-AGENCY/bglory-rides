@@ -6,9 +6,9 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Careers at BGlory Rides | Tech Jobs Abuja, Ride-Hailing Careers Nigeria",
+  title: "Careers at Zyon | Tech Jobs Abuja, Ride-Hailing Careers Nigeria",
   description:
-    "Join BGlory Rides and help build Africa's next great ride-hailing platform. We are hiring engineers, designers, and operators in Abuja and remotely. Early-stage equity, massive impact, zero bureaucracy.",
+    "Join Zyon and help build Africa's next great ride-hailing platform. We are hiring engineers, designers, and operators in Abuja and remotely. Early-stage equity, massive impact, zero bureaucracy.",
 };
 
 const benefits = [
@@ -25,7 +25,7 @@ const benefits = [
   {
     title: "Grow Faster Than Anywhere Else",
     description:
-      "Early team members get equity potential, outsized responsibility, and a direct line to leadership. As BGlory scales, your role scales with it.",
+      "Early team members get equity potential, outsized responsibility, and a direct line to leadership. As Zyon scales, your role scales with it.",
   },
   {
     title: "Flexibility as a Default",
@@ -126,7 +126,7 @@ export default function CareersPage() {
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
                 Find your role{" "}
-                <span className="text-primary-400">at BGlory.</span>
+                <span className="text-primary-400">at Zyon.</span>
               </h2>
             </AnimatedSection>
 

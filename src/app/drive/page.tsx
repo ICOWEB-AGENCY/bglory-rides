@@ -8,18 +8,18 @@ import Button from "@/components/Button";
 
 export const metadata: Metadata = {
   title:
-    "Become a Driver in Abuja | Earn Up to ₦40,000/Day | BGlory Rides",
+    "Become a Driver in Abuja | Earn Up to ₦40,000/Day | Zyon",
   description:
-    "Drive and earn in Nigeria with BGlory Rides. Apply today, start earning in 48 hours. Weekly payouts, flexible hours, and launch bonuses for early drivers in Abuja.",
+    "Drive and earn in Nigeria with Zyon. Apply today, start earning in 48 hours. Weekly payouts, flexible hours, and launch bonuses for early drivers in Abuja.",
   keywords:
-    "become a driver Abuja, earn money driving Nigeria, driver app Abuja, drive and earn Nigeria, ride hailing driver Abuja, BGlory driver signup",
+    "become a driver Abuja, earn money driving Nigeria, driver app Abuja, drive and earn Nigeria, ride hailing driver Abuja, Zyon driver signup",
 };
 
 const benefits = [
   {
     title: "Earn Up to ₦40,000 Daily",
     description:
-      "Full-time drivers on BGlory are taking home serious money every single day. You keep 80% of every fare. The more you drive, the more you earn. Your income has no ceiling.",
+      "Full-time drivers on Zyon are taking home serious money every single day. You keep 80% of every fare. The more you drive, the more you earn. Your income has no ceiling.",
   },
   {
     title: "Get Paid Every Week",
@@ -85,7 +85,7 @@ export default function DrivePage() {
     <>
       <PageHero
         label="Become a Driver in Abuja"
-        title="Earn up to ₦40,000 a day driving with BGlory."
+        title="Earn up to ₦40,000 a day driving with Zyon."
         description="Thousands of ride requests go unfilled every day in Abuja. You keep 80% of every fare, and there is no cap on how much you can make. Apply now, get approved in 48 hours, and start earning this week."
         breadcrumbs={[{ label: "Drive and Earn" }]}
       />
@@ -96,7 +96,7 @@ export default function DrivePage() {
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
-                Why Drivers Choose BGlory
+                Why Drivers Choose Zyon
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
                 More money in your pocket,{" "}

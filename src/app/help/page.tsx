@@ -6,21 +6,21 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Help Center | BGlory Rides Support",
+  title: "Help Center | Zyon Support",
   description:
-    "Get quick answers about BGlory Rides. Help with booking rides, payments, driver sign-up, safety features, and account settings. Our ride-hailing support team responds within hours.",
+    "Get quick answers about Zyon. Help with booking rides, payments, driver sign-up, safety features, and account settings. Our ride-hailing support team responds within hours.",
 };
 
 const helpTopics = [
   {
     title: "Getting Started",
     description:
-      "Ready to take your first ride? Follow these simple steps to create your BGlory account, set up your payment method, and book a ride in minutes.",
+      "Ready to take your first ride? Follow these simple steps to create your Zyon account, set up your payment method, and book a ride in minutes.",
     questions: [
-      "How to create a BGlory Rides account",
-      "How to book your first ride on BGlory",
-      "What payment methods does BGlory accept?",
-      "How to add a debit card to your BGlory account",
+      "How to create a Zyon account",
+      "How to book your first ride on Zyon",
+      "What payment methods does Zyon accept?",
+      "How to add a debit card to your Zyon account",
     ],
   },
   {
@@ -28,10 +28,10 @@ const helpTopics = [
     description:
       "Booking a ride should be the easy part of your day. Here is how to request, schedule, cancel, and manage every trip.",
     questions: [
-      "How to request a ride on BGlory",
-      "Can I cancel a BGlory ride after booking?",
-      "How to schedule a ride in advance on BGlory",
-      "What happens if my BGlory driver cancels on me?",
+      "How to request a ride on Zyon",
+      "Can I cancel a Zyon ride after booking?",
+      "How to schedule a ride in advance on Zyon",
+      "What happens if my Zyon driver cancels on me?",
     ],
   },
   {
@@ -39,10 +39,10 @@ const helpTopics = [
     description:
       "No surprises when it comes to your fare. Learn how pricing works, manage your payment options, and download receipts for any trip.",
     questions: [
-      "How is my BGlory ride fare calculated?",
-      "Can I pay for a BGlory ride with cash?",
-      "How to get a receipt for my BGlory ride",
-      "Why was I charged a cancellation fee on BGlory?",
+      "How is my Zyon ride fare calculated?",
+      "Can I pay for a Zyon ride with cash?",
+      "How to get a receipt for my Zyon ride",
+      "Why was I charged a cancellation fee on Zyon?",
     ],
   },
   {
@@ -50,20 +50,20 @@ const helpTopics = [
     description:
       "Your safety is built into every ride. Learn how to share your trip, use the emergency button, and report anything that does not feel right.",
     questions: [
-      "How to share your BGlory trip location with family",
-      "How does the BGlory emergency button work?",
-      "How to report a safety issue on BGlory Rides",
+      "How to share your Zyon trip location with family",
+      "How does the Zyon emergency button work?",
+      "How to report a safety issue on Zyon",
     ],
   },
   {
     title: "Driver Questions",
     description:
-      "Thinking about earning with BGlory? Here is everything you need to know about signing up, vehicle requirements, and how you get paid.",
+      "Thinking about earning with Zyon? Here is everything you need to know about signing up, vehicle requirements, and how you get paid.",
     questions: [
-      "How to become a BGlory driver in Abuja",
-      "What are the vehicle requirements for BGlory drivers?",
-      "How do BGlory driver earnings and payouts work?",
-      "What documents do I need to sign up as a BGlory driver?",
+      "How to become a Zyon driver in Abuja",
+      "What are the vehicle requirements for Zyon drivers?",
+      "How do Zyon driver earnings and payouts work?",
+      "What documents do I need to sign up as a Zyon driver?",
     ],
   },
   {
@@ -71,10 +71,10 @@ const helpTopics = [
     description:
       "Keep your account up to date and secure. Update your profile, adjust your notifications, and manage your privacy in just a few taps.",
     questions: [
-      "How to update your BGlory profile information",
-      "How to change notification settings on BGlory",
-      "How to delete your BGlory Rides account",
-      "How to reset your BGlory password",
+      "How to update your Zyon profile information",
+      "How to change notification settings on Zyon",
+      "How to delete your Zyon account",
+      "How to reset your Zyon password",
     ],
   },
 ];

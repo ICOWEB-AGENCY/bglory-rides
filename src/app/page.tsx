@@ -266,7 +266,7 @@ function Features() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 mb-16 sm:mb-20">
           <AnimatedSection>
             <p className="text-sm font-medium text-primary-400 mb-4">
-              Why Riders Choose BGlory
+              Why Riders Choose Zyon
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15]">
               Everything you need.{" "}
@@ -497,7 +497,7 @@ function FAQSection() {
                 Questions riders and drivers ask us
               </h2>
               <p className="mt-4 text-base text-dark-500 dark:text-dark-400 leading-relaxed">
-                Everything you need to know before you ride or drive with BGlory. Still have questions?{" "}
+                Everything you need to know before you ride or drive with Zyon. Still have questions?{" "}
                 <Link
                   href="/contact"
                   className="text-primary-500 font-medium hover:underline"

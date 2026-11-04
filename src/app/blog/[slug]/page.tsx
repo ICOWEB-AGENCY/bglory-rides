@@ -25,7 +25,7 @@ export async function generateMetadata({
   if (!post) return { title: "Post Not Found" };
 
   return {
-    title: `${post.title} | BGlory Rides Blog`,
+    title: `${post.title} | Zyon Blog`,
     description: post.excerpt,
     openGraph: {
       title: post.title,
@@ -174,7 +174,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   Be first to ride.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Join the BGlory waitlist and get early access, launch updates,
+                  Join the Zyon waitlist and get early access, launch updates,
                   and new posts before anyone else. No spam, just the things
                   that matter.
                 </p>

@@ -37,6 +37,15 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 31536000,
   },
   compress: true,
+  // Blog posts kept their old BGlory slugs until the Zyon rename; old links
+  // still land on the same post.
+  async redirects() {
+    return [
+      { source: "/blog/7-safety-layers-on-every-bglory-ride", destination: "/blog/7-safety-layers-on-every-zyon-ride", permanent: true },
+      { source: "/blog/why-your-bglory-fare-never-changes", destination: "/blog/why-your-zyon-fare-never-changes", permanent: true },
+      { source: "/blog/what-it-takes-to-become-a-bglory-driver", destination: "/blog/what-it-takes-to-become-a-zyon-driver", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

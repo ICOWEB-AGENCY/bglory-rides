@@ -8,9 +8,9 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Blog | BGlory Rides News, Ride-Hailing Insights Nigeria",
+  title: "Blog | Zyon News, Ride-Hailing Insights Nigeria",
   description:
-    "Get insider insights on ride-hailing in Abuja, safety tips for riders and drivers, product updates, and the story behind BGlory Rides. New posts every week.",
+    "Get insider insights on ride-hailing in Abuja, safety tips for riders and drivers, product updates, and the story behind Zyon. New posts every week.",
 };
 
 export default function BlogPage() {
@@ -92,7 +92,7 @@ export default function BlogPage() {
                   Be first to ride.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Join the BGlory waitlist and get early access, launch updates,
+                  Join the Zyon waitlist and get early access, launch updates,
                   and new posts before anyone else. No spam, just the things
                   that matter.
                 </p>

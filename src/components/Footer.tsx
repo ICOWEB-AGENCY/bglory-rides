@@ -46,11 +46,11 @@ export default function Footer() {
           <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="inline-block mb-5">
               <Image
-                src="/images/logo.webp"
-                alt="BGlory Rides"
+                src="/images/zyon-wordmark-light.svg"
+                alt="Zyon"
                 width={140}
-                height={40}
-                className="h-9 w-auto brightness-110"
+                height={53}
+                className="h-9 w-auto"
               />
             </Link>
             <p className="text-dark-400 text-sm leading-relaxed max-w-sm mb-6">
@@ -131,7 +131,7 @@ export default function Footer() {
 
         <div className="border-t border-dark-800 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-dark-500">
-            &copy; {new Date().getFullYear()} BGlory Rides. All rights
+            &copy; {new Date().getFullYear()} Zyon. All rights
             reserved.
           </p>
           <div className="flex items-center gap-1">

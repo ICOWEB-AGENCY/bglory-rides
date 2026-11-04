@@ -40,7 +40,7 @@ export default function WaitlistForm() {
           You are on the list.
         </div>
         <p className="mt-2 text-dark-400 text-sm">
-          We will email you the moment BGlory goes live. Check your inbox for a confirmation.
+          We will email you the moment Zyon goes live. Check your inbox for a confirmation.
         </p>
       </div>
     );

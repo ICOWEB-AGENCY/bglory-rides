@@ -232,7 +232,7 @@ export default function ContactPage() {
                             setFormState({ ...formState, message: e.target.value })
                           }
                           className="w-full px-4 py-3 rounded-xl bg-white dark:bg-dark-800 border border-surface-200 dark:border-dark-700 text-dark-900 dark:text-white text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all resize-none"
-                          placeholder="Tell us how we can help you ride, drive, or partner with BGlory..."
+                          placeholder="Tell us how we can help you ride, drive, or partner with Zyon..."
                         />
                       </div>
 

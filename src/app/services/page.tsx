@@ -8,9 +8,9 @@ import SectionHeading from "@/components/SectionHeading";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Ride Options Abuja | Book a Ride in Nigeria | BGlory Rides",
+  title: "Ride Options Abuja | Book a Ride in Nigeria | Zyon",
   description:
-    "Discover affordable ride options in Abuja. From daily commutes to group travel and corporate accounts, BGlory gives you reliable ride-hailing services across Nigeria.",
+    "Discover affordable ride options in Abuja. From daily commutes to group travel and corporate accounts, Zyon gives you reliable ride-hailing services across Nigeria.",
 };
 
 const services = [
@@ -58,7 +58,7 @@ export default function ServicesPage() {
       <PageHero
         label="Services"
         title="The right ride, right when you need it."
-        description="Whether you need affordable rides in Abuja for your daily commute, a premium car for a client meeting, or a group ride to the airport, you will always find a BGlory option that fits."
+        description="Whether you need affordable rides in Abuja for your daily commute, a premium car for a client meeting, or a group ride to the airport, you will always find a Zyon option that fits."
         breadcrumbs={[{ label: "Services" }]}
       />
 

@@ -6,9 +6,9 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "About BGlory Rides | Ride-Hailing Company Nigeria",
+  title: "About Zyon | Ride-Hailing Company Nigeria",
   description:
-    "BGlory Rides is a ride-hailing company in Nigeria building safe, affordable transportation for Abuja and beyond. Discover why thousands are joining the movement.",
+    "Zyon is a ride-hailing company in Nigeria building safe, affordable transportation for Abuja and beyond. Discover why thousands are joining the movement.",
 };
 
 const values = [
@@ -20,7 +20,7 @@ const values = [
   {
     title: "You Belong Here",
     description:
-      "BGlory Rides is not just a ride-hailing company in Nigeria. It is a growing community of riders and drivers building something bigger together. When you ride or drive with us, you move your city forward.",
+      "Zyon is not just a ride-hailing company in Nigeria. It is a growing community of riders and drivers building something bigger together. When you ride or drive with us, you move your city forward.",
   },
   {
     title: "Affordable for Everyone",
@@ -30,15 +30,15 @@ const values = [
   {
     title: "Built on Your Feedback",
     description:
-      "Every feature in the BGlory Rides app exists because a real rider or driver asked for it. You shape the product. We listen, we build, we ship. Your voice drives every update.",
+      "Every feature in the Zyon app exists because a real rider or driver asked for it. You shape the product. We listen, we build, we ship. Your voice drives every update.",
   },
 ];
 
 const milestones = [
-  { year: "2024", title: "The Spark", description: "One too many cancelled rides, one too many overpriced fares. BGlory Rides started because getting around Nigerian cities deserved a better answer." },
+  { year: "2024", title: "The Spark", description: "One too many cancelled rides, one too many overpriced fares. Zyon started because getting around Nigerian cities deserved a better answer." },
   { year: "2024", title: "The Team", description: "Engineers, designers, and operators who live the same commute frustrations came together. Building started fast because the mission was personal." },
   { year: "2025", title: "Abuja Pilot", description: "Real riders and drivers in Abuja tested every feature and told us exactly what worked and what did not. Their feedback became the product." },
-  { year: "2025", title: "Drivers Joining", description: "Verified drivers across multiple cities signed up, passed screening, and started earning. The BGlory network grew city by city." },
+  { year: "2025", title: "Drivers Joining", description: "Verified drivers across multiple cities signed up, passed screening, and started earning. The Zyon network grew city by city." },
   { year: "2026", title: "Your Turn", description: "Public launch is coming. Join the waitlist now and be among the first to experience ride-hailing in Abuja the way it should be." },
 ];
 
@@ -46,9 +46,9 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        label="About BGlory Rides"
+        label="About Zyon"
         title="Your city deserves a ride-hailing company that puts you first."
-        description="BGlory Rides exists for one reason: to give you safe, affordable, and reliable rides wherever you need to go. This is the story of how we are making ride-hailing in Abuja and across Nigeria work for you."
+        description="Zyon exists for one reason: to give you safe, affordable, and reliable rides wherever you need to go. This is the story of how we are making ride-hailing in Abuja and across Nigeria work for you."
         breadcrumbs={[{ label: "About Us" }]}
       />
 
@@ -101,7 +101,7 @@ export default function AboutPage() {
                   <p className="text-dark-500 dark:text-dark-400 leading-relaxed">
                     Picture Abuja where you never wait more than minutes for a
                     safe, affordable ride. Fewer cars on the road, cleaner air,
-                    and a city that actually moves. That is the future BGlory
+                    and a city that actually moves. That is the future Zyon
                     Rides is building, and it starts with you.
                   </p>
                 </div>
@@ -221,7 +221,7 @@ export default function AboutPage() {
                   The waitlist is filling up. Get your spot now.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Ride or drive with BGlory Rides. Early members get first
+                  Ride or drive with Zyon. Early members get first
                   access when we launch. Do not miss it.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">

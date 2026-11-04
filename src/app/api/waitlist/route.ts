@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     }
 
     await resend.emails.send({
-      from: "BGlory Rides <onboarding@resend.dev>",
+      from: "Zyon <onboarding@resend.dev>",
       to: "contact@bgloryrides.com",
       subject: "[Waitlist] New signup",
       html: `
@@ -22,7 +22,7 @@ export async function POST(request: Request) {
           <h2 style="color: #0f1419;">New Waitlist Signup</h2>
           <hr style="border: none; border-top: 1px solid #e5e7eb;" />
           <p><strong>Email:</strong> ${email}</p>
-          <p style="color: #6b7280; font-size: 14px;">This person joined the BGlory Rides waitlist and wants early access.</p>
+          <p style="color: #6b7280; font-size: 14px;">This person joined the Zyon waitlist and wants early access.</p>
         </div>
       `,
     });

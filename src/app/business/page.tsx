@@ -9,7 +9,7 @@ import Button from "@/components/Button";
 export const metadata: Metadata = {
   title: "Business | Corporate Rides Abuja",
   description:
-    "BGlory Business is the smartest way to manage corporate rides in Abuja. Centralized billing, real-time reporting, and priority pickup for your team. The leading business ride-hailing solution in Nigeria.",
+    "Zyon Business is the smartest way to manage corporate rides in Abuja. Centralized billing, real-time reporting, and priority pickup for your team. The leading business ride-hailing solution in Nigeria.",
 };
 
 const benefits = [
@@ -31,7 +31,7 @@ const benefits = [
   {
     title: "Priority Pickup",
     description:
-      "Your team should not be standing on the curb waiting. BGlory Business riders get matched with nearby drivers faster, so they spend less time waiting and more time working.",
+      "Your team should not be standing on the curb waiting. Zyon Business riders get matched with nearby drivers faster, so they spend less time waiting and more time working.",
   },
 ];
 
@@ -103,12 +103,12 @@ export default function BusinessPage() {
       />
 
       <main>
-        {/* Why BGlory Business */}
+        {/* Why Zyon Business */}
         <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
-                Why BGlory Business
+                Why Zyon Business
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
                 Built for teams that waste zero time on{" "}

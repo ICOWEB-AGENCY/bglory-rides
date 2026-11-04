@@ -23,8 +23,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "BGlory Rides | Affordable Ride-Hailing in Abuja, Nigeria",
-    template: "%s | BGlory Rides",
+    default: "Zyon | Affordable Ride-Hailing in Abuja, Nigeria",
+    template: "%s | Zyon",
   },
   description:
     "Request a ride in Abuja and get picked up in under 4 minutes. Verified drivers, upfront pricing, no surge fees. Join the waitlist for Nigeria's smarter ride-hailing app.",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "affordable rides Abuja",
     "book a ride Abuja",
     "taxi app Nigeria",
-    "BGlory Rides",
+    "Zyon",
     "ride-hailing app Africa",
     "become a driver Abuja",
     "earn money driving Nigeria",
@@ -46,24 +46,24 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://bglory-rides.vercel.app"),
   openGraph: {
-    title: "BGlory Rides | Affordable Ride-Hailing in Abuja, Nigeria",
+    title: "Zyon | Affordable Ride-Hailing in Abuja, Nigeria",
     description:
       "Get picked up in under 4 minutes. Verified drivers, upfront pricing, zero surge fees. Join the waitlist for Abuja's smarter ride-hailing app.",
     type: "website",
     locale: "en_NG",
-    siteName: "BGlory Rides",
+    siteName: "Zyon",
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "BGlory Rides - Affordable Ride-Hailing in Abuja",
+        alt: "Zyon - Affordable Ride-Hailing in Abuja",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BGlory Rides | Affordable Ride-Hailing in Abuja",
+    title: "Zyon | Affordable Ride-Hailing in Abuja",
     description:
       "Verified drivers. Upfront pricing. 4-minute pickups. Join the waitlist for Abuja's smarter ride-hailing app.",
     images: ["/images/og-image.png"],

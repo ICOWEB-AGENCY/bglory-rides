@@ -7,7 +7,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Learn how BGlory Rides collects, uses, and protects your personal information. Your privacy matters to us.",
+    "Learn how Zyon collects, uses, and protects your personal information. Your privacy matters to us.",
 };
 
 const sections = [
@@ -15,7 +15,7 @@ const sections = [
     number: "01",
     title: "Information We Collect",
     paragraphs: [
-      "When you create an account or use BGlory Rides, we collect information that helps us provide and improve our services. This includes personal details you provide directly, as well as data generated through your use of the platform.",
+      "When you create an account or use Zyon, we collect information that helps us provide and improve our services. This includes personal details you provide directly, as well as data generated through your use of the platform.",
     ],
     items: [
       "Personal information such as your name, email address, phone number, and profile photo",
@@ -30,7 +30,7 @@ const sections = [
     number: "02",
     title: "How We Use Your Information",
     paragraphs: [
-      "We use the information we collect to operate, maintain, and improve BGlory Rides. Every piece of data serves a clear purpose in delivering a safe and reliable experience.",
+      "We use the information we collect to operate, maintain, and improve Zyon. Every piece of data serves a clear purpose in delivering a safe and reliable experience.",
     ],
     items: [
       "Providing and managing ride services, including matching you with nearby drivers",
@@ -46,7 +46,7 @@ const sections = [
     number: "03",
     title: "Location Data",
     paragraphs: [
-      "Location data is essential to how BGlory Rides works. We are transparent about when and how we access your location, and you remain in control.",
+      "Location data is essential to how Zyon works. We are transparent about when and how we access your location, and you remain in control.",
     ],
     items: [
       "We collect real-time location data while you have an active ride in progress. This is required to match you with drivers, calculate fares, and provide navigation",
@@ -123,7 +123,7 @@ const sections = [
       "App analytics: we use analytics tools to understand how you interact with the app, identify bugs, and improve performance",
       "Crash reporting: we collect crash logs and diagnostic data to identify and fix technical issues quickly",
       "Session management: cookies and similar technologies are used to keep you logged in and remember your preferences",
-      "We do not use third-party advertising trackers. Your activity on BGlory Rides is not shared with ad networks",
+      "We do not use third-party advertising trackers. Your activity on Zyon is not shared with ad networks",
       "You can manage cookie preferences for our website through your browser settings",
     ],
   },
@@ -131,7 +131,7 @@ const sections = [
     number: "09",
     title: "Children's Privacy",
     paragraphs: [
-      "BGlory Rides is not intended for use by anyone under the age of 18. We do not knowingly collect personal information from children.",
+      "Zyon is not intended for use by anyone under the age of 18. We do not knowingly collect personal information from children.",
       "If we become aware that we have collected data from a user under 18, we will take steps to delete that information promptly. If you believe a child has provided us with their personal data, please contact us at privacy@bgloryrides.com.",
     ],
     items: [],
@@ -174,10 +174,10 @@ export default function PrivacyPage() {
           <div className="mx-auto max-w-3xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed">
-                At BGlory Rides, we respect your privacy and are committed to
+                At Zyon, we respect your privacy and are committed to
                 protecting the personal information you share with us. This
                 policy explains what data we collect, how we use it, and the
-                choices you have. By using BGlory Rides, you agree to the
+                choices you have. By using Zyon, you agree to the
                 practices described below.
               </p>
             </AnimatedSection>

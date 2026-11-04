@@ -51,20 +51,20 @@ export default function Navbar() {
               {/* Logo */}
               <Link href="/" className="relative z-[60] flex items-center shrink-0">
                 <Image
-                  src="/images/logo.webp"
-                  alt="BGlory Rides"
+                  src="/images/zyon-wordmark-light.svg"
+                  alt="Zyon"
                   width={130}
-                  height={36}
+                  height={49}
                   className={`h-7 sm:h-8 w-auto transition-all duration-500 ${
                     scrolled || isOpen ? "opacity-0 absolute dark:opacity-100 dark:relative" : "opacity-100"
                   }`}
                   priority
                 />
                 <Image
-                  src="/images/logo-dark.webp"
-                  alt="BGlory Rides"
+                  src="/images/zyon-wordmark.svg"
+                  alt="Zyon"
                   width={130}
-                  height={36}
+                  height={49}
                   className={`h-7 sm:h-8 w-auto transition-all duration-500 ${
                     scrolled || isOpen ? "opacity-100 dark:opacity-0 dark:absolute" : "opacity-0 absolute"
                   }`}

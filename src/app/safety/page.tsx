@@ -6,16 +6,16 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Safety | Safe Ride-Hailing in Abuja | BGlory Rides",
+  title: "Safety | Safe Ride-Hailing in Abuja | Zyon",
   description:
-    "Feel protected on every trip with verified drivers in Abuja, real-time tracking, and 24/7 safety support. BGlory Rides is the safe ride-hailing choice in Nigeria.",
+    "Feel protected on every trip with verified drivers in Abuja, real-time tracking, and 24/7 safety support. Zyon is the safe ride-hailing choice in Nigeria.",
 };
 
 const safetyFeatures = [
   {
     title: "Verified Drivers",
     description:
-      "You only ride with drivers who have passed thorough background checks, vehicle inspections, and identity verification. Every driver on BGlory is screened before they can accept a single trip.",
+      "You only ride with drivers who have passed thorough background checks, vehicle inspections, and identity verification. Every driver on Zyon is screened before they can accept a single trip.",
   },
   {
     title: "Real-Time Trip Tracking",
@@ -80,7 +80,7 @@ export default function SafetyPage() {
       <PageHero
         label="Safety"
         title="You deserve to feel safe on every ride."
-        description="Every layer of BGlory is built to protect you. From the moment you request a ride to the moment you step out, you are covered by verified drivers, real-time tracking, and a safety team that never sleeps."
+        description="Every layer of Zyon is built to protect you. From the moment you request a ride to the moment you step out, you are covered by verified drivers, real-time tracking, and a safety team that never sleeps."
         breadcrumbs={[{ label: "Safety" }]}
       />
 
