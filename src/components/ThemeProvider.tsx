@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark";
 
@@ -18,33 +18,42 @@ export function useTheme() {
   return useContext(ThemeContext);
 }
 
+// Key kept from before the Zyon name so visitors keep their saved choice.
+const STORAGE_KEY = "bglory-theme";
+const THEME_EVENT = "site-theme-change";
+
+// The saved choice (or the system setting) lives outside React, so it is
+// read as an external store: the server render sees "light", the browser
+// the real value, and the anti-flash script in layout.tsx sets the class first.
+function readTheme(): Theme {
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored === "light" || stored === "dark") return stored;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function subscribe(onChange: () => void) {
+  const mq = window.matchMedia("(prefers-color-scheme: dark)");
+  window.addEventListener("storage", onChange);
+  window.addEventListener(THEME_EVENT, onChange);
+  mq.addEventListener("change", onChange);
+  return () => {
+    window.removeEventListener("storage", onChange);
+    window.removeEventListener(THEME_EVENT, onChange);
+    mq.removeEventListener("change", onChange);
+  };
+}
+
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
-  const [mounted, setMounted] = useState(false);
+  const theme = useSyncExternalStore<Theme>(subscribe, readTheme, () => "light");
 
   useEffect(() => {
-    setMounted(true);
-    const stored = localStorage.getItem("bglory-theme") as Theme | null;
-    if (stored) {
-      setTheme(stored);
-      document.documentElement.classList.toggle("dark", stored === "dark");
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    }
+    document.documentElement.classList.toggle("dark", theme === "dark");
+  }, [theme]);
+
+  const toggleTheme = useCallback(() => {
+    localStorage.setItem(STORAGE_KEY, readTheme() === "light" ? "dark" : "light");
+    window.dispatchEvent(new Event(THEME_EVENT));
   }, []);
 
-  const toggleTheme = () => {
-    const next = theme === "light" ? "dark" : "light";
-    setTheme(next);
-    localStorage.setItem("bglory-theme", next);
-    document.documentElement.classList.toggle("dark", next === "dark");
-  };
-
-  // Prevent flash: render children immediately but don't expose toggle until mounted
-  return (
-    <ThemeContext.Provider value={{ theme: mounted ? theme : "light", toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
 }
