@@ -37,8 +37,8 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 31536000,
   },
   compress: true,
-  // Blog posts kept their old BGlory slugs until the Zyon rename; old links
-  // still land on the same post.
+  // The three posts were renamed with the brand (BGlory to Zyon). Keep these
+  // permanently: shared links and search results still use the old slugs.
   async redirects() {
     return [
       { source: "/blog/7-safety-layers-on-every-bglory-ride", destination: "/blog/7-safety-layers-on-every-zyon-ride", permanent: true },

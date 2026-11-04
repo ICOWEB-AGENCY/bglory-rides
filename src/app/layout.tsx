@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Sora } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
 import "./globals.css";
+import { SITE_URL } from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     icon: "/images/favicon-32x32.png",
     apple: "/images/apple-touch-icon.png",
   },
-  metadataBase: new URL("https://bglory-rides.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     title: "Zyon | Affordable Ride-Hailing in Abuja, Nigeria",
     description:
