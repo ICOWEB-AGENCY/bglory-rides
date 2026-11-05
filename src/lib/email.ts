@@ -8,6 +8,8 @@ import { SITE_URL } from "./site";
  *
  * Every helper escapes the text it is given. The frame copies the API's
  * internal/notify/templates.go: keep the two in step when either changes.
+ * The footer is the API's short team footer, because every website email
+ * goes to the Zyon team, never to a customer.
  */
 
 export const EMAIL_FROM = "Zyon <noreply@bgloryrides.com>";
