@@ -1,10 +1,10 @@
 import { SITE_URL } from "./site";
 
 /**
- * Emails sent by the website (contact form and waitlist). They use the same
- * frame as the emails the Zyon apps send: deep green header with the
- * wordmark, white body, quiet footer. Table layout and inline styles only,
- * because that is what every mail client renders the same way.
+ * Emails sent by the website (contact form and waitlist, both to the team).
+ * They use the same frame as the emails the Zyon apps send: a plain white
+ * page, a small wordmark, the message, and a footer. Table layout and inline
+ * styles only, because that is what every mail client renders the same way.
  *
  * Every helper escapes the text it is given. The frame copies the API's
  * internal/notify/templates.go: keep the two in step when either changes.
@@ -13,15 +13,14 @@ import { SITE_URL } from "./site";
 export const EMAIL_FROM = "Zyon <noreply@bgloryrides.com>";
 export const TEAM_INBOX = "contact@bgloryrides.com";
 
-const LOGO_URL = `${SITE_URL}/images/email/zyon-wordmark-light.png`;
+// 180px wide for sharp screens, shown at 60.
+const LOGO = { url: `${SITE_URL}/images/email/zyon-wordmark.png`, width: 60, height: 23 };
 const C = {
   brand: "#063F1E",
-  ink: "#0F1A14",
-  text: "#3A4540",
-  muted: "#6B7570",
-  line: "#E6E9E4",
-  surface: "#F4F6F2",
-  page: "#EEF1EC",
+  ink: "#111814",
+  text: "#3B4540",
+  muted: "#6E7772",
+  line: "#E7EAE6",
 };
 const FONT = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
 
@@ -42,38 +41,38 @@ export const block = {
       .filter(([, v]) => v.trim() !== "")
       .map(
         ([k, v]) =>
-          `<tr><td style="padding:12px 0;border-top:1px solid ${C.line};font-size:14px;line-height:20px;color:${C.muted};">${escapeHtml(k)}</td>` +
-          `<td align="right" style="padding:12px 0 12px 16px;border-top:1px solid ${C.line};font-size:14px;line-height:20px;color:${C.ink};font-weight:600;">${escapeHtml(v)}</td></tr>`,
+          `<tr><td valign="top" style="padding:11px 0;border-top:1px solid ${C.line};font-size:14px;line-height:20px;color:${C.muted};">${escapeHtml(k)}</td>` +
+          `<td align="right" valign="top" style="padding:11px 0 11px 16px;border-top:1px solid ${C.line};font-size:14px;line-height:20px;color:${C.ink};">${escapeHtml(v)}</td></tr>`,
       )
       .join("");
-    return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 20px;border-bottom:1px solid ${C.line};">${body}</table>`;
+    return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:4px 0 20px;border-bottom:1px solid ${C.line};">${body}</table>`;
   },
   quote: (s: string) =>
-    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:4px 0 20px;"><tr>` +
-    `<td style="padding:2px 0 2px 16px;border-left:3px solid ${C.line};font-size:15px;line-height:24px;color:${C.ink};white-space:pre-line;">${escapeHtml(s)}</td></tr></table>`,
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 20px;"><tr>` +
+    `<td style="padding:0 0 0 14px;border-left:2px solid ${C.line};font-size:15px;line-height:24px;color:${C.ink};white-space:pre-line;">${escapeHtml(s)}</td></tr></table>`,
   small: (s: string) =>
     `<p style="margin:4px 0 0;font-size:13px;line-height:20px;color:${C.muted};">${escapeHtml(s)}</p>`,
 };
 
-/** Wraps body blocks in the Zyon frame. */
+/** Wraps body blocks in the Zyon frame. footer says why the email came. */
 export function layout(opts: { title: string; preheader: string; body: string; footer: string }): string {
   const { title, preheader, body, footer } = opts;
   return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="color-scheme" content="light"><meta name="supported-color-schemes" content="light"><title>${escapeHtml(title)}</title></head>
-<body style="margin:0;padding:0;background:${C.page};-webkit-text-size-adjust:100%;">
+<body style="margin:0;padding:0;background:#FFFFFF;-webkit-text-size-adjust:100%;">
 <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;font-size:0;line-height:0;mso-hide:all;">${escapeHtml(preheader)}&#8203;&#847;&#8203;&#847;&#8203;&#847;&#8203;&#847;</div>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${C.page};font-family:${FONT};"><tr><td align="center" style="padding:32px 16px 40px;">
-<!--[if mso]><table role="presentation" width="560" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;">
-<tr><td style="background:${C.brand};border-radius:16px 16px 0 0;padding:22px 32px;">
-<img src="${LOGO_URL}" width="88" height="33" alt="Zyon" style="display:block;border:0;outline:none;text-decoration:none;height:33px;width:88px;color:#FFFFFF;font-family:${FONT};font-size:22px;font-weight:700;">
-</td></tr>
-<tr><td style="background:#FFFFFF;border-radius:0 0 16px 16px;padding:36px 32px 32px;">
-<h1 style="margin:0 0 20px;font-size:24px;line-height:32px;font-weight:600;letter-spacing:-0.3px;color:${C.ink};">${escapeHtml(title)}</h1>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#FFFFFF;font-family:${FONT};"><tr><td align="center" style="padding:40px 24px 48px;">
+<!--[if mso]><table role="presentation" width="520" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;">
+<tr><td style="padding:0 0 36px;"><img src="${LOGO.url}" width="${LOGO.width}" height="${LOGO.height}" alt="Zyon" style="display:block;border:0;outline:none;text-decoration:none;width:${LOGO.width}px;height:${LOGO.height}px;font-family:${FONT};font-size:16px;font-weight:700;color:${C.brand};"></td></tr>
+<tr><td>
+<h1 style="margin:0 0 16px;font-size:22px;line-height:30px;font-weight:600;letter-spacing:-0.2px;color:${C.ink};">${escapeHtml(title)}</h1>
 ${body}
 </td></tr>
-<tr><td style="padding:24px 32px 0;font-size:12px;line-height:18px;color:${C.muted};">${escapeHtml(footer)}<br>Zyon, Abuja, Nigeria</td></tr>
+<tr><td style="padding:32px 0 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td style="border-top:1px solid ${C.line};padding:24px 0 0;">
+<p style="margin:0;font-size:12px;line-height:18px;color:${C.muted};">${escapeHtml(footer)}<br>Zyon, Abuja, Nigeria</p>
+</td></tr></table></td></tr>
 </table>
 <!--[if mso]></td></tr></table><![endif]-->
 </td></tr></table></body></html>`;
