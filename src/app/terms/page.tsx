@@ -112,7 +112,7 @@ const sections = [
     content: [
       "If you have questions, concerns, or feedback regarding these Terms of Service, please reach out to our legal team.",
     ],
-    contact: "legal@bgloryrides.com",
+    contact: "legal@zyonrides.com",
   },
 ];
 

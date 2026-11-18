@@ -44,7 +44,7 @@ export async function POST(request: Request) {
           ]) +
           block.quote(message) +
           block.small("Reply to this email to answer them directly."),
-        footer: "Sent to the Zyon team from the contact form on bgloryrides.com.",
+        footer: "Sent to the Zyon team from the contact form on zyonrides.com.",
       }),
     });
     if (error) throw new Error(error.message);

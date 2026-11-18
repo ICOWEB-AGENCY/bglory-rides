@@ -10,8 +10,8 @@ import AnimatedSection from "@/components/AnimatedSection";
 const contactChannels = [
   {
     label: "Email",
-    value: "contact@bgloryrides.com",
-    href: "mailto:contact@bgloryrides.com",
+    value: "contact@zyonrides.com",
+    href: "mailto:contact@zyonrides.com",
     note: "Most inquiries answered within 2 hours",
   },
   {

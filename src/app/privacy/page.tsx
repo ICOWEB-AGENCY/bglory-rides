@@ -132,7 +132,7 @@ const sections = [
     title: "Children's Privacy",
     paragraphs: [
       "Zyon is not intended for use by anyone under the age of 18. We do not knowingly collect personal information from children.",
-      "If we become aware that we have collected data from a user under 18, we will take steps to delete that information promptly. If you believe a child has provided us with their personal data, please contact us at privacy@bgloryrides.com.",
+      "If we become aware that we have collected data from a user under 18, we will take steps to delete that information promptly. If you believe a child has provided us with their personal data, please contact us at privacy@zyonrides.com.",
     ],
     items: [],
   },
@@ -152,7 +152,7 @@ const sections = [
       "If you have questions, concerns, or requests regarding this privacy policy or how we handle your data, please reach out to us. We are committed to addressing your concerns promptly.",
     ],
     items: [
-      "Email: privacy@bgloryrides.com",
+      "Email: privacy@zyonrides.com",
       "Response time: we aim to respond to all privacy-related inquiries within 5 business days",
       "For data access or deletion requests, please include your registered email address and a description of your request",
     ],

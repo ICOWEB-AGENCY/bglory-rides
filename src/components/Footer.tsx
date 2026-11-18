@@ -60,11 +60,11 @@ export default function Footer() {
             </p>
             <div className="space-y-3">
               <a
-                href="mailto:contact@bgloryrides.com"
+                href="mailto:contact@zyonrides.com"
                 className="flex items-center gap-2 text-sm text-dark-400 hover:text-primary-400 transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                contact@bgloryrides.com
+                contact@zyonrides.com
               </a>
               <a
                 href="tel:+2348063376181"

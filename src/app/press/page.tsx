@@ -52,7 +52,7 @@ const mediaResources = [
   {
     title: "Press Contact",
     description:
-      "Need a quote, interview, or exclusive? Our communications team responds to journalists within 24 hours. Reach us at press@bgloryrides.com.",
+      "Need a quote, interview, or exclusive? Our communications team responds to journalists within 24 hours. Reach us at press@zyonrides.com.",
   },
 ];
 

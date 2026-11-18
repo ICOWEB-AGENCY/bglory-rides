@@ -12,8 +12,8 @@ import { SITE_URL } from "./site";
  * goes to the Zyon team, never to a customer.
  */
 
-export const EMAIL_FROM = "Zyon <noreply@bgloryrides.com>";
-export const TEAM_INBOX = "contact@bgloryrides.com";
+export const EMAIL_FROM = "Zyon <noreply@zyonrides.com>";
+export const TEAM_INBOX = "contact@zyonrides.com";
 
 // 180px wide for sharp screens, shown at 60.
 const LOGO = { url: `${SITE_URL}/images/email/zyon-wordmark.png`, width: 60, height: 23 };

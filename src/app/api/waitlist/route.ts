@@ -23,8 +23,8 @@ export async function POST(request: Request) {
       html: layout({
         title: "New waitlist signup",
         preheader: `${email} wants early access.`,
-        body: block.rows([["Email", email]]) + block.small("They joined the Zyon waitlist from bgloryrides.com."),
-        footer: "Sent to the Zyon team from the waitlist on bgloryrides.com.",
+        body: block.rows([["Email", email]]) + block.small("They joined the Zyon waitlist from zyonrides.com."),
+        footer: "Sent to the Zyon team from the waitlist on zyonrides.com.",
       }),
     });
     if (error) throw new Error(error.message);
