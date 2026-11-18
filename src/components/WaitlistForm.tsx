@@ -1,11 +1,14 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import Turnstile from "@/components/Turnstile";
 
 export default function WaitlistForm() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [token, setToken] = useState<string | null>(null);
+  const [checkRound, setCheckRound] = useState(0);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -16,7 +19,7 @@ export default function WaitlistForm() {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, turnstileToken: token }),
       });
 
       if (!res.ok) {
@@ -29,6 +32,8 @@ export default function WaitlistForm() {
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Failed to join. Please try again.");
+      // A Turnstile token works once: get a fresh one for the next try.
+      setCheckRound((n) => n + 1);
     }
   };
 
@@ -62,12 +67,16 @@ export default function WaitlistForm() {
         />
         <button
           type="submit"
-          disabled={status === "sending"}
+          disabled={status === "sending" || !token}
           className="px-6 py-3.5 rounded-xl bg-primary-400 text-white text-sm font-semibold hover:bg-primary-500 transition-colors shrink-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {status === "sending" ? "Joining..." : "Join Waitlist"}
         </button>
       </form>
+
+      <div className="mt-3">
+        <Turnstile onToken={setToken} resetKey={checkRound} theme="dark" />
+      </div>
 
       {status === "error" && (
         <p className="mt-3 text-sm text-red-400">{errorMsg}</p>

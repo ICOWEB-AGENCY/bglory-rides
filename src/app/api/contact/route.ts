@@ -1,14 +1,16 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { EMAIL_FROM, TEAM_INBOX, block, cleanEmail, cleanText, jsonObject, layout, oneLine } from "@/lib/email";
+import { passedTurnstile } from "@/lib/turnstile";
 
 const LIMITS = { name: 100, subject: 150, message: 5000 };
 
 /**
  * Contact form: the message goes to the team inbox, and replying to it
  * answers the sender directly. No email goes to the address the visitor
- * typed: without a rate limit and a bot check, that would let anyone send
- * Zyon mail to strangers and hurt delivery of sign-up codes.
+ * typed: that would let anyone send Zyon mail to strangers and hurt delivery
+ * of sign-up codes. A Cloudflare Turnstile check must pass first, so bots
+ * cannot flood the team inbox.
  */
 export async function POST(request: Request) {
   const body = await jsonObject(request);
@@ -24,6 +26,10 @@ export async function POST(request: Request) {
       { error: `Please keep the name under ${LIMITS.name}, the subject under ${LIMITS.subject} and the message under ${LIMITS.message} characters.` },
       { status: 400 },
     );
+  }
+
+  if (!(await passedTurnstile(body?.turnstileToken, request.headers.get("cf-connecting-ip")))) {
+    return NextResponse.json({ error: "Please complete the security check and try again." }, { status: 400 });
   }
 
   try {

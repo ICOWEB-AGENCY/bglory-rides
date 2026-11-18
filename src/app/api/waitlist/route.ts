@@ -1,16 +1,20 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { EMAIL_FROM, TEAM_INBOX, block, cleanEmail, jsonObject, layout } from "@/lib/email";
+import { passedTurnstile } from "@/lib/turnstile";
 
 /**
  * Waitlist: tells the team. Nothing is sent to the address typed in, for the
- * same reason as the contact form (no rate limit or bot check yet).
+ * same reason as the contact form, and the same Turnstile check runs first.
  */
 export async function POST(request: Request) {
   const body = await jsonObject(request);
   const email = cleanEmail(body?.email);
   if (!email) {
     return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+  }
+  if (!(await passedTurnstile(body?.turnstileToken, request.headers.get("cf-connecting-ip")))) {
+    return NextResponse.json({ error: "Please complete the security check and try again." }, { status: 400 });
   }
 
   try {

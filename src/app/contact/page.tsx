@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import { ArrowRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
+import Turnstile from "@/components/Turnstile";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -38,6 +39,8 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  const [token, setToken] = useState<string | null>(null);
+  const [checkRound, setCheckRound] = useState(0);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -48,7 +51,7 @@ export default function ContactPage() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formState),
+        body: JSON.stringify({ ...formState, turnstileToken: token }),
       });
 
       if (!res.ok) {
@@ -62,6 +65,8 @@ export default function ContactPage() {
       setError(err instanceof Error ? err.message : "Failed to send. Please try again.");
     } finally {
       setSending(false);
+      // A Turnstile token works once: get a fresh one for the next send.
+      setCheckRound((n) => n + 1);
     }
   };
 
@@ -236,13 +241,15 @@ export default function ContactPage() {
                         />
                       </div>
 
+                      <Turnstile onToken={setToken} resetKey={checkRound} />
+
                       {error && (
                         <p className="text-sm text-red-500">{error}</p>
                       )}
 
                       <button
                         type="submit"
-                        disabled={sending}
+                        disabled={sending || !token}
                         className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-primary-400 text-white text-sm font-semibold hover:bg-primary-500 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         {sending ? "Sending..." : "Send Message"}
