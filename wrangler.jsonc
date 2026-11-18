@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "zyon-website",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    { "binding": "WORKER_SELF_REFERENCE", "service": "zyon-website" }
+  ],
+  // next/image resizing. Without it OpenNext serves the original image.
+  "images": { "binding": "IMAGES" },
+  // www.zyonrides.com serves the site; zyonrides.com redirects to it through
+  // a zone redirect rule (Cloudflare dashboard, Rules).
+  "routes": [{ "pattern": "www.zyonrides.com", "custom_domain": true }],
+  "observability": { "enabled": true },
+  // Minify the server bundle to keep uploads small.
+  "minify": true
+}
