@@ -1,0 +1,16 @@
+# Cloudflare serves the files in public/ and /_next/static straight from the
+# asset store, without the Worker, so next.config.ts headers never reach them.
+# Same security headers here, plus long caching for files that never change.
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(self), interest-cohort=()
+  X-XSS-Protection: 1; mode=block
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable

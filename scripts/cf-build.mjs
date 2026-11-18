@@ -11,12 +11,17 @@
 //      duration of the build: OpenNext writes production, development AND
 //      test env sets into the bundle, so a .env.test secret ships too,
 //   3. verifies the emitted next-env.mjs holds only public keys.
-//
-// Keep this guard: the Worker bundle must never carry a secret.
 import { existsSync, readdirSync, readFileSync, renameSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 
 const isPublic = (key) => key.startsWith("NEXT_PUBLIC_");
+
+// A build killed hard (SIGKILL, crash) cannot run its restore: put any env
+// file it left hidden back first, or it would stay hidden for good.
+for (const held of readdirSync(".").filter((f) => f.endsWith(".cf-hold"))) {
+  const original = held.slice(0, -".cf-hold".length);
+  if (!existsSync(original)) renameSync(held, original);
+}
 // Env files only (.env, .env.local, ...), never .envrc (direnv), the
 // production file this build reads, or a committed .example.
 const HIDE = readdirSync(".").filter(
