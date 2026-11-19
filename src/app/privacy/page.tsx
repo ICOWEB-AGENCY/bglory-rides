@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
-import AnimatedSection from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -162,65 +161,37 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <>
-      <PageHero
-        label="Legal"
-        title="Privacy Policy"
-        description="Last updated: February 2026"
-        breadcrumbs={[{ label: "Privacy Policy" }]}
-      />
+      <PageHero title="Privacy" dim="policy." description="Last updated: February 2026" breadcrumbs={[{ label: "Privacy Policy" }]} />
 
-      <main>
-        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
-          <div className="mx-auto max-w-3xl px-5 sm:px-6 md:px-8 lg:px-12">
-            <AnimatedSection>
-              <p className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed">
-                At Zyon, we respect your privacy and are committed to
-                protecting the personal information you share with us. This
-                policy explains what data we collect, how we use it, and the
-                choices you have. By using Zyon, you agree to the
-                practices described below.
-              </p>
-            </AnimatedSection>
-
-            <div className="mt-12">
-              {sections.map((section, i) => (
-                <AnimatedSection key={section.number} delay={i * 0.03}>
-                  <div
-                    className={`py-8 ${i < sections.length - 1 ? "border-b border-surface-200 dark:border-white/[0.06]" : ""}`}
-                  >
-                    <span className="text-sm font-semibold text-dark-400">
-                      {section.number}
-                    </span>
-                    <h2 className="text-lg sm:text-xl font-bold text-dark-900 dark:text-white mt-3 mb-3">
-                      {section.title}
-                    </h2>
+      <main className="bg-white dark:bg-ink">
+        <div className="shell py-16 sm:py-24">
+          <div className="mx-auto max-w-2xl">
+            <p className="text-lg leading-relaxed text-dark-700 dark:text-white/75">
+              At Zyon, we respect your privacy and are committed to protecting the personal information you share with us. This policy explains what data we collect, how we use it, and the choices you have. By using Zyon, you agree to the practices described below.
+            </p>
+            <div className="mt-12 border-t border-ink/15 dark:border-white/15">
+              {sections.map((section) => (
+                <section key={section.number} className="border-b border-ink/15 py-10 dark:border-white/15">
+                  <h2 className="display text-[clamp(1.5rem,2.4vw,2rem)]">
+                    {Number(section.number)}. {section.title}
+                  </h2>
+                  <div className="mt-4 space-y-3 leading-relaxed text-dark-600 dark:text-white/70">
                     {section.paragraphs.map((paragraph, pi) => (
-                      <p
-                        key={pi}
-                        className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed mb-3 last:mb-0"
-                      >
-                        {paragraph}
-                      </p>
+                      <p key={pi}>{paragraph}</p>
                     ))}
-                    {section.items.length > 0 && (
-                      <ul className="mt-4 space-y-2">
-                        {section.items.map((item, ii) => (
-                          <li
-                            key={ii}
-                            className="flex items-start gap-2.5 text-sm text-dark-600 dark:text-dark-300 leading-relaxed"
-                          >
-                            <span className="w-1 h-1 rounded-full bg-primary-400 mt-2 shrink-0" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
                   </div>
-                </AnimatedSection>
+                  {section.items.length > 0 && (
+                    <ul className="mt-4 list-disc space-y-2 pl-5 leading-relaxed text-dark-600 marker:text-dark-400 dark:text-white/70">
+                      {section.items.map((item, ii) => (
+                        <li key={ii}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
+                </section>
               ))}
             </div>
           </div>
-        </section>
+        </div>
       </main>
 
       <Footer />

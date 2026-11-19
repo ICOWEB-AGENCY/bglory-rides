@@ -119,7 +119,7 @@ export default function Navbar() {
                     href={link.href}
                     onClick={close}
                     aria-current={pathname === link.href ? "page" : undefined}
-                    className="display block py-2 text-[2.6rem] text-white aria-[current=page]:text-lime"
+                    className="display block py-2 text-[2.6rem] text-white aria-[current=page]:text-white/45"
                   >
                     {link.label}
                   </Link>

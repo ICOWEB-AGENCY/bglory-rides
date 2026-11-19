@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
-import AnimatedSection from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -119,77 +118,43 @@ const sections = [
 export default function TermsPage() {
   return (
     <>
-      <PageHero
-        label="Legal"
-        title="Terms of Service"
-        description="Last updated: February 2026"
-        breadcrumbs={[{ label: "Terms of Service" }]}
-      />
+      <PageHero title="Terms" dim="of service." description="Last updated: February 2026" breadcrumbs={[{ label: "Terms of Service" }]} />
 
-      <main>
-        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
-          <div className="mx-auto max-w-3xl px-5 sm:px-6 md:px-8 lg:px-12">
+      <main className="bg-white dark:bg-ink">
+        <div className="shell py-16 sm:py-24">
+          <div className="mx-auto max-w-2xl border-t border-ink/15 dark:border-white/15">
             {sections.map((section, i) => (
-              <AnimatedSection key={section.title} delay={i * 0.04}>
-                <div
-                  className={`py-8 ${i < sections.length - 1 ? "border-b border-surface-200 dark:border-white/[0.06]" : ""}`}
-                >
-                  <span className="text-sm font-semibold text-dark-400">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h2 className="text-lg sm:text-xl font-bold text-dark-900 dark:text-white mt-3 mb-3">
-                    {section.title}
-                  </h2>
-
-                  {section.content && (
-                    <div className="space-y-3">
-                      {section.content.map((paragraph, j) => (
-                        <p
-                          key={j}
-                          className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed"
-                        >
-                          {paragraph}
-                        </p>
-                      ))}
-                    </div>
-                  )}
-
-                  {section.items && (
-                    <ul className="space-y-2 mt-3">
-                      {section.items.map((item, j) => (
-                        <li
-                          key={j}
-                          className="flex items-start gap-2.5 text-sm text-dark-600 dark:text-dark-300 leading-relaxed"
-                        >
-                          <span className="w-1 h-1 rounded-full bg-primary-400 mt-2 shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-
-                  {section.footer && (
-                    <p className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed mt-4">
-                      {section.footer}
-                    </p>
-                  )}
-
-                  {section.contact && (
-                    <p className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed mt-3">
-                      Email:{" "}
-                      <a
-                        href={`mailto:${section.contact}`}
-                        className="text-primary-400 hover:underline"
-                      >
-                        {section.contact}
-                      </a>
-                    </p>
-                  )}
-                </div>
-              </AnimatedSection>
+              <section key={section.title} className="border-b border-ink/15 py-10 dark:border-white/15">
+                <h2 className="display text-[clamp(1.5rem,2.4vw,2rem)]">
+                  {i + 1}. {section.title}
+                </h2>
+                {section.content && (
+                  <div className="mt-4 space-y-3 leading-relaxed text-dark-600 dark:text-white/70">
+                    {section.content.map((paragraph, j) => (
+                      <p key={j}>{paragraph}</p>
+                    ))}
+                  </div>
+                )}
+                {section.items && (
+                  <ul className="mt-4 list-disc space-y-2 pl-5 leading-relaxed text-dark-600 marker:text-dark-400 dark:text-white/70">
+                    {section.items.map((item, j) => (
+                      <li key={j}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+                {section.footer && <p className="mt-4 leading-relaxed text-dark-600 dark:text-white/70">{section.footer}</p>}
+                {section.contact && (
+                  <p className="mt-3 leading-relaxed text-dark-600 dark:text-white/70">
+                    Email:{" "}
+                    <a href={`mailto:${section.contact}`} className="font-semibold text-ink underline underline-offset-2 dark:text-white">
+                      {section.contact}
+                    </a>
+                  </p>
+                )}
+              </section>
             ))}
           </div>
-        </section>
+        </div>
       </main>
 
       <Footer />

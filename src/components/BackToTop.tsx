@@ -19,7 +19,7 @@ export default function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 z-50 w-11 h-11 rounded-full bg-primary-400 text-white shadow-lg hover:bg-primary-500 transition-all duration-300 flex items-center justify-center cursor-pointer ${
+      className={`fixed bottom-8 right-8 z-50 w-11 h-11 rounded-full bg-ink text-white shadow-lg ring-1 ring-white/15 hover:bg-black transition-all duration-300 flex items-center justify-center cursor-pointer ${
         visible
           ? "opacity-100 scale-100 pointer-events-auto"
           : "opacity-0 scale-75 pointer-events-none"

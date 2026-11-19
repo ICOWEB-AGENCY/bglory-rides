@@ -6,7 +6,7 @@ import { blogPosts } from "@/lib/data";
 import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
-import AnimatedSection from "@/components/AnimatedSection";
+import { CtaCard } from "@/components/page/blocks";
 import Button from "@/components/Button";
 
 interface BlogPostPageProps {
@@ -49,129 +49,55 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <>
       <PageHero
-        label={post.category}
         title={post.title}
         description={post.excerpt}
         breadcrumbs={[
           { label: "Blog", href: "/blog" },
-          { label: post.title },
+          { label: post.category },
         ]}
       />
 
-      <main>
-        {/* Article Content */}
-        <article className="py-16 sm:py-24 bg-white dark:bg-dark-950">
-          <div className="mx-auto max-w-3xl px-5 sm:px-6 md:px-8">
-            {/* Meta bar */}
-            <AnimatedSection>
-              <div className="flex flex-wrap items-center gap-4 pb-8 border-b border-surface-200 dark:border-white/[0.06]">
-                <span className="text-sm font-semibold text-primary-700 dark:text-lime">{post.category}</span>
-                <span className="text-sm text-dark-400">{post.date}</span>
-                <span className="text-sm text-dark-400">
-                  {Math.ceil(post.content.join(" ").split(" ").length / 200)} min
-                  read
-                </span>
-              </div>
-            </AnimatedSection>
+      <main className="bg-white dark:bg-ink">
+        <article className="shell py-16 sm:py-24">
+          <div className="mx-auto max-w-2xl">
+            <p className="border-b border-ink/15 pb-6 text-sm text-dark-500 dark:border-white/15 dark:text-white/55">
+              {post.category} · {post.date} · {Math.ceil(post.content.join(" ").split(" ").length / 200)} min read
+            </p>
+            <div className="mt-10 space-y-6">
+              {post.content.map((paragraph, i) => (
+                <p key={i} className={i === 0 ? "text-xl leading-relaxed text-dark-800 dark:text-white/85" : "text-lg leading-[1.8] text-dark-600 dark:text-white/70"}>
+                  {paragraph}
+                </p>
+              ))}
+            </div>
 
-            {/* Body */}
-            <AnimatedSection delay={0.1}>
-              <div className="mt-10 sm:mt-12 space-y-6">
-                {post.content.map((paragraph, i) => (
-                  <p
-                    key={i}
-                    className={`text-dark-600 dark:text-dark-300 leading-[1.8] ${
-                      i === 0
-                        ? "text-lg sm:text-xl text-dark-800 dark:text-dark-200 font-medium leading-[1.7]"
-                        : "text-base"
-                    }`}
-                  >
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </AnimatedSection>
-
-            {/* Back link */}
-            <AnimatedSection delay={0.15}>
-              <div className="mt-12 pt-8 border-t border-surface-200 dark:border-white/[0.06]">
-                <Link
-                  href="/blog"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary-500 hover:text-primary-600 transition-colors"
-                >
-                  <ArrowLeft className="w-4 h-4" />
-                  Back to all posts
+            <nav aria-label="More posts" className="mt-16 grid gap-4 border-t border-ink/15 pt-10 sm:grid-cols-2 dark:border-white/15">
+              {prevPost ? (
+                <Link href={`/blog/${prevPost.slug}`} className="group rounded-[1.5rem] bg-mist p-6 dark:bg-ink-raised">
+                  <span className="text-xs text-dark-500 dark:text-white/50">Previous</span>
+                  <span className="mt-2 block font-semibold leading-snug group-hover:underline">{prevPost.title}</span>
                 </Link>
-              </div>
-            </AnimatedSection>
+              ) : (
+                <span />
+              )}
+              {nextPost && (
+                <Link href={`/blog/${nextPost.slug}`} className="group rounded-[1.5rem] bg-mist p-6 sm:text-right dark:bg-ink-raised">
+                  <span className="text-xs text-dark-500 dark:text-white/50">Next</span>
+                  <span className="mt-2 block font-semibold leading-snug group-hover:underline">{nextPost.title}</span>
+                </Link>
+              )}
+            </nav>
+
+            <Link href="/blog" className="mt-10 inline-flex items-center gap-2 text-sm font-semibold hover:underline">
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+              All posts
+            </Link>
           </div>
         </article>
 
-        {/* Prev / Next Navigation */}
-        {(prevPost || nextPost) && (
-          <section className="py-16 sm:py-20 bg-surface-50 dark:bg-dark-900">
-            <div className="mx-auto max-w-3xl px-5 sm:px-6 md:px-8">
-              <AnimatedSection>
-                <p className="text-sm font-medium text-primary-400 mb-8">
-                  Keep Reading
-                </p>
-              </AnimatedSection>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {prevPost && (
-                  <AnimatedSection delay={0.06}>
-                    <Link
-                      href={`/blog/${prevPost.slug}`}
-                      className="group block p-6 bg-white dark:bg-dark-950 rounded-2xl border border-surface-200 dark:border-white/[0.06] hover:border-primary-400/30 transition-colors"
-                    >
-                      <span className="text-xs font-medium text-dark-400">Previous</span>
-                      <h3 className="mt-3 text-sm font-bold text-dark-900 dark:text-white group-hover:text-primary-500 transition-colors leading-snug">
-                        {prevPost.title}
-                      </h3>
-                    </Link>
-                  </AnimatedSection>
-                )}
-                {nextPost && (
-                  <AnimatedSection delay={0.12}>
-                    <Link
-                      href={`/blog/${nextPost.slug}`}
-                      className="group block p-6 bg-white dark:bg-dark-950 rounded-2xl border border-surface-200 dark:border-white/[0.06] hover:border-primary-400/30 transition-colors"
-                    >
-                      <span className="text-xs font-medium text-dark-400">Next</span>
-                      <h3 className="mt-3 text-sm font-bold text-dark-900 dark:text-white group-hover:text-primary-500 transition-colors leading-snug">
-                        {nextPost.title}
-                      </h3>
-                    </Link>
-                  </AnimatedSection>
-                )}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* CTA */}
-        <section className="py-20 sm:py-28 lg:py-36 bg-dark-950">
-          <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-            <div className="max-w-2xl">
-              <AnimatedSection>
-                <p className="text-sm font-medium text-primary-400 mb-4">
-                  Get the launch email
-                </p>
-                <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Be first to ride.
-                </h2>
-                <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Leave your email and we will send you one message, the day
-                  the apps are live.
-                </p>
-                <div className="mt-8">
-                  <Button href="/#notify" variant="primary" size="lg">
-                    Get the launch email
-                  </Button>
-                </div>
-              </AnimatedSection>
-            </div>
-          </div>
-        </section>
+        <CtaCard title="Be first to ride" dim="with Zyon." text="Leave your email and we will send you one message, the day the apps are live.">
+          <Button href="/#notify" size="lg">Get the launch email</Button>
+        </CtaCard>
       </main>
 
       <Footer />

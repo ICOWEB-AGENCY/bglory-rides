@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
-import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
+import { Band, CtaCard } from "@/components/page/blocks";
 
 export const metadata: Metadata = {
   title: "Help Center | Zyon Support",
@@ -67,71 +67,34 @@ export default function HelpPage() {
   return (
     <>
       <PageHero
-        label="Help Center"
-        title="How can we help you?"
+        title="How can"
+        dim="we help?"
         description="Answers to the questions riders and drivers ask most. For anything else, send us a message."
         breadcrumbs={[{ label: "Help Center" }]}
       />
 
       <main>
-        {/* Browse Topics */}
-        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
-          <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-            <AnimatedSection>
-              <p className="text-sm font-medium text-primary-400 mb-6">
-                Browse Topics
-              </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
-                Get answers{" "}
-                <span className="text-primary-400">fast.</span>
-              </h2>
-            </AnimatedSection>
-
-            <div className="mt-14 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 border-t border-surface-200 dark:border-white/[0.06]">
-              {helpTopics.map((topic, i) => (
-                <AnimatedSection key={topic.title} delay={i * 0.06}>
-                  <div className="py-8 sm:py-10 border-b border-surface-200 dark:border-white/[0.06]">
-                    <h3 className="text-lg sm:text-xl font-bold text-dark-900 dark:text-white ">
-                      {topic.title}
-                    </h3>
-                    <dl className="mt-4 space-y-5">
-                      {topic.questions.map(({ q, a }) => (
-                        <div key={q}>
-                          <dt className="text-sm font-semibold text-dark-900 dark:text-white">{q}</dt>
-                          <dd className="mt-1 text-sm leading-relaxed text-dark-500 dark:text-dark-400">{a}</dd>
-                        </div>
-                      ))}
-                    </dl>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
+        <Band tone="white">
+          <div className="grid gap-x-16 gap-y-16 lg:grid-cols-2">
+            {helpTopics.map((topic) => (
+              <section key={topic.title} aria-labelledby={`help-${topic.title}`} className="border-t border-ink/15 pt-8 dark:border-white/15">
+                <h2 id={`help-${topic.title}`} className="display text-[clamp(1.8rem,3vw,2.6rem)]">{topic.title}</h2>
+                <dl className="mt-8 space-y-7">
+                  {topic.questions.map(({ q, a }) => (
+                    <div key={q}>
+                      <dt className="font-semibold">{q}</dt>
+                      <dd className="mt-1.5 text-sm leading-relaxed text-dark-500 dark:text-white/60">{a}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </section>
+            ))}
           </div>
-        </section>
+        </Band>
 
-        {/* CTA */}
-        <section className="py-20 sm:py-28 lg:py-36 bg-dark-950">
-          <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-            <div className="max-w-2xl">
-              <AnimatedSection>
-                <p className="text-sm font-medium text-primary-400 mb-4">
-                  Contact Support
-                </p>
-                <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Did not find your answer?
-                </h2>
-                <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Send us a message and we will reply by email.
-                </p>
-                <div className="mt-8">
-                  <Button href="/contact" variant="primary" size="lg">
-                    Contact Us
-                  </Button>
-                </div>
-              </AnimatedSection>
-            </div>
-          </div>
-        </section>
+        <CtaCard title="Did not find" dim="your answer?" text="Send us a message and we will reply by email.">
+          <Button href="/contact" size="lg">Contact us</Button>
+        </CtaCard>
       </main>
 
       <Footer />

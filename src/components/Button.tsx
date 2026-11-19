@@ -11,19 +11,17 @@ interface ButtonProps {
 }
 
 const variants = {
-  primary:
-    "bg-primary-400 text-white hover:bg-primary-500 border-2 border-primary-400 hover:border-primary-500",
-  outline:
-    "bg-transparent text-white border-2 border-white hover:bg-white hover:text-dark-900",
-  dark: "bg-dark-900 dark:bg-white text-white dark:text-dark-900 border-2 border-dark-900 dark:border-white hover:bg-dark-800 dark:hover:bg-dark-100 hover:border-dark-800 dark:hover:border-dark-100",
-  ghost:
-    "bg-transparent text-dark-900 dark:text-dark-100 border-2 border-dark-200 dark:border-dark-700 hover:border-dark-900 dark:hover:border-dark-400",
+  // Lime is kept for the one main action on a page.
+  primary: "bg-lime text-ink hover:bg-primary-300",
+  outline: "border border-white/25 text-white hover:border-white/60",
+  dark: "bg-ink text-white hover:bg-black dark:bg-white dark:text-ink dark:hover:bg-dark-100",
+  ghost: "border border-ink/20 text-ink hover:border-ink dark:border-white/25 dark:text-white dark:hover:border-white/60",
 };
 
 const sizes = {
   sm: "px-4 py-2.5 text-sm",
   md: "px-5 py-3 text-sm sm:px-6",
-  lg: "px-6 py-3.5 text-base sm:px-8",
+  lg: "px-7 py-3.5 text-sm",
 };
 
 export default function Button({
@@ -35,7 +33,7 @@ export default function Button({
   onClick,
   type = "button",
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-all duration-200 hover:scale-[1.03] hover:-translate-y-px active:scale-[0.97] ${variants[variant]} ${sizes[size]} ${className}`;
+  const classes = `inline-flex w-full items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-200 sm:w-auto ${variants[variant]} ${sizes[size]} ${className}`;
 
   if (href) {
     return (

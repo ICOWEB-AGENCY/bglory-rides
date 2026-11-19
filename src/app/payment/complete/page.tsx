@@ -16,14 +16,14 @@ export default function PaymentCompletePage() {
   return (
     <>
       <PageHero
-        label="Payment"
-        title="Payment received."
+        title="Payment"
+        dim="received."
         description="You can close this page and go back to the Zyon app. Your wallet or trip updates there in a moment."
         breadcrumbs={[{ label: "Payment" }]}
       />
-      <main className="py-16 sm:py-24 bg-white dark:bg-dark-950">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-          <p className="max-w-xl text-base sm:text-lg text-dark-500 dark:text-dark-300 leading-relaxed">
+      <main className="bg-white py-16 sm:py-24 dark:bg-ink">
+        <div className="shell">
+          <p className="max-w-xl text-base sm:text-lg leading-relaxed text-dark-500 dark:text-white/60">
             If the app does not show the payment within a few minutes,{" "}
             <Link href="/contact" className="font-semibold text-dark-900 dark:text-white underline underline-offset-4">
               write to us

@@ -1,217 +1,100 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import { BadgeCheck, KeyRound, MoonStar, Share2, Siren, Star } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
-import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
+import { Band, CtaCard, Heading } from "@/components/page/blocks";
+import { Ruled } from "@/components/page/Ruled";
 
 export const metadata: Metadata = {
   title: "Safety | Safe Ride-Hailing in Nigeria | Zyon",
-  description:
-    "Safety built into every Zyon ride: drivers checked by our team, a ride PIN, live trip sharing, an SOS button and night check-ins.",
+  description: "Safety built into every Zyon ride: drivers checked by our team, a ride PIN, live trip sharing, an SOS button and night check-ins.",
 };
 
-const safetyFeatures = [
-  {
-    title: "Drivers checked by our team",
-    description:
-      "Before a driver takes a single trip, our team reviews their licence, vehicle licence, proof of ownership, roadworthiness certificate, insurance, hackney permit and photos of the car. You see their name, photo, car and plate before they arrive.",
-  },
-  {
-    title: "A ride PIN",
-    description:
-      "You get a 4-digit PIN for each ride. Your driver enters it to start the trip, so you only ever get into the right car.",
-  },
-  {
-    title: "Share your trip live",
-    description:
-      "Send your live trip link to anyone on WhatsApp or any app on your phone. They follow your ride on the map until you arrive.",
-  },
-  {
-    title: "SOS in one tap",
-    description:
-      "Press SOS and our team sees the alert straight away, with your trip and location. Your emergency contact is told too.",
-  },
-  {
-    title: "Night check-ins",
-    description:
-      "Late at night, if your car stops for a while, the app checks that you are fine. Turn it on in your safety settings.",
-  },
-  {
-    title: "Ratings both ways",
-    description:
-      "You rate your driver after each trip and your driver rates you, with reasons.",
-  },
+const features = [
+  { icon: BadgeCheck, title: "Drivers checked by our team", text: "Before a driver takes a single trip, our team reviews their licence, vehicle licence, proof of ownership, roadworthiness certificate, insurance, hackney permit and photos of the car." },
+  { icon: KeyRound, title: "A ride PIN", text: "You get a 4-digit PIN for each ride. Your driver enters it to start the trip, so you only ever get into the right car." },
+  { icon: Share2, title: "Share your trip live", text: "Send your live trip link to anyone on WhatsApp or any app. They follow your ride on the map until you arrive." },
+  { icon: Siren, title: "SOS in one tap", text: "Press SOS and our team sees the alert straight away, with your trip and location. Your emergency contact is told too." },
+  { icon: MoonStar, title: "Night check-ins", text: "Late at night, if your car stops for a while, the app checks that you are fine. Turn it on in your safety settings." },
+  { icon: Star, title: "Ratings both ways", text: "You rate your driver after each trip and your driver rates you, with reasons." },
 ];
 
-const safetyPillars = [
-  {
-    title: "Before your ride",
-    items: [
-      "Your driver's documents and car were checked by our team",
-      "You see your driver's name, photo, car and plate",
-      "Your pickup pin is your exact spot",
-    ],
-  },
-  {
-    title: "During your ride",
-    items: [
-      "Your driver enters your ride PIN to start the trip",
-      "Share your live trip with anyone you trust",
-      "SOS reaches our team in one tap",
-      "Calls and chat with your driver stay in the app",
-    ],
-  },
-  {
-    title: "After your ride",
-    items: [
-      "Rate your driver and say what went well or wrong",
-      "Report a problem from the trip in the app",
-      "See every trip and receipt in your history",
-    ],
-  },
+const moments = [
+  { title: "Before your ride", items: ["Your driver's documents and car were checked by our team", "You see your driver's name, photo, car and plate", "Your pickup pin is your exact spot"] },
+  { title: "During your ride", items: ["Your driver enters your ride PIN to start the trip", "Share your live trip with anyone you trust", "SOS reaches our team in one tap", "Calls and chat with your driver stay in the app"] },
+  { title: "After your ride", items: ["Rate your driver and say what went well or wrong", "Report a problem from the trip in the app", "See every trip and receipt in your history"] },
+];
+
+/** What the server does when a rider presses SOS, in order. */
+const sos = [
+  "Our team sees your alert at once, with your trip, your driver and where you are.",
+  "Our support inbox gets an email about it too.",
+  "Your emergency contact is told that you raised an alert.",
+  "If you are in danger, call the police on 112 as well.",
 ];
 
 export default function SafetyPage() {
   return (
     <>
       <PageHero
-        label="Safety"
-        title="Safety built into every ride."
-        description="From the driver checks before their first trip to the PIN, the live link and the SOS button during yours, here is what Zyon does to keep you safe."
+        title="Safety built"
+        dim="into every ride."
+        description="From the checks a driver passes before their first trip to the PIN, the live link and the SOS button during yours."
         breadcrumbs={[{ label: "Safety" }]}
+        media={
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem]">
+            <Image src="/images/photos/lekki.webp" alt="Lekki-Ikoyi Link Bridge, Lagos" fill priority sizes="(min-width: 1024px) 600px, 100vw" className="object-cover" />
+          </div>
+        }
       />
 
       <main>
-        {/* Safety Features */}
-        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
-          <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-            <AnimatedSection>
-              <p className="text-sm font-medium text-primary-400 mb-6">
-                Safety Features
-              </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
-                Your protection is{" "}
-                <span className="text-primary-400">built into every trip.</span>
-              </h2>
-            </AnimatedSection>
-
-            <div className="mt-14 sm:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-0 border-t border-surface-200 dark:border-white/[0.06]">
-              {safetyFeatures.map((feature, i) => (
-                <AnimatedSection key={feature.title} delay={i * 0.06}>
-                  <div className="py-7 sm:py-8 border-b border-surface-200 dark:border-white/[0.06]">
-                    <h3 className="text-base font-bold text-dark-900 dark:text-white mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm text-dark-500 dark:text-dark-400 leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
+        <Band tone="white">
+          <Heading title="What keeps" dim="you safe." />
+          <div className="mt-14">
+            <Ruled items={features} />
           </div>
-        </section>
+        </Band>
 
-        {/* Safety Pillars */}
-        <section className="py-20 sm:py-28 bg-dark-950">
-          <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-            <AnimatedSection>
-              <p className="text-sm font-medium text-primary-400 mb-6">
-                End-to-End Safety
-              </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15]">
-                Before, during and after every ride.
-              </h2>
-            </AnimatedSection>
-
-            <div className="mt-14 sm:mt-16 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-0">
-              {safetyPillars.map((pillar, i) => (
-                <AnimatedSection key={pillar.title} delay={i * 0.1}>
-                  <div className={`p-6 sm:p-8 lg:p-0 rounded-2xl lg:rounded-none border border-white/[0.08] lg:border-0 bg-white/[0.02] lg:bg-transparent ${i === 0 ? "lg:pr-8" : i === safetyPillars.length - 1 ? "lg:pl-8" : "lg:px-8"} ${i < safetyPillars.length - 1 ? "lg:border-r lg:!border-white/[0.08]" : ""}`}>
-                    <h3 className="text-lg font-bold text-white mt-3 mb-5">
-                      {pillar.title}
-                    </h3>
-                    <ul className="space-y-3">
-                      {pillar.items.map((item) => (
-                        <li
-                          key={item}
-                          className="flex items-start gap-2.5 text-sm text-dark-400"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary-400 mt-1.5 shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Emergency */}
-        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
-          <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-              <AnimatedSection>
-                <p className="text-sm font-medium text-red-500 mb-6">
-                  Emergency Response
-                </p>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15]">
-                  If something goes wrong.
-                </h2>
-                <p className="mt-5 text-dark-500 dark:text-dark-400 leading-relaxed">
-                  Press SOS on the trip screen. Here is what happens.
-                </p>
-              </AnimatedSection>
-
-              <AnimatedSection delay={0.1}>
-                <div className="border-t border-surface-200 dark:border-white/[0.06]">
-                  {[
-                    "Our team sees your alert at once, with your trip, your driver and where you are",
-                    "Our support inbox gets an email about it too",
-                    "Your emergency contact is told that you raised an alert",
-                    "If you are in danger, call the police on 112 as well",
-                  ].map((step, i) => (
-                    <div
-                      key={i}
-                      className="py-5 border-b border-surface-200 dark:border-white/[0.06] flex items-start gap-4"
-                    >
-                      <p className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed">
-                        {step}
-                      </p>
-                    </div>
+        <Band tone="mist">
+          <Heading title="Before, during" dim="and after every ride." />
+          <div className="mt-14 grid gap-10 lg:grid-cols-3">
+            {moments.map((m) => (
+              <div key={m.title} className="border-t border-ink/15 pt-6 dark:border-white/15">
+                <h3 className="text-lg font-semibold tracking-tight">{m.title}</h3>
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-dark-500 dark:text-white/60">
+                  {m.items.map((it) => (
+                    <li key={it}>{it}</li>
                   ))}
-                </div>
-              </AnimatedSection>
-            </div>
+                </ul>
+              </div>
+            ))}
           </div>
-        </section>
+        </Band>
 
-        {/* CTA */}
-        <section className="py-20 sm:py-28 lg:py-36 bg-dark-950">
-          <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-            <div className="max-w-2xl">
-              <AnimatedSection>
-                <p className="text-sm font-medium text-primary-400 mb-4">
-                  Ride with Confidence
-                </p>
-                <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Safe ride-hailing in Nigeria starts here.
-                </h2>
-                <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  The rider app is on its way to the App Store and Google Play. Leave your email and we will tell you the day it is live. Ride-hailing built around your protection.
-                </p>
-                <div className="mt-8">
-                  <Button href="/#notify" variant="primary" size="lg">
-                    Get the launch email
-                  </Button>
-                </div>
-              </AnimatedSection>
+        <Band tone="white">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
+            <div>
+              <Heading title="If something" dim="goes wrong." />
+              <p className="mt-5 max-w-sm leading-relaxed text-dark-500 dark:text-white/55">Press SOS on the trip screen. Here is what happens next.</p>
             </div>
+            <ol className="border-t border-ink/15 dark:border-white/15">
+              {sos.map((s) => (
+                <li key={s} className="border-b border-ink/15 py-5 leading-relaxed text-dark-700 dark:border-white/15 dark:text-white/75">
+                  {s}
+                </li>
+              ))}
+            </ol>
           </div>
-        </section>
+        </Band>
+
+        <CtaCard title="Ride with" dim="confidence." text="The rider app is on its way to Google Play and the App Store. Leave your email and we will tell you the day it is live.">
+          <Button href="/#notify" size="lg">Get the launch email</Button>
+          <Button href="/blog/7-safety-layers-on-every-zyon-ride" variant="outline" size="lg">Read the 7 safety layers</Button>
+        </CtaCard>
       </main>
 
       <Footer />
