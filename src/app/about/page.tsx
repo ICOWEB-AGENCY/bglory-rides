@@ -8,7 +8,7 @@ import Button from "@/components/Button";
 export const metadata: Metadata = {
   title: "About Zyon | Ride-Hailing Company Nigeria",
   description:
-    "Zyon is a ride-hailing app built for Abuja: drivers checked by our team, the price before you book, and safety features on every ride.",
+    "Zyon is a ride-hailing app built for Nigeria: drivers checked by our team, the price before you book, and safety features on every ride.",
 };
 
 const values = [
@@ -28,9 +28,9 @@ const values = [
       "Drivers keep 80% of every fare, drive the hours they choose and withdraw their earnings to their own bank.",
   },
   {
-    title: "Built for Abuja",
+    title: "Built for Nigeria",
     description:
-      "Pickups at your exact spot, directions read out in a Nigerian voice, and cash, card or wallet, because that is how Abuja pays.",
+      "Pickups at your exact spot, directions read out in a Nigerian voice, and cash, card or wallet, because that is how Nigeria pays.",
   },
 ];
 
@@ -39,8 +39,8 @@ export default function AboutPage() {
     <>
       <PageHero
         label="About Zyon"
-        title="Ride-hailing built for Abuja."
-        description="Zyon is a ride-hailing app for Abuja: one app for riders, one for drivers, and a team that checks every driver before their first trip."
+        title="Ride-hailing built for Nigeria."
+        description="Zyon is a ride-hailing app for Nigeria: one app for riders, one for drivers, and a team that checks every driver before their first trip."
         breadcrumbs={[{ label: "About Us" }]}
       />
 
@@ -78,7 +78,7 @@ export default function AboutPage() {
                     Vision
                   </h3>
                   <p className="text-dark-500 dark:text-dark-400 leading-relaxed">
-                    An Abuja where a safe, fairly priced ride is a tap away, and
+                    Cities across Nigeria where a safe, fairly priced ride is a tap away, and
                     driving for a living pays properly. We start here and grow
                     city by city.
                   </p>

@@ -39,7 +39,7 @@ export default function Footer() {
             <Link href="/" aria-label="Zyon home">
               <Image src="/images/zyon-wordmark-light.svg" alt="Zyon" width={130} height={49} className="h-8 w-auto" />
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">Rides across Abuja, at a fair price. You see the price before you book.</p>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">Rides across Nigeria, priced before you book.</p>
           </div>
           <div className="grid gap-10 sm:grid-cols-3">
             {columns.map((col) => (
@@ -67,6 +67,9 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-white">
               Terms of Service
             </Link>
+            <a href="/images/photos/CREDITS.md" className="hover:text-white">
+              Photo credits
+            </a>
             <ThemeToggle />
           </div>
           <p className="text-center text-xs text-white/45">

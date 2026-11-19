@@ -2,25 +2,27 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import Hero from "@/components/home/Hero";
-import Services from "@/components/home/Services";
-import Abuja from "@/components/home/Abuja";
-import Facts from "@/components/home/Facts";
-import Drive from "@/components/home/Drive";
-import GetTheApp from "@/components/home/GetTheApp";
-import Articles from "@/components/home/Articles";
+import Intro from "@/components/home/Intro";
+import Split from "@/components/home/Split";
+import Showcase from "@/components/home/Showcase";
+import Confidence from "@/components/home/Confidence";
+import Numbers from "@/components/home/Numbers";
+import AppBand from "@/components/home/AppBand";
+import ClosingCta from "@/components/home/ClosingCta";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="bg-white dark:bg-ink">
+      <main className="bg-ink">
         <Hero />
-        <Services />
-        <Abuja />
-        <Facts />
-        <Drive />
-        <GetTheApp />
-        <Articles />
+        <Intro />
+        <Split />
+        <Showcase />
+        <Confidence />
+        <Numbers />
+        <AppBand />
+        <ClosingCta />
       </main>
       <Footer />
       <BackToTop />

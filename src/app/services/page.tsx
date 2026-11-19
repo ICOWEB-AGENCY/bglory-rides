@@ -7,9 +7,9 @@ import SectionHeading from "@/components/SectionHeading";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Ride Options in Abuja | Economy, Standard, Premium | Zyon",
+  title: "Ride Options in Nigeria | Economy, Standard, Premium | Zyon",
   description:
-    "Three ways to ride with Zyon in Abuja: Economy, Standard and Premium. See the price before you book, pay with cash, card or your Zyon wallet.",
+    "Three ways to ride with Zyon: Economy, Standard and Premium. See the price before you book, pay with cash, card or your Zyon wallet.",
 };
 
 /** The ride classes the app offers. A car's class is set from its make, model and year. */
@@ -118,7 +118,7 @@ export default function ServicesPage() {
                   Launching Soon
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Abuja is about to ride better.
+                  Nigeria is about to ride better.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
                   The rider app is on its way to the App Store and Google Play. Leave your email and we will tell you the day it is live.

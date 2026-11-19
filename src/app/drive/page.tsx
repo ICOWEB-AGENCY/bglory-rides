@@ -7,11 +7,11 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Drive with Zyon in Abuja | Keep 80% of Every Fare | Zyon",
+  title: "Drive with Zyon in Nigeria | Keep 80% of Every Fare | Zyon",
   description:
-    "Drive with Zyon in Abuja. Sign up in the driver app, upload your documents, and go online once our team approves you. Keep 80% of every fare and withdraw to your bank.",
+    "Drive with Zyon in Nigeria. Sign up in the driver app, upload your documents, and go online once our team approves you. Keep 80% of every fare and withdraw to your bank.",
   keywords:
-    "become a driver Abuja, drive and earn Nigeria, driver app Abuja, ride hailing driver Abuja, Zyon driver signup",
+    "become a driver Nigeria, drive and earn Nigeria, driver app Nigeria, Zyon driver signup",
 };
 
 const benefits = [
@@ -81,7 +81,7 @@ export default function DrivePage() {
     <>
       <PageHero
         label="Drive with Zyon"
-        title="Drive in Abuja and keep 80% of every fare."
+        title="Drive with Zyon and keep 80% of every fare."
         description="Sign up in the driver app, upload your documents, and go online once our team approves you. Drive when it suits you and withdraw your earnings to your bank."
         breadcrumbs={[{ label: "Drive and Earn" }]}
       />

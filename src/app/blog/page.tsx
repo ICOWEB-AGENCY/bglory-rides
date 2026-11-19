@@ -10,7 +10,7 @@ import Button from "@/components/Button";
 export const metadata: Metadata = {
   title: "Blog | Zyon News, Ride-Hailing Insights Nigeria",
   description:
-    "How Zyon works: the safety on every ride, how fares are worked out, and what it takes to drive with Zyon in Abuja.",
+    "How Zyon works: the safety on every ride, how fares are worked out, and what it takes to drive with Zyon in Nigeria.",
 };
 
 export default function BlogPage() {
@@ -19,7 +19,7 @@ export default function BlogPage() {
       <PageHero
         label="Blog"
         title="Stories from the road."
-        description="Practical tips for riders and drivers, product deep dives, and the real story behind building a ride-hailing platform in Abuja. Written for you, not investors."
+        description="How Zyon works: the safety on every ride, how fares are worked out, and what it takes to drive with Zyon."
         breadcrumbs={[{ label: "Blog" }]}
       />
 

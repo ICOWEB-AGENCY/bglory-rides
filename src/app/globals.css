@@ -4,7 +4,7 @@
 
 @theme {
   --font-sans: var(--font-inter), system-ui, sans-serif;
-  --font-heading: var(--font-sora), system-ui, sans-serif;
+  --font-heading: var(--font-display), system-ui, sans-serif;
 
   /* Primary - Lime Green (from logo) */
   --color-primary-50: #f5fbe7;
@@ -50,6 +50,28 @@
   --color-mist: #f3f5f4; /* tiles on white */
 }
 
+/* Page width: slim side gutters, content runs wide like the references. */
+@utility shell {
+  width: 100%;
+  max-width: 1520px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4.5vw, 4.5rem);
+}
+
+/* Display headlines: tight grotesk, negative tracking. */
+@utility display {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+/* A highlighter stroke behind a word, as in the references. */
+@utility mark-lime {
+  background-image: linear-gradient(transparent 58%, color-mix(in srgb, var(--color-lime) 55%, transparent) 58%, color-mix(in srgb, var(--color-lime) 55%, transparent) 92%, transparent 92%);
+  padding-inline: 0.06em;
+}
+
 /* The green hero panel on the home page and every inner page */
 @utility bg-brand-hero {
   background-image: linear-gradient(115deg, var(--color-brand) 0%, var(--color-brand-mid) 55%, var(--color-brand-light) 100%);
@@ -59,7 +81,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip, not hidden: hidden makes a scroll box and breaks sticky sections */
   background: #ffffff;
 }
 
@@ -69,7 +91,7 @@ html.dark {
 
 body {
   font-family: var(--font-sans);
-  overflow-x: hidden;
+  overflow-x: clip; /* clip, not hidden: hidden makes a scroll box and breaks sticky sections */
 }
 
 h1,

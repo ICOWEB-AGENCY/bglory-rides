@@ -7,7 +7,7 @@ import Button from "@/components/Button";
 
 export const metadata: Metadata = {
   title: "Press | Zyon",
-  description: "Writing about Zyon, the ride-hailing app built for Abuja? Ask us for facts, app screenshots and our logo at press@zyonrides.com.",
+  description: "Writing about Zyon, the ride-hailing app built for Nigeria? Ask us for facts, app screenshots and our logo at press@zyonrides.com.",
 };
 
 /** No press releases until there is news to release. */
@@ -32,7 +32,7 @@ export default function PressPage() {
       <PageHero
         label="Press"
         title="Writing about Zyon?"
-        description="Zyon is a ride-hailing app built for Abuja, on its way to the App Store and Google Play. Write to press@zyonrides.com and we will send what you need."
+        description="Zyon is a ride-hailing app built for Nigeria, on its way to the App Store and Google Play. Write to press@zyonrides.com and we will send what you need."
         breadcrumbs={[{ label: "Press" }]}
       />
 

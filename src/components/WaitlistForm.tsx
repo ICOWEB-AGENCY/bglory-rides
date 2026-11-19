@@ -41,8 +41,8 @@ export default function WaitlistForm() {
   if (status === "success") {
     return (
       <motion.div className="mt-4" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-        <p className="text-sm font-semibold text-primary-700 dark:text-primary-400">You are on the list.</p>
-        <p className="mt-2 text-dark-500 dark:text-dark-400 text-sm">
+        <p className="text-sm font-semibold text-white">You are on the list.</p>
+        <p className="mt-2 text-sm text-white/70">
           We will email you the moment Zyon goes live. Check your inbox for a confirmation.
         </p>
       </motion.div>
@@ -61,12 +61,12 @@ export default function WaitlistForm() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email address"
           required
-          className="flex-1 px-4 py-3.5 rounded-lg bg-white border border-dark-200 text-dark-900 text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-500 transition-all dark:bg-dark-800 dark:border-dark-700 dark:text-white dark:placeholder:text-dark-500"
+          className="flex-1 rounded-full border border-ink/10 bg-white px-5 py-3.5 text-sm text-ink placeholder:text-dark-400 transition-all focus:border-ink focus:outline-none focus:ring-2 focus:ring-ink/20"
         />
         <button
           type="submit"
           disabled={status === "sending" || !token}
-          className="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-brand text-white text-sm font-semibold hover:bg-brand-mid transition-colors shrink-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed dark:bg-lime dark:text-brand dark:hover:bg-primary-300"
+          className="w-full shrink-0 cursor-pointer rounded-full bg-lime px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-primary-300 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
         >
           {status === "sending" ? "Sending..." : "Email me at launch"}
         </button>
@@ -77,7 +77,7 @@ export default function WaitlistForm() {
       </div>
 
       {status === "error" && (
-        <p className="mt-3 text-sm text-red-400">{errorMsg}</p>
+        <p className="mt-3 text-sm font-medium text-red-300">{errorMsg}</p>
       )}
 
     </>

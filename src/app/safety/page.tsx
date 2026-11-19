@@ -6,9 +6,9 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Safety | Safe Ride-Hailing in Abuja | Zyon",
+  title: "Safety | Safe Ride-Hailing in Nigeria | Zyon",
   description:
-    "Safety built into every Zyon ride in Abuja: drivers checked by our team, a ride PIN, live trip sharing, an SOS button and night check-ins.",
+    "Safety built into every Zyon ride: drivers checked by our team, a ride PIN, live trip sharing, an SOS button and night check-ins.",
 };
 
 const safetyFeatures = [
@@ -198,7 +198,7 @@ export default function SafetyPage() {
                   Ride with Confidence
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Safe ride-hailing in Abuja starts here.
+                  Safe ride-hailing in Nigeria starts here.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
                   The rider app is on its way to the App Store and Google Play. Leave your email and we will tell you the day it is live. Ride-hailing built around your protection.

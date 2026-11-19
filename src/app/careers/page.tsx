@@ -6,16 +6,16 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Careers at Zyon | Abuja",
+  title: "Careers at Zyon | Nigeria",
   description:
-    "Zyon is a small team building ride-hailing for Abuja. We have no open roles listed right now, but we want to hear from people who would like to help.",
+    "Zyon is a small team building ride-hailing for Nigeria. We have no open roles listed right now, but we want to hear from people who would like to help.",
 };
 
 /** No roles are listed until there are real ones to fill. */
 const kinds = [
   {
     title: "On the road",
-    text: "Driver support and operations in Abuja: getting drivers checked, on the road and paid.",
+    text: "Driver support and operations across Nigeria: getting drivers checked, on the road and paid.",
   },
   {
     title: "In the product",
@@ -23,7 +23,7 @@ const kinds = [
   },
   {
     title: "With riders",
-    text: "Support, partnerships and telling Abuja that Zyon is here.",
+    text: "Support, partnerships and telling Nigeria that Zyon is here.",
   },
 ];
 
@@ -32,7 +32,7 @@ export default function CareersPage() {
     <>
       <PageHero
         label="Careers"
-        title="Help us build ride-hailing for Abuja."
+        title="Help us build ride-hailing for Nigeria."
         description="We are a small team, and we have no open roles listed right now. If you want to be part of what comes next, we would like to hear from you."
         breadcrumbs={[{ label: "Careers" }]}
       />

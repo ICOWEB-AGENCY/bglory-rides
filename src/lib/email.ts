@@ -73,7 +73,7 @@ export function layout(opts: { title: string; preheader: string; body: string; f
 ${body}
 </td></tr>
 <tr><td style="padding:32px 0 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td style="border-top:1px solid ${C.line};padding:24px 0 0;">
-<p style="margin:0;font-size:12px;line-height:18px;color:${C.muted};">${escapeHtml(footer)}<br>Zyon, Abuja, Nigeria</p>
+<p style="margin:0;font-size:12px;line-height:18px;color:${C.muted};">${escapeHtml(footer)}<br>Zyon, Nigeria</p>
 </td></tr></table></td></tr>
 </table>
 <!--[if mso]></td></tr></table><![endif]-->

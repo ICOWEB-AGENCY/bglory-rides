@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Inter, Inter_Tight } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
 import MotionRoot from "@/components/MotionRoot";
 import "./globals.css";
@@ -11,9 +11,11 @@ const inter = Inter({
   display: "swap",
 });
 
-const sora = Sora({
-  variable: "--font-sora",
+// Display face: a tight grotesk for the big headlines, set with negative tracking.
+const interTight = Inter_Tight({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["500", "600"],
   display: "swap",
 });
 
@@ -29,22 +31,21 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Zyon | Affordable Ride-Hailing in Abuja, Nigeria",
+    default: "Zyon | Ride-Hailing Built for Nigeria",
     template: "%s | Zyon",
   },
   description:
-    "Ride-hailing built for Abuja. See the price before you book, ride with drivers our team has checked, and share your trip live. Get an email when the apps launch.",
+    "Ride-hailing built for Nigeria. See the price before you book, ride with drivers our team has checked, and share your trip live. Get an email when the apps launch.",
   keywords: [
-    "ride-hailing Abuja",
     "ride-hailing Nigeria",
-    "affordable rides Abuja",
-    "book a ride Abuja",
+    "book a ride Nigeria",
+    "Lagos ride-hailing",
     "taxi app Nigeria",
     "Zyon",
     "ride-hailing app Africa",
-    "become a driver Abuja",
+    "become a driver Nigeria",
     "earn money driving Nigeria",
-    "safe rides Abuja",
+    "safe rides Nigeria",
   ],
   icons: {
     icon: "/images/favicon-32x32.png",
@@ -52,9 +53,9 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(SITE_URL),
   openGraph: {
-    title: "Zyon | Affordable Ride-Hailing in Abuja, Nigeria",
+    title: "Zyon | Ride-Hailing Built for Nigeria",
     description:
-      "See the price before you book, ride with drivers our team has checked, and share your trip live. Ride-hailing built for Abuja.",
+      "See the price before you book, ride with drivers our team has checked, and share your trip live. Ride-hailing built for Nigeria.",
     type: "website",
     locale: "en_NG",
     siteName: "Zyon",
@@ -63,15 +64,15 @@ export const metadata: Metadata = {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Zyon - Affordable Ride-Hailing in Abuja",
+        alt: "Zyon - Ride-Hailing Built for Nigeria",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zyon | Affordable Ride-Hailing in Abuja",
+    title: "Zyon | Ride-Hailing Built for Nigeria",
     description:
-      "The price before you book. Drivers checked by our team. Your trip shared live. Ride-hailing built for Abuja.",
+      "The price before you book. Drivers checked by our team. Your trip shared live. Ride-hailing built for Nigeria.",
     images: ["/images/og-image.png"],
   },
   robots: {
@@ -103,7 +104,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body
-        className={`${inter.variable} ${sora.variable} antialiased bg-white dark:bg-ink text-dark-900 dark:text-dark-100 transition-colors duration-300`}
+        className={`${inter.variable} ${interTight.variable} antialiased bg-white dark:bg-ink text-dark-900 dark:text-dark-100 transition-colors duration-300`}
       >
         <ThemeProvider>
           <MotionRoot>{children}</MotionRoot>

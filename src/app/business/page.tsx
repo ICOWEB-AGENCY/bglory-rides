@@ -7,9 +7,9 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Zyon for Business | Team Rides in Abuja",
+  title: "Zyon for Business | Team Rides in Nigeria",
   description:
-    "Team accounts for companies in Abuja are coming to Zyon. Tell us how your people move around the city and what you need from a business account.",
+    "Team accounts for companies in Nigeria are coming to Zyon. Tell us how your people move around the city and what you need from a business account.",
 };
 
 /** Team accounts do not exist yet: this page collects interest, it does not sell plans. */
