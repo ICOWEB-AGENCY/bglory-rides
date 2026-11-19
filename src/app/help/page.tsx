@@ -17,7 +17,7 @@ const helpTopics = [
     title: "Getting started",
     questions: [
       { q: "How do I create an account?", a: "Open the Zyon app and sign up with your name, phone number, email and a password. We send a code to confirm your number, or to your email if you choose." },
-      { q: "How do I pay?", a: "Cash to your driver at the end of the trip, a debit card, or your Zyon wallet. Pick one before you confirm a ride." },
+      { q: "How do I pay?", a: "Cash to your driver at the end of the trip, a card, or your Zyon wallet. Pick one before you confirm a ride." },
       { q: "How do I add a card?", a: "Go to Wallet, tap Add card and follow the steps. Card payments run through Paystack." },
     ],
   },
@@ -121,8 +121,7 @@ export default function HelpPage() {
                   Did not find your answer?
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Send us a message. A person reads every one and replies by
-                  email.
+                  Send us a message and we will reply by email.
                 </p>
                 <div className="mt-8">
                   <Button href="/contact" variant="primary" size="lg">

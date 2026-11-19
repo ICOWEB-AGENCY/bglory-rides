@@ -18,7 +18,7 @@ const benefits = [
   {
     title: "Keep 80% of every fare",
     description:
-      "Zyon's share is 20%. On cash trips you collect the fare in hand and our share is settled from your account later.",
+      "Zyon's share is 20%. On cash trips you collect the whole fare in hand, and you settle our share in the app.",
   },
   {
     title: "Withdraw when you want",
@@ -28,7 +28,7 @@ const benefits = [
   {
     title: "Busy hours pay more",
     description:
-      "At busy times the fare riders see is higher, and your 80% rises with it.",
+      "Fares are higher at busy times, and you keep 80% of them.",
   },
   {
     title: "Drive when it suits you",

@@ -18,13 +18,13 @@ const tiles: Tile[] = [
   },
   {
     title: "Standard",
-    line: "More room, newer cars.",
+    line: "A step up from Economy.",
     href: "/services#standard",
     art: <Sedan bodyClass="fill-dark-200" className="w-32 sm:w-36" />,
   },
   {
     title: "Premium",
-    line: "Our nicest cars, for when it counts.",
+    line: "Our top class, for when it counts.",
     href: "/services#premium",
     art: <Sedan bodyClass="fill-brand dark:fill-[#2f7a46]" className="w-32 sm:w-36" />,
   },

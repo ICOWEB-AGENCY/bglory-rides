@@ -66,7 +66,7 @@ export default function CareersPage() {
               <AnimatedSection>
                 <h2 className="text-3xl sm:text-4xl font-bold text-white leading-[1.1] tracking-tight">Tell us about yourself.</h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Send a short note about what you do and what you would like to work on. We keep every message and write back when a role opens.
+                  Send a short note about what you do and what you would like to work on.
                 </p>
                 <div className="mt-8">
                   <Button href="/contact" variant="primary" size="lg">

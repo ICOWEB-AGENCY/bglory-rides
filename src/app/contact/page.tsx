@@ -19,7 +19,7 @@ const contactChannels = [
     label: "Phone",
     value: "0806 337 6181",
     href: "tel:+2348063376181",
-    note: "Speak to a real person, Monday to Friday",
+    note: "Call us about a trip, your account or driving with Zyon",
   },
   {
     label: "In the app",
@@ -75,7 +75,7 @@ export default function ContactPage() {
       <PageHero
         label="Contact"
         title="We would love to hear from you."
-        description="Whether you ride, drive or want to work with us, write to us. A person reads every message."
+        description="Whether you ride, drive or want to work with us, send us a message."
         breadcrumbs={[{ label: "Contact" }]}
       />
 
@@ -117,7 +117,7 @@ export default function ContactPage() {
                   </h2>
                   <p className="mt-5 text-dark-500 dark:text-dark-400 leading-relaxed">
                     Riders, drivers and companies all write to the same team.
-                    A person reads every message and replies by email.
+                    Leave your email so we can reply.
                   </p>
                 </AnimatedSection>
               </div>
@@ -130,8 +130,8 @@ export default function ContactPage() {
                         Message received.
                       </h3>
                       <p className="text-dark-500 dark:text-dark-400 text-sm mb-8 max-w-sm mx-auto">
-                        Thank you for writing. A member of the team will reply
-                        to your email.
+                        Thank you for writing. We will reply to the email you
+                        gave us.
                       </p>
                       <button
                         onClick={() => setSubmitted(false)}

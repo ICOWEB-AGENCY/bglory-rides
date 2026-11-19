@@ -17,17 +17,17 @@ const services = [
   {
     name: "Economy",
     description: "Everyday rides at the lowest fare. Good for the school run, the market and getting to work.",
-    features: ["The lowest fare", "Air conditioning", "Ride PIN and live trip sharing"],
+    features: ["The lowest fare", "Ride PIN and live trip sharing"],
   },
   {
     name: "Standard",
-    description: "More room and newer cars, for when you want a little more comfort on the way.",
-    features: ["Newer, roomier cars", "Air conditioning", "Ride PIN and live trip sharing"],
+    description: "A step up from Economy, for when you want a little more comfort on the way.",
+    features: ["Class set by make, model and year", "Ride PIN and live trip sharing"],
   },
   {
     name: "Premium",
-    description: "Our nicest cars, for client meetings, airport runs and evenings out.",
-    features: ["Premium cars", "Air conditioning", "Ride PIN and live trip sharing"],
+    description: "Our top class, for client meetings, airport runs and evenings out.",
+    features: ["Class set by make, model and year", "Ride PIN and live trip sharing"],
   },
 ];
 

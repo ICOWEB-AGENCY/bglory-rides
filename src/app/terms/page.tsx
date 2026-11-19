@@ -134,7 +134,7 @@ export default function TermsPage() {
                 <div
                   className={`py-8 ${i < sections.length - 1 ? "border-b border-surface-200 dark:border-white/[0.06]" : ""}`}
                 >
-                  <span className="text-xs font-mono text-dark-300 tracking-widest">
+                  <span className="text-sm font-semibold text-dark-400">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h2 className="text-lg sm:text-xl font-bold text-dark-900 dark:text-white mt-3 mb-3">

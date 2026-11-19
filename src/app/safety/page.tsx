@@ -15,7 +15,7 @@ const safetyFeatures = [
   {
     title: "Drivers checked by our team",
     description:
-      "Before a driver takes a single trip, our team reviews their licence, car papers, insurance, hackney permit and photos of the car. You see their name, photo, car and plate before they arrive.",
+      "Before a driver takes a single trip, our team reviews their licence, vehicle licence, proof of ownership, roadworthiness certificate, insurance, hackney permit and photos of the car. You see their name, photo, car and plate before they arrive.",
   },
   {
     title: "A ride PIN",
@@ -40,7 +40,7 @@ const safetyFeatures = [
   {
     title: "Ratings both ways",
     description:
-      "You rate your driver after each trip and your driver rates you, with reasons, so problems are seen and dealt with.",
+      "You rate your driver after each trip and your driver rates you, with reasons.",
   },
 ];
 
