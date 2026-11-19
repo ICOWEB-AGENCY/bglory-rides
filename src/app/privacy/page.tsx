@@ -107,7 +107,7 @@ const sections = [
     items: [
       "Active account data is kept for as long as your account remains open and active",
       "Ride history, receipts, and transaction records are retained for 3 years after the ride date for accounting and dispute resolution purposes",
-      "When you delete your account, we delete your personal data, except records the law requires us to keep",
+      "When you delete your account in the app, we wipe your name, contact details, photos, documents, saved places and saved cards. Trip and payment records stay, with your details removed, because drivers' histories and our accounts depend on them",
       "Anonymized, aggregated data that cannot identify you may be retained indefinitely for analytical purposes",
       "Data required for legal compliance, fraud prevention, or ongoing disputes may be retained beyond these periods as permitted by law",
     ],
