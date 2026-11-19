@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Briefcase, Receipt, ShieldCheck, Share2 } from "lucide-react";
-import { Sedan } from "./art";
+import { Sedan } from "./visuals";
 
 /** flush: the art sits on the tile's bottom edge (a phone rising from below). */
 type Tile = { title: string; line: string; href: string; art: React.ReactNode; flush?: boolean };
@@ -14,27 +14,27 @@ const tiles: Tile[] = [
     title: "Economy",
     line: "Everyday rides at the lowest fare.",
     href: "/services#economy",
-    art: <Sedan bodyClass="fill-[#11161b] dark:fill-[#5b6d7b]" className="w-32 sm:w-36" />,
+    art: <Sedan bodyClass="fill-[#11161b] dark:fill-dark-500" className="w-32 sm:w-36" />,
   },
   {
     title: "Standard",
     line: "More room, newer cars.",
     href: "/services#standard",
-    art: <Sedan bodyClass="fill-[#c9d1d7]" className="w-32 sm:w-36" />,
+    art: <Sedan bodyClass="fill-dark-200" className="w-32 sm:w-36" />,
   },
   {
     title: "Premium",
-    line: "Top-rated drivers, premium cars.",
+    line: "Our nicest cars, for when it counts.",
     href: "/services#premium",
-    art: <Sedan bodyClass="fill-[#063F1E] dark:fill-[#2f7a46]" className="w-32 sm:w-36" />,
+    art: <Sedan bodyClass="fill-brand dark:fill-[#2f7a46]" className="w-32 sm:w-36" />,
   },
   {
     title: "Zyon for Business",
-    line: "Team rides on one account.",
+    line: "Team accounts are coming. Talk to us.",
     href: "/business",
     art: (
       <div className="flex items-end gap-2" aria-hidden="true">
-        <span className="grid h-14 w-14 place-items-center rounded-xl bg-[#063F1E] text-[#9ACD32]">
+        <span className="grid h-14 w-14 place-items-center rounded-xl bg-brand text-lime">
           <Briefcase className="h-7 w-7" />
         </span>
         <span className="grid h-10 w-10 place-items-center rounded-lg bg-white text-dark-900 shadow-sm dark:bg-dark-800 dark:text-white">
@@ -49,7 +49,7 @@ const tiles: Tile[] = [
     href: "/drive",
     flush: true,
     art: (
-      <div className="relative h-24 w-24 overflow-hidden rounded-t-2xl border-x-4 border-t-4 border-[#0b0f0d] sm:h-28 sm:w-28" aria-hidden="true">
+      <div className="relative h-24 w-24 overflow-hidden rounded-t-2xl border-x-4 border-t-4 border-ink sm:h-28 sm:w-28" aria-hidden="true">
         <Image src="/images/app/driver-online.webp" alt="" width={720} height={1564} className="w-full" sizes="112px" />
       </div>
     ),
@@ -63,7 +63,7 @@ const tiles: Tile[] = [
         <span className="grid h-10 w-10 place-items-center rounded-lg bg-white text-dark-900 shadow-sm dark:bg-dark-800 dark:text-white">
           <Share2 className="h-5 w-5" />
         </span>
-        <span className="grid h-14 w-14 place-items-center rounded-xl bg-[#9ACD32] text-[#063F1E]">
+        <span className="grid h-14 w-14 place-items-center rounded-xl bg-lime text-brand">
           <ShieldCheck className="h-7 w-7" />
         </span>
       </div>
@@ -87,7 +87,7 @@ export default function Services() {
             >
               <Link
                 href={t.href}
-                className="group relative flex h-44 flex-col overflow-hidden rounded-2xl bg-[#f3f5f4] p-6 transition-colors hover:bg-[#ebefed] dark:bg-[#141a17] dark:hover:bg-[#1a221e]"
+                className="group relative flex h-44 flex-col overflow-hidden rounded-2xl bg-mist p-6 transition-colors hover:bg-[#ebefed] dark:bg-ink-raised dark:hover:bg-[#1a221e]"
               >
                 <span className="text-lg font-semibold text-dark-900 dark:text-white">{t.title}</span>
                 <span className="mt-1 max-w-[60%] text-sm leading-snug text-dark-500 dark:text-dark-300">{t.line}</span>

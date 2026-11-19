@@ -18,22 +18,22 @@ export default function Articles() {
         <div className="mt-10 grid gap-3 lg:grid-cols-[1.4fr_1fr]">
           <Link
             href={`/blog/${lead.slug}`}
-            className="group flex min-h-72 flex-col justify-between rounded-2xl bg-[#063F1E] p-7 text-white sm:p-9"
+            className="group flex min-h-72 flex-col justify-between rounded-2xl bg-brand p-7 text-white sm:p-9"
           >
-            <span className="text-xs font-semibold text-[#9ACD32]">
+            <span className="text-xs font-semibold text-lime">
               {lead.category} · {lead.date}
             </span>
             <div>
               <h3 className="max-w-lg text-2xl font-semibold leading-tight sm:text-3xl">{lead.title}</h3>
               <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/70">{lead.excerpt}</p>
-              <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-[#9ACD32]">
+              <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-lime">
                 Read the post <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
               </span>
             </div>
           </Link>
           <div className="divide-y divide-dark-100 rounded-2xl border border-dark-100 dark:divide-dark-800 dark:border-dark-800">
             {rest.slice(0, 2).map((p) => (
-              <Link key={p.slug} href={`/blog/${p.slug}`} className="group block p-7 transition-colors hover:bg-[#f3f5f4] dark:hover:bg-[#141a17]">
+              <Link key={p.slug} href={`/blog/${p.slug}`} className="group block p-7 transition-colors hover:bg-mist dark:hover:bg-ink-raised">
                 <span className="text-xs font-semibold text-dark-400">
                   {p.category} · {p.date}
                 </span>

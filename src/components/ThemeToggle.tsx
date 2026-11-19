@@ -37,7 +37,7 @@ export default function ThemeToggle() {
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        aria-haspopup="true"
+        aria-controls="theme-choices"
         aria-expanded={open}
         aria-label="Change theme"
         className="grid h-9 w-9 place-items-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-white/40 hover:text-white"
@@ -47,18 +47,20 @@ export default function ThemeToggle() {
       <AnimatePresence>
         {open && (
           <motion.div
-            role="menu"
+            id="theme-choices"
+            role="radiogroup"
+            aria-label="Theme"
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 6 }}
             transition={{ duration: 0.15 }}
-            className="absolute bottom-11 left-1/2 flex -translate-x-1/2 gap-1 rounded-xl border border-white/10 bg-[#141a17] p-1 shadow-xl"
+            className="absolute bottom-11 left-1/2 flex -translate-x-1/2 gap-1 rounded-xl border border-white/10 bg-ink-raised p-1 shadow-xl"
           >
             {choices.map(({ value, label, Icon }) => (
               <button
                 key={value}
                 type="button"
-                role="menuitemradio"
+                role="radio"
                 aria-checked={choice === value}
                 aria-label={label}
                 title={label}
@@ -67,7 +69,7 @@ export default function ThemeToggle() {
                   setOpen(false);
                 }}
                 className={`grid h-9 w-9 place-items-center rounded-lg transition-colors ${
-                  choice === value ? "bg-[#9ACD32] text-[#063F1E]" : "text-white/70 hover:bg-white/10 hover:text-white"
+                  choice === value ? "bg-lime text-brand" : "text-white/70 hover:bg-white/10 hover:text-white"
                 }`}
               >
                 <Icon className="h-4 w-4" />

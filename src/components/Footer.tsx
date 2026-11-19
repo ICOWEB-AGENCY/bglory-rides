@@ -32,14 +32,14 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="mt-20 bg-[#0b0f0d] text-white dark:border-t dark:border-white/10">
+    <footer className="mt-20 bg-ink text-white dark:border-t dark:border-white/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 py-16 text-center sm:text-left lg:grid-cols-[1.3fr_2fr]">
           <div className="flex flex-col items-center sm:items-start">
             <Link href="/" aria-label="Zyon home">
               <Image src="/images/zyon-wordmark-light.svg" alt="Zyon" width={130} height={49} className="h-8 w-auto" />
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">Rides across Abuja, at a fair price. The fare you see is the fare you pay.</p>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">Rides across Abuja, at a fair price. You see the price before you book.</p>
           </div>
           <div className="grid gap-10 sm:grid-cols-3">
             {columns.map((col) => (
@@ -48,7 +48,7 @@ export default function Footer() {
                 <ul className="mt-4 space-y-3">
                   {col.links.map((l) => (
                     <li key={l.href}>
-                      <Link href={l.href} className="text-sm text-white/60 transition-colors hover:text-[#9ACD32]">
+                      <Link href={l.href} className="text-sm text-white/60 transition-colors hover:text-lime">
                         {l.label}
                       </Link>
                     </li>

@@ -103,7 +103,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body
-        className={`${inter.variable} ${sora.variable} antialiased bg-white dark:bg-[#0b0f0d] text-dark-900 dark:text-dark-100 transition-colors duration-300`}
+        className={`${inter.variable} ${sora.variable} antialiased bg-white dark:bg-ink text-dark-900 dark:text-dark-100 transition-colors duration-300`}
       >
         <ThemeProvider>
           <MotionRoot>{children}</MotionRoot>

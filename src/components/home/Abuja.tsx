@@ -8,7 +8,7 @@ const points = [
   {
     icon: ReceiptText,
     title: "The price before you book",
-    text: "You confirm the fare first. That is what you pay, with no surge added after you sit down.",
+    text: "You see the fare, busy-hour pricing included, before you confirm. It changes only if the trip turns out much longer than planned.",
   },
   {
     icon: MapPin,
@@ -38,7 +38,7 @@ export default function Abuja() {
           <ul className="mt-10 space-y-8">
             {points.map(({ icon: Icon, title, text }) => (
               <li key={title} className="flex gap-4">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#063F1E] text-[#9ACD32]">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand text-lime">
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <div>
@@ -60,10 +60,10 @@ export default function Abuja() {
           {collage.map((c) => (
             <div
               key={c.src}
-              className={`relative overflow-hidden rounded-2xl ${c.span} ${c.screen ? "bg-[#063F1E] px-6 pt-6" : "bg-dark-100 dark:bg-dark-800"}`}
+              className={`relative overflow-hidden rounded-2xl ${c.span} ${c.screen ? "bg-brand px-6 pt-6" : "bg-dark-100 dark:bg-dark-800"}`}
             >
               {c.screen ? (
-                <div className="h-full overflow-hidden rounded-t-[1.4rem] border-x-[5px] border-t-[5px] border-[#0b0f0d]">
+                <div className="h-full overflow-hidden rounded-t-[1.4rem] border-x-[5px] border-t-[5px] border-ink">
                   <Image src={c.src} alt={c.alt} width={c.w} height={c.h} className="w-full" sizes="(min-width: 1024px) 260px, 45vw" />
                 </div>
               ) : (

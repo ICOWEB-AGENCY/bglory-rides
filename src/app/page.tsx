@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="bg-white dark:bg-[#0b0f0d]">
+      <main className="bg-white dark:bg-ink">
         <Hero />
         <Services />
         <Abuja />

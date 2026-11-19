@@ -28,16 +28,26 @@ export default function Navbar() {
     setIsOpen(false);
   }
 
+  // While the menu covers the page: no scrolling behind it, Tab stays in the
+  // menu (the page behind is inert), and Escape closes it.
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
+    if (!isOpen) return;
+    const behind = [document.querySelector("main"), document.querySelector("footer")];
+    document.body.style.overflow = "hidden";
+    behind.forEach((el) => el?.setAttribute("inert", ""));
+    const esc = (e: KeyboardEvent) => e.key === "Escape" && setIsOpen(false);
+    document.addEventListener("keydown", esc);
     return () => {
       document.body.style.overflow = "";
+      behind.forEach((el) => el?.removeAttribute("inert"));
+      document.removeEventListener("keydown", esc);
     };
   }, [isOpen]);
+  const close = () => setIsOpen(false);
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 bg-white transition-shadow duration-300 dark:bg-[#0b0f0d] ${
+      className={`fixed inset-x-0 top-0 z-50 bg-white transition-shadow duration-300 dark:bg-ink ${
         scrolled && !isOpen ? "shadow-[0_1px_0_rgba(15,20,25,0.08)] dark:shadow-[0_1px_0_rgba(255,255,255,0.08)]" : ""
       }`}
     >
@@ -58,7 +68,7 @@ export default function Navbar() {
                 className={`rounded-lg px-3.5 py-2 text-sm transition-colors ${
                   active
                     ? "font-semibold text-dark-900 dark:text-white"
-                    : "font-medium text-dark-500 hover:bg-[#f3f5f4] hover:text-dark-900 dark:text-dark-300 dark:hover:bg-white/5 dark:hover:text-white"
+                    : "font-medium text-dark-500 hover:bg-mist hover:text-dark-900 dark:text-dark-300 dark:hover:bg-white/5 dark:hover:text-white"
                 }`}
               >
                 {link.label}
@@ -68,12 +78,12 @@ export default function Navbar() {
         </div>
 
         <div className="hidden shrink-0 items-center gap-2 lg:flex">
-          <Link href="/drive" className="rounded-lg px-3.5 py-2 text-sm font-semibold text-dark-900 hover:bg-[#f3f5f4] dark:text-white dark:hover:bg-white/5">
+          <Link href="/drive" className="rounded-lg px-3.5 py-2 text-sm font-semibold text-dark-900 hover:bg-mist dark:text-white dark:hover:bg-white/5">
             Drive with Zyon
           </Link>
           <Link
             href="/#get-the-app"
-            className="rounded-lg bg-[#063F1E] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#0a5229] dark:bg-[#9ACD32] dark:text-[#063F1E] dark:hover:bg-[#b4dc66]"
+            className="rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-mid dark:bg-lime dark:text-brand dark:hover:bg-primary-300"
           >
             Get the app
           </Link>
@@ -84,19 +94,20 @@ export default function Navbar() {
           onClick={() => setIsOpen((o) => !o)}
           aria-expanded={isOpen}
           aria-label={isOpen ? "Close menu" : "Open menu"}
-          className="relative z-[60] grid h-11 w-11 place-items-center rounded-lg text-dark-900 hover:bg-[#f3f5f4] lg:hidden dark:text-white dark:hover:bg-white/5"
+          className="relative z-[60] grid h-11 w-11 place-items-center rounded-lg text-dark-900 hover:bg-mist lg:hidden dark:text-white dark:hover:bg-white/5"
         >
           {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </nav>
 
       {isOpen && (
-        <div className="fixed inset-0 top-16 z-50 flex flex-col justify-between overflow-y-auto bg-white px-4 pb-8 pt-4 sm:px-6 lg:hidden dark:bg-[#0b0f0d]">
+        <div className="fixed inset-0 top-16 z-50 flex flex-col justify-between overflow-y-auto bg-white px-4 pb-8 pt-4 sm:px-6 lg:hidden dark:bg-ink">
           <ul className="divide-y divide-dark-100 dark:divide-dark-800">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
+                  onClick={close}
                   aria-current={pathname === link.href ? "page" : undefined}
                   className="block py-4 text-xl font-semibold text-dark-900 dark:text-white"
                 >
@@ -108,13 +119,14 @@ export default function Navbar() {
           <div className="mt-8 flex flex-col gap-3">
             <Link
               href="/#get-the-app"
-              onClick={() => setIsOpen(false)}
-              className="inline-flex w-full items-center justify-center rounded-lg bg-[#063F1E] px-6 py-3.5 text-sm font-semibold text-white dark:bg-[#9ACD32] dark:text-[#063F1E]"
+              onClick={close}
+              className="inline-flex w-full items-center justify-center rounded-lg bg-brand px-6 py-3.5 text-sm font-semibold text-white dark:bg-lime dark:text-brand"
             >
               Get the app
             </Link>
             <Link
               href="/drive"
+              onClick={close}
               className="inline-flex w-full items-center justify-center rounded-lg border border-dark-200 px-6 py-3.5 text-sm font-semibold text-dark-900 dark:border-dark-700 dark:text-white"
             >
               Drive with Zyon

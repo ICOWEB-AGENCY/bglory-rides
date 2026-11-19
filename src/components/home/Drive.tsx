@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Clock3, Navigation, Wallet } from "lucide-react";
-import { Phone, Sedan } from "./art";
+import { Phone, Sedan } from "./visuals";
 
 const points = [
   { icon: Clock3, title: "Drive when it suits you", text: "Go online for an hour or a whole day. Requests come from riders close by." },
@@ -17,7 +17,7 @@ export default function Drive() {
       <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2 lg:gap-20">
         {/* The driver's real screen over a block of brand green, with the car pulling in. */}
         <div className="relative order-2 mx-auto h-[440px] w-full max-w-[480px] lg:order-1 lg:h-[520px]">
-          <div className="absolute inset-y-10 left-[18%] right-0 rounded-[28px] bg-[#9ACD32]" />
+          <div className="absolute inset-y-10 left-[18%] right-0 rounded-[28px] bg-lime" />
           <motion.div
             className="absolute left-[30%] top-0 w-[46%] sm:w-[42%]"
             initial={{ opacity: 0, y: 30 }}
@@ -34,7 +34,7 @@ export default function Drive() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <Sedan bodyClass="fill-[#063F1E]" className="w-full drop-shadow-[0_18px_18px_rgba(0,0,0,0.25)]" />
+            <Sedan bodyClass="fill-brand" className="w-full drop-shadow-[0_18px_18px_rgba(0,0,0,0.25)]" />
           </motion.div>
         </div>
 
@@ -43,7 +43,7 @@ export default function Drive() {
           <ul className="mt-10 space-y-7">
             {points.map(({ icon: Icon, title, text }) => (
               <li key={title} className="flex gap-4">
-                <Icon className="mt-0.5 h-6 w-6 shrink-0 text-[#4b6616] dark:text-[#9ACD32]" aria-hidden="true" />
+                <Icon className="mt-0.5 h-6 w-6 shrink-0 text-primary-700 dark:text-lime" aria-hidden="true" />
                 <div>
                   <h3 className="text-base font-semibold text-dark-900 dark:text-white">{title}</h3>
                   <p className="mt-1 max-w-md text-sm leading-relaxed text-dark-500 dark:text-dark-300">{text}</p>

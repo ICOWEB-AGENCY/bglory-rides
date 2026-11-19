@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { motion } from "framer-motion";
 import Turnstile from "@/components/Turnstile";
 
 export default function WaitlistForm() {
@@ -39,15 +40,12 @@ export default function WaitlistForm() {
 
   if (status === "success") {
     return (
-      <div className="mt-4 animate-fade-in">
-        <div className="flex items-center gap-2 text-[#4b6616] dark:text-primary-400 font-semibold text-sm">
-          <span className="w-2 h-2 rounded-full bg-primary-400" />
-          You are on the list.
-        </div>
+      <motion.div className="mt-4" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
+        <p className="text-sm font-semibold text-primary-700 dark:text-primary-400">You are on the list.</p>
         <p className="mt-2 text-dark-500 dark:text-dark-400 text-sm">
           We will email you the moment Zyon goes live. Check your inbox for a confirmation.
         </p>
-      </div>
+      </motion.div>
     );
   }
 
@@ -68,7 +66,7 @@ export default function WaitlistForm() {
         <button
           type="submit"
           disabled={status === "sending" || !token}
-          className="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#063F1E] text-white text-sm font-semibold hover:bg-[#0a5229] transition-colors shrink-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed dark:bg-[#9ACD32] dark:text-[#063F1E] dark:hover:bg-[#b4dc66]"
+          className="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-brand text-white text-sm font-semibold hover:bg-brand-mid transition-colors shrink-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed dark:bg-lime dark:text-brand dark:hover:bg-primary-300"
         >
           {status === "sending" ? "Joining..." : "Join Waitlist"}
         </button>

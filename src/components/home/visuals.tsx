@@ -27,7 +27,7 @@ export function Phone({
   className?: string;
 }) {
   return (
-    <div className={`relative rounded-[2.4rem] bg-[#0b0f0d] p-[7px] shadow-[0_30px_60px_-25px_rgba(0,0,0,0.55)] ${className}`}>
+    <div className={`relative rounded-[2.4rem] bg-ink p-[7px] shadow-[0_30px_60px_-25px_rgba(0,0,0,0.55)] ${className}`}>
       <div className="relative overflow-hidden rounded-[2rem] bg-white">
         <Image src={src} alt={alt} width={720} height={1564} priority={priority} className="block h-auto w-full" sizes="(min-width: 1024px) 300px, 60vw" />
       </div>
