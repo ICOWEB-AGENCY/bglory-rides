@@ -9,7 +9,12 @@ const DEV_SECRET = "1x0000000000000000000000000000000AA";
 export async function passedTurnstile(token: unknown, ip: string | null): Promise<boolean> {
   const secret =
     process.env.TURNSTILE_SECRET_KEY || (process.env.NODE_ENV === "development" ? DEV_SECRET : "");
-  if (!secret || typeof token !== "string" || token === "" || token.length > 2048) return false;
+  if (!secret) {
+    // Every form would fail with "complete the security check": say why in the logs.
+    console.error("Turnstile: TURNSTILE_SECRET_KEY is not set; form submissions are refused");
+    return false;
+  }
+  if (typeof token !== "string" || token === "" || token.length > 2048) return false;
   const form = new URLSearchParams({ secret, response: token });
   if (ip) form.set("remoteip", ip);
   try {
