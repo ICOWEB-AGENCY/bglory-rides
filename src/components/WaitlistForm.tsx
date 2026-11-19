@@ -68,7 +68,7 @@ export default function WaitlistForm() {
           disabled={status === "sending" || !token}
           className="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-brand text-white text-sm font-semibold hover:bg-brand-mid transition-colors shrink-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed dark:bg-lime dark:text-brand dark:hover:bg-primary-300"
         >
-          {status === "sending" ? "Joining..." : "Join Waitlist"}
+          {status === "sending" ? "Sending..." : "Email me at launch"}
         </button>
       </form>
 
