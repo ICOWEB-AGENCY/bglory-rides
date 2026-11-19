@@ -41,6 +41,7 @@ export default function ContactPage() {
   const [error, setError] = useState("");
   const [token, setToken] = useState<string | null>(null);
   const [checkRound, setCheckRound] = useState(0);
+  const [checkFailed, setCheckFailed] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -223,7 +224,22 @@ export default function ContactPage() {
                         />
                       </div>
 
-                      <Turnstile onToken={setToken} resetKey={checkRound} />
+                      <Turnstile onToken={setToken} onFail={() => setCheckFailed(true)} resetKey={checkRound} />
+                      {checkFailed && (
+                        <p className="text-sm text-dark-500 dark:text-dark-400">
+                          We could not check this browser.{" "}
+                          <button
+                            type="button"
+                            className="font-semibold text-dark-900 underline underline-offset-2 dark:text-white"
+                            onClick={() => {
+                              setCheckFailed(false);
+                              setCheckRound((n) => n + 1);
+                            }}
+                          >
+                            Try again
+                          </button>
+                        </p>
+                      )}
 
                       {error && (
                         <p className="text-sm text-red-500">{error}</p>

@@ -6,6 +6,7 @@ import { TURNSTILE_SITE_KEY } from "@/lib/site";
 type TurnstileApi = {
   render: (el: HTMLElement, options: Record<string, unknown>) => string;
   remove: (id: string) => void;
+  reset: (id: string) => void;
 };
 
 declare global {
@@ -40,19 +41,24 @@ function loadTurnstile(): Promise<void> {
  */
 export default function Turnstile({
   onToken,
+  onFail,
   resetKey = 0,
   theme = "auto",
 }: {
   onToken: (token: string | null) => void;
+  /** The check could not run (script blocked, error, bad key): the form shows a retry. */
+  onFail?: () => void;
   resetKey?: number;
   theme?: "auto" | "light" | "dark";
 }) {
   const box = useRef<HTMLDivElement>(null);
   const latest = useRef(onToken);
+  const failed = useRef(onFail);
 
   useEffect(() => {
     latest.current = onToken;
-  }, [onToken]);
+    failed.current = onFail;
+  }, [onToken, onFail]);
 
   useEffect(() => {
     let id: string | undefined;
@@ -67,11 +73,21 @@ export default function Turnstile({
           // Stays invisible unless Cloudflare needs the visitor to act, so forms show no test box.
           appearance: "interaction-only",
           callback: (token: string) => latest.current(token),
-          "expired-callback": () => latest.current(null),
-          "error-callback": () => latest.current(null),
+          // An expired token is replaced at once, so the button never stays off for no visible reason.
+          "expired-callback": () => {
+            latest.current(null);
+            if (id && window.turnstile) window.turnstile.reset(id);
+          },
+          "error-callback": () => {
+            latest.current(null);
+            failed.current?.();
+          },
         });
       })
-      .catch(() => latest.current(null));
+      .catch(() => {
+        latest.current(null);
+        failed.current?.();
+      });
     return () => {
       cancelled = true;
       if (id && window.turnstile) window.turnstile.remove(id);

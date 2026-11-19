@@ -84,7 +84,7 @@ export default function Confidence() {
 
   return (
     <section ref={section} className="relative bg-white dark:bg-ink" style={{ height: `calc(100vh + ${distance}px)` }}>
-      <div className="sticky top-0 flex h-screen flex-col justify-center gap-12 overflow-hidden pt-24">
+      <div className="sticky top-0 flex h-dvh flex-col justify-center gap-12 overflow-hidden pt-24">
         <Heading />
         <motion.ul ref={rail} style={{ x }} className={`${railClass} will-change-transform`}>
           {cards.map((c) => (

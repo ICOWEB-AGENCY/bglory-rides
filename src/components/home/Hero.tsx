@@ -23,16 +23,7 @@ export default function Hero() {
       {/* Zyon green light behind the phones; one soft source, no glow on the type. */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[70%] bg-[radial-gradient(50%_65%_at_50%_100%,rgba(154,205,50,0.30)_0%,rgba(6,63,30,0.7)_38%,rgba(6,63,30,0.18)_62%,transparent_80%)]" />
       <div className="shell relative text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease }}
-          className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/80"
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-lime" aria-hidden="true" />
-          Ride-hailing built for Nigeria
-        </motion.p>
-        <h1 className="display mx-auto mt-6 max-w-[14ch] text-[clamp(2.9rem,8.2vw,7.4rem)]" aria-label="Your ride, priced before you book.">
+        <h1 className="display mx-auto max-w-[14ch] text-[clamp(2.9rem,8.2vw,7.4rem)]" aria-label="Your ride, priced before you book.">
           {words.map((w, i) => (
             <span key={w.text} aria-hidden="true" className="inline-block overflow-hidden pb-[0.08em] align-bottom">
               <motion.span

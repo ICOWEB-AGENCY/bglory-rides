@@ -10,6 +10,7 @@ export default function WaitlistForm() {
   const [errorMsg, setErrorMsg] = useState("");
   const [token, setToken] = useState<string | null>(null);
   const [checkRound, setCheckRound] = useState(0);
+  const [checkFailed, setCheckFailed] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -73,7 +74,22 @@ export default function WaitlistForm() {
       </form>
 
       <div className="mt-3">
-        <Turnstile onToken={setToken} resetKey={checkRound} theme="dark" />
+        <Turnstile onToken={setToken} onFail={() => setCheckFailed(true)} resetKey={checkRound} theme="dark" />
+        {checkFailed && (
+          <p className="text-sm text-white/70">
+            We could not check this browser.{" "}
+            <button
+              type="button"
+              className="font-semibold text-white underline underline-offset-2"
+              onClick={() => {
+                setCheckFailed(false);
+                setCheckRound((n) => n + 1);
+              }}
+            >
+              Try again
+            </button>
+          </p>
+        )}
       </div>
 
       {status === "error" && (

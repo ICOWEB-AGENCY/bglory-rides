@@ -24,6 +24,8 @@ export default function Navbar() {
   // While the menu covers the page: no scrolling behind it, Tab stays in the
   // menu (the page behind is inert), and Escape closes it.
   const bar = useRef<HTMLElement>(null);
+  const toggle = useRef<HTMLButtonElement>(null);
+  const firstLink = useRef<HTMLAnchorElement>(null);
   useEffect(() => {
     if (!isOpen) return;
     // Everything outside the header, at every level up to <body>: the page
@@ -33,6 +35,8 @@ export default function Navbar() {
       for (const sib of el.parentElement?.children ?? []) if (sib !== el) behind.push(sib);
     }
     document.body.style.overflow = "hidden";
+    const opener = toggle.current;
+    requestAnimationFrame(() => firstLink.current?.focus());
     behind.forEach((el) => el.setAttribute("inert", ""));
     const esc = (e: KeyboardEvent) => e.key === "Escape" && setIsOpen(false);
     document.addEventListener("keydown", esc);
@@ -45,6 +49,7 @@ export default function Navbar() {
       document.body.style.overflow = "";
       behind.forEach((el) => el.removeAttribute("inert"));
       document.removeEventListener("keydown", esc);
+      opener?.focus();
     };
   }, [isOpen]);
   const close = () => setIsOpen(false);
@@ -85,6 +90,7 @@ export default function Navbar() {
             Get the app
           </Link>
           <button
+            ref={toggle}
             type="button"
             onClick={() => setIsOpen((o) => !o)}
             aria-expanded={isOpen}
@@ -109,6 +115,7 @@ export default function Navbar() {
               {navLinks.map((link, i) => (
                 <motion.li key={link.href} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.04 * i, duration: 0.3 }}>
                   <Link
+                    ref={i === 0 ? firstLink : undefined}
                     href={link.href}
                     onClick={close}
                     aria-current={pathname === link.href ? "page" : undefined}

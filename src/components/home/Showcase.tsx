@@ -14,43 +14,56 @@ const slides = [
 
 const DWELL = 6; // seconds on each screen before moving on
 
-/** A list of what the apps do; the active item drives the phone, and the list moves on by itself unless the visitor is reading. */
+/**
+ * A list of what the apps do; the chosen item drives one phone, standing free on
+ * the page at an angle. The list moves on by itself until the visitor picks an
+ * item, and waits while a mouse rests on it.
+ */
 export default function Showcase() {
   const reduce = useReducedMotion();
-  const [i, setI] = useState(0);
-  const [held, setHeld] = useState(false);
+  const [active, setActive] = useState(0);
+  const [hovering, setHovering] = useState(false);
+  const [picked, setPicked] = useState(false);
+  const auto = !reduce && !picked;
+  const paused = hovering || !auto;
 
   useEffect(() => {
-    if (reduce || held) return;
-    const t = setTimeout(() => setI((n) => (n + 1) % slides.length), DWELL * 1000);
+    if (paused) return;
+    const t = setTimeout(() => setActive((n) => (n + 1) % slides.length), DWELL * 1000);
     return () => clearTimeout(t);
-  }, [i, held, reduce]);
+  }, [active, paused]);
 
+  const slide = slides[active];
   return (
     <section className="relative overflow-hidden bg-mist py-24 text-ink sm:py-32" aria-label="Inside the Zyon apps">
-      <div className="shell grid items-center gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
-        <div onMouseEnter={() => setHeld(true)} onMouseLeave={() => setHeld(false)} onFocus={() => setHeld(true)} onBlur={() => setHeld(false)}>
+      <div className="shell grid items-center gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+        <div
+          onPointerEnter={(e) => e.pointerType === "mouse" && setHovering(true)}
+          onPointerLeave={(e) => e.pointerType === "mouse" && setHovering(false)}
+        >
           <h2 className="display max-w-[12ch] text-[clamp(2.4rem,5vw,4.6rem)]">
             Two apps, <span className="text-ink/35">one smooth trip.</span>
           </h2>
-          <ul className="mt-12 border-t border-ink/10" role="tablist" aria-label="What the apps do">
+          <ul className="mt-12 border-t border-ink/10">
             {slides.map((s, n) => {
-              const active = n === i;
+              const on = n === active;
               return (
                 <li key={s.tag} className="relative border-b border-ink/10">
                   <button
                     type="button"
-                    role="tab"
-                    aria-selected={active}
-                    onClick={() => setI(n)}
-                    className="flex w-full flex-col items-start py-6 text-left"
+                    aria-current={on ? "true" : undefined}
+                    onClick={() => {
+                      setActive(n);
+                      setPicked(true);
+                    }}
+                    className="flex w-full flex-col items-start py-6 text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
                   >
                     <span className="flex w-full items-baseline justify-between gap-4">
-                      <span className={`text-xl font-semibold tracking-tight transition-colors sm:text-2xl ${active ? "text-ink" : "text-ink/35 hover:text-ink/60"}`}>{s.tag}</span>
-                      <span className={`text-xs font-medium transition-colors ${active ? "text-ink/55" : "text-ink/25"}`}>{s.app}</span>
+                      <span className={`text-xl font-semibold tracking-tight transition-colors sm:text-2xl ${on ? "text-ink" : "text-ink/35 hover:text-ink/60"}`}>{s.tag}</span>
+                      <span className={`text-xs font-medium transition-colors ${on ? "text-ink/55" : "text-ink/25"}`}>{s.app}</span>
                     </span>
                     <AnimatePresence initial={false}>
-                      {active && (
+                      {on && (
                         <motion.span
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
@@ -63,16 +76,15 @@ export default function Showcase() {
                       )}
                     </AnimatePresence>
                   </button>
-                  {/* Time left on this item; it pauses while the visitor reads. */}
-                  {active && !reduce && (
+                  {/* Time left on this item while the list moves by itself. */}
+                  {on && auto && (
                     <motion.span
-                      key={`${n}-${held}`}
+                      key={`${n}-${hovering}`}
                       aria-hidden="true"
-                      className="absolute bottom-[-1px] left-0 h-px origin-left bg-ink"
+                      className="absolute bottom-[-1px] left-0 h-px w-full origin-left bg-ink"
                       initial={{ scaleX: 0 }}
-                      animate={{ scaleX: held ? 0 : 1 }}
-                      transition={{ duration: held ? 0.2 : DWELL, ease: "linear" }}
-                      style={{ width: "100%" }}
+                      animate={{ scaleX: hovering ? 0 : 1 }}
+                      transition={{ duration: hovering ? 0.2 : DWELL, ease: "linear" }}
                     />
                   )}
                 </li>
@@ -81,18 +93,21 @@ export default function Showcase() {
           </ul>
         </div>
 
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-[560px] overflow-hidden rounded-[2rem] bg-white">
-          <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(70%_60%_at_50%_100%,rgba(6,63,30,0.16),transparent_70%)]" />
+        {/* The phone stands free on the page, tilted, with its shadow on the floor; no box around it. */}
+        <div className="relative mx-auto h-[min(118vw,680px)] w-full max-w-[560px] [perspective:2400px]">
+          <div aria-hidden="true" className="absolute bottom-[4%] left-1/2 h-[7%] w-[58%] -translate-x-1/2 rounded-[50%] bg-ink/25 blur-2xl" />
           <AnimatePresence mode="popLayout" initial={false}>
             <motion.div
-              key={slides[i].src}
-              initial={{ opacity: 0, y: 40, scale: 0.97 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -24, scale: 0.98 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute left-1/2 top-[9%] w-[58%] -translate-x-1/2"
+              key={slide.src}
+              initial={{ opacity: 0, x: 60, rotate: 4 }}
+              animate={{ opacity: 1, x: 0, rotate: 0 }}
+              exit={{ opacity: 0, x: -60, rotate: -4 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute left-1/2 top-[2%] w-[60%] max-w-[340px] -translate-x-1/2"
             >
-              <DeviceFrame src={slides[i].src} alt={slides[i].alt} sizes="(min-width: 1024px) 330px, 58vw" />
+              <div className="[transform:rotateY(-20deg)_rotateX(10deg)_rotateZ(8deg)] [transform-style:preserve-3d]">
+                <DeviceFrame src={slide.src} alt={slide.alt} sizes="(min-width: 1024px) 340px, 60vw" />
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>
