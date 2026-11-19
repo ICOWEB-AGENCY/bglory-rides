@@ -50,6 +50,16 @@ export default function ThemeToggle() {
             id="theme-choices"
             role="radiogroup"
             aria-label="Theme"
+            onKeyDown={(e) => {
+              // Arrow keys move the choice, as in any radio group.
+              const step = e.key === "ArrowRight" || e.key === "ArrowDown" ? 1 : e.key === "ArrowLeft" || e.key === "ArrowUp" ? -1 : 0;
+              if (!step) return;
+              e.preventDefault();
+              const at = choices.findIndex((c) => c.value === choice);
+              const next = choices[(at + step + choices.length) % choices.length];
+              setChoice(next.value);
+              e.currentTarget.querySelector<HTMLButtonElement>(`[data-theme-choice="${next.value}"]`)?.focus();
+            }}
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 6 }}
@@ -61,6 +71,8 @@ export default function ThemeToggle() {
                 key={value}
                 type="button"
                 role="radio"
+                data-theme-choice={value}
+                tabIndex={choice === value ? 0 : -1}
                 aria-checked={choice === value}
                 aria-label={label}
                 title={label}

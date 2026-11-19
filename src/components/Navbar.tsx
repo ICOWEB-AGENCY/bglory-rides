@@ -43,7 +43,12 @@ export default function Navbar() {
     behind.forEach((el) => el.setAttribute("inert", ""));
     const esc = (e: KeyboardEvent) => e.key === "Escape" && setIsOpen(false);
     document.addEventListener("keydown", esc);
+    // The menu is phone and tablet only: widening to desktop closes it.
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const wide = () => desktop.matches && setIsOpen(false);
+    desktop.addEventListener("change", wide);
     return () => {
+      desktop.removeEventListener("change", wide);
       document.body.style.overflow = "";
       behind.forEach((el) => el.removeAttribute("inert"));
       document.removeEventListener("keydown", esc);
