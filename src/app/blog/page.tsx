@@ -10,7 +10,7 @@ import Button from "@/components/Button";
 export const metadata: Metadata = {
   title: "Blog | Zyon News, Ride-Hailing Insights Nigeria",
   description:
-    "Get insider insights on ride-hailing in Abuja, safety tips for riders and drivers, product updates, and the story behind Zyon. New posts every week.",
+    "How Zyon works: the safety on every ride, how fares are worked out, and what it takes to drive with Zyon in Abuja.",
 };
 
 export default function BlogPage() {
@@ -45,22 +45,12 @@ export default function BlogPage() {
                     className="group block py-8 sm:py-10 border-b border-surface-200 dark:border-white/[0.06]"
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-4 lg:gap-16">
-                      {/* Left: number + category + date */}
-                      <div>
-                        <div className="flex items-center gap-3 mb-4">
-                          <span className="text-xs font-mono text-dark-300 tracking-widest">
-                            {String(i + 1).padStart(2, "0")}
-                          </span>
-                          <span className="text-[11px] font-medium text-primary-600 bg-primary-400/10 px-2.5 py-1 rounded-full border border-primary-400/20">
-                            {post.category}
-                          </span>
-                        </div>
-                        <span className="text-xs font-mono text-dark-300 tracking-wide">
-                          {post.date}
-                        </span>
-                      </div>
+                      {/* Left: category and date */}
+                      <p className="text-sm text-dark-500 dark:text-dark-400">
+                        <span className="font-semibold text-primary-700 dark:text-lime">{post.category}</span> · {post.date}
+                      </p>
 
-                      {/* Right: title + excerpt + read more */}
+                      {/* Right: title, excerpt and read more */}
                       <div>
                         <h3 className="text-lg font-bold text-dark-900 dark:text-white group-hover:text-primary-500 transition-colors">
                           {post.title}
@@ -86,19 +76,18 @@ export default function BlogPage() {
             <div className="max-w-2xl">
               <AnimatedSection>
                 <p className="text-sm font-medium text-primary-400 mb-4">
-                  Join the Waitlist
+                  Get the launch email
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
                   Be first to ride.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Join the Zyon waitlist and get early access, launch updates,
-                  and new posts before anyone else. No spam, just the things
-                  that matter.
+                  Leave your email and we will send you one message, the day
+                  the apps are live.
                 </p>
                 <div className="mt-8">
                   <Button href="/#notify" variant="primary" size="lg">
-                    Join the Waitlist
+                    Get the launch email
                   </Button>
                 </div>
               </AnimatedSection>

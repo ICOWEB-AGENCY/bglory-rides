@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -30,16 +30,22 @@ export default function Navbar() {
 
   // While the menu covers the page: no scrolling behind it, Tab stays in the
   // menu (the page behind is inert), and Escape closes it.
+  const bar = useRef<HTMLElement>(null);
   useEffect(() => {
     if (!isOpen) return;
-    const behind = [document.querySelector("main"), document.querySelector("footer")];
+    // Everything outside the header, at every level up to <body>: the page
+    // hero, main and footer, wherever a page renders them.
+    const behind: Element[] = [];
+    for (let el: Element | null = bar.current; el && el !== document.body; el = el.parentElement) {
+      for (const sib of el.parentElement?.children ?? []) if (sib !== el) behind.push(sib);
+    }
     document.body.style.overflow = "hidden";
-    behind.forEach((el) => el?.setAttribute("inert", ""));
+    behind.forEach((el) => el.setAttribute("inert", ""));
     const esc = (e: KeyboardEvent) => e.key === "Escape" && setIsOpen(false);
     document.addEventListener("keydown", esc);
     return () => {
       document.body.style.overflow = "";
-      behind.forEach((el) => el?.removeAttribute("inert"));
+      behind.forEach((el) => el.removeAttribute("inert"));
       document.removeEventListener("keydown", esc);
     };
   }, [isOpen]);
@@ -47,6 +53,7 @@ export default function Navbar() {
 
   return (
     <header
+      ref={bar}
       className={`fixed inset-x-0 top-0 z-50 bg-white transition-shadow duration-300 dark:bg-ink ${
         scrolled && !isOpen ? "shadow-[0_1px_0_rgba(15,20,25,0.08)] dark:shadow-[0_1px_0_rgba(255,255,255,0.08)]" : ""
       }`}

@@ -1,8 +1,8 @@
-/** Numbers the app enforces today (commission, ride PIN, emergency contacts). No user counts until there are real ones. */
+/** Things the app does today (commission, ride PIN, SOS). No user counts until there are real ones. */
 const facts = [
   { value: "80%", label: "of every fare goes to the driver" },
   { value: "4-digit", label: "ride PIN, so you get in the right car" },
-  { value: "5", label: "trusted contacts can follow your trip live" },
+  { value: "1 tap", label: "alerts our team if something goes wrong" },
 ];
 
 export default function Facts() {

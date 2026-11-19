@@ -6,70 +6,24 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Careers at Zyon | Tech Jobs Abuja, Ride-Hailing Careers Nigeria",
+  title: "Careers at Zyon | Abuja",
   description:
-    "Join Zyon and help build Africa's next great ride-hailing platform. We are hiring engineers, designers, and operators in Abuja and remotely. Early-stage equity, massive impact, zero bureaucracy.",
+    "Zyon is a small team building ride-hailing for Abuja. We have no open roles listed right now, but we want to hear from people who would like to help.",
 };
 
-const benefits = [
+/** No roles are listed until there are real ones to fill. */
+const kinds = [
   {
-    title: "Mission That Actually Matters",
-    description:
-      "You will not be optimizing ad clicks. You will be building the infrastructure that moves millions of people safely and affordably across Africa's biggest cities.",
+    title: "On the road",
+    text: "Driver support and operations in Abuja: getting drivers checked, on the road and paid.",
   },
   {
-    title: "Ground Floor, Not the Waiting Room",
-    description:
-      "We are early stage, which means your work ships to real users this week, not next quarter. No approval chains. No politics. Your fingerprints will be on everything.",
+    title: "In the product",
+    text: "The rider app, the driver app and the tools our team uses every day.",
   },
   {
-    title: "Grow Faster Than Anywhere Else",
-    description:
-      "Early team members get equity potential, outsized responsibility, and a direct line to leadership. As Zyon scales, your role scales with it.",
-  },
-  {
-    title: "Flexibility as a Default",
-    description:
-      "Remote-friendly, async-first, results-only. You set your own schedule and work from wherever you do your best thinking. We measure output, not hours at a desk.",
-  },
-];
-
-const positions = [
-  {
-    role: "Senior Mobile Engineer",
-    department: "Engineering",
-    location: "Abuja, Nigeria",
-    type: "Full-time",
-  },
-  {
-    role: "Backend Engineer",
-    department: "Engineering",
-    location: "Abuja, Nigeria",
-    type: "Full-time",
-  },
-  {
-    role: "Product Designer",
-    department: "Design",
-    location: "Remote",
-    type: "Full-time",
-  },
-  {
-    role: "Operations Manager",
-    department: "Operations",
-    location: "Abuja, Nigeria",
-    type: "Full-time",
-  },
-  {
-    role: "Marketing Lead",
-    department: "Marketing",
-    location: "Abuja, Nigeria",
-    type: "Full-time",
-  },
-  {
-    role: "Community Manager",
-    department: "Growth",
-    location: "Remote",
-    type: "Full-time",
+    title: "With riders",
+    text: "Support, partnerships and telling Abuja that Zyon is here.",
   },
 ];
 
@@ -78,38 +32,27 @@ export default function CareersPage() {
     <>
       <PageHero
         label="Careers"
-        title="Build the future of mobility."
-        description="This is your chance to get in early at a company that will move millions of people. We are hiring builders, thinkers, and operators who want equity in something massive, not just another job."
+        title="Help us build ride-hailing for Abuja."
+        description="We are a small team, and we have no open roles listed right now. If you want to be part of what comes next, we would like to hear from you."
         breadcrumbs={[{ label: "Careers" }]}
       />
 
       <main>
-        {/* Why Join Us */}
-        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
+        <section className="py-20 sm:py-28 bg-white dark:bg-ink">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
-              <p className="text-sm font-medium text-primary-400 mb-6">
-                Why Join Us
-              </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
-                Your unfair advantage{" "}
-                <span className="text-primary-400">starts here.</span>
+              <p className="text-sm font-medium text-primary-600 dark:text-lime mb-6">The work</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
+                Where we will need people as we grow.
               </h2>
             </AnimatedSection>
 
-            <div className="mt-14 sm:mt-16 border-t border-surface-200 dark:border-white/[0.06]">
-              {benefits.map((benefit, i) => (
-                <AnimatedSection key={benefit.title} delay={i * 0.08}>
-                  <div className="py-7 sm:py-8 border-b border-surface-200 dark:border-white/[0.06] grid grid-cols-1 md:grid-cols-[60px,1fr,1.5fr] gap-3 md:gap-8 items-start">
-                    <span className="text-xs font-mono text-dark-300 tracking-widest pt-1">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="text-lg font-bold text-dark-900 dark:text-white">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-dark-500 dark:text-dark-400 leading-relaxed">
-                      {benefit.description}
-                    </p>
+            <div className="mt-12 grid gap-x-12 border-t border-surface-200 md:grid-cols-3 dark:border-white/[0.06]">
+              {kinds.map((k, i) => (
+                <AnimatedSection key={k.title} delay={i * 0.06}>
+                  <div className="border-b border-surface-200 py-7 dark:border-white/[0.06]">
+                    <h3 className="text-base font-bold text-dark-900 dark:text-white">{k.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-dark-500 dark:text-dark-400">{k.text}</p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -117,73 +60,17 @@ export default function CareersPage() {
           </div>
         </section>
 
-        {/* Open Positions */}
-        <section className="py-20 sm:py-28 bg-surface-50 dark:bg-dark-900">
-          <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-            <AnimatedSection>
-              <p className="text-sm font-medium text-primary-400 mb-6">
-                Open Positions
-              </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
-                Find your role{" "}
-                <span className="text-primary-400">at Zyon.</span>
-              </h2>
-            </AnimatedSection>
-
-            <div className="mt-14 sm:mt-16 border-t border-surface-200 dark:border-white/[0.06]">
-              {positions.map((position, i) => (
-                <AnimatedSection key={position.role} delay={i * 0.06}>
-                  <div className="group py-6 sm:py-8 border-b border-surface-200 dark:border-white/[0.06] cursor-pointer">
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 sm:justify-between">
-                      {/* Left: number + role + badge */}
-                      <div className="flex items-start sm:items-center gap-3 sm:gap-4">
-                        <span className="text-xs font-mono text-dark-300 tracking-widest pt-1 sm:pt-0 shrink-0">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                          <h3 className="text-base sm:text-lg font-bold text-dark-900 dark:text-white group-hover:text-primary-500 transition-colors">
-                            {position.role}
-                          </h3>
-                          <span className="text-[11px] font-medium text-primary-600 bg-primary-400/10 px-2.5 py-1 rounded-full border border-primary-400/20 w-fit">
-                            {position.department}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Right: location + type */}
-                      <div className="flex items-center gap-3 text-sm text-dark-500 dark:text-dark-400 pl-8 sm:pl-0 shrink-0">
-                        <span>{position.location}</span>
-                        <span className="w-1 h-1 rounded-full bg-dark-300 shrink-0" />
-                        <span>{position.type}</span>
-                      </div>
-                    </div>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-20 sm:py-28 lg:py-36 bg-dark-950">
+        <section className="py-20 sm:py-28 bg-ink">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <div className="max-w-2xl">
               <AnimatedSection>
-                <p className="text-sm font-medium text-primary-400 mb-4">
-                  Limited Window
-                </p>
-                <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  The founding team is still forming.
-                </h2>
+                <h2 className="text-3xl sm:text-4xl font-bold text-white leading-[1.1] tracking-tight">Tell us about yourself.</h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  We only have a handful of roles open right now, and once they
-                  are filled, this window closes. If you are exceptional at
-                  what you do and want to build something that matters, do not
-                  wait.
+                  Send a short note about what you do and what you would like to work on. We keep every message and write back when a role opens.
                 </p>
                 <div className="mt-8">
                   <Button href="/contact" variant="primary" size="lg">
-                    Apply Now
+                    Contact us
                   </Button>
                 </div>
               </AnimatedSection>

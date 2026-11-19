@@ -6,53 +6,23 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Press & Media | Zyon Newsroom, Ride-Hailing News Abuja",
-  description:
-    "Get the latest news from Zyon. Press releases, media kits, brand assets, and press contacts for Africa's fastest-growing ride-hailing platform.",
+  title: "Press | Zyon",
+  description: "Writing about Zyon, the ride-hailing app built for Abuja? Ask us for facts, app screenshots and our logo at press@zyonrides.com.",
 };
 
-const pressReleases = [
+/** No press releases until there is news to release. */
+const resources = [
   {
-    date: "Feb 2026",
-    title: "Zyon Goes Live Across Abuja, Opens Doors to All Riders and Drivers",
-    description:
-      "After months of closed testing, Zyon is now publicly available across Abuja. Riders can book their first trip today, and thousands of verified drivers are already on the road.",
+    title: "Facts about Zyon",
+    text: "What the rider and driver apps do today, how fares work, and how we check drivers.",
   },
   {
-    date: "Jan 2026",
-    title: "Zyon Hits 5,000 Verified Drivers Before Public Launch",
-    description:
-      "Zyon has onboarded over 5,000 drivers, each cleared through background checks, vehicle inspections, and safety training. The milestone sets the stage for the largest verified driver network at launch in Nigeria.",
+    title: "App screenshots",
+    text: "Real screens from the Zyon rider and driver apps, in light and dark.",
   },
   {
-    date: "Dec 2025",
-    title: "10,000 Pilot Trips Completed with 98% Rider Satisfaction",
-    description:
-      "Zyon releases results from its closed pilot: 10,000+ trips, 98% satisfaction, and an average pickup time of just 4 minutes. The data signals strong product-market fit ahead of the public launch.",
-  },
-  {
-    date: "Oct 2025",
-    title: "New Ride-Hailing Challenger Launches in Abuja with a Safety-First Approach",
-    description:
-      "Zyon enters the market with a clear mission: make safe, reliable, and affordable rides accessible to every rider in Africa. Development begins alongside early driver recruitment.",
-  },
-];
-
-const mediaResources = [
-  {
-    title: "Brand Assets",
-    description:
-      "Grab our logo, brand colors, and visual guidelines in print and web-ready formats. Everything you need to feature Zyon accurately in your publication.",
-  },
-  {
-    title: "Media Kit",
-    description:
-      "Download our company fact sheet, founder bios, key growth metrics, and high-resolution product screenshots. Ready to drop into your story.",
-  },
-  {
-    title: "Press Contact",
-    description:
-      "Need a quote, interview, or exclusive? Our communications team responds to journalists within 24 hours. Reach us at press@zyonrides.com.",
+    title: "Logo and colours",
+    text: "The Zyon wordmark for light and dark backgrounds, and our brand colours.",
   },
 ];
 
@@ -61,43 +31,27 @@ export default function PressPage() {
     <>
       <PageHero
         label="Press"
-        title="Zyon in the news."
-        description="5,000+ verified drivers. 10,000+ pilot trips. 98% rider satisfaction. Here is what is happening at Abuja's fastest-growing ride-hailing platform."
+        title="Writing about Zyon?"
+        description="Zyon is a ride-hailing app built for Abuja, on its way to the App Store and Google Play. Write to press@zyonrides.com and we will send what you need."
         breadcrumbs={[{ label: "Press" }]}
       />
 
       <main>
-        {/* Press Releases */}
-        <section className="py-20 sm:py-28 bg-white dark:bg-dark-950">
+        <section className="py-20 sm:py-28 bg-white dark:bg-ink">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
-              <p className="text-sm font-medium text-primary-400 mb-6">
-                Press Releases
-              </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
-                Latest announcements{" "}
-                <span className="text-primary-400">from Zyon.</span>
+              <p className="text-sm font-medium text-primary-600 dark:text-lime mb-6">On request</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
+                What we can send you.
               </h2>
             </AnimatedSection>
 
-            <div className="mt-14 sm:mt-16 border-t border-surface-200 dark:border-white/[0.06]">
-              {pressReleases.map((release, i) => (
-                <AnimatedSection key={release.title} delay={i * 0.08}>
-                  <div className="py-7 sm:py-8 border-b border-surface-200 dark:border-white/[0.06]">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="text-xs font-mono text-dark-300 tracking-widest">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="text-[11px] font-medium text-primary-600 bg-primary-400/10 px-2.5 py-1 rounded-full border border-primary-400/20">
-                        {release.date}
-                      </span>
-                    </div>
-                    <h3 className="text-base sm:text-lg font-bold text-dark-900 dark:text-white mb-2">
-                      {release.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-dark-500 dark:text-dark-400 leading-relaxed">
-                      {release.description}
-                    </p>
+            <div className="mt-12 grid gap-x-12 border-t border-surface-200 md:grid-cols-3 dark:border-white/[0.06]">
+              {resources.map((r, i) => (
+                <AnimatedSection key={r.title} delay={i * 0.06}>
+                  <div className="border-b border-surface-200 py-7 dark:border-white/[0.06]">
+                    <h3 className="text-base font-bold text-dark-900 dark:text-white">{r.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-dark-500 dark:text-dark-400">{r.text}</p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -105,64 +59,20 @@ export default function PressPage() {
           </div>
         </section>
 
-        {/* Media Resources */}
-        <section className="py-20 sm:py-28 bg-surface-50 dark:bg-dark-900">
-          <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-            <AnimatedSection>
-              <p className="text-sm font-medium text-primary-400 mb-6">
-                Media Resources
-              </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
-                Everything you need{" "}
-                <span className="text-primary-400">to cover Zyon.</span>
-              </h2>
-            </AnimatedSection>
-
-            <div className="mt-14 sm:mt-16 grid grid-cols-1 lg:grid-cols-3 gap-0">
-              {mediaResources.map((resource, i) => (
-                <AnimatedSection key={resource.title} delay={i * 0.1}>
-                  <div
-                    className={`py-8 lg:py-0 lg:px-8 first:lg:pl-0 last:lg:pr-0 ${
-                      i < mediaResources.length - 1
-                        ? "border-b lg:border-b-0 lg:border-r border-surface-200 dark:border-white/[0.06]"
-                        : ""
-                    }`}
-                  >
-                    <span className="text-xs font-mono text-dark-300 tracking-widest">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="text-lg font-bold text-dark-900 dark:text-white mt-3 mb-3">
-                      {resource.title}
-                    </h3>
-                    <p className="text-sm text-dark-500 dark:text-dark-400 leading-relaxed">
-                      {resource.description}
-                    </p>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-20 sm:py-28 lg:py-36 bg-dark-950">
+        <section className="py-20 sm:py-28 bg-ink">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <div className="max-w-2xl">
               <AnimatedSection>
-                <p className="text-sm font-medium text-primary-400 mb-4">
-                  Media Inquiries
-                </p>
-                <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Writing about ride-hailing in Africa?
-                </h2>
+                <h2 className="text-3xl sm:text-4xl font-bold text-white leading-[1.1] tracking-tight">press@zyonrides.com</h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  We make it easy for journalists. Get data, executive quotes,
-                  and exclusive insights from our communications team. Fast
-                  turnaround guaranteed.
+                  For interviews, facts or images, email us or use the contact form.
                 </p>
-                <div className="mt-8">
-                  <Button href="/contact" variant="primary" size="lg">
-                    Reach the Press Team
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                  <Button href="mailto:press@zyonrides.com" variant="primary" size="lg">
+                    Email the press team
+                  </Button>
+                  <Button href="/contact" variant="outline" size="lg">
+                    Contact form
                   </Button>
                 </div>
               </AnimatedSection>

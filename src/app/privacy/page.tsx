@@ -51,7 +51,7 @@ const sections = [
     items: [
       "We collect real-time location data while you have an active ride in progress. This is required to match you with drivers, calculate fares, and provide navigation",
       "Background location access is only used when you have explicitly granted permission. You can revoke this permission at any time through your device settings",
-      "Location data is used for safety features, including trip sharing with your emergency contacts and our 24/7 safety monitoring",
+      "Location data is used for safety features, including sharing your trip with people you choose and SOS alerts to our team",
       "We use aggregated, anonymized location data to identify high-demand areas and optimize driver availability across the city",
       "Your precise location history is never sold to third parties or used for advertising purposes",
     ],

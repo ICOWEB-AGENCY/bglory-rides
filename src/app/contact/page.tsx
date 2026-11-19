@@ -13,7 +13,7 @@ const contactChannels = [
     label: "Email",
     value: "contact@zyonrides.com",
     href: "mailto:contact@zyonrides.com",
-    note: "Most inquiries answered within 2 hours",
+    note: "Write to us about anything, from a trip to a partnership",
   },
   {
     label: "Phone",
@@ -22,10 +22,10 @@ const contactChannels = [
     note: "Speak to a real person, Monday to Friday",
   },
   {
-    label: "Office",
-    value: "Abuja, Nigeria",
-    href: "#",
-    note: "Walk in and meet the team on weekdays",
+    label: "In the app",
+    value: "Help and support",
+    href: "/help",
+    note: "Report a problem with a trip straight from your history",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function ContactPage() {
       <PageHero
         label="Contact"
         title="We would love to hear from you."
-        description="Whether you want to ride, drive, or partner with us, our team is ready to help. Reach out and get a response within hours, not days."
+        description="Whether you ride, drive or want to work with us, write to us. A person reads every message."
         breadcrumbs={[{ label: "Contact" }]}
       />
 
@@ -91,10 +91,7 @@ export default function ContactPage() {
                     href={channel.href}
                     className={`group block py-8 ${i === 0 ? "lg:pr-10" : i === contactChannels.length - 1 ? "lg:pl-10" : "lg:px-10"} border-b lg:border-b-0 border-surface-200 dark:border-white/[0.06] ${i < contactChannels.length - 1 ? "lg:border-r" : ""}`}
                   >
-                    <span className="text-xs font-mono text-dark-300 tracking-widest">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <p className="text-sm text-dark-500 dark:text-dark-400 mt-3 mb-1">
+                    <p className="text-sm text-dark-500 dark:text-dark-400 mb-1">
                       {channel.label}
                     </p>
                     <p className="text-base font-bold text-dark-900 dark:text-white group-hover:text-primary-500 transition-colors">
@@ -113,27 +110,15 @@ export default function ContactPage() {
               <div className="lg:sticky lg:top-32 lg:self-start">
                 <AnimatedSection>
                   <p className="text-sm font-medium text-primary-400 mb-6">
-                    Get a Fast Response
+                    Send a message
                   </p>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15]">
                     Tell us what you need.
                   </h2>
                   <p className="mt-5 text-dark-500 dark:text-dark-400 leading-relaxed">
-                    Drop us a message and a real team member will get back to you
-                    within hours. Riders, drivers, and partners all get priority
-                    support.
+                    Riders, drivers and companies all write to the same team.
+                    A person reads every message and replies by email.
                   </p>
-
-                  <div className="mt-8 space-y-3">
-                    <div className="flex items-center gap-2 text-sm text-dark-500 dark:text-dark-400">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
-                      Average response time: under 2 hours
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-dark-500 dark:text-dark-400">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
-                      Available 24/7, including weekends
-                    </div>
-                  </div>
                 </AnimatedSection>
               </div>
 
@@ -141,15 +126,12 @@ export default function ContactPage() {
                 <div className="rounded-2xl border border-surface-200 dark:border-white/[0.06] bg-surface-50 dark:bg-dark-900 p-6 sm:p-8 lg:p-10">
                   {submitted ? (
                     <div className="py-10 sm:py-14 text-center">
-                      <p className="text-xs font-mono text-primary-400 tracking-widest mb-4">
-                        SENT
-                      </p>
                       <h3 className="text-2xl sm:text-3xl font-bold text-dark-900 dark:text-white mb-3">
                         Message received.
                       </h3>
                       <p className="text-dark-500 dark:text-dark-400 text-sm mb-8 max-w-sm mx-auto">
-                        Thank you for reaching out. A team member will respond
-                        within a few hours.
+                        Thank you for writing. A member of the team will reply
+                        to your email.
                       </p>
                       <button
                         onClick={() => setSubmitted(false)}

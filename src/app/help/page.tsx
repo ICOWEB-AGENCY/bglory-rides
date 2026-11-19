@@ -8,73 +8,57 @@ import Button from "@/components/Button";
 export const metadata: Metadata = {
   title: "Help Center | Zyon Support",
   description:
-    "Get quick answers about Zyon. Help with booking rides, payments, driver sign-up, safety features, and account settings. Our ride-hailing support team responds within hours.",
+    "Answers about Zyon: booking a ride, how fares work, paying with cash, card or wallet, trip safety, driving with Zyon and your account.",
 };
 
+/** Every answer describes what the apps do today. */
 const helpTopics = [
   {
-    title: "Getting Started",
-    description:
-      "Ready to take your first ride? Follow these simple steps to create your Zyon account, set up your payment method, and book a ride in minutes.",
+    title: "Getting started",
     questions: [
-      "How to create a Zyon account",
-      "How to book your first ride on Zyon",
-      "What payment methods does Zyon accept?",
-      "How to add a debit card to your Zyon account",
+      { q: "How do I create an account?", a: "Open the Zyon app and sign up with your name, phone number, email and a password. We send a code to confirm your number, or to your email if you choose." },
+      { q: "How do I pay?", a: "Cash to your driver at the end of the trip, a debit card, or your Zyon wallet. Pick one before you confirm a ride." },
+      { q: "How do I add a card?", a: "Go to Wallet, tap Add card and follow the steps. Card payments run through Paystack." },
     ],
   },
   {
-    title: "Rides & Booking",
-    description:
-      "Booking a ride should be the easy part of your day. Here is how to request, schedule, cancel, and manage every trip.",
+    title: "Rides",
     questions: [
-      "How to request a ride on Zyon",
-      "Can I cancel a Zyon ride after booking?",
-      "How to schedule a ride in advance on Zyon",
-      "What happens if my Zyon driver cancels on me?",
+      { q: "How do I book a ride?", a: "Type where you are going, pick Economy, Standard or Premium, check the price and tap Confirm." },
+      { q: "Can I cancel?", a: "Yes. Cancel from the trip screen before your trip starts." },
+      { q: "What is the ride PIN?", a: "A 4-digit number on your trip screen. Your driver enters it to start the trip, so you know you are in the right car. You can turn it off in your safety settings." },
     ],
   },
   {
-    title: "Payments & Pricing",
-    description:
-      "No surprises when it comes to your fare. Learn how pricing works, manage your payment options, and download receipts for any trip.",
+    title: "Fares",
     questions: [
-      "How is my Zyon ride fare calculated?",
-      "Can I pay for a Zyon ride with cash?",
-      "How to get a receipt for my Zyon ride",
-      "Why was I charged a cancellation fee on Zyon?",
+      { q: "How is my fare worked out?", a: "From the distance and time of your trip and the class you pick. At busy hours, or when few cars are near, the fare is higher. The price you see before you confirm already includes this." },
+      { q: "Can my fare change?", a: "Only if the trip turns out much longer than planned, for example after a change of route. The fare is then worked out again for the distance actually driven." },
+      { q: "Where is my receipt?", a: "Every trip has a receipt in your trip history." },
     ],
   },
   {
-    title: "Safety & Security",
-    description:
-      "Your safety is built into every ride. Learn how to share your trip, use the emergency button, and report anything that does not feel right.",
+    title: "Safety",
     questions: [
-      "How to share your Zyon trip location with family",
-      "How does the Zyon emergency button work?",
-      "How to report a safety issue on Zyon",
+      { q: "How do I share my trip?", a: "Tap Share on the trip screen and send the live link on WhatsApp or any app. You can also keep up to 5 emergency contacts in your safety settings." },
+      { q: "What does SOS do?", a: "It alerts our team straight away with your trip and location, and tells your emergency contact. If you are in danger, call the police on 112 as well." },
+      { q: "How do I report a problem?", a: "Open the trip in your history and report it, or write to us from Help in the app." },
     ],
   },
   {
-    title: "Driver Questions",
-    description:
-      "Thinking about earning with Zyon? Here is everything you need to know about signing up, vehicle requirements, and how you get paid.",
+    title: "Driving with Zyon",
     questions: [
-      "How to become a Zyon driver in Abuja",
-      "What are the vehicle requirements for Zyon drivers?",
-      "How do Zyon driver earnings and payouts work?",
-      "What documents do I need to sign up as a Zyon driver?",
+      { q: "How do I become a driver?", a: "Download the Zyon Driver app, sign up, add your car and upload your documents. Our team checks them, and you can go online once you are approved." },
+      { q: "What documents do I need?", a: "Your driver's licence (front and back), vehicle licence, proof of ownership, roadworthiness certificate, insurance, hackney permit, and photos of your car and of yourself." },
+      { q: "How do I get paid?", a: "You keep 80% of every fare. Card and wallet earnings go to your Zyon wallet, and you withdraw them to your bank from ₦100 with your withdrawal PIN." },
     ],
   },
   {
-    title: "Account & Settings",
-    description:
-      "Keep your account up to date and secure. Update your profile, adjust your notifications, and manage your privacy in just a few taps.",
+    title: "Your account",
     questions: [
-      "How to update your Zyon profile information",
-      "How to change notification settings on Zyon",
-      "How to delete your Zyon account",
-      "How to reset your Zyon password",
+      { q: "How do I change my details?", a: "Open Account in the app to change your name, photo, phone number or email." },
+      { q: "I forgot my password", a: "Tap Forgot password on the log in screen. We email you a code to set a new one." },
+      { q: "How do I delete my account?", a: "Go to Account and choose Delete account. You confirm with your password." },
     ],
   },
 ];
@@ -85,7 +69,7 @@ export default function HelpPage() {
       <PageHero
         label="Help Center"
         title="How can we help you?"
-        description="You will find answers to the most common questions below. If you need anything else, our support team is just a message away."
+        description="Answers to the questions riders and drivers ask most. For anything else, send us a message."
         breadcrumbs={[{ label: "Help Center" }]}
       />
 
@@ -107,28 +91,17 @@ export default function HelpPage() {
               {helpTopics.map((topic, i) => (
                 <AnimatedSection key={topic.title} delay={i * 0.06}>
                   <div className="py-8 sm:py-10 border-b border-surface-200 dark:border-white/[0.06]">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-xs font-mono text-dark-300 tracking-widest">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-dark-900 dark:text-white mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-dark-900 dark:text-white ">
                       {topic.title}
                     </h3>
-                    <p className="text-sm text-dark-500 dark:text-dark-400 leading-relaxed mb-5">
-                      {topic.description}
-                    </p>
-                    <ul className="space-y-2.5">
-                      {topic.questions.map((question) => (
-                        <li
-                          key={question}
-                          className="flex items-start gap-2.5 text-sm text-dark-600 dark:text-dark-300"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary-400 mt-1.5 shrink-0" />
-                          {question}
-                        </li>
+                    <dl className="mt-4 space-y-5">
+                      {topic.questions.map(({ q, a }) => (
+                        <div key={q}>
+                          <dt className="text-sm font-semibold text-dark-900 dark:text-white">{q}</dt>
+                          <dd className="mt-1 text-sm leading-relaxed text-dark-500 dark:text-dark-400">{a}</dd>
+                        </div>
                       ))}
-                    </ul>
+                    </dl>
                   </div>
                 </AnimatedSection>
               ))}
@@ -148,8 +121,8 @@ export default function HelpPage() {
                   Did not find your answer?
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Send us a message and our support team will get back to you
-                  within a few hours. We are here to help you ride with confidence.
+                  Send us a message. A person reads every one and replies by
+                  email.
                 </p>
                 <div className="mt-8">
                   <Button href="/contact" variant="primary" size="lg">

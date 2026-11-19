@@ -65,12 +65,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {/* Meta bar */}
             <AnimatedSection>
               <div className="flex flex-wrap items-center gap-4 pb-8 border-b border-surface-200 dark:border-white/[0.06]">
-                <span className="text-[11px] font-medium text-primary-600 bg-primary-400/10 px-2.5 py-1 rounded-full border border-primary-400/20">
-                  {post.category}
-                </span>
-                <span className="text-sm font-mono text-dark-400">
-                  {post.date}
-                </span>
+                <span className="text-sm font-semibold text-primary-700 dark:text-lime">{post.category}</span>
+                <span className="text-sm text-dark-400">{post.date}</span>
                 <span className="text-sm text-dark-400">
                   {Math.ceil(post.content.join(" ").split(" ").length / 200)} min
                   read
@@ -127,15 +123,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       href={`/blog/${prevPost.slug}`}
                       className="group block p-6 bg-white dark:bg-dark-950 rounded-2xl border border-surface-200 dark:border-white/[0.06] hover:border-primary-400/30 transition-colors"
                     >
-                      <span className="text-xs font-mono text-dark-300 tracking-widest">
-                        Previous
-                      </span>
+                      <span className="text-xs font-medium text-dark-400">Previous</span>
                       <h3 className="mt-3 text-sm font-bold text-dark-900 dark:text-white group-hover:text-primary-500 transition-colors leading-snug">
                         {prevPost.title}
                       </h3>
-                      <span className="inline-block mt-2 text-[11px] font-medium text-primary-600 bg-primary-400/10 px-2 py-0.5 rounded-full">
-                        {prevPost.category}
-                      </span>
                     </Link>
                   </AnimatedSection>
                 )}
@@ -145,15 +136,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       href={`/blog/${nextPost.slug}`}
                       className="group block p-6 bg-white dark:bg-dark-950 rounded-2xl border border-surface-200 dark:border-white/[0.06] hover:border-primary-400/30 transition-colors"
                     >
-                      <span className="text-xs font-mono text-dark-300 tracking-widest">
-                        Next
-                      </span>
+                      <span className="text-xs font-medium text-dark-400">Next</span>
                       <h3 className="mt-3 text-sm font-bold text-dark-900 dark:text-white group-hover:text-primary-500 transition-colors leading-snug">
                         {nextPost.title}
                       </h3>
-                      <span className="inline-block mt-2 text-[11px] font-medium text-primary-600 bg-primary-400/10 px-2 py-0.5 rounded-full">
-                        {nextPost.category}
-                      </span>
                     </Link>
                   </AnimatedSection>
                 )}
@@ -168,19 +154,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="max-w-2xl">
               <AnimatedSection>
                 <p className="text-sm font-medium text-primary-400 mb-4">
-                  Join the Waitlist
+                  Get the launch email
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
                   Be first to ride.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Join the Zyon waitlist and get early access, launch updates,
-                  and new posts before anyone else. No spam, just the things
-                  that matter.
+                  Leave your email and we will send you one message, the day
+                  the apps are live.
                 </p>
                 <div className="mt-8">
                   <Button href="/#notify" variant="primary" size="lg">
-                    Join the Waitlist
+                    Get the launch email
                   </Button>
                 </div>
               </AnimatedSection>

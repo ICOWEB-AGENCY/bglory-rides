@@ -7,76 +7,72 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title:
-    "Become a Driver in Abuja | Earn Up to ₦40,000/Day | Zyon",
+  title: "Drive with Zyon in Abuja | Keep 80% of Every Fare | Zyon",
   description:
-    "Drive and earn in Nigeria with Zyon. Apply today, start earning in 48 hours. Weekly payouts, flexible hours, and launch bonuses for early drivers in Abuja.",
+    "Drive with Zyon in Abuja. Sign up in the driver app, upload your documents, and go online once our team approves you. Keep 80% of every fare and withdraw to your bank.",
   keywords:
-    "become a driver Abuja, earn money driving Nigeria, driver app Abuja, drive and earn Nigeria, ride hailing driver Abuja, Zyon driver signup",
+    "become a driver Abuja, drive and earn Nigeria, driver app Abuja, ride hailing driver Abuja, Zyon driver signup",
 };
 
 const benefits = [
   {
-    title: "Earn Up to ₦40,000 Daily",
+    title: "Keep 80% of every fare",
     description:
-      "Full-time drivers on Zyon are taking home serious money every single day. You keep 80% of every fare. The more you drive, the more you earn. Your income has no ceiling.",
+      "Zyon's share is 20%. On cash trips you collect the fare in hand and our share is settled from your account later.",
   },
   {
-    title: "Get Paid Every Week",
+    title: "Withdraw when you want",
     description:
-      "Your earnings hit your bank account weekly, guaranteed. Need cash sooner? Instant withdrawals are available anytime, no waiting around.",
+      "Card and wallet earnings land in your Zyon wallet. Send them to your Nigerian bank account from ₦100, protected by your own withdrawal PIN.",
   },
   {
-    title: "Keep More of What You Earn",
+    title: "Busy hours pay more",
     description:
-      "Our commission rates are lower than every other platform in Abuja. You did the driving, you should keep the money. Simple.",
+      "At busy times the fare riders see is higher, and your 80% rises with it.",
   },
   {
-    title: "Earn Extra During Peak Hours",
+    title: "Drive when it suits you",
     description:
-      "Surge pricing means your fares multiply during rush hours, rain, and weekends. Smart drivers plan around peak times and double their daily take-home.",
+      "Go online for an hour or a whole day. Set how far you will travel to a pickup and only get requests inside that distance.",
   },
   {
-    title: "Get Free Insurance on Every Trip",
+    title: "Every turn read out loud",
     description:
-      "You and your passengers are fully covered on every ride at zero cost to you. Drive with peace of mind knowing your vehicle and your income are protected.",
+      "Turn-by-turn directions in a clear Nigerian voice, so your eyes stay on the road.",
   },
   {
-    title: "Get Rewarded for Great Service",
+    title: "See what you earn",
     description:
-      "Top-rated drivers unlock priority ride matching, cash bonuses, and exclusive incentives. The better your ratings, the more money you make.",
+      "Today, this week and this month, trip by trip, right in the app.",
   },
 ];
 
+/** The documents the driver app asks for; our team checks each one before approval. */
 const requirements = [
-  "Valid driver's license (at least 1 year old). Most drivers already qualify.",
-  "Vehicle in good condition (2015 or newer). Sedans, SUVs, and minivans all accepted.",
-  "Clean driving record with no major violations. A good record works in your favour.",
-  "Valid vehicle insurance and registration. Standard documents you already have.",
-  "Smartphone with iOS 14+ or Android 10+. Any recent phone will do.",
-  "Pass a background check and identity verification. Quick and straightforward.",
+  "Driver's licence, front and back.",
+  "Vehicle licence and proof of ownership.",
+  "Roadworthiness certificate and vehicle insurance.",
+  "Hackney permit.",
+  "Five photos of your car: front, back, both sides and inside.",
+  "A clear photo of yourself for your profile.",
 ];
 
 const steps = [
   {
-    title: "Apply in 10 Minutes",
-    description:
-      "Upload your license, vehicle documents, and a recent photo. The whole application takes less than 10 minutes from your phone.",
+    title: "Sign up in the app",
+    description: "Create your account with your phone number and email, then add your car.",
   },
   {
-    title: "Get Approved Fast",
-    description:
-      "Our team reviews your documents and verifies your identity. Most drivers are approved within 48 hours, not weeks.",
+    title: "Upload your documents",
+    description: "Take photos of your licence, car papers and car straight from your phone.",
   },
   {
-    title: "Learn the App",
-    description:
-      "A quick training walkthrough shows you how to accept rides, navigate, and track your earnings. You will be ready in under an hour.",
+    title: "We check them",
+    description: "Our team reviews every document. You get a notification and an email the moment you are approved.",
   },
   {
-    title: "Start Earning Immediately",
-    description:
-      "Go online and accept your first ride. There is no waiting period. From approval to your first fare, it happens the same day.",
+    title: "Go online",
+    description: "Set your pickup distance, go online and take your first request.",
   },
 ];
 
@@ -84,9 +80,9 @@ export default function DrivePage() {
   return (
     <>
       <PageHero
-        label="Become a Driver in Abuja"
-        title="Earn up to ₦40,000 a day driving with Zyon."
-        description="Thousands of ride requests go unfilled every day in Abuja. You keep 80% of every fare, and there is no cap on how much you can make. Apply now, get approved in 48 hours, and start earning this week."
+        label="Drive with Zyon"
+        title="Drive in Abuja and keep 80% of every fare."
+        description="Sign up in the driver app, upload your documents, and go online once our team approves you. Drive when it suits you and withdraw your earnings to your bank."
         breadcrumbs={[{ label: "Drive and Earn" }]}
       />
 
@@ -96,11 +92,11 @@ export default function DrivePage() {
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
-                Why Drivers Choose Zyon
+                Why drive with Zyon
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15] max-w-2xl">
-                More money in your pocket,{" "}
-                <span className="text-primary-400">every single week.</span>
+                Your car, your hours,{" "}
+                <span className="text-primary-400">most of the fare.</span>
               </h2>
             </AnimatedSection>
 
@@ -108,11 +104,6 @@ export default function DrivePage() {
               {benefits.map((b, i) => (
                 <AnimatedSection key={b.title} delay={i * 0.06}>
                   <div className="py-7 sm:py-8 border-b border-surface-200 dark:border-white/[0.06]">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="text-xs font-mono text-dark-300 tracking-widest">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                    </div>
                     <h3 className="text-base font-bold text-dark-900 dark:text-white mb-2">
                       {b.title}
                     </h3>
@@ -131,10 +122,10 @@ export default function DrivePage() {
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <AnimatedSection>
               <p className="text-sm font-medium text-primary-400 mb-6">
-                Start Earning in 48 Hours
+                How to start
               </p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15]">
-                From application to your first fare. Two days.
+                From sign-up to your first request.
               </h2>
             </AnimatedSection>
 
@@ -144,9 +135,6 @@ export default function DrivePage() {
                 <AnimatedSection key={s.title} delay={i * 0.1}>
                   <div className="relative pl-8 pb-10 last:pb-0">
                     <div className="absolute left-0 top-1 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-primary-400" />
-                    <span className="text-xs font-mono text-primary-400 tracking-widest">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
                     <h3 className="text-base font-bold text-white mt-2 mb-2">
                       {s.title}
                     </h3>
@@ -163,9 +151,6 @@ export default function DrivePage() {
               {steps.map((s, i) => (
                 <AnimatedSection key={s.title} delay={i * 0.1}>
                   <div className="pr-8 last:pr-0">
-                    <span className="text-xs font-mono text-primary-400 tracking-widest">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
                     <div className="flex items-center mt-3 mb-5">
                       <div className="w-2 h-2 rounded-full bg-primary-400 shrink-0 relative z-10" />
                       {i < steps.length - 1 && (
@@ -194,26 +179,23 @@ export default function DrivePage() {
                   Requirements
                 </p>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15]">
-                  You probably{" "}
-                  <span className="text-primary-400">already qualify.</span>
+                  What you need{" "}
+                  <span className="text-primary-400">to sign up.</span>
                 </h2>
                 <p className="mt-5 text-dark-500 dark:text-dark-400 leading-relaxed">
-                  Most applicants meet every requirement on this list. If you
-                  have a car and a license, you are closer to earning than you
-                  think. Not sure about something? Our team will walk you through it.
+                  Have these ready before you start. The app asks for each one,
+                  and our team checks them all before your first trip. Not sure
+                  about a document? Ask us.
                 </p>
               </AnimatedSection>
 
               <AnimatedSection delay={0.1}>
                 <div className="border-t border-surface-200 dark:border-white/[0.06]">
-                  {requirements.map((req, i) => (
+                  {requirements.map((req) => (
                     <div
                       key={req}
                       className="py-4 border-b border-surface-200 dark:border-white/[0.06] flex items-start gap-4"
                     >
-                      <span className="text-xs font-mono text-dark-300 tracking-widest pt-0.5">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
                       <span className="text-sm text-dark-700 dark:text-dark-300">{req}</span>
                     </div>
                   ))}
@@ -229,24 +211,22 @@ export default function DrivePage() {
             <div className="max-w-2xl">
               <AnimatedSection>
                 <p className="text-sm font-medium text-primary-400 mb-4">
-                  Limited Early Driver Spots
+                  Ready to drive?
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  Every day you wait is money left on the table.
+                  Get the Zyon Driver app.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  We are onboarding a limited number of launch drivers in Abuja
-                  right now. Early drivers lock in the lowest commission rates
-                  and get first access to the highest-demand zones. Spots are
-                  filling fast. The application takes less than 10 minutes.
+                  The driver app is on its way to the App Store and Google Play.
+                  Leave your email and we will tell you the day it is live.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                  <Button href="#" variant="primary" size="lg">
-                    Apply Now and Start Earning
+                  <Button href="/#notify" variant="primary" size="lg">
+                    Tell me when it is live
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                   <Button href="/contact" variant="outline" size="lg">
-                    Have Questions?
+                    Ask a question
                   </Button>
                 </div>
               </AnimatedSection>

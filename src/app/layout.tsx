@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s | Zyon",
   },
   description:
-    "Request a ride in Abuja and get picked up in under 4 minutes. Verified drivers, upfront pricing, no surge fees. Join the waitlist for Nigeria's smarter ride-hailing app.",
+    "Ride-hailing built for Abuja. See the price before you book, ride with drivers our team has checked, and share your trip live. Get an email when the apps launch.",
   keywords: [
     "ride-hailing Abuja",
     "ride-hailing Nigeria",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Zyon | Affordable Ride-Hailing in Abuja, Nigeria",
     description:
-      "Get picked up in under 4 minutes. Verified drivers, upfront pricing, zero surge fees. Join the waitlist for Abuja's smarter ride-hailing app.",
+      "See the price before you book, ride with drivers our team has checked, and share your trip live. Ride-hailing built for Abuja.",
     type: "website",
     locale: "en_NG",
     siteName: "Zyon",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Zyon | Affordable Ride-Hailing in Abuja",
     description:
-      "Verified drivers. Upfront pricing. 4-minute pickups. Join the waitlist for Abuja's smarter ride-hailing app.",
+      "The price before you book. Drivers checked by our team. Your trip shared live. Ride-hailing built for Abuja.",
     images: ["/images/og-image.png"],
   },
   robots: {

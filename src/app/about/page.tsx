@@ -8,38 +8,30 @@ import Button from "@/components/Button";
 export const metadata: Metadata = {
   title: "About Zyon | Ride-Hailing Company Nigeria",
   description:
-    "Zyon is a ride-hailing company in Nigeria building safe, affordable transportation for Abuja and beyond. Discover why thousands are joining the movement.",
+    "Zyon is a ride-hailing app built for Abuja: drivers checked by our team, the price before you book, and safety features on every ride.",
 };
 
 const values = [
   {
-    title: "Your Safety, Non-Negotiable",
+    title: "Safety on every ride",
     description:
-      "You deserve to feel safe every time you open the app. That is why every driver passes thorough background checks, every ride is tracked in real time, and every trip comes with built-in safety features. No exceptions.",
+      "Every driver's documents and car are checked by our team before their first trip. Every ride has a PIN, a live trip link you can share and an SOS button.",
   },
   {
-    title: "You Belong Here",
+    title: "The price before you book",
     description:
-      "Zyon is not just a ride-hailing company in Nigeria. It is a growing community of riders and drivers building something bigger together. When you ride or drive with us, you move your city forward.",
+      "You see the fare before you confirm, busy-hour pricing included. It changes only if the trip turns out much longer than planned.",
   },
   {
-    title: "Affordable for Everyone",
+    title: "Fair to drivers",
     description:
-      "Getting around Abuja or any city should never drain your wallet. You get transparent pricing, no surge surprises, and fares that respect your budget. Reliable transportation is for everyone, not just those who can afford to overpay.",
+      "Drivers keep 80% of every fare, drive the hours they choose and withdraw their earnings to their own bank.",
   },
   {
-    title: "Built on Your Feedback",
+    title: "Built for Abuja",
     description:
-      "Every feature in the Zyon app exists because a real rider or driver asked for it. You shape the product. We listen, we build, we ship. Your voice drives every update.",
+      "Pickups at your exact spot, directions read out in a Nigerian voice, and cash, card or wallet, because that is how Abuja pays.",
   },
-];
-
-const milestones = [
-  { year: "2024", title: "The Spark", description: "One too many cancelled rides, one too many overpriced fares. Zyon started because getting around Nigerian cities deserved a better answer." },
-  { year: "2024", title: "The Team", description: "Engineers, designers, and operators who live the same commute frustrations came together. Building started fast because the mission was personal." },
-  { year: "2025", title: "Abuja Pilot", description: "Real riders and drivers in Abuja tested every feature and told us exactly what worked and what did not. Their feedback became the product." },
-  { year: "2025", title: "Drivers Joining", description: "Verified drivers across multiple cities signed up, passed screening, and started earning. The Zyon network grew city by city." },
-  { year: "2026", title: "Your Turn", description: "Public launch is coming. Join the waitlist now and be among the first to experience ride-hailing in Abuja the way it should be." },
 ];
 
 export default function AboutPage() {
@@ -47,8 +39,8 @@ export default function AboutPage() {
     <>
       <PageHero
         label="About Zyon"
-        title="Your city deserves a ride-hailing company that puts you first."
-        description="Zyon exists for one reason: to give you safe, affordable, and reliable rides wherever you need to go. This is the story of how we are making ride-hailing in Abuja and across Nigeria work for you."
+        title="Ride-hailing built for Abuja."
+        description="Zyon is a ride-hailing app for Abuja: one app for riders, one for drivers, and a team that checks every driver before their first trip."
         breadcrumbs={[{ label: "About Us" }]}
       />
 
@@ -69,40 +61,26 @@ export default function AboutPage() {
             <div className="mt-14 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-0">
               <AnimatedSection>
                 <div className="pb-8 md:pb-0 md:pr-12 md:border-r border-surface-200 dark:border-white/[0.06]">
-                  <div className="flex items-center gap-3 mb-5">
-                    <span className="text-xs font-mono text-dark-300 tracking-widest">
-                      01
-                    </span>
-                    <div className="h-px flex-1 bg-surface-200" />
-                  </div>
                   <h3 className="text-lg sm:text-xl font-bold text-dark-900 dark:text-white mb-3">
                     Mission
                   </h3>
                   <p className="text-dark-500 dark:text-dark-400 leading-relaxed">
-                    To end the daily transportation struggle for millions of
-                    people in Nigeria. You open the app, you get a ride, you
-                    arrive safely, and you can afford to do it again tomorrow.
-                    That is the standard we are building toward.
+                    You open the app, you get a ride, you arrive safely, and you
+                    can afford to do it again tomorrow. That is the standard we
+                    hold every trip to.
                   </p>
                 </div>
               </AnimatedSection>
 
               <AnimatedSection delay={0.1}>
                 <div className="pt-8 md:pt-0 md:pl-12 border-t md:border-t-0 border-surface-200 dark:border-white/[0.06]">
-                  <div className="flex items-center gap-3 mb-5">
-                    <span className="text-xs font-mono text-dark-300 tracking-widest">
-                      02
-                    </span>
-                    <div className="h-px flex-1 bg-surface-200" />
-                  </div>
                   <h3 className="text-lg sm:text-xl font-bold text-dark-900 dark:text-white mb-3">
                     Vision
                   </h3>
                   <p className="text-dark-500 dark:text-dark-400 leading-relaxed">
-                    Picture Abuja where you never wait more than minutes for a
-                    safe, affordable ride. Fewer cars on the road, cleaner air,
-                    and a city that actually moves. That is the future Zyon
-                    Rides is building, and it starts with you.
+                    An Abuja where a safe, fairly priced ride is a tap away, and
+                    driving for a living pays properly. We start here and grow
+                    city by city.
                   </p>
                 </div>
               </AnimatedSection>
@@ -117,7 +95,7 @@ export default function AboutPage() {
               <div className="lg:sticky lg:top-32 lg:self-start">
                 <AnimatedSection>
                   <p className="text-sm font-medium text-primary-400 mb-6">
-                    Our Promises
+                    What we stand for
                   </p>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-dark-900 dark:text-white tracking-tight leading-[1.15]">
                     What you can{" "}
@@ -130,11 +108,6 @@ export default function AboutPage() {
                 {values.map((value, i) => (
                   <AnimatedSection key={value.title} delay={i * 0.08}>
                     <div className="py-7 sm:py-8 border-b border-surface-300 dark:border-white/[0.08]">
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="text-xs font-mono text-dark-300 tracking-widest">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                      </div>
                       <h3 className="text-lg font-bold text-dark-900 dark:text-white mb-2">
                         {value.title}
                       </h3>
@@ -149,84 +122,24 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Timeline - vertical on mobile, horizontal on desktop */}
-        <section className="py-20 sm:py-28 bg-dark-950 overflow-hidden">
-          <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-            <AnimatedSection>
-              <p className="text-sm font-medium text-primary-400 mb-6">
-                Our Journey
-              </p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] max-w-2xl">
-                From frustration to the future of ride-hailing in Nigeria.
-              </h2>
-            </AnimatedSection>
-
-            {/* Mobile: vertical timeline */}
-            <div className="mt-14 sm:mt-16 lg:hidden border-l border-white/[0.08] ml-3">
-              {milestones.map((m, i) => (
-                <AnimatedSection key={m.title} delay={i * 0.1}>
-                  <div className="relative pl-8 pb-10 last:pb-0">
-                    {/* Dot on line */}
-                    <div className="absolute left-0 top-1 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-primary-400" />
-                    <span className="text-xs font-mono text-primary-400 tracking-widest">
-                      {m.year}
-                    </span>
-                    <h3 className="text-base font-bold text-white mt-2 mb-2">
-                      {m.title}
-                    </h3>
-                    <p className="text-sm text-dark-400 leading-relaxed">
-                      {m.description}
-                    </p>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-
-            {/* Desktop: horizontal timeline */}
-            <div className="mt-14 sm:mt-16 hidden lg:grid lg:grid-cols-5 gap-0">
-              {milestones.map((m, i) => (
-                <AnimatedSection key={m.title} delay={i * 0.1}>
-                  <div className="pr-8 last:pr-0">
-                    <span className="text-xs font-mono text-primary-400 tracking-widest">
-                      {m.year}
-                    </span>
-                    <div className="flex items-center mt-3 mb-5">
-                      <div className="w-2 h-2 rounded-full bg-primary-400 shrink-0 relative z-10" />
-                      {i < milestones.length - 1 && (
-                        <div className="h-px flex-1 bg-white/[0.08]" />
-                      )}
-                    </div>
-                    <h3 className="text-base font-bold text-white mb-2">
-                      {m.title}
-                    </h3>
-                    <p className="text-sm text-dark-400 leading-relaxed">
-                      {m.description}
-                    </p>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* CTA */}
         <section className="py-20 sm:py-28 lg:py-36 bg-dark-950 border-t border-white/[0.08]">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
             <div className="max-w-2xl">
               <AnimatedSection>
                 <p className="text-sm font-medium text-primary-400 mb-4">
-                  Join the Movement
+                  Coming to the stores
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                  The waitlist is filling up. Get your spot now.
+                  Be first to ride with Zyon.
                 </h2>
                 <p className="mt-5 text-dark-400 text-base leading-relaxed">
-                  Ride or drive with Zyon. Early members get first
-                  access when we launch. Do not miss it.
+                  Both apps are on their way to the App Store and Google Play.
+                  Leave your email and we will tell you the day they are live.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <Button href="/#notify" variant="primary" size="lg">
-                    Join the Waitlist
+                    Get the launch email
                   </Button>
                   <Button href="/drive" variant="outline" size="lg">
                     Become a Driver
