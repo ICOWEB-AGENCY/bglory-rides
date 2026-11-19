@@ -31,14 +31,17 @@ const THEME_EVENT = "site-theme-change";
 // the anti-flash script in layout.tsx has already set the <html> class, so
 // the class only changes on a real change (toggle or system setting), never
 // from a render.
+// Used when storage is blocked (private mode), so the choice still holds
+// for this page even though it cannot be saved.
+let unsavedChoice: ThemeChoice = "system";
+
 function readChoice(): ThemeChoice {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored === "light" || stored === "dark") return stored;
+    return stored === "light" || stored === "dark" ? stored : "system";
   } catch {
-    // Storage blocked (private mode): follow the system.
+    return unsavedChoice;
   }
-  return "system";
 }
 
 function systemTheme(): Theme {
@@ -56,17 +59,19 @@ function applyTheme(theme: Theme) {
 
 function subscribe(onChange: () => void) {
   const mq = window.matchMedia("(prefers-color-scheme: dark)");
-  const onSystem = () => {
+  // Another tab, this tab or the device setting changed: the page follows,
+  // not only the switch's icon.
+  const follow = () => {
     applyTheme(readTheme());
     onChange();
   };
-  window.addEventListener("storage", onChange);
-  window.addEventListener(THEME_EVENT, onChange);
-  mq.addEventListener("change", onSystem);
+  window.addEventListener("storage", follow);
+  window.addEventListener(THEME_EVENT, follow);
+  mq.addEventListener("change", follow);
   return () => {
-    window.removeEventListener("storage", onChange);
-    window.removeEventListener(THEME_EVENT, onChange);
-    mq.removeEventListener("change", onSystem);
+    window.removeEventListener("storage", follow);
+    window.removeEventListener(THEME_EVENT, follow);
+    mq.removeEventListener("change", follow);
   };
 }
 
@@ -75,13 +80,13 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
   const choice = useSyncExternalStore<ThemeChoice>(subscribe, readChoice, () => "system");
 
   const setChoice = useCallback((next: ThemeChoice) => {
+    unsavedChoice = next;
     try {
       if (next === "system") localStorage.removeItem(STORAGE_KEY);
       else localStorage.setItem(STORAGE_KEY, next);
     } catch {
-      // Not saved; it still applies until the page reloads.
+      // Not saved; unsavedChoice keeps it until the page reloads.
     }
-    applyTheme(next === "system" ? systemTheme() : next);
     window.dispatchEvent(new Event(THEME_EVENT));
   }, []);
 

@@ -20,7 +20,11 @@ const sora = Sora({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0f1419",
+  // The browser bar matches the page's top bar in each theme.
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0f0d" },
+  ],
 };
 
 export const metadata: Metadata = {
