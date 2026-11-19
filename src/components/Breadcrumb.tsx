@@ -18,7 +18,7 @@ export default function Breadcrumb({ items, variant = "dark" }: BreadcrumbProps)
     <nav aria-label="Breadcrumb" className="mb-6 sm:mb-8">
       <ol
         className={`flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm ${
-          isDark ? "text-dark-400" : "text-dark-500"
+          isDark ? "text-white" : "text-dark-500"
         }`}
       >
         <li>

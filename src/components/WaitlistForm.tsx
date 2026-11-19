@@ -39,12 +39,12 @@ export default function WaitlistForm() {
 
   if (status === "success") {
     return (
-      <div className="mt-8 animate-fade-in">
-        <div className="flex items-center gap-2 text-primary-400 font-semibold text-sm">
+      <div className="mt-4 animate-fade-in">
+        <div className="flex items-center gap-2 text-[#4b6616] dark:text-primary-400 font-semibold text-sm">
           <span className="w-2 h-2 rounded-full bg-primary-400" />
           You are on the list.
         </div>
-        <p className="mt-2 text-dark-400 text-sm">
+        <p className="mt-2 text-dark-500 dark:text-dark-400 text-sm">
           We will email you the moment Zyon goes live. Check your inbox for a confirmation.
         </p>
       </div>
@@ -55,7 +55,7 @@ export default function WaitlistForm() {
     <>
       <form
         onSubmit={handleSubmit}
-        className="mt-8 flex flex-col sm:flex-row gap-3 max-w-md"
+        className="mt-4 flex flex-col sm:flex-row gap-3 max-w-md"
       >
         <input
           type="email"
@@ -63,12 +63,12 @@ export default function WaitlistForm() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email address"
           required
-          className="flex-1 px-5 py-3.5 rounded-xl bg-dark-800 border border-dark-700 text-white text-sm placeholder:text-dark-500 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 transition-all"
+          className="flex-1 px-4 py-3.5 rounded-lg bg-white border border-dark-200 text-dark-900 text-sm placeholder:text-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-500 transition-all dark:bg-dark-800 dark:border-dark-700 dark:text-white dark:placeholder:text-dark-500"
         />
         <button
           type="submit"
           disabled={status === "sending" || !token}
-          className="px-6 py-3.5 rounded-xl bg-primary-400 text-white text-sm font-semibold hover:bg-primary-500 transition-colors shrink-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#063F1E] text-white text-sm font-semibold hover:bg-[#0a5229] transition-colors shrink-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed dark:bg-[#9ACD32] dark:text-[#063F1E] dark:hover:bg-[#b4dc66]"
         >
           {status === "sending" ? "Joining..." : "Join Waitlist"}
         </button>
@@ -82,20 +82,6 @@ export default function WaitlistForm() {
         <p className="mt-3 text-sm text-red-400">{errorMsg}</p>
       )}
 
-      <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-dark-500">
-        <div className="flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
-          No spam, ever
-        </div>
-        <div className="flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
-          Unsubscribe anytime
-        </div>
-        <div className="flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />
-          Priority access for early signups
-        </div>
-      </div>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Sora } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
+import MotionRoot from "@/components/MotionRoot";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site";
 
@@ -98,10 +99,10 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body
-        className={`${inter.variable} ${sora.variable} antialiased bg-white dark:bg-dark-950 text-dark-900 dark:text-dark-100 transition-colors duration-300`}
+        className={`${inter.variable} ${sora.variable} antialiased bg-white dark:bg-[#0b0f0d] text-dark-900 dark:text-dark-100 transition-colors duration-300`}
       >
         <ThemeProvider>
-          {children}
+          <MotionRoot>{children}</MotionRoot>
         </ThemeProvider>
       </body>
     </html>

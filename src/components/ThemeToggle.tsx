@@ -1,47 +1,81 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "./ThemeProvider";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Monitor, Moon, Sun } from "lucide-react";
+import { useTheme, type ThemeChoice } from "./ThemeProvider";
 
-interface ThemeToggleProps {
-  variant?: "navbar" | "default";
-  scrolled?: boolean;
-}
+const choices: { value: ThemeChoice; label: string; Icon: typeof Sun }[] = [
+  { value: "light", label: "Light", Icon: Sun },
+  { value: "system", label: "System", Icon: Monitor },
+  { value: "dark", label: "Dark", Icon: Moon },
+];
 
-export default function ThemeToggle({ variant = "default", scrolled = false }: ThemeToggleProps) {
-  const { theme, toggleTheme } = useTheme();
+/** A small circle in the footer showing the current theme; it opens Light, System and Dark. */
+export default function ThemeToggle() {
+  const { choice, setChoice } = useTheme();
+  const [open, setOpen] = useState(false);
+  const box = useRef<HTMLDivElement>(null);
+  const Current = choices.find((c) => c.value === choice)?.Icon ?? Monitor;
 
-  if (variant === "navbar") {
-    return (
-      <button
-        onClick={toggleTheme}
-        className={`w-9 h-9 flex items-center justify-center rounded-full transition-colors cursor-pointer ${
-          scrolled
-            ? "text-dark-600 hover:text-dark-900 hover:bg-surface-100 dark:text-dark-400 dark:hover:text-white dark:hover:bg-white/10"
-            : "text-white/70 hover:text-white hover:bg-white/10"
-        }`}
-        aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-      >
-        {theme === "dark" ? (
-          <Sun className="w-[18px] h-[18px]" />
-        ) : (
-          <Moon className="w-[18px] h-[18px]" />
-        )}
-      </button>
-    );
-  }
+  useEffect(() => {
+    if (!open) return;
+    const away = (e: PointerEvent) => {
+      if (!box.current?.contains(e.target as Node)) setOpen(false);
+    };
+    const esc = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("pointerdown", away);
+    document.addEventListener("keydown", esc);
+    return () => {
+      document.removeEventListener("pointerdown", away);
+      document.removeEventListener("keydown", esc);
+    };
+  }, [open]);
 
   return (
-    <button
-      onClick={toggleTheme}
-      className="w-10 h-10 flex items-center justify-center rounded-full text-dark-500 hover:text-primary-400 transition-colors cursor-pointer dark:text-dark-400 dark:hover:text-primary-400"
-      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-    >
-      {theme === "dark" ? (
-        <Sun className="w-4 h-4" />
-      ) : (
-        <Moon className="w-4 h-4" />
-      )}
-    </button>
+    <div ref={box} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-haspopup="true"
+        aria-expanded={open}
+        aria-label="Change theme"
+        className="grid h-9 w-9 place-items-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-white/40 hover:text-white"
+      >
+        <Current className="h-4 w-4" />
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            role="menu"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 6 }}
+            transition={{ duration: 0.15 }}
+            className="absolute bottom-11 left-1/2 flex -translate-x-1/2 gap-1 rounded-xl border border-white/10 bg-[#141a17] p-1 shadow-xl"
+          >
+            {choices.map(({ value, label, Icon }) => (
+              <button
+                key={value}
+                type="button"
+                role="menuitemradio"
+                aria-checked={choice === value}
+                aria-label={label}
+                title={label}
+                onClick={() => {
+                  setChoice(value);
+                  setOpen(false);
+                }}
+                className={`grid h-9 w-9 place-items-center rounded-lg transition-colors ${
+                  choice === value ? "bg-[#9ACD32] text-[#063F1E]" : "text-white/70 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                <Icon className="h-4 w-4" />
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }

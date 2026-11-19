@@ -16,53 +16,28 @@ interface PageHeroProps {
   breadcrumbs: BreadcrumbItem[];
 }
 
+/** The inner pages' banner: the same rounded brand-green block as the home page hero. */
 export default function PageHero({ label, title, description, breadcrumbs }: PageHeroProps) {
   return (
-    <section className="relative bg-dark-950 overflow-hidden">
-      {/* Subtle diagonal lines instead of blobs */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.025]"
-        aria-hidden="true"
-        style={{
-          backgroundImage:
-            "linear-gradient(135deg, rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(225deg, rgba(255,255,255,1) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-      {/* Single focused glow */}
-      <div className="absolute top-1/2 -right-20 w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] bg-primary-400/[0.06] rounded-full blur-[120px] pointer-events-none" />
-
+    <>
       <Navbar />
-
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12 pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-24">
+      <section className="bg-white px-4 pt-24 sm:px-6 sm:pt-28 lg:px-8 dark:bg-[#0b0f0d]">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          className="mx-auto max-w-7xl rounded-[28px] bg-[linear-gradient(115deg,#063F1E_0%,#0a5229_55%,#0f6b36_100%)] px-6 py-12 text-white sm:px-10 sm:py-14 lg:px-14 lg:py-16"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <Breadcrumb items={breadcrumbs} variant="dark" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-end">
-            {/* Left: label + title */}
+          <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-2 lg:gap-16">
             <div>
-              <p className="text-sm font-medium text-primary-400 mb-3">{label}</p>
-              <h1 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-white tracking-tight leading-[1.1]">
-                {title}
-              </h1>
+              <p className="mb-3 text-sm font-semibold text-[#9ACD32]">{label}</p>
+              <h1 className="text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl">{title}</h1>
             </div>
-
-            {/* Right: description - aligned to bottom of title */}
-            <div className="lg:pb-1">
-              <p className="text-base sm:text-lg text-dark-400 leading-relaxed">
-                {description}
-              </p>
-            </div>
+            <p className="text-base leading-relaxed text-white/75 sm:text-lg lg:pb-1">{description}</p>
           </div>
-
-          {/* Divider line */}
-          <div className="mt-10 sm:mt-12 h-px bg-white/[0.08]" />
         </motion.div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

@@ -35,7 +35,7 @@ export default function Button({
   onClick,
   type = "button",
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 hover:scale-[1.03] hover:-translate-y-px active:scale-[0.97] ${variants[variant]} ${sizes[size]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-all duration-200 hover:scale-[1.03] hover:-translate-y-px active:scale-[0.97] ${variants[variant]} ${sizes[size]} ${className}`;
 
   if (href) {
     return (

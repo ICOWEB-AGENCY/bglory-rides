@@ -1,152 +1,80 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
-const footerLinks = {
-  company: [
-    { label: "About Us", href: "/about" },
-    { label: "Careers", href: "/careers" },
-    { label: "Press", href: "/press" },
-    { label: "Blog", href: "/blog" },
-  ],
-  product: [
-    { label: "Ride Options", href: "/services" },
-    { label: "Safety", href: "/safety" },
-    { label: "Drive with Us", href: "/drive" },
-    { label: "Business", href: "/business" },
-  ],
-  support: [
-    { label: "Help Center", href: "/help" },
-    { label: "Contact Us", href: "/contact" },
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
-  ],
-};
-
-const socials = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+const columns = [
+  {
+    title: "Ride",
+    links: [
+      { label: "Ride options", href: "/services" },
+      { label: "Safety", href: "/safety" },
+      { label: "Zyon for Business", href: "/business" },
+    ],
+  },
+  {
+    title: "Drive",
+    links: [
+      { label: "Drive with Zyon", href: "/drive" },
+      { label: "Help Center", href: "/help" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Careers", href: "/careers" },
+      { label: "Press", href: "/press" },
+      { label: "Blog", href: "/blog" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-dark-950 text-white border-t border-white/[0.08]">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12">
-        <div className="py-14 sm:py-20 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-6 lg:gap-8">
-          <div className="col-span-2 lg:col-span-2">
-            <Link href="/" className="inline-block mb-5">
-              <Image
-                src="/images/zyon-wordmark-light.svg"
-                alt="Zyon"
-                width={140}
-                height={53}
-                className="h-9 w-auto"
-              />
+    <footer className="mt-20 bg-[#0b0f0d] text-white dark:border-t dark:border-white/10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-12 py-16 text-center sm:text-left lg:grid-cols-[1.3fr_2fr]">
+          <div className="flex flex-col items-center sm:items-start">
+            <Link href="/" aria-label="Zyon home">
+              <Image src="/images/zyon-wordmark-light.svg" alt="Zyon" width={130} height={49} className="h-8 w-auto" />
             </Link>
-            <p className="text-dark-400 text-sm leading-relaxed max-w-sm mb-6">
-              Affordable rides across Abuja with verified drivers and
-              upfront pricing. No surge fees, no surprises. Request a ride
-              and get where you need to go.
-            </p>
-            <div className="space-y-3">
-              <a
-                href="mailto:contact@zyonrides.com"
-                className="flex items-center gap-2 text-sm text-dark-400 hover:text-primary-400 transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-                contact@zyonrides.com
-              </a>
-              <a
-                href="tel:+2348063376181"
-                className="flex items-center gap-2 text-sm text-dark-400 hover:text-primary-400 transition-colors"
-              >
-                <Phone className="w-4 h-4" />
-                0806 337 6181
-              </a>
-              <p className="flex items-center gap-2 text-sm text-dark-400">
-                <MapPin className="w-4 h-4 shrink-0" />
-                Abuja, Nigeria
-              </p>
-            </div>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">Rides across Abuja, at a fair price. The fare you see is the fare you pay.</p>
           </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Company</h3>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-dark-400 hover:text-primary-400 transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Product</h3>
-            <ul className="space-y-3">
-              {footerLinks.product.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-dark-400 hover:text-primary-400 transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Support</h3>
-            <ul className="space-y-3">
-              {footerLinks.support.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-dark-400 hover:text-primary-400 transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className="grid gap-10 sm:grid-cols-3">
+            {columns.map((col) => (
+              <div key={col.title}>
+                <h2 className="text-sm font-semibold text-white">{col.title}</h2>
+                <ul className="mt-4 space-y-3">
+                  {col.links.map((l) => (
+                    <li key={l.href}>
+                      <Link href={l.href} className="text-sm text-white/60 transition-colors hover:text-[#9ACD32]">
+                        {l.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="border-t border-dark-800 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-dark-500">
-            &copy; {new Date().getFullYear()} Zyon. All rights
-            reserved.
-          </p>
-          <div className="flex items-center gap-1">
-            {socials.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                aria-label={social.label}
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center text-dark-500 hover:text-primary-400 transition-colors"
-              >
-                <social.icon className="w-4 h-4" />
-              </a>
-            ))}
+        <div className="flex flex-col items-center gap-5 border-t border-white/10 py-7 lg:flex-row lg:justify-between">
+          <div className="flex items-center gap-5 text-sm text-white/60">
+            <Link href="/privacy" className="hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-white">
+              Terms of Service
+            </Link>
+            <ThemeToggle />
           </div>
+          <p className="text-center text-xs text-white/45">
+            &copy; {new Date().getFullYear()} Zyon. All rights reserved. Built by{" "}
+            <a href="https://www.icowebagency.com" target="_blank" rel="noopener noreferrer" className="underline-offset-2 hover:text-white hover:underline">
+              ICOWEB
+            </a>
+          </p>
         </div>
       </div>
     </footer>

@@ -3,15 +3,19 @@
 import { createContext, useCallback, useContext, useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark";
+/** What the visitor picked: a theme, or follow the phone or computer. */
+export type ThemeChoice = Theme | "system";
 
 interface ThemeContextType {
   theme: Theme;
-  toggleTheme: () => void;
+  choice: ThemeChoice;
+  setChoice: (choice: ThemeChoice) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType>({
   theme: "light",
-  toggleTheme: () => {},
+  choice: "system",
+  setChoice: () => {},
 });
 
 export function useTheme() {
@@ -27,14 +31,23 @@ const THEME_EVENT = "site-theme-change";
 // the anti-flash script in layout.tsx has already set the <html> class, so
 // the class only changes on a real change (toggle or system setting), never
 // from a render.
-function readTheme(): Theme {
+function readChoice(): ThemeChoice {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === "light" || stored === "dark") return stored;
   } catch {
     // Storage blocked (private mode): follow the system.
   }
+  return "system";
+}
+
+function systemTheme(): Theme {
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function readTheme(): Theme {
+  const choice = readChoice();
+  return choice === "system" ? systemTheme() : choice;
 }
 
 function applyTheme(theme: Theme) {
@@ -59,17 +72,18 @@ function subscribe(onChange: () => void) {
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
   const theme = useSyncExternalStore<Theme>(subscribe, readTheme, () => "light");
+  const choice = useSyncExternalStore<ThemeChoice>(subscribe, readChoice, () => "system");
 
-  const toggleTheme = useCallback(() => {
-    const next: Theme = readTheme() === "light" ? "dark" : "light";
+  const setChoice = useCallback((next: ThemeChoice) => {
     try {
-      localStorage.setItem(STORAGE_KEY, next);
+      if (next === "system") localStorage.removeItem(STORAGE_KEY);
+      else localStorage.setItem(STORAGE_KEY, next);
     } catch {
       // Not saved; it still applies until the page reloads.
     }
-    applyTheme(next);
+    applyTheme(next === "system" ? systemTheme() : next);
     window.dispatchEvent(new Event(THEME_EVENT));
   }, []);
 
-  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
+  return <ThemeContext.Provider value={{ theme, choice, setChoice }}>{children}</ThemeContext.Provider>;
 }

@@ -59,7 +59,11 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background: #0f1419;
+  background: #ffffff;
+}
+
+html.dark {
+  background: #0b0f0d;
 }
 
 body {
