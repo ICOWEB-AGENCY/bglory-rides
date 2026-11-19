@@ -64,6 +64,8 @@ export default function Turnstile({
         id = window.turnstile.render(box.current, {
           sitekey: TURNSTILE_SITE_KEY,
           theme,
+          // Stays invisible unless Cloudflare needs the visitor to act, so forms show no test box.
+          appearance: "interaction-only",
           callback: (token: string) => latest.current(token),
           "expired-callback": () => latest.current(null),
           "error-callback": () => latest.current(null),
@@ -76,5 +78,5 @@ export default function Turnstile({
     };
   }, [resetKey, theme]);
 
-  return <div ref={box} className="min-h-[65px]" />;
+  return <div ref={box} />;
 }
