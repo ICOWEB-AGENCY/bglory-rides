@@ -65,7 +65,7 @@ const sections = [
       "With drivers: your first name, pickup location, and drop-off location are shared when a ride is confirmed. Your phone number is masked through our in-app communication system",
       "With payment processors: transaction details are shared with our payment partners to process fares, refunds, and payouts securely",
       "With law enforcement: we may disclose information when required by law, court order, or governmental regulation, or when necessary to protect safety",
-      "With service providers: we work with trusted partners for cloud hosting, analytics, and customer support. These partners are bound by strict data protection agreements",
+      "With service providers: we work with trusted partners for cloud hosting, analytics, and customer support. We share only what each partner needs to do its job",
       "Aggregated analytics: we may share anonymized, aggregated statistics that cannot be used to identify any individual user",
     ],
   },
@@ -76,11 +76,11 @@ const sections = [
       "Protecting your data is a responsibility we take seriously. We implement industry-standard security measures and continuously work to strengthen our defenses.",
     ],
     items: [
-      "All data is encrypted in transit using TLS 1.2 or higher, and at rest using AES-256 encryption",
+      "Data travels between the apps and our servers over encrypted connections (HTTPS)",
       "Access to personal data is restricted to authorized personnel on a need-to-know basis, with role-based access controls",
-      "We conduct regular security audits, penetration testing, and vulnerability assessments",
-      "Payment information is handled in compliance with PCI DSS standards and is never stored on our servers in plain text",
-      "We maintain an incident response plan and will notify affected users promptly in the event of a data breach",
+      "We review our systems and fix security issues as we find them",
+      "Card payments are handled by our payment provider, Paystack. Your full card number never reaches our servers",
+      "If a data breach affects you, we will tell you",
     ],
   },
   {
@@ -91,7 +91,7 @@ const sections = [
     ],
     items: [
       "Access your data: you can request a copy of the personal information we hold about you at any time through the app or by contacting us",
-      "Request deletion: you can ask us to delete your account and associated personal data. We will process deletion requests within 30 days",
+      "Request deletion: you can ask us to delete your account and associated personal data",
       "Opt out of marketing: you can unsubscribe from promotional emails and push notifications through your account settings",
       "Data portability: you can request your data in a structured, commonly used, machine-readable format",
       "Correction: you can update or correct inaccurate personal information directly in your account settings or by contacting our support team",
@@ -107,7 +107,7 @@ const sections = [
     items: [
       "Active account data is kept for as long as your account remains open and active",
       "Ride history, receipts, and transaction records are retained for 3 years after the ride date for accounting and dispute resolution purposes",
-      "When you delete your account, your personal data is purged from our active systems within 30 days. Backup copies are removed within 90 days",
+      "When you delete your account, we delete your personal data, except records the law requires us to keep",
       "Anonymized, aggregated data that cannot identify you may be retained indefinitely for analytical purposes",
       "Data required for legal compliance, fraud prevention, or ongoing disputes may be retained beyond these periods as permitted by law",
     ],
@@ -148,11 +148,10 @@ const sections = [
     number: "11",
     title: "Contact Us",
     paragraphs: [
-      "If you have questions, concerns, or requests regarding this privacy policy or how we handle your data, please reach out to us. We are committed to addressing your concerns promptly.",
+      "If you have questions, concerns, or requests regarding this privacy policy or how we handle your data, please reach out to us. We read every message.",
     ],
     items: [
       "Email: privacy@zyonrides.com",
-      "Response time: we aim to respond to all privacy-related inquiries within 5 business days",
       "For data access or deletion requests, please include your registered email address and a description of your request",
     ],
   },

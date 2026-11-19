@@ -35,6 +35,15 @@ export default function Button({
 }: ButtonProps) {
   const classes = `inline-flex w-full items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-200 sm:w-auto ${variants[variant]} ${sizes[size]} ${className}`;
 
+  // Email, phone and outside links are plain anchors; next/link is for pages on this site.
+  if (href && /^(mailto:|tel:|https?:)/.test(href)) {
+    return (
+      <a href={href} className={classes}>
+        {children}
+      </a>
+    );
+  }
+
   if (href) {
     return (
       <Link href={href} className={classes}>

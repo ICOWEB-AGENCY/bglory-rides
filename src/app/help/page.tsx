@@ -76,9 +76,9 @@ export default function HelpPage() {
       <main>
         <Band tone="white">
           <div className="grid gap-x-16 gap-y-16 lg:grid-cols-2">
-            {helpTopics.map((topic) => (
-              <section key={topic.title} aria-labelledby={`help-${topic.title}`} className="border-t border-ink/15 pt-8 dark:border-white/15">
-                <h2 id={`help-${topic.title}`} className="display text-[clamp(1.8rem,3vw,2.6rem)]">{topic.title}</h2>
+            {helpTopics.map((topic, i) => (
+              <section key={topic.title} aria-labelledby={`help-topic-${i}`} className="border-t border-ink/15 pt-8 dark:border-white/15">
+                <h2 id={`help-topic-${i}`} className="display text-[clamp(1.8rem,3vw,2.6rem)]">{topic.title}</h2>
                 <dl className="mt-8 space-y-7">
                   {topic.questions.map(({ q, a }) => (
                     <div key={q}>
